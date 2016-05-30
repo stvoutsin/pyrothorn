@@ -1,0 +1,5 @@
+recursive-exclude conf *
+recursive-exclude containers *
+recursive-exclude logs *
+recursive-include scripts *
+recursive-exclude testing *

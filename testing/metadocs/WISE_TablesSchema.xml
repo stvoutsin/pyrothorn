@@ -1,0 +1,4314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>WISE</Name>
+   <Description></Description>
+
+   <Table ID="wise_allskysc">
+      <Name>wise_allskysc</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the WISE allsky catalogue]]></Description>
+      <Column ID="wise_allskysc.designation" indexed="false">
+         <Name>designation</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Sexagesimal, equatorial position-based source name in the form: hhmmss.ss+ddmmss.s]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 right ascension with respect to the 2MASS PSC reference frame.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 declination with respect to the 2MASS PSC reference frame.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.sigra" indexed="false">
+         <Name>sigra</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[One-sigma uncertainty in right ascension coordinate]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.sigdec" indexed="false">
+         <Name>sigdec</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[One-sigma uncertainty in declination coordinate]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.sigradec" indexed="false">
+         <Name>sigradec</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The co-sigma of the equatorial position uncertainties, sig_ra, sig_dec (&sigma;&lt;sub&gt;&alpha;&lt;/sub&gt;, &sigma;&delta;&lt;sub&gt;&lt;/sub&gt;). The co-sigma is related to the covariance between the position errors V&alpha;&delta; by the formula V&alpha;&delta; = &sigma;&lt;sub&gt;&alpha;&delta;&lt;/sub&gt;&times;|&sigma;&lt;sub&gt;&alpha;&delta;&lt;/sub&gt;|. This maintains the sign information for the correlation, since &sigma;&lt;sub&gt;&alpha;&delta;&lt;/sub&gt; may be negative. It is more natural to carry the co-sigma along with the other uncertainties instead of the covariance because the former is in the same units as the other uncertainties.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.glon" indexed="false">
+         <Name>glon</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude. CAUTION: This coordinate should not be used as an astrometric reference.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.glat" indexed="false">
+         <Name>glat</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude. CAUTION: This coordinate should not be used as an astrometric reference.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.elon" indexed="false">
+         <Name>elon</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Ecliptic longitude. CAUTION: This coordinate should not be used as an astrometric reference.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.elat" indexed="false">
+         <Name>elat</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Ecliptic latitude. CAUTION: This coordinate should not be used as an astrometric reference.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.wx" indexed="false">
+         <Name>wx</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The x-pixel coordinate of this source on the Atlas Image.]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.wy" indexed="false">
+         <Name>wy</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The y-pixel coordinate of this source on the Atlas Image.]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.cntr" indexed="true">
+         <Name>cntr</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique identification number for the Catalog source]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.source_id" indexed="false">
+         <Name>source_id</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Unique source ID, formed from a combination of the Atlas Tile ID, coadd_id, and sequential extracted source number, src, within the Tile.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.coadd_id" indexed="false">
+         <Name>coadd_id</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Atlas Tile identifier from which source was extracted.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.src" indexed="false">
+         <Name>src</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Sequential number of this source extraction in the Atlas Tile from which this source was extracted, in approximate descending order of W1 source brightness.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mpro" indexed="false">
+         <Name>w1mpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 magnitude measured with profile-fitting photometry, or the magnitude of the 95% confidence brightness upper limit if the W1 flux measurement has SNR&lt;2.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigmpro" indexed="false">
+         <Name>w1sigmpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 profile-fit photometric measurement uncertainty.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1snr" indexed="false">
+         <Name>w1snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 profile-fit measurement signal-to-noise ratio.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1rchi2" indexed="false">
+         <Name>w1rchi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared of the W1 profile-fit photometry measurement.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mpro" indexed="false">
+         <Name>w2mpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 magnitude measured with profile-fitting photometry, or the magnitude of the 95% confidence brightness upper limit if the W2 flux measurement has SNR&lt;2.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigmpro" indexed="false">
+         <Name>w2sigmpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 profile-fit photometric measurement uncertainty.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2snr" indexed="false">
+         <Name>w2snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 profile-fit measurement signal-to-noise ratio.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2rchi2" indexed="false">
+         <Name>w2rchi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared of the W2 profile-fit photometry measurement.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mpro" indexed="false">
+         <Name>w3mpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 magnitude measured with profile-fitting photometry, or the magnitude of the 95% confidence brightness upper limit if the W3 flux measurement has SNR&lt;2.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigmpro" indexed="false">
+         <Name>w3sigmpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 profile-fit photometric measurement uncertainty.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3snr" indexed="false">
+         <Name>w3snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 profile-fit measurement signal-to-noise ratio.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3rchi2" indexed="false">
+         <Name>w3rchi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared of the W3 profile-fit photometry measurement.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mpro" indexed="false">
+         <Name>w4mpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 magnitude measured with profile-fitting photometry, or the magnitude of the 95% confidence brightness upper limit if the W4 flux measurement has SNR&lt;2.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigmpro" indexed="false">
+         <Name>w4sigmpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 profile-fit photometric measurement uncertainty.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4snr" indexed="false">
+         <Name>w4snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 profile-fit measurement signal-to-noise ratio.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4rchi2" indexed="false">
+         <Name>w4rchi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared of the W4 profile-fit photometry measurement.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.rchi2" indexed="false">
+         <Name>rchi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Combined reduced chi-squared of the profile-fit photometry measurement in all bands.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.nb" indexed="false">
+         <Name>nb</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of PSF components used simultaneously in the profile-fitting for this source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.na" indexed="false">
+         <Name>na</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Active deblending flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sat" indexed="false">
+         <Name>w1sat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Saturated pixel fraction, W1.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sat" indexed="false">
+         <Name>w2sat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Saturated pixel fraction, W2.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sat" indexed="false">
+         <Name>w3sat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Saturated pixel fraction, W3.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sat" indexed="false">
+         <Name>w4sat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Saturated pixel fraction, W4.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.satnum" indexed="false">
+         <Name>satnum</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Minimum sample at which saturation occurs in each band.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.cc_flags" indexed="false">
+         <Name>cc_flags</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.ext_flg" indexed="false">
+         <Name>ext_flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Extended source flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.var_flg" indexed="false">
+         <Name>var_flg</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Variability flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.ph_qual" indexed="false">
+         <Name>ph_qual</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Photometric quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.det_bit" indexed="false">
+         <Name>det_bit</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Bit-encoded integer indicating bands in which a source has a w?snr&gt;2 detection.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.moon_lev" indexed="false">
+         <Name>moon_lev</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Scattered moonlight contamination flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1nm" indexed="false">
+         <Name>w1nm</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame detection count in W1.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1m" indexed="false">
+         <Name>w1m</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame coverage in W1.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2nm" indexed="false">
+         <Name>w2nm</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame detection count in W2.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2m" indexed="false">
+         <Name>w2m</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame coverage in W2.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3nm" indexed="false">
+         <Name>w3nm</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame detection count in W3.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3m" indexed="false">
+         <Name>w3m</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame coverage in W3.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4nm" indexed="false">
+         <Name>w4nm</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame detection count in W4.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4m" indexed="false">
+         <Name>w4m</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame coverage in W4.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1cov" indexed="false">
+         <Name>w1cov</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean pixel coverage in W1.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2cov" indexed="false">
+         <Name>w2cov</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean pixel coverage in W2.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3cov" indexed="false">
+         <Name>w3cov</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean pixel coverage in W3.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4cov" indexed="false">
+         <Name>w4cov</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean pixel coverage in W4.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1frtr" indexed="false">
+         <Name>w1frtr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Fraction of W1 pixels affected by transients.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2frtr" indexed="false">
+         <Name>w2frtr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Fraction of W2 pixels affected by transients.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3frtr" indexed="false">
+         <Name>w3frtr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Fraction of W3 pixels affected by transients.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4frtr" indexed="false">
+         <Name>w4frtr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Fraction of W4 pixels affected by transients.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1cc_map" indexed="false">
+         <Name>w1cc_map</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Contamination and confusion map for this source in W1.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1cc_map_str" indexed="false">
+         <Name>w1cc_map_str</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion string in W1.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2cc_map" indexed="false">
+         <Name>w2cc_map</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Contamination and confusion map for this source in W2.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2cc_map_str" indexed="false">
+         <Name>w2cc_map_str</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion string in W2.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3cc_map" indexed="false">
+         <Name>w3cc_map</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Contamination and confusion map for this source in W3.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3cc_map_str" indexed="false">
+         <Name>w3cc_map_str</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion string in W3.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4cc_map" indexed="false">
+         <Name>w4cc_map</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Contamination and confusion map for this source in W4.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4cc_map_str" indexed="false">
+         <Name>w4cc_map_str</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion string in W4.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1flux" indexed="false">
+         <Name>w1flux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The &quot;raw&quot; W1 source flux measured in profile-fit photometry in units of digital numbers.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigflux" indexed="false">
+         <Name>w1sigflux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the &quot;raw&quot; W1 source flux measurement in profile-fit photometry in units of digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sky" indexed="false">
+         <Name>w1sky</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The trimmed average of the W1 sky background value in digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigsk" indexed="false">
+         <Name>w1sigsk</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The uncertainty in the W1 sky background value in units of digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1conf" indexed="false">
+         <Name>w1conf</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Estimated confusion noise in the W1 sky background annulus, in digital numbers.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2flux" indexed="false">
+         <Name>w2flux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The &quot;raw&quot; W2 source flux measured in profile-fit photometry in units of digital numbers.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigflux" indexed="false">
+         <Name>w2sigflux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the &quot;raw&quot; W2 source flux measurement in profile-fit photometry in units of digital numbers.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sky" indexed="false">
+         <Name>w2sky</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The trimmed average of the W2 sky background value in digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigsk" indexed="false">
+         <Name>w2sigsk</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The uncertainty in the W2 sky background value in units of digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2conf" indexed="false">
+         <Name>w2conf</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Estimated confusion noise in the W2 sky background annulus, in digital numbers.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3flux" indexed="false">
+         <Name>w3flux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The &quot;raw&quot; W3 source flux measured in profile-fit photometry in units of digital numbers.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigflux" indexed="false">
+         <Name>w3sigflux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the &quot;raw&quot; W3 source flux measurement in profile-fit photometry in units of digital numbers.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sky" indexed="false">
+         <Name>w3sky</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The trimmed average of the W3 sky background value in digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigsk" indexed="false">
+         <Name>w3sigsk</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The uncertainty in the W3 sky background value in units of digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3conf" indexed="false">
+         <Name>w3conf</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Estimated confusion noise in the W3 sky background annulus, in digital numbers.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4flux" indexed="false">
+         <Name>w4flux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The &quot;raw&quot; W4 source flux measured in profile-fit photometry in units of digital numbers.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigflux" indexed="false">
+         <Name>w4sigflux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the &quot;raw&quot; W4 source flux measurement in profile-fit photometry in units of digital numbers.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sky" indexed="false">
+         <Name>w4sky</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The trimmed average of the W4 sky background value in digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;.]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigsk" indexed="false">
+         <Name>w4sigsk</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The uncertainty in the W4 sky background value in units of digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4conf" indexed="false">
+         <Name>w4conf</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Estimated confusion noise in the W4 sky background annulus, in digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mag" indexed="false">
+         <Name>w1mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 &quot;standard&quot; aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigm" indexed="false">
+         <Name>w1sigm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 &quot;standard&quot; aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1flg" indexed="false">
+         <Name>w1flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 &quot;standard&quot; aperture measurement quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mcor" indexed="false">
+         <Name>w1mcor</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 aperture curve-of-growth correction.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mag" indexed="false">
+         <Name>w2mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 &quot;standard&quot; aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigm" indexed="false">
+         <Name>w2sigm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 &quot;standard&quot; aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2flg" indexed="false">
+         <Name>w2flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 &quot;standard&quot; aperture measurement quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mcor" indexed="false">
+         <Name>w2mcor</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 aperture curve-of-growth correction, in magnitudes.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mag" indexed="false">
+         <Name>w3mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 &quot;standard&quot; aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigm" indexed="false">
+         <Name>w3sigm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 &quot;standard&quot; aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3flg" indexed="false">
+         <Name>w3flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 &quot;standard&quot; aperture measurement quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mcor" indexed="false">
+         <Name>w3mcor</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 aperture curve-of-growth correction, in magnitudes.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mag" indexed="false">
+         <Name>w4mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 &quot;standard&quot; aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigm" indexed="false">
+         <Name>w4sigm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 &quot;standard&quot; aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4flg" indexed="false">
+         <Name>w4flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 &quot;standard&quot; aperture measurement quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mcor" indexed="false">
+         <Name>w4mcor</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 aperture curve-of-growth correction, in magnitudes.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mag_1" indexed="false">
+         <Name>w1mag_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 5.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigm_1" indexed="false">
+         <Name>w1sigm_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 5.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1flg_1" indexed="false">
+         <Name>w1flg_1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 5.5&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mag_1" indexed="false">
+         <Name>w2mag_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 5.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigm_1" indexed="false">
+         <Name>w2sigm_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 5.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2flg_1" indexed="false">
+         <Name>w2flg_1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 5.5&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mag_1" indexed="false">
+         <Name>w3mag_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 5.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigm_1" indexed="false">
+         <Name>w3sigm_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 5.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3flg_1" indexed="false">
+         <Name>w3flg_1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 5.5&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mag_1" indexed="false">
+         <Name>w4mag_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 11.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigm_1" indexed="false">
+         <Name>w4sigm_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 11.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4flg_1" indexed="false">
+         <Name>w4flg_1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 11.0&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mag_2" indexed="false">
+         <Name>w1mag_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 8.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigm_2" indexed="false">
+         <Name>w1sigm_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 8.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1flg_2" indexed="false">
+         <Name>w1flg_2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 8.25&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mag_2" indexed="false">
+         <Name>w2mag_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 8.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigm_2" indexed="false">
+         <Name>w2sigm_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 8.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2flg_2" indexed="false">
+         <Name>w2flg_2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 8.25&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mag_2" indexed="false">
+         <Name>w3mag_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 8.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigm_2" indexed="false">
+         <Name>w3sigm_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 8.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3flg_2" indexed="false">
+         <Name>w3flg_2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 8.25&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mag_2" indexed="false">
+         <Name>w4mag_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 16.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigm_2" indexed="false">
+         <Name>w4sigm_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 16.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4flg_2" indexed="false">
+         <Name>w4flg_2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 16.5&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mag_3" indexed="false">
+         <Name>w1mag_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 11.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigm_3" indexed="false">
+         <Name>w1sigm_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 11.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1flg_3" indexed="false">
+         <Name>w1flg_3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 11.0&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mag_3" indexed="false">
+         <Name>w2mag_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 11.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigm_3" indexed="false">
+         <Name>w2sigm_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 11.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2flg_3" indexed="false">
+         <Name>w2flg_3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 11.0&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mag_3" indexed="false">
+         <Name>w3mag_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 11.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigm_3" indexed="false">
+         <Name>w3sigm_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 11.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3flg_3" indexed="false">
+         <Name>w3flg_3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 11.0&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mag_3" indexed="false">
+         <Name>w4mag_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 22.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigm_3" indexed="false">
+         <Name>w4sigm_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 22.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4flg_3" indexed="false">
+         <Name>w4flg_3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 22.0&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mag_4" indexed="false">
+         <Name>w1mag_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 13.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigm_4" indexed="false">
+         <Name>w1sigm_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 13.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1flg_4" indexed="false">
+         <Name>w1flg_4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 13.75&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mag_4" indexed="false">
+         <Name>w2mag_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 13.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigm_4" indexed="false">
+         <Name>w2sigm_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 13.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2flg_4" indexed="false">
+         <Name>w2flg_4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 13.75&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mag_4" indexed="false">
+         <Name>w3mag_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 13.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag.</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigm_4" indexed="false">
+         <Name>w3sigm_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 13.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3flg_4" indexed="false">
+         <Name>w3flg_4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 13.75&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mag_4" indexed="false">
+         <Name>w4mag_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 27.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigm_4" indexed="false">
+         <Name>w4sigm_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 27.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4flg_4" indexed="false">
+         <Name>w4flg_4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 27.5&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mag_5" indexed="false">
+         <Name>w1mag_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 16.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigm_5" indexed="false">
+         <Name>w1sigm_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 16.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1flg_5" indexed="false">
+         <Name>w1flg_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 16.5&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mag_5" indexed="false">
+         <Name>w2mag_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 16.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigm_5" indexed="false">
+         <Name>w2sigm_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 16.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2flg_5" indexed="false">
+         <Name>w2flg_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 16.5&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mag_5" indexed="false">
+         <Name>w3mag_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 16.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigm_5" indexed="false">
+         <Name>w3sigm_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 16.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3flg_5" indexed="false">
+         <Name>w3flg_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 16.5&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mag_5" indexed="false">
+         <Name>w4mag_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 33.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigm_5" indexed="false">
+         <Name>w4sigm_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 33.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4flg_5" indexed="false">
+         <Name>w4flg_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 33.0&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mag_6" indexed="false">
+         <Name>w1mag_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 19.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigm_6" indexed="false">
+         <Name>w1sigm_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 19.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1flg_6" indexed="false">
+         <Name>w1flg_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 19.25&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mag_6" indexed="false">
+         <Name>w2mag_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 19.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag.</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigm_6" indexed="false">
+         <Name>w2sigm_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 19.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2flg_6" indexed="false">
+         <Name>w2flg_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 19.25&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mag_6" indexed="false">
+         <Name>w3mag_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 19.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigm_6" indexed="false">
+         <Name>w3sigm_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 19.25&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3flg_6" indexed="false">
+         <Name>w3flg_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 19.25&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mag_6" indexed="false">
+         <Name>w4mag_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 38.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigm_6" indexed="false">
+         <Name>w4sigm_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 38.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4flg_6" indexed="false">
+         <Name>w4flg_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 38.5&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mag_7" indexed="false">
+         <Name>w1mag_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 22.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigm_7" indexed="false">
+         <Name>w1sigm_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 22.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1flg_7" indexed="false">
+         <Name>w1flg_7</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 22.0&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mag_7" indexed="false">
+         <Name>w2mag_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 22.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigm_7" indexed="false">
+         <Name>w2sigm_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 22.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2flg_7" indexed="false">
+         <Name>w2flg_7</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 22.0&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mag_7" indexed="false">
+         <Name>w3mag_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 22.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigm_7" indexed="false">
+         <Name>w3sigm_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 22.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3flg_7" indexed="false">
+         <Name>w3flg_7</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 22.0&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mag_7" indexed="false">
+         <Name>w4mag_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 44.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigm_7" indexed="false">
+         <Name>w4sigm_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 44.0&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4flg_7" indexed="false">
+         <Name>w4flg_7</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 44.0&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mag_8" indexed="false">
+         <Name>w1mag_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 24.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigm_8" indexed="false">
+         <Name>w1sigm_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 24.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1flg_8" indexed="false">
+         <Name>w1flg_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 24.75&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mag_8" indexed="false">
+         <Name>w2mag_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 24.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigm_8" indexed="false">
+         <Name>w2sigm_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 24.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2flg_8" indexed="false">
+         <Name>w2flg_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 24.75&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mag_8" indexed="false">
+         <Name>w3mag_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 24.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigm_8" indexed="false">
+         <Name>w3sigm_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 24.75&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3flg_8" indexed="false">
+         <Name>w3flg_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 24.75&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mag_8" indexed="false">
+         <Name>w4mag_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 49.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigm_8" indexed="false">
+         <Name>w4sigm_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 49.5&quot; radius aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4flg_8" indexed="false">
+         <Name>w4flg_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 49.5&quot; radius aperture magnitude quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1magp" indexed="false">
+         <Name>w1magp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Inverse-variance-weighted mean W1 magnitude computed from profile-fit measurements on the w1m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigp1" indexed="false">
+         <Name>w1sigp1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the population of W1 fluxes measured on the w1m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1sigp2" indexed="false">
+         <Name>w1sigp2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the mean of the distribution of W1 fluxes (w1magp) computed from profile-fit measurements on the w1m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1dmag" indexed="false">
+         <Name>w1dmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Difference between maximum and minimum magnitude of the source from all usable single-exposure frames, W1.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1ndf" indexed="false">
+         <Name>w1ndf</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Number of degrees of freedom in the flux variability chi-square, W1.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mlq" indexed="false">
+         <Name>w1mlq</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Probability measure that the source is variable in W1 flux.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mjdmin" indexed="false">
+         <Name>w1mjdmin</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The earliest modified Julian Date (mJD) of the W1 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mjdmax" indexed="false">
+         <Name>w1mjdmax</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The latest modified Julian Date (mJD) of the W1 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1mjdmean" indexed="false">
+         <Name>w1mjdmean</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The average modified Julian Date (mJD) of the W1 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2magp" indexed="false">
+         <Name>w2magp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Inverse-variance-weighted mean W2 magnitude computed from profile-fit measurements on the w2m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigp1" indexed="false">
+         <Name>w2sigp1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the population of W2 fluxes measured on the w2m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2sigp2" indexed="false">
+         <Name>w2sigp2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the mean of the distribution of W2 fluxes (w2magp) computed from profile-fit measurements on the w2m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2dmag" indexed="false">
+         <Name>w2dmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Difference between maximum and minimum magnitude of the source from all usable single-exposure frames, W2.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2ndf" indexed="false">
+         <Name>w2ndf</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Number of degrees of freedom in the flux variability chi-square, W2.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mlq" indexed="false">
+         <Name>w2mlq</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Probability measure that the source is variable in W2 flux.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mjdmin" indexed="false">
+         <Name>w2mjdmin</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The earliest modified Julian Date (mJD) of the W2 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mjdmax" indexed="false">
+         <Name>w2mjdmax</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The latest modified Julian Date (mJD) of the W2 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2mjdmean" indexed="false">
+         <Name>w2mjdmean</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The average modified Julian Date (mJD) of the W2 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3magp" indexed="false">
+         <Name>w3magp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Inverse-variance-weighted mean W3 magnitude computed from profile-fit measurements on the w3m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigp1" indexed="false">
+         <Name>w3sigp1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the population of W3 fluxes measured on the w3m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3sigp2" indexed="false">
+         <Name>w3sigp2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the mean of the distribution of W3 fluxes (w3magp) computed from profile-fit measurements on the w3m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3dmag" indexed="false">
+         <Name>w3dmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Difference between maximum and minimum magnitude of the source from all usable single-exposure frames, W3.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3ndf" indexed="false">
+         <Name>w3ndf</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Number of degrees of freedom in the flux variability chi-square, W3.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mlq" indexed="false">
+         <Name>w3mlq</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Probability measure that the source is variable in W3 flux.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mjdmin" indexed="false">
+         <Name>w3mjdmin</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The earliest modified Julian Date (mJD) of the W3 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mjdmax" indexed="false">
+         <Name>w3mjdmax</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The latest modified Julian Date (mJD) of the W3 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3mjdmean" indexed="false">
+         <Name>w3mjdmean</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The average modified Julian Date (mJD) of the W3 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4magp" indexed="false">
+         <Name>w4magp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Inverse-variance-weighted mean W4 magnitude computed from profile-fit measurements on the w4m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigp1" indexed="false">
+         <Name>w4sigp1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the population of W4 fluxes measured on the w4m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4sigp2" indexed="false">
+         <Name>w4sigp2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the mean of the distribution of W4 fluxes (w4magp) computed from profile-fit measurements on the w4m individual frames covering this source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4dmag" indexed="false">
+         <Name>w4dmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Difference between maximum and minimum magnitude of the source from all usable single-exposure frames, W4.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4ndf" indexed="false">
+         <Name>w4ndf</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Number of degrees of freedom in the flux variability chi-square, W4.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mlq" indexed="false">
+         <Name>w4mlq</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Probability measure that the source is variable in W4 flux.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mjdmin" indexed="false">
+         <Name>w4mjdmin</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The earliest modified Julian Date (mJD) of the W4 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mjdmax" indexed="false">
+         <Name>w4mjdmax</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The latest modified Julian Date (mJD) of the W4 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4mjdmean" indexed="false">
+         <Name>w4mjdmean</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The average modified Julian Date (mJD) of the W4 single-exposures covering the source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.rho12" indexed="false">
+         <Name>rho12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The correlation coefficient between the W1 and W2 single-exposure flux measurements.]]></Description>
+         <Units>%</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.rho23" indexed="false">
+         <Name>rho23</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The correlation coefficient between the W2 and W4 single-exposure flux measurements.]]></Description>
+         <Units>%</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.rho34" indexed="false">
+         <Name>rho34</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The correlation coefficient between the W3 and W4 single-exposure flux measurements.]]></Description>
+         <Units>%</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.q12" indexed="false">
+         <Name>q12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Correlation significance between W1 and W2.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.q23" indexed="false">
+         <Name>q23</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Correlation significance between W2 and W3.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.q34" indexed="false">
+         <Name>q34</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Correlation significance between W3 and W4.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.xscprox" indexed="false">
+         <Name>xscprox</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS Extended Source Catalog (XSC) proximity.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1rsemi" indexed="false">
+         <Name>w1rsemi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of the elliptical aperture used to measure source in W1.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1ba" indexed="false">
+         <Name>w1ba</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Axis ratio (b/a) of the elliptical aperture used to measure source in W1.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1pa" indexed="false">
+         <Name>w1pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle (degrees E of N) of the elliptical aperture major axis used to measure source in W1.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1gmag" indexed="false">
+         <Name>w1gmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 magnitude of source measured in the elliptical aperture described by w1rsemi, w1ba, and w1pa.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1gerr" indexed="false">
+         <Name>w1gerr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 magnitude of source measured in elliptical aperture.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w1gflg" indexed="false">
+         <Name>w1gflg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 elliptical aperture measurement quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2rsemi" indexed="false">
+         <Name>w2rsemi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of the elliptical aperture used to measure source in W2.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2ba" indexed="false">
+         <Name>w2ba</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Axis ratio (b/a) of the elliptical aperture used to measure source in W2.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2pa" indexed="false">
+         <Name>w2pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle (degrees E of N) of the elliptical aperture major axis used to measure source in W2.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2gmag" indexed="false">
+         <Name>w2gmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 magnitude of source measured in the elliptical aperture described by w2rsemi, w2ba, and w2pa.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2gerr" indexed="false">
+         <Name>w2gerr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 magnitude of source measured in elliptical aperture.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w2gflg" indexed="false">
+         <Name>w2gflg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 elliptical aperture measurement quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3rsemi" indexed="false">
+         <Name>w3rsemi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of the elliptical aperture used to measure source in W3.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3ba" indexed="false">
+         <Name>w3ba</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Axis ratio (b/a) of the elliptical aperture used to measure source in W3.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3pa" indexed="false">
+         <Name>w3pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle (degrees E of N) of the elliptical aperture major axis used to measure source in W3.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3gmag" indexed="false">
+         <Name>w3gmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 magnitude of source measured in the elliptical aperture described by w3rsemi, w3ba, and w3pa.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3gerr" indexed="false">
+         <Name>w3gerr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 magnitude of source measured in elliptical aperture.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w3gflg" indexed="false">
+         <Name>w3gflg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 elliptical aperture measurement quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4rsemi" indexed="false">
+         <Name>w4rsemi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of the elliptical aperture used to measure source in W4.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4ba" indexed="false">
+         <Name>w4ba</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Axis ratio (b/a) of the elliptical aperture used to measure source in W4.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4pa" indexed="false">
+         <Name>w4pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle (degrees E of N) of the elliptical aperture major axis used to measure source in W4.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4gmag" indexed="false">
+         <Name>w4gmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 magnitude of source measured in the elliptical aperture described by w4rsemi, w4ba, and w4pa.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4gerr" indexed="false">
+         <Name>w4gerr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 magnitude of source measured in elliptical aperture.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.w4gflg" indexed="false">
+         <Name>w4gflg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 elliptical aperture measurement quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.tmass_key" indexed="false">
+         <Name>tmass_key</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[2MASS PSC association. Unique identifier of the closest source in the 2MASS Point Source Catalog (PSC) that falls within 3&quot; of the position of this WISE source.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.r_2mass" indexed="false">
+         <Name>r_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Distance separating the positions of the WISE source and associated 2MASS PSC source within 3&quot;, default if there is no associated 2MASS PSC source.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.pa_2mass" indexed="false">
+         <Name>pa_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle (degrees E of N) of the vector from the WISE source to the associated 2MASS PSC source, default if there is no associated 2MASS PSC source.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.n_2mass" indexed="false">
+         <Name>n_2mass</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The number of 2MASS PSC entries found within a 3&quot; radius of the WISE source position.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.j_m_2mass" indexed="false">
+         <Name>j_m_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS J-band magnitude or magnitude upper limit of the associated 2MASS PSC source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.j_msig_2mass" indexed="false">
+         <Name>j_msig_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS J-band corrected photometric uncertainty of the associated 2MASS PSC source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.h_m_2mass" indexed="false">
+         <Name>h_m_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS H-band magnitude or magnitude upper limit of the associated 2MASS PSC source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.h_msig_2mass" indexed="false">
+         <Name>h_msig_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS H-band corrected photometric uncertainty of the associated 2MASS PSC source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.k_m_2mass" indexed="false">
+         <Name>k_m_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS Ks-band magnitude or magnitude upper limit of the associated 2MASS PSC source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.k_msig_2mass" indexed="false">
+         <Name>k_msig_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS Ks-band corrected photometric uncertainty of the associated 2MASS PSC source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.best_use_cntr" indexed="false">
+         <Name>best_use_cntr</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Cntr identification value of the source extraction that was selected as a candidate Catalog source in the duplicate resolution process for the group of associated sources that included this extraction.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.ngrp" indexed="false">
+         <Name>ngrp</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of positionally associated duplicate resolution groups in which this extractions was included.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates (similar to x in IPAC IRSA schema, but recomputed)]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates (similar to y in IPAC IRSA schema, but recomputed)]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates (similar to z in IPAC IRSA schema, but recomputed)]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_allskysc.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index for equatorial co-ordinates (similar to spt_ind in IPAC IRSA schema, but recomputed to level 20)]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="wise_prelimsc">
+      <Name>wise_prelimsc</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the WISE preliminary catalogue]]></Description>
+      <Column ID="wise_prelimsc.designation" indexed="false">
+         <Name>designation</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Sexagesimal, equatorial position-based source name in the form: hhmmss.ss+ddmmss.s]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 right ascension with respect to the 2MASS PSC reference frame]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 declination with respect to the 2MASS PSC reference frame]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.sigra" indexed="false">
+         <Name>sigra</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[One-sigma uncertainty in right ascension coordinate]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.sigdec" indexed="false">
+         <Name>sigdec</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[One-sigma uncertainty in declination coordinate]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.sigradec" indexed="false">
+         <Name>sigradec</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The co-sigma of the equatorial position uncertainties, (sig_ra, sig_dec)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.glon" indexed="false">
+         <Name>glon</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude. CAUTION: This coordinate should not be used as an astrometric reference]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.glat" indexed="false">
+         <Name>glat</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude. CAUTION: This coordinate should not be used as an astrometric reference]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.elon" indexed="false">
+         <Name>elon</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Ecliptic longitude. CAUTION: This coordinate should not be used as an astrometric reference]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.elat" indexed="false">
+         <Name>elat</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Ecliptic latitude. CAUTION: This coordinate should not be used as an astrometric reference]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.wx" indexed="false">
+         <Name>wx</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The x-pixel coordinate of this source on the Atlas Image]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.wy" indexed="false">
+         <Name>wy</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The y-pixel coordinate of this source on the Atlas Image]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.cntr" indexed="true">
+         <Name>cntr</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique identification number for the Catalog source]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.source_id" indexed="false">
+         <Name>source_id</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Unique source ID, formed from a combination of the Atlas Tile ID, coadd_id, and sequential extracted source number, src, within the Tile]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.coadd_id" indexed="false">
+         <Name>coadd_id</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Atlas Tile identifier from which source was extracted]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.src" indexed="false">
+         <Name>src</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Sequential number of this source extraction in the Atlas Tile from which this source was extracted, in approximate descending order of W1 source brightness]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mpro" indexed="false">
+         <Name>w1mpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 magnitude measured with profile-fitting photometry, or the magnitude of the 95% confidence brightness upper limit if the W1 flux measurement has SNR&lt;2]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigmpro" indexed="false">
+         <Name>w1sigmpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 profile-fit photometric measurement uncertainty]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1snr" indexed="false">
+         <Name>w1snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 profile-fit measurement signal-to-noise ratio]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1rchi2" indexed="false">
+         <Name>w1rchi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared of the W1 profile-fit photometry measurement]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mpro" indexed="false">
+         <Name>w2mpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 magnitude measured with profile-fitting photometry, or the magnitude of the 95% confidence brightness upper limit if the W2 flux measurement has SNR&lt;2]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigmpro" indexed="false">
+         <Name>w2sigmpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 profile-fit photometric measurement uncertainty]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2snr" indexed="false">
+         <Name>w2snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 profile-fit measurement signal-to-noise ratio]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2rchi2" indexed="false">
+         <Name>w2rchi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared of the W2 profile-fit photometry measurement]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mpro" indexed="false">
+         <Name>w3mpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 magnitude measured with profile-fitting photometry, or the magnitude of the 95% confidence brightness upper limit if the W3 flux measurement has SNR&lt;2]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigmpro" indexed="false">
+         <Name>w3sigmpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 profile-fit photometric measurement uncertainty]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3snr" indexed="false">
+         <Name>w3snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 profile-fit measurement signal-to-noise ratio]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3rchi2" indexed="false">
+         <Name>w3rchi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared of the W3 profile-fit photometry measurement]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mpro" indexed="false">
+         <Name>w4mpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 magnitude measured with profile-fitting photometry, or the magnitude of the 95% confidence brightness upper limit if the W4 flux measurement has SNR&lt;2]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigmpro" indexed="false">
+         <Name>w4sigmpro</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 profile-fit photometric measurement uncertainty]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4snr" indexed="false">
+         <Name>w4snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 profile-fit measurement signal-to-noise ratio]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4rchi2" indexed="false">
+         <Name>w4rchi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared of the W4 profile-fit photometry measurement]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.rchi2" indexed="false">
+         <Name>rchi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Combined reduced chi-squared of the profile-fit photometry measurement in all bands]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.nb" indexed="false">
+         <Name>nb</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of PSF components used simultaneously in the profile-fitting for this source]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.na" indexed="false">
+         <Name>na</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Active deblending flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sat" indexed="false">
+         <Name>w1sat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Saturated pixel fraction, W1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sat" indexed="false">
+         <Name>w2sat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Saturated pixel fraction, W2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sat" indexed="false">
+         <Name>w3sat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Saturated pixel fraction, W3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sat" indexed="false">
+         <Name>w4sat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Saturated pixel fraction, W4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.satnum" indexed="false">
+         <Name>satnum</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Minimum sample at which saturation occurs in each band]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.cc_flags" indexed="false">
+         <Name>cc_flags</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.ext_flg" indexed="false">
+         <Name>ext_flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Extended source flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.var_flg" indexed="false">
+         <Name>var_flg</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Variability flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.ph_qual" indexed="false">
+         <Name>ph_qual</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Photometric quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.det_bit" indexed="false">
+         <Name>det_bit</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Bit-encoded integer indicating bands in which a source has a w?snr&gt;2 detection]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1nm" indexed="false">
+         <Name>w1nm</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame detection count in W1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1m" indexed="false">
+         <Name>w1m</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame coverage in W1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2nm" indexed="false">
+         <Name>w2nm</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame detection count in W2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2m" indexed="false">
+         <Name>w2m</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame coverage in W2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3nm" indexed="false">
+         <Name>w3nm</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame detection count in W3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3m" indexed="false">
+         <Name>w3m</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame coverage in W3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4nm" indexed="false">
+         <Name>w4nm</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame detection count in W4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4m" indexed="false">
+         <Name>w4m</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Integer frame coverage in W4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1cov" indexed="false">
+         <Name>w1cov</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean pixel coverage in W1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2cov" indexed="false">
+         <Name>w2cov</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean pixel coverage in W2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3cov" indexed="false">
+         <Name>w3cov</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean pixel coverage in W3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4cov" indexed="false">
+         <Name>w4cov</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean pixel coverage in W4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1frl" indexed="false">
+         <Name>w1frl</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Fraction of W1 pixels affected by latents]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2frl" indexed="false">
+         <Name>w2frl</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Fraction of W2 pixels affected by latents]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3frl" indexed="false">
+         <Name>w3frl</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Fraction of W3 pixels affected by latents]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4frl" indexed="false">
+         <Name>w4frl</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Fraction of W4 pixels affected by latents]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1cc_map" indexed="false">
+         <Name>w1cc_map</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Contamination and confusion map for this source in W1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1cc_map_str" indexed="false">
+         <Name>w1cc_map_str</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion string in W1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2cc_map" indexed="false">
+         <Name>w2cc_map</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Contamination and confusion map for this source in W2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2cc_map_str" indexed="false">
+         <Name>w2cc_map_str</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion string in W2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3cc_map" indexed="false">
+         <Name>w3cc_map</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Contamination and confusion map for this source in W3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3cc_map_str" indexed="false">
+         <Name>w3cc_map_str</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion string in W3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4cc_map" indexed="false">
+         <Name>w4cc_map</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Contamination and confusion map for this source in W4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4cc_map_str" indexed="false">
+         <Name>w4cc_map_str</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion string in W4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1flux" indexed="false">
+         <Name>w1flux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The &quot;raw&quot; W1 source flux measured in profile-fit photometry in units of digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigflux" indexed="false">
+         <Name>w1sigflux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the &quot;raw&quot; W1 source flux measurement in profile-fit photometry in units of digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sky" indexed="false">
+         <Name>w1sky</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The trimmed average of the W1 sky background value in digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigsk" indexed="false">
+         <Name>w1sigsk</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The uncertainty in the W1 sky background value in units of digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1conf" indexed="false">
+         <Name>w1conf</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Estimated confusion noise in the W1 sky background annulus, in digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2flux" indexed="false">
+         <Name>w2flux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The &quot;raw&quot; W2 source flux measured in profile-fit photometry in units of digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigflux" indexed="false">
+         <Name>w2sigflux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the &quot;raw&quot; W2 source flux measurement in profile-fit photometry in units of digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sky" indexed="false">
+         <Name>w2sky</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The trimmed average of the W2 sky background value in digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigsk" indexed="false">
+         <Name>w2sigsk</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The uncertainty in the W2 sky background value in units of digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2conf" indexed="false">
+         <Name>w2conf</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Estimated confusion noise in the W2 sky background annulus, in digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3flux" indexed="false">
+         <Name>w3flux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The &quot;raw&quot; W3 source flux measured in profile-fit photometry in units of digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigflux" indexed="false">
+         <Name>w3sigflux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the &quot;raw&quot; W3 source flux measurement in profile-fit photometry in units of digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sky" indexed="false">
+         <Name>w3sky</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The trimmed average of the W3 sky background value in digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigsk" indexed="false">
+         <Name>w3sigsk</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The uncertainty in the W3 sky background value in units of digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3conf" indexed="false">
+         <Name>w3conf</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Estimated confusion noise in the W3 sky background annulus, in digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4flux" indexed="false">
+         <Name>w4flux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The &quot;raw&quot; W4 source flux measured in profile-fit photometry in units of digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigflux" indexed="false">
+         <Name>w4sigflux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the &quot;raw&quot; W4 source flux measurement in profile-fit photometry in units of digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sky" indexed="false">
+         <Name>w4sky</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The trimmed average of the W4 sky background value in digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigsk" indexed="false">
+         <Name>w4sigsk</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The uncertainty in the W4 sky background value in units of digital numbers measured in an annulus with an inner radius of 50&quot; and outer radius of 70&quot;]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4conf" indexed="false">
+         <Name>w4conf</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Estimated confusion noise in the W4 sky background annulus, in digital numbers]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mag" indexed="false">
+         <Name>w1mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 &quot;standard&quot; aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigm" indexed="false">
+         <Name>w1sigm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 &quot;standard&quot; aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1flg" indexed="false">
+         <Name>w1flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 &quot;standard&quot; aperture measurement quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mcor" indexed="false">
+         <Name>w1mcor</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 aperture curve-of-growth correction]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mag" indexed="false">
+         <Name>w2mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 &quot;standard&quot; aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigm" indexed="false">
+         <Name>w2sigm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 &quot;standard&quot; aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2flg" indexed="false">
+         <Name>w2flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 &quot;standard&quot; aperture measurement quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mcor" indexed="false">
+         <Name>w2mcor</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 aperture curve-of-growth correction, in magnitudes]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mag" indexed="false">
+         <Name>w3mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 &quot;standard&quot; aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigm" indexed="false">
+         <Name>w3sigm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 &quot;standard&quot; aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3flg" indexed="false">
+         <Name>w3flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 &quot;standard&quot; aperture measurement quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mcor" indexed="false">
+         <Name>w3mcor</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 aperture curve-of-growth correction, in magnitudes]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mag" indexed="false">
+         <Name>w4mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 &quot;standard&quot; aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigm" indexed="false">
+         <Name>w4sigm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 &quot;standard&quot; aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4flg" indexed="false">
+         <Name>w4flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 &quot;standard&quot; aperture measurement quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mcor" indexed="false">
+         <Name>w4mcor</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 aperture curve-of-growth correction, in magnitudes]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mag_1" indexed="false">
+         <Name>w1mag_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 5.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigm_1" indexed="false">
+         <Name>w1sigm_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 5.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1flg_1" indexed="false">
+         <Name>w1flg_1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 5.5&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mag_1" indexed="false">
+         <Name>w2mag_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 5.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigm_1" indexed="false">
+         <Name>w2sigm_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 5.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2flg_1" indexed="false">
+         <Name>w2flg_1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 5.5&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mag_1" indexed="false">
+         <Name>w3mag_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 5.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigm_1" indexed="false">
+         <Name>w3sigm_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 5.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3flg_1" indexed="false">
+         <Name>w3flg_1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 5.5&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mag_1" indexed="false">
+         <Name>w4mag_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 11.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigm_1" indexed="false">
+         <Name>w4sigm_1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 11.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4flg_1" indexed="false">
+         <Name>w4flg_1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 11.0&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mag_2" indexed="false">
+         <Name>w1mag_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 8.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigm_2" indexed="false">
+         <Name>w1sigm_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 8.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1flg_2" indexed="false">
+         <Name>w1flg_2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 8.25&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mag_2" indexed="false">
+         <Name>w2mag_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 8.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigm_2" indexed="false">
+         <Name>w2sigm_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 8.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2flg_2" indexed="false">
+         <Name>w2flg_2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 8.25&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mag_2" indexed="false">
+         <Name>w3mag_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 8.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigm_2" indexed="false">
+         <Name>w3sigm_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 8.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3flg_2" indexed="false">
+         <Name>w3flg_2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 8.25&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mag_2" indexed="false">
+         <Name>w4mag_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 16.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigm_2" indexed="false">
+         <Name>w4sigm_2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 16.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4flg_2" indexed="false">
+         <Name>w4flg_2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 16.5&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mag_3" indexed="false">
+         <Name>w1mag_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 11.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigm_3" indexed="false">
+         <Name>w1sigm_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 11.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1flg_3" indexed="false">
+         <Name>w1flg_3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 11.0&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mag_3" indexed="false">
+         <Name>w2mag_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 11.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigm_3" indexed="false">
+         <Name>w2sigm_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 11.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2flg_3" indexed="false">
+         <Name>w2flg_3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 11.0&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mag_3" indexed="false">
+         <Name>w3mag_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 11.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigm_3" indexed="false">
+         <Name>w3sigm_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 11.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3flg_3" indexed="false">
+         <Name>w3flg_3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 11.0&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mag_3" indexed="false">
+         <Name>w4mag_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 22.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigm_3" indexed="false">
+         <Name>w4sigm_3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 22.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4flg_3" indexed="false">
+         <Name>w4flg_3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 22.0&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mag_4" indexed="false">
+         <Name>w1mag_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 13.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigm_4" indexed="false">
+         <Name>w1sigm_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 13.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1flg_4" indexed="false">
+         <Name>w1flg_4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 13.75&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mag_4" indexed="false">
+         <Name>w2mag_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 13.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigm_4" indexed="false">
+         <Name>w2sigm_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 13.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2flg_4" indexed="false">
+         <Name>w2flg_4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 13.75&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mag_4" indexed="false">
+         <Name>w3mag_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 13.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigm_4" indexed="false">
+         <Name>w3sigm_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 13.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3flg_4" indexed="false">
+         <Name>w3flg_4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 13.75&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mag_4" indexed="false">
+         <Name>w4mag_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 27.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigm_4" indexed="false">
+         <Name>w4sigm_4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 27.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4flg_4" indexed="false">
+         <Name>w4flg_4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 27.5&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mag_5" indexed="false">
+         <Name>w1mag_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 16.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigm_5" indexed="false">
+         <Name>w1sigm_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 16.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1flg_5" indexed="false">
+         <Name>w1flg_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 16.5&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mag_5" indexed="false">
+         <Name>w2mag_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 16.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigm_5" indexed="false">
+         <Name>w2sigm_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 16.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2flg_5" indexed="false">
+         <Name>w2flg_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 16.5&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mag_5" indexed="false">
+         <Name>w3mag_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 16.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigm_5" indexed="false">
+         <Name>w3sigm_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 16.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3flg_5" indexed="false">
+         <Name>w3flg_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 16.5&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mag_5" indexed="false">
+         <Name>w4mag_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 33.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigm_5" indexed="false">
+         <Name>w4sigm_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 33.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4flg_5" indexed="false">
+         <Name>w4flg_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 33.0&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mag_6" indexed="false">
+         <Name>w1mag_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 19.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigm_6" indexed="false">
+         <Name>w1sigm_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 19.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1flg_6" indexed="false">
+         <Name>w1flg_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 19.25&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mag_6" indexed="false">
+         <Name>w2mag_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 19.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigm_6" indexed="false">
+         <Name>w2sigm_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 19.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2flg_6" indexed="false">
+         <Name>w2flg_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 19.25&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mag_6" indexed="false">
+         <Name>w3mag_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 19.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigm_6" indexed="false">
+         <Name>w3sigm_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 19.25&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3flg_6" indexed="false">
+         <Name>w3flg_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 19.25&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mag_6" indexed="false">
+         <Name>w4mag_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 38.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigm_6" indexed="false">
+         <Name>w4sigm_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 38.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4flg_6" indexed="false">
+         <Name>w4flg_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 38.5&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mag_7" indexed="false">
+         <Name>w1mag_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 22.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigm_7" indexed="false">
+         <Name>w1sigm_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 22.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1flg_7" indexed="false">
+         <Name>w1flg_7</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 22.0&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mag_7" indexed="false">
+         <Name>w2mag_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 22.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigm_7" indexed="false">
+         <Name>w2sigm_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 22.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2flg_7" indexed="false">
+         <Name>w2flg_7</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 22.0&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mag_7" indexed="false">
+         <Name>w3mag_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 22.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigm_7" indexed="false">
+         <Name>w3sigm_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 22.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3flg_7" indexed="false">
+         <Name>w3flg_7</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 22.0&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mag_7" indexed="false">
+         <Name>w4mag_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 44.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigm_7" indexed="false">
+         <Name>w4sigm_7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 44.0&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4flg_7" indexed="false">
+         <Name>w4flg_7</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 44.0&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1mag_8" indexed="false">
+         <Name>w1mag_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 24.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigm_8" indexed="false">
+         <Name>w1sigm_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 24.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1flg_8" indexed="false">
+         <Name>w1flg_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 24.75&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2mag_8" indexed="false">
+         <Name>w2mag_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 24.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigm_8" indexed="false">
+         <Name>w2sigm_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 24.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2flg_8" indexed="false">
+         <Name>w2flg_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 24.75&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3mag_8" indexed="false">
+         <Name>w3mag_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 24.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigm_8" indexed="false">
+         <Name>w3sigm_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 24.75&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3flg_8" indexed="false">
+         <Name>w3flg_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 24.75&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4mag_8" indexed="false">
+         <Name>w4mag_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 49.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigm_8" indexed="false">
+         <Name>w4sigm_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 49.5&quot; radius aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4flg_8" indexed="false">
+         <Name>w4flg_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 49.5&quot; radius aperture magnitude quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1magp" indexed="false">
+         <Name>w1magp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Inverse-variance-weighted mean W1 magnitude computed from profile-fit measurements on the w1m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigp1" indexed="false">
+         <Name>w1sigp1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the population of W1 fluxes measured on the w1m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1sigp2" indexed="false">
+         <Name>w1sigp2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the mean of the distribution of W1 fluxes (w1magp) computed from profile-fit measurements on the w1m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2magp" indexed="false">
+         <Name>w2magp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Inverse-variance-weighted mean W2 magnitude computed from profile-fit measurements on the w2m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigp1" indexed="false">
+         <Name>w2sigp1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the population of W2 fluxes measured on the w2m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2sigp2" indexed="false">
+         <Name>w2sigp2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the mean of the distribution of W2 fluxes (w2magp) computed from profile-fit measurements on the w2m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3magp" indexed="false">
+         <Name>w3magp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Inverse-variance-weighted mean W3 magnitude computed from profile-fit measurements on the w3m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigp1" indexed="false">
+         <Name>w3sigp1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the population of W3 fluxes measured on the w3m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3sigp2" indexed="false">
+         <Name>w3sigp2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the mean of the distribution of W3 fluxes (w3magp) computed from profile-fit measurements on the w3m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4magp" indexed="false">
+         <Name>w4magp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Inverse-variance-weighted mean W4 magnitude computed from profile-fit measurements on the w4m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigp1" indexed="false">
+         <Name>w4sigp1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the population of W4 fluxes measured on the w4m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4sigp2" indexed="false">
+         <Name>w4sigp2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation of the mean of the distribution of W4 fluxes (w4magp) computed from profile-fit measurements on the w4m individual frames covering this source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.xscprox" indexed="false">
+         <Name>xscprox</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Distance between the WISE source position and the position of a nearby 2MASS XSC source, if the separation is less than 1.1 times the Ks isophotal radius size of the XSC source]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1rsemi" indexed="false">
+         <Name>w1rsemi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of the elliptical aperture used to measure source in W1]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1ba" indexed="false">
+         <Name>w1ba</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Axis ratio (b/a) of the elliptical aperture used to measure source in W1]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1pa" indexed="false">
+         <Name>w1pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle (degrees E of N) of the elliptical aperture major axis used to measure source in W1]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1gmag" indexed="false">
+         <Name>w1gmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W1 magnitude of source measured in the elliptical aperture described by w1rsemi, w1ba, and w1pa]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1gerr" indexed="false">
+         <Name>w1gerr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W1 magnitude of source measured in elliptical aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w1gflg" indexed="false">
+         <Name>w1gflg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W1 elliptical aperture measurement quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2rsemi" indexed="false">
+         <Name>w2rsemi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of the elliptical aperture used to measure source in W2]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2ba" indexed="false">
+         <Name>w2ba</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Axis ratio (b/a) of the elliptical aperture used to measure source in W2]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2pa" indexed="false">
+         <Name>w2pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle (degrees E of N) of the elliptical aperture major axis used to measure source in W2]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2gmag" indexed="false">
+         <Name>w2gmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W2 magnitude of source measured in the elliptical aperture described by w2rsemi, w2ba, and w2pa]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2gerr" indexed="false">
+         <Name>w2gerr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W2 magnitude of source measured in elliptical aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w2gflg" indexed="false">
+         <Name>w2gflg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W2 elliptical aperture measurement quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3rsemi" indexed="false">
+         <Name>w3rsemi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of the elliptical aperture used to measure source in W3]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3ba" indexed="false">
+         <Name>w3ba</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Axis ratio (b/a) of the elliptical aperture used to measure source in W3]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3pa" indexed="false">
+         <Name>w3pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle (degrees E of N) of the elliptical aperture major axis used to measure source in W3]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3gmag" indexed="false">
+         <Name>w3gmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W3 magnitude of source measured in the elliptical aperture described by w3rsemi, w3ba, and w3pa]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3gerr" indexed="false">
+         <Name>w3gerr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W3 magnitude of source measured in elliptical aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w3gflg" indexed="false">
+         <Name>w3gflg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W3 elliptical aperture measurement quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4rsemi" indexed="false">
+         <Name>w4rsemi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of the elliptical aperture used to measure source in W4]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4ba" indexed="false">
+         <Name>w4ba</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Axis ratio (b/a) of the elliptical aperture used to measure source in W4]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4pa" indexed="false">
+         <Name>w4pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle (degrees E of N) of the elliptical aperture major axis used to measure source in W4]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4gmag" indexed="false">
+         <Name>w4gmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[W4 magnitude of source measured in the elliptical aperture described by w4rsemi, w4ba, and w4pa]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4gerr" indexed="false">
+         <Name>w4gerr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the W4 magnitude of source measured in elliptical aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.w4gflg" indexed="false">
+         <Name>w4gflg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[W4 elliptical aperture measurement quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.tmass_key" indexed="false">
+         <Name>tmass_key</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique identifier of the closest source in the 2MASS Point Source Catalog (PSC) that falls within 3&quot; of the position of this WISE source]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.r_2mass" indexed="false">
+         <Name>r_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Distance separating the positions of the WISE source and associated 2MASS PSC source within 3&quot;, default if there is no associated 2MASS PSC source]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.pa_2mass" indexed="false">
+         <Name>pa_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle (degrees E of N) of the vector from the WISE source to the associated 2MASS PSC source, default if there is no associated 2MASS PSC source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.n_2mass" indexed="false">
+         <Name>n_2mass</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The number of 2MASS PSC entries found within a 3&quot; radius of the WISE source position]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.j_m_2mass" indexed="false">
+         <Name>j_m_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS J-band magnitude or magnitude upper limit of the associated 2MASS PSC source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.j_msig_2mass" indexed="false">
+         <Name>j_msig_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS J-band corrected photometric uncertainty of the associated 2MASS PSC source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.h_m_2mass" indexed="false">
+         <Name>h_m_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS H-band magnitude or magnitude upper limit of the associated 2MASS PSC source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.h_msig_2mass" indexed="false">
+         <Name>h_msig_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS H-band corrected photometric uncertainty of the associated 2MASS PSC source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.k_m_2mass" indexed="false">
+         <Name>k_m_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS Ks-band magnitude or magnitude upper limit of the associated 2MASS PSC source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.k_msig_2mass" indexed="false">
+         <Name>k_msig_2mass</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS Ks-band corrected photometric uncertainty of the associated 2MASS PSC source]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates (similar to x in IPAC IRSA schema, but recomputed)]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates (similar to y in IPAC IRSA schema, but recomputed)]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates (similar to z in IPAC IRSA schema, but recomputed)]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="wise_prelimsc.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index for equatorial co-ordinates (similar to spt_ind in IPAC IRSA schema, but recomputed to level 20)]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

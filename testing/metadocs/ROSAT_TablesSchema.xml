@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>ROSAT</Name>
+   <Description></Description>
+
+   <Table ID="rosat_fsc">
+      <Name>rosat_fsc</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the ROSAT Faint Source Catalogue]]></Description>
+      <Column ID="rosat_fsc.srcName" indexed="false">
+         <Name>srcName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[ROSAT All-Sky Survey Catalogue source name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number in the FSC]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Right Ascension (decimal degrees; J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Declination (decimal degrees; J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.errP" indexed="false">
+         <Name>errP</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[total positional error (1-sigma-radius; including 6&quot; systematic error)]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.nFlag" indexed="false">
+         <Name>nFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[nearby sources affecting SASS flux determination]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.pFlag" indexed="false">
+         <Name>pFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[possible problem with position determination]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.eFlag" indexed="false">
+         <Name>eFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[source extended beyond SASS extraction radius]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.dFlag" indexed="false">
+         <Name>dFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[complex diffuse emission pattern]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.mFlag" indexed="false">
+         <Name>mFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[source missed by SASS]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.rFlag" indexed="false">
+         <Name>rFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[source counts and extraction radius recalculated]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.iFlag" indexed="false">
+         <Name>iFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[broad band image available]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.vFlag" indexed="false">
+         <Name>vFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[variability flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.dum" indexed="false">
+         <Name>dum</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[dummy flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.srcCps" indexed="false">
+         <Name>srcCps</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[source countrate in the broad energy band, vignetting corrected]]></Description>
+         <Units>counts/sec</Units>
+         <UCD version="1">PHOT_COUNT-RATE_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.errSrcCps" indexed="false">
+         <Name>errSrcCps</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[error of source countrate, vignetting corrected]]></Description>
+         <Units>counts/s</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.bgrCpsa" indexed="false">
+         <Name>bgrCpsa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[background countrate, vignetting corrected]]></Description>
+         <Units>counts/sec/arcmin**2</Units>
+         <UCD version="1">INST_BACKGROUND</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.expTime" indexed="false">
+         <Name>expTime</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[exposure time]]></Description>
+         <Units>sec</Units>
+         <UCD version="1">TIME_EXPTIME</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.hr1" indexed="false">
+         <Name>hr1</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[hardness ratio 1]]></Description>
+         <Units> </Units>
+         <UCD version="1">SPECT_HARDNESS-RATIO</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.errHr1" indexed="false">
+         <Name>errHr1</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[error of hardness ratio 1]]></Description>
+         <Units> </Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.hr2" indexed="false">
+         <Name>hr2</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[hardness ratio 2]]></Description>
+         <Units> </Units>
+         <UCD version="1">SPECT_HARDNESS-RATIO</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.errHr2" indexed="false">
+         <Name>errHr2</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[error of hardness ratio 2]]></Description>
+         <Units> </Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.ext" indexed="false">
+         <Name>ext</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[source extent]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_DIAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.extl" indexed="false">
+         <Name>extl</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[likelihood of source extent]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_LIKELIHOOD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.srcl" indexed="false">
+         <Name>srcl</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[likelihood of source detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_LIKELIHOOD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.extr" indexed="false">
+         <Name>extr</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[extraction radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">REDUCT_EXTR-RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.priFlgMb" indexed="false">
+         <Name>priFlgMb</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag M-broad]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.priFlgLb" indexed="false">
+         <Name>priFlgLb</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag L-broad]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.priFlgMh" indexed="false">
+         <Name>priFlgMh</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag M-hard]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.priFlgLh" indexed="false">
+         <Name>priFlgLh</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag L-hard]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.priFlgMs" indexed="false">
+         <Name>priFlgMs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag M-soft]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.priFlgLs" indexed="false">
+         <Name>priFlgLs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag L-soft]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.phaRange" indexed="false">
+         <Name>phaRange</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[PHA range with highest detection likelihood]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.vigF" indexed="false">
+         <Name>vigF</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[vignetting factor]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_CORR-FACTOR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.orgDate" indexed="false">
+         <Name>orgDate</Name>
+         <Datatype>dateTime</Datatype>
+         <Description><![CDATA[date when source was included (MM-DD-YYYY)]]></Description>
+         <Units>mm-dd-yyyy</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.modDate" indexed="false">
+         <Name>modDate</Name>
+         <Datatype>dateTime</Datatype>
+         <Description><![CDATA[date when source properties were changed (MM-DD-YYYY)]]></Description>
+         <Units>mm-dd-yyyy</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.idCand" indexed="false">
+         <Name>idCand</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[number of identification candidates in the correlation catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.fieldID" indexed="false">
+         <Name>fieldID</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[identification number of SASS field]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_FIELD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.srcID" indexed="false">
+         <Name>srcID</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[SASS source number (MASOL number) in SASS field]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.rct1" indexed="false">
+         <Name>rct1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[number of nearby RASS detections with distances in range 0'-5']]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.rct2" indexed="false">
+         <Name>rct2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[number of nearby RASS detections with distances in range 5'-10']]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.rct3" indexed="false">
+         <Name>rct3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[number of nearby RASS detections with distances in range 10'-15']]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.itb" indexed="false">
+         <Name>itb</Name>
+         <Datatype>dateTime</Datatype>
+         <Description><![CDATA[start time of observation (MM-DD-YYYY HH:MM:SS)]]></Description>
+         <Units>mm-dd-yyyy hh:mm:ss</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.ite" indexed="false">
+         <Name>ite</Name>
+         <Datatype>dateTime</Datatype>
+         <Description><![CDATA[end time of observation (MM-DD-YYYY HH:MM:SS)]]></Description>
+         <Units>mm-dd-yyyy hh:mm:ss</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_fsc.rl" indexed="false">
+         <Name>rl</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[reliability of source detection (0...99)]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_SIGNIFICANCE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="rosat_bsc">
+      <Name>rosat_bsc</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the ROSAT Bright Source Catalogue]]></Description>
+      <Column ID="rosat_bsc.srcName" indexed="false">
+         <Name>srcName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[ROSAT All-Sky Survey Catalogue source name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number in the BSC]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Right Ascension (decimal degrees; J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Declination (decimal degrees; J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.errP" indexed="false">
+         <Name>errP</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[total positional error (1-sigma-radius; including 6&quot; systematic error)]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.nFlag" indexed="false">
+         <Name>nFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[nearby sources affecting SASS flux determination]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.pFlag" indexed="false">
+         <Name>pFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[possible problem with position determination]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.eFlag" indexed="false">
+         <Name>eFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[source extended beyond SASS extraction radius]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.dFlag" indexed="false">
+         <Name>dFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[complex diffuse emission pattern]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.mFlag" indexed="false">
+         <Name>mFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[source missed by SASS]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.rFlag" indexed="false">
+         <Name>rFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[source counts and extraction radius recalculated]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.iFlag" indexed="false">
+         <Name>iFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[broad band image available]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.vFlag" indexed="false">
+         <Name>vFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[variability flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.dum" indexed="false">
+         <Name>dum</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[dummy flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.srcCps" indexed="false">
+         <Name>srcCps</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[source countrate in the broad energy band, vignetting corrected]]></Description>
+         <Units>counts/sec</Units>
+         <UCD version="1">PHOT_COUNT-RATE_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.errSrcCps" indexed="false">
+         <Name>errSrcCps</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[error of source countrate, vignetting corrected]]></Description>
+         <Units>counts/s</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.bgrCpsa" indexed="false">
+         <Name>bgrCpsa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[background countrate, vignetting corrected]]></Description>
+         <Units>counts/sec/arcmin**2</Units>
+         <UCD version="1">INST_BACKGROUND</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.expTime" indexed="false">
+         <Name>expTime</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[exposure time]]></Description>
+         <Units>sec</Units>
+         <UCD version="1">TIME_EXPTIME</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.hr1" indexed="false">
+         <Name>hr1</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[hardness ratio 1]]></Description>
+         <Units> </Units>
+         <UCD version="1">SPECT_HARDNESS-RATIO</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.errHr1" indexed="false">
+         <Name>errHr1</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[error of hardness ratio 1]]></Description>
+         <Units> </Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.hr2" indexed="false">
+         <Name>hr2</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[hardness ratio 2]]></Description>
+         <Units> </Units>
+         <UCD version="1">SPECT_HARDNESS-RATIO</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.errHr2" indexed="false">
+         <Name>errHr2</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[error of hardness ratio 2]]></Description>
+         <Units> </Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.ext" indexed="false">
+         <Name>ext</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[source extent]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_DIAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.extl" indexed="false">
+         <Name>extl</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[likelihood of source extent]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_LIKELIHOOD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.srcl" indexed="false">
+         <Name>srcl</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[likelihood of source detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_LIKELIHOOD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.extr" indexed="false">
+         <Name>extr</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[extraction radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">REDUCT_EXTR-RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.priFlgMb" indexed="false">
+         <Name>priFlgMb</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag M-broad]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.priFlgLb" indexed="false">
+         <Name>priFlgLb</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag L-broad]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.priFlgMh" indexed="false">
+         <Name>priFlgMh</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag M-hard]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.priFlgLh" indexed="false">
+         <Name>priFlgLh</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag L-hard]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.priFlgMs" indexed="false">
+         <Name>priFlgMs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag M-soft]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.priFlgLs" indexed="false">
+         <Name>priFlgLs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[priority flag L-soft]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.phaRange" indexed="false">
+         <Name>phaRange</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[PHA range with highest detection likelihood]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.vigf" indexed="false">
+         <Name>vigf</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[vignetting factor]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_CORR-FACTOR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.orgDate" indexed="false">
+         <Name>orgDate</Name>
+         <Datatype>dateTime</Datatype>
+         <Description><![CDATA[date when source was included (MM-DD-YYYY)]]></Description>
+         <Units>mm-dd-yyyy</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.modDate" indexed="false">
+         <Name>modDate</Name>
+         <Datatype>dateTime</Datatype>
+         <Description><![CDATA[date when source properties were changed (MM-DD-YYYY)]]></Description>
+         <Units>mm-dd-yyyy</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.idCand" indexed="false">
+         <Name>idCand</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[number of identification candidates in the correlation catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.fieldID" indexed="false">
+         <Name>fieldID</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[identification number of SASS field]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_FIELD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rosat_bsc.srcID" indexed="false">
+         <Name>srcID</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[SASS source number (MASOL number) in SASS field]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

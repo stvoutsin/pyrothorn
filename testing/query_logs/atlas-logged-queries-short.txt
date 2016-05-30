@@ -1,0 +1,13 @@
+SELECT AVG(rAperMag3) FROM atlasSource WHERE rAperMag3 > 0.0  
+SELECT ra, dec FROM atlasMergeLog  
+SELECT ra, dec FROM atlasMergeLog WHERE dec BETWEEN -22.5 AND 20.5  
+SELECT ra, dec FROM atlasMergeLog WHERE dec BETWEEN -22.5 AND -12.5  
+SELECT mjdObs, ra, dec FROM atlasMergeLog, Multiframe WHERE (dec BETWEEN -22.5 AND -12.5) AND (gmfID = multiframeID) AND (gmfID > 0)  
+SELECT ATLASsource.*,2*DEGREES(ASIN(sqrt(power(-0.997825033922517-cx,2)+power(-0.052293794140904105-cy,2)+power(-0.040131792532559725-cz,2))/2))*60 as dist FROM ATLASsource WHERE dec > -2.3166666666666664 and dec < -2.283333333333333 and RA >= 182.98331970017435 and RA <= 183.01668029982565 and ((cx * -0.997825033922517 + cy * -0.052293794140904105 + cz * -0.040131792532559725 ) >= 0.9999999576920253)  
+SELECT 602 as idnum,sourceid, ra as radeg, dec as deddeg,upetromag, gpetromag, rpetromag, ipetromag,zpetromag, upetromagerr, gpetromagerr, rpetromagerr, ipetromagerr,zpetromagerr, au, ag, ar, ai, az,2*DEGREES(ASIN(sqrt(power(0.8386203412085153-cx,2)+power(-0.32325248201700757-cy,2)+power(-0.4384332972997806-cz,2))/2))*60 as dist FROM ATLASsource WHERE dec > -26.703962 and dec < -25.303962 and RA >= 338.1369038997157 and RA <= 339.70403610028427 and ((cx * 0.8386203412085153 + cy * -0.32325248201700757 + cz * -0.4384332972997806 ) >= 0.999925369660452) and (priorsec=0 or priorsec=framesetid) and gpetromag >0 and rpetromag >0 and ipetromag>0 and zpetromag >0 and mergedclass = 1  
+Select top 10 * from Filter order by filterID
+select top 10 ra,dec from atlassource  
+select top 2000 ra,dec from atlassource  
+select top 10000 ra,dec from atlassource  
+SELECT distinct mi.arcfile as i_name, mg.arcfile as g_name, mi.filterID as i_file, mg.filterID as g_filt FROM atlasSource as a, atlasMergeLog as l, multiframeDetector as dg, multiframeDetector as di, multiframe as mg, multiframe as mi WHERE a.framesetid=l.framesetid AND l.gmfid=dg.multiframeid AND l.imfid=di.multiframeid AND l.geNum=dg.extNum AND l.ieNum=di.extNum AND dg.multiframeid=mg.multiframeid AND di.multiframeid=mi.multiframeid AND mi.filterID=2 AND mg.filterID=4 AND a.gAperMag3 > 0.0 AND a.iAperMag3 > 0.0 AND (a.priOrSec=0 OR a.priOrSec=a.frameSetID)
+SELECT TOP 5 ra, dec FROM atlasMergeLog WHERE dec IN ( -22.5, -12.5)  

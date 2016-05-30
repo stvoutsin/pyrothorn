@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>IRAS</Name>
+   <Description></Description>
+
+   <Table ID="iras_asc">
+      <Name>iras_asc</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the IRAS associated PSCs]]></Description>
+      <Column ID="iras_asc.name" indexed="true">
+         <Name>name</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Source Name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_asc.recNo" indexed="true">
+         <Name>recNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Record Number of source in data file]]></Description>
+         <Units> </Units>
+         <UCD version="1">RECORD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_asc.catNo" indexed="true">
+         <Name>catNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Catalog number]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_CATALOG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_asc.sourceID" indexed="true">
+         <Name>sourceID</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Source ID]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_ALTERNATIVE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_asc.type" indexed="false">
+         <Name>type</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Source Type/Spectral Class]]></Description>
+         <Units> </Units>
+         <UCD version="1">SPECT_TYPE_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_asc.radius1" indexed="true">
+         <Name>radius1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Radius Vector from IRAS Source to Association]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_asc.pos" indexed="true">
+         <Name>pos</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Position Angle from IRAS Source to Association (E of N)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_asc.field1" indexed="true">
+         <Name>field1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[object field #1 (magnitude/other)]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_FIELD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_asc.field2" indexed="true">
+         <Name>field2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[object field #2 (magnitude/other)]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_FIELD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_asc.field3" indexed="false">
+         <Name>field3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[object field #3 (size/other)]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_FIELD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="iras_psc">
+      <Name>iras_psc</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the IRAS PSC]]></Description>
+      <Column ID="iras_psc.name" indexed="false">
+         <Name>name</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Source Name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 Celestial Right Ascension]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 Celestial Declination]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.major" indexed="false">
+         <Name>major</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Uncertainty ellipse major axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.minor" indexed="false">
+         <Name>minor</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Uncertainty ellipse minor axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.posAng" indexed="false">
+         <Name>posAng</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Uncertainty ellipse position angle (East of North)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.nhcon" indexed="false">
+         <Name>nhcon</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of times observed (&lt;25)]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.flux_12" indexed="false">
+         <Name>flux_12</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Averaged non-color corrected 12 micron flux density]]></Description>
+         <Units>Jansky (1.0E-26 W/m**2/Hz)</Units>
+         <UCD version="1">PHOT_FLUX_IR_12</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.flux_25" indexed="false">
+         <Name>flux_25</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Averaged non-color corrected 25 micron flux density]]></Description>
+         <Units>Jansky (1.0E-26 W/m**2/Hz)</Units>
+         <UCD version="1">PHOT_FLUX_IR_25</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.flux_60" indexed="false">
+         <Name>flux_60</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Averaged non-color corrected 60 micron flux density]]></Description>
+         <Units>Jansky (1.0E-26 W/m**2/Hz)</Units>
+         <UCD version="1">PHOT_FLUX_IR_60</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.flux_100" indexed="false">
+         <Name>flux_100</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Averaged non-color corrected 100 micron flux density]]></Description>
+         <Units>Jansky (1.0E-26 W/m**2/Hz)</Units>
+         <UCD version="1">PHOT_FLUX_IR_100</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.fQual_12" indexed="false">
+         <Name>fQual_12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[12 micron flux density quality.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_QUALITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.fQual_25" indexed="false">
+         <Name>fQual_25</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[25 micron flux density quality.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_QUALITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.fQual_60" indexed="false">
+         <Name>fQual_60</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[60 micron flux density quality.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_QUALITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.fQual_100" indexed="false">
+         <Name>fQual_100</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[100 micron flux density quality.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_QUALITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.nLrs" indexed="false">
+         <Name>nLrs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of significant LRS spectra]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.lrsChar" indexed="false">
+         <Name>lrsChar</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Characterization of averaged LRS spectrum.]]></Description>
+         <Units> </Units>
+         <UCD version="1">SPECT_TYPE_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.relUnc_12" indexed="false">
+         <Name>relUnc_12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[percent relative 12 micron flux density uncertainties.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.relUnc_25" indexed="false">
+         <Name>relUnc_25</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[percent relative 25 micron flux density uncertainties.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.relUnc_60" indexed="false">
+         <Name>relUnc_60</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[percent relative 60 micron flux density uncertainties.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.relUnc_100" indexed="false">
+         <Name>relUnc_100</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[percent relative 100 micron flux density uncertainties.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.tSnr_12" indexed="false">
+         <Name>tSnr_12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[ten times the minimum signal-to-noise ratio (12 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.tSnr_25" indexed="false">
+         <Name>tSnr_25</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[ten times the minimum signal-to-noise ratio (25 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.tSnr_60" indexed="false">
+         <Name>tSnr_60</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[ten times the minimum signal-to-noise ratio (60 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.tSnr_100" indexed="false">
+         <Name>tSnr_100</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[ten times the minimum signal-to-noise ratio (100 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.cc_12" indexed="false">
+         <Name>cc_12</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[point source correlation coefficient (12 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.cc_25" indexed="false">
+         <Name>cc_25</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[point source correlation coefficient (25 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.cc_60" indexed="false">
+         <Name>cc_60</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[point source correlation coefficient (60 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.cc_100" indexed="false">
+         <Name>cc_100</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[point source correlation coefficient (100 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.var" indexed="false">
+         <Name>var</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[percent Likelihood of Variability]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_VARIAB</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.disc_12" indexed="false">
+         <Name>disc_12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Discrepant Fluxes flag (12 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.disc_25" indexed="false">
+         <Name>disc_25</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Discrepant Fluxes flag (25 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.disc_60" indexed="false">
+         <Name>disc_60</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Discrepant Fluxes flag (60 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.disc_100" indexed="false">
+         <Name>disc_100</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Discrepant Fluxes flag (100 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.confuse_12" indexed="false">
+         <Name>confuse_12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Confusion flag (12 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.confuse_25" indexed="false">
+         <Name>confuse_25</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Confusion flag (25 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.confuse_60" indexed="false">
+         <Name>confuse_60</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Confusion flag (60 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.confuse_100" indexed="false">
+         <Name>confuse_100</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Confusion flag (100 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.pNearH" indexed="false">
+         <Name>pNearH</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of nearby hours-confirmed point sources]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.pNearW" indexed="false">
+         <Name>pNearW</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of nearby weeks-confirmed point sources]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.ses1_12" indexed="false">
+         <Name>ses1_12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of seconds-confirmed nearby small extended sources (12 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.ses1_25" indexed="false">
+         <Name>ses1_25</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of seconds-confirmed nearby small extended sources (25 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.ses1_60" indexed="false">
+         <Name>ses1_60</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of seconds-confirmed nearby small extended sources (60 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.ses1_100" indexed="false">
+         <Name>ses1_100</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of seconds-confirmed nearby small extended sources (100 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.ses2_12" indexed="false">
+         <Name>ses2_12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of nearby weeks-confirmed small extended sources (12 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.ses2_25" indexed="false">
+         <Name>ses2_25</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of nearby weeks-confirmed small extended sources (25 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.ses2_60" indexed="false">
+         <Name>ses2_60</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of nearby weeks-confirmed small extended sources (60 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.ses2_100" indexed="false">
+         <Name>ses2_100</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of nearby weeks-confirmed small extended sources (100 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.hsdFlag_12" indexed="false">
+         <Name>hsdFlag_12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source is located in high source density bin (12 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.hsdFlag_25" indexed="false">
+         <Name>hsdFlag_25</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source is located in high source density bin (25 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.hsdFlag_60" indexed="false">
+         <Name>hsdFlag_60</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source is located in high source density bin (60 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.hsdFlag_100" indexed="false">
+         <Name>hsdFlag_100</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source is located in high source density bin (100 micron).]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.cirr1" indexed="false">
+         <Name>cirr1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of nearby 100 micron only WSDB sources]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.cirr2" indexed="false">
+         <Name>cirr2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Spatially filtered 100 micron sky brightness ratio to flux density of point source]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_FLUX_RATIO</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.cirr3" indexed="false">
+         <Name>cirr3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Total 100 micron sky surface brightness]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1">PHOT_SB_IR-100</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.nId" indexed="false">
+         <Name>nId</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of positional associations (&lt;25).]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.idType" indexed="false">
+         <Name>idType</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Type of Object]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.mHcon" indexed="false">
+         <Name>mHcon</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Possible number of HCONs]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.fCor_12" indexed="false">
+         <Name>fCor_12</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux correction factor applied (times 1000, 12 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_CORR-FACTOR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.fCor_25" indexed="false">
+         <Name>fCor_25</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux correction factor applied (times 1000, 25 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_CORR-FACTOR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.fCor_60" indexed="false">
+         <Name>fCor_60</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux correction factor applied (times 1000, 60 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_CORR-FACTOR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_psc.fCor_100" indexed="false">
+         <Name>fCor_100</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux correction factor applied (times 1000, 100 micron)]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_CORR-FACTOR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="iras_assoc_cats">
+      <Name>iras_assoc_cats</Name>
+      <Description><![CDATA[ Contains the parameters provided for the IRAS associated catalogues]]></Description>
+      <Column ID="iras_assoc_cats.catNo" indexed="true">
+         <Name>catNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Catalog number]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_CATALOG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="iras_assoc_cats.catName" indexed="false">
+         <Name>catName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Source Name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

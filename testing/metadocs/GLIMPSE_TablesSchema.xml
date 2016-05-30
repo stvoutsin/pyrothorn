@@ -1,0 +1,3698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>GLIMPSE</Name>
+   <Description></Description>
+
+   <Table ID="glimpse2_hrc">
+      <Name>glimpse2_hrc</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the GLIMPSEII Highly Reliable Catalog]]></Description>
+      <Column ID="glimpse2_hrc.srcName" indexed="false">
+         <Name>srcName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[GLIMPSEI Highly Reliable Catalogue source name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number in the HRC]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.tmassName" indexed="false">
+         <Name>tmassName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Source name from 2MASS All-Sky point source catalog (PSC)]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.tmassID" indexed="false">
+         <Name>tmassID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique identification number for the 2MASS source from the 2MASS All-Sky PSC]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.l" indexed="false">
+         <Name>l</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LON</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.b" indexed="false">
+         <Name>b</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LAT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.l_err" indexed="false">
+         <Name>l_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic longitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.b_err" indexed="false">
+         <Name>b_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic latitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Right Ascension (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Declination (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.ra_err" indexed="false">
+         <Name>ra_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Right Ascension]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.dec_err" indexed="false">
+         <Name>dec_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Declination]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.conf" indexed="false">
+         <Name>conf</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Close source flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.magJ" indexed="false">
+         <Name>magJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.magJ_err" indexed="false">
+         <Name>magJ_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.magH" indexed="false">
+         <Name>magH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.magH_err" indexed="false">
+         <Name>magH_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.magK" indexed="false">
+         <Name>magK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.magKs_err" indexed="false">
+         <Name>magKs_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.mag3_6" indexed="false">
+         <Name>mag3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.mag3_6_err" indexed="false">
+         <Name>mag3_6_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.mag4_5" indexed="false">
+         <Name>mag4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.mag4_5_err" indexed="false">
+         <Name>mag4_5_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.mag5_8" indexed="false">
+         <Name>mag5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.mag5_8_err" indexed="false">
+         <Name>mag5_8_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.mag8_0" indexed="false">
+         <Name>mag8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.mag8_0_err" indexed="false">
+         <Name>mag8_0_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.FJ" indexed="false">
+         <Name>FJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.FJ_err" indexed="false">
+         <Name>FJ_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.FH" indexed="false">
+         <Name>FH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.FH_err" indexed="false">
+         <Name>FH_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.FKs" indexed="false">
+         <Name>FKs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.FKs_err" indexed="false">
+         <Name>FKs_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F3_6" indexed="false">
+         <Name>F3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F3_6_err" indexed="false">
+         <Name>F3_6_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F4_5" indexed="false">
+         <Name>F4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F4_5_err" indexed="false">
+         <Name>F4_5_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F5_8" indexed="false">
+         <Name>F5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F5_8_err" indexed="false">
+         <Name>F5_8_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F8_0" indexed="false">
+         <Name>F8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F8_0_err" indexed="false">
+         <Name>F8_0_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F3_6_rms" indexed="false">
+         <Name>F3_6_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 3.6um IRAC (Band 1)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F4_5_rms" indexed="false">
+         <Name>F4_5_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 4.5um IRAC (Band 2)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F5_8_rms" indexed="false">
+         <Name>F5_8_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 5.8um IRAC (Band 3)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.F8_0_rms" indexed="false">
+         <Name>F8_0_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 8.0um IRAC (Band 4)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.sky3_6" indexed="false">
+         <Name>sky3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 3.6um IRAC (Band 1)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.sky4_5" indexed="false">
+         <Name>sky4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 4.5um IRAC (Band 2)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.sky5_8" indexed="false">
+         <Name>sky5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 5.8um IRAC (Band 3)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.sky8_0" indexed="false">
+         <Name>sky8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 8.0um IRAC (Band 4)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SNJ" indexed="false">
+         <Name>SNJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SNH" indexed="false">
+         <Name>SNH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SNKs" indexed="false">
+         <Name>SNKs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SN3_6" indexed="false">
+         <Name>SN3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SN4_5" indexed="false">
+         <Name>SN4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SN5_8" indexed="false">
+         <Name>SN5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SN8_0" indexed="false">
+         <Name>SN8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.srcdens3_6" indexed="false">
+         <Name>srcdens3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 3.6um IRAC (Band 1)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.srcdens4_5" indexed="false">
+         <Name>srcdens4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 4.5um IRAC (Band 2)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.srcdens5_8" indexed="false">
+         <Name>srcdens5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 5.8um IRAC (Band 3)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.srcdens8_0" indexed="false">
+         <Name>srcdens8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 8.0um IRAC (Band 4)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.M3_6" indexed="false">
+         <Name>M3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.M4_5" indexed="false">
+         <Name>M4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.M5_8" indexed="false">
+         <Name>M5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.M8_0" indexed="false">
+         <Name>M8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.N3_6" indexed="false">
+         <Name>N3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.N4_5" indexed="false">
+         <Name>N4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.N5_8" indexed="false">
+         <Name>N5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.N8_0" indexed="false">
+         <Name>N8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SQFJ" indexed="false">
+         <Name>SQFJ</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SQFH" indexed="false">
+         <Name>SQFH</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SQFKs" indexed="false">
+         <Name>SQFKs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SQF3_6" indexed="false">
+         <Name>SQF3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SQF4_5" indexed="false">
+         <Name>SQF4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SQF5_8" indexed="false">
+         <Name>SQF5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.SQF8_0" indexed="false">
+         <Name>SQF8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.MF3_6" indexed="false">
+         <Name>MF3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.MF4_5" indexed="false">
+         <Name>MF4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.MF5_8" indexed="false">
+         <Name>MF5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_hrc.MF8_0" indexed="false">
+         <Name>MF8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="glimpse1_mca">
+      <Name>glimpse1_mca</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the GLIMPSEI More Complete Archive]]></Description>
+      <Column ID="glimpse1_mca.srcName" indexed="false">
+         <Name>srcName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[GLIMPSEI Highly Reliable Catalogue source name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number in the HRC]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.tmassName" indexed="false">
+         <Name>tmassName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Source name from 2MASS All-Sky point source catalog (PSC)]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.tmassID" indexed="false">
+         <Name>tmassID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique identification number for the 2MASS source from the 2MASS All-Sky PSC]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.l" indexed="false">
+         <Name>l</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LON</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.b" indexed="false">
+         <Name>b</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LAT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.l_err" indexed="false">
+         <Name>l_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic longitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.b_err" indexed="false">
+         <Name>b_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic latitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Right Ascension (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Declination (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.ra_err" indexed="false">
+         <Name>ra_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Right Ascension]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.dec_err" indexed="false">
+         <Name>dec_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Declination]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.conf" indexed="false">
+         <Name>conf</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Close source flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.magJ" indexed="false">
+         <Name>magJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.magJ_err" indexed="false">
+         <Name>magJ_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.magH" indexed="false">
+         <Name>magH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.magH_err" indexed="false">
+         <Name>magH_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.magK" indexed="false">
+         <Name>magK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.magKs_err" indexed="false">
+         <Name>magKs_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.mag3_6" indexed="false">
+         <Name>mag3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.mag3_6_err" indexed="false">
+         <Name>mag3_6_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.mag4_5" indexed="false">
+         <Name>mag4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.mag4_5_err" indexed="false">
+         <Name>mag4_5_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.mag5_8" indexed="false">
+         <Name>mag5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.mag5_8_err" indexed="false">
+         <Name>mag5_8_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.mag8_0" indexed="false">
+         <Name>mag8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.mag8_0_err" indexed="false">
+         <Name>mag8_0_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.FJ" indexed="false">
+         <Name>FJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.FJ_err" indexed="false">
+         <Name>FJ_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.FH" indexed="false">
+         <Name>FH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.FH_err" indexed="false">
+         <Name>FH_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.FKs" indexed="false">
+         <Name>FKs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.FKs_err" indexed="false">
+         <Name>FKs_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F3_6" indexed="false">
+         <Name>F3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F3_6_err" indexed="false">
+         <Name>F3_6_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F4_5" indexed="false">
+         <Name>F4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F4_5_err" indexed="false">
+         <Name>F4_5_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F5_8" indexed="false">
+         <Name>F5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F5_8_err" indexed="false">
+         <Name>F5_8_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F8_0" indexed="false">
+         <Name>F8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F8_0_err" indexed="false">
+         <Name>F8_0_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F3_6_rms" indexed="false">
+         <Name>F3_6_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 3.6um IRAC (Band 1)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F4_5_rms" indexed="false">
+         <Name>F4_5_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 4.5um IRAC (Band 2)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F5_8_rms" indexed="false">
+         <Name>F5_8_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 5.8um IRAC (Band 3)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.F8_0_rms" indexed="false">
+         <Name>F8_0_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 8.0um IRAC (Band 4)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.sky3_6" indexed="false">
+         <Name>sky3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 3.6um IRAC (Band 1)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.sky4_5" indexed="false">
+         <Name>sky4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 4.5um IRAC (Band 2)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.sky5_8" indexed="false">
+         <Name>sky5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 5.8um IRAC (Band 3)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.sky8_0" indexed="false">
+         <Name>sky8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 8.0um IRAC (Band 4)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SNJ" indexed="false">
+         <Name>SNJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SNH" indexed="false">
+         <Name>SNH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SNKs" indexed="false">
+         <Name>SNKs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SN3_6" indexed="false">
+         <Name>SN3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SN4_5" indexed="false">
+         <Name>SN4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SN5_8" indexed="false">
+         <Name>SN5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SN8_0" indexed="false">
+         <Name>SN8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.srcdens3_6" indexed="false">
+         <Name>srcdens3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 3.6um IRAC (Band 1)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.srcdens4_5" indexed="false">
+         <Name>srcdens4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 4.5um IRAC (Band 2)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.srcdens5_8" indexed="false">
+         <Name>srcdens5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 5.8um IRAC (Band 3)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.srcdens8_0" indexed="false">
+         <Name>srcdens8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 8.0um IRAC (Band 4)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.M3_6" indexed="false">
+         <Name>M3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.M4_5" indexed="false">
+         <Name>M4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.M5_8" indexed="false">
+         <Name>M5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.M8_0" indexed="false">
+         <Name>M8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.N3_6" indexed="false">
+         <Name>N3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.N4_5" indexed="false">
+         <Name>N4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.N5_8" indexed="false">
+         <Name>N5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.N8_0" indexed="false">
+         <Name>N8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SQFJ" indexed="false">
+         <Name>SQFJ</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SQFH" indexed="false">
+         <Name>SQFH</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SQFKs" indexed="false">
+         <Name>SQFKs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SQF3_6" indexed="false">
+         <Name>SQF3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SQF4_5" indexed="false">
+         <Name>SQF4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SQF5_8" indexed="false">
+         <Name>SQF5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.SQF8_0" indexed="false">
+         <Name>SQF8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.MF3_6" indexed="false">
+         <Name>MF3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.MF4_5" indexed="false">
+         <Name>MF4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.MF5_8" indexed="false">
+         <Name>MF5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_mca.MF8_0" indexed="false">
+         <Name>MF8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="glimpse_hrc_inter">
+      <Name>glimpse_hrc_inter</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the GLIMPSE Highly Reliable Catalog (intermediate)]]></Description>
+      <Column ID="glimpse_hrc_inter.srcName" indexed="false">
+         <Name>srcName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[GLIMPSE Highly Reliable Catalogue source name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number in the HRC]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.l" indexed="false">
+         <Name>l</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LON</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.b" indexed="false">
+         <Name>b</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LAT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.l_err" indexed="false">
+         <Name>l_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic longitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.b_err" indexed="false">
+         <Name>b_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic latitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Right Ascension (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Declination (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.ra_err" indexed="false">
+         <Name>ra_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Right Ascension]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.dec_err" indexed="false">
+         <Name>dec_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Declination]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.conf" indexed="false">
+         <Name>conf</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Confusion flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.mag1" indexed="false">
+         <Name>mag1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Magnitude in IRAC band 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.mag1_err" indexed="false">
+         <Name>mag1_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma mag error (IRAC band 1)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.mag2" indexed="false">
+         <Name>mag2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Magnitude in IRAC band 2]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.mag2_err" indexed="false">
+         <Name>mag2_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma mag error (IRAC band 2)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.mag3" indexed="false">
+         <Name>mag3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Magnitude in IRAC band 3]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.mag3_err" indexed="false">
+         <Name>mag3_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma mag error (IRAC band 3)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.mag4" indexed="false">
+         <Name>mag4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Magnitude in IRAC band 4]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.mag4_err" indexed="false">
+         <Name>mag4_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma mag error (IRAC band 4)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F1" indexed="false">
+         <Name>F1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in IRAC band 1]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F1_err" indexed="false">
+         <Name>F1_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma flux error (IRAC band 1)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F2" indexed="false">
+         <Name>F2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in IRAC band 2]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F2_err" indexed="false">
+         <Name>F2_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma flux error (IRAC band 2)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F3" indexed="false">
+         <Name>F3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in IRAC band 3]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F3_err" indexed="false">
+         <Name>F3_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma flux error (IRAC band 3)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F4" indexed="false">
+         <Name>F4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in IRAC band 4]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F4_err" indexed="false">
+         <Name>F4_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma flux error (IRAC band 4)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F1_rms" indexed="false">
+         <Name>F1_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS dev. of detection from F1]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F2_rms" indexed="false">
+         <Name>F2_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS dev. of detection from F2]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F3_rms" indexed="false">
+         <Name>F3_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS dev. of detection from F3]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.F4_rms" indexed="false">
+         <Name>F4_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS dev. of detection from F4]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.sky1" indexed="false">
+         <Name>sky1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky bkg. for band 1 flux]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.sky2" indexed="false">
+         <Name>sky2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky bkg. for band 2 flux]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.sky3" indexed="false">
+         <Name>sky3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky bkg. for band 3 flux]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.sky4" indexed="false">
+         <Name>sky4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky bkg. for band 4 flux]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.SN1" indexed="false">
+         <Name>SN1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Signal/Noise for band 1 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.SN2" indexed="false">
+         <Name>SN2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Signal/Noise for band 2 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.SN3" indexed="false">
+         <Name>SN3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Signal/Noise for band 3 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.SN4" indexed="false">
+         <Name>SN4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Signal/Noise for band 4 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.srcdens1" indexed="false">
+         <Name>srcdens1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for band 1]]></Description>
+         <Units>#/sqamin</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.srcdens2" indexed="false">
+         <Name>srcdens2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for band 2]]></Description>
+         <Units>#/sqamin</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.srcdens3" indexed="false">
+         <Name>srcdens3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for band 3]]></Description>
+         <Units>#/sqamin</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.srcdens4" indexed="false">
+         <Name>srcdens4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for band 4]]></Description>
+         <Units>#/sqamin</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.M1" indexed="false">
+         <Name>M1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for band 1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.M2" indexed="false">
+         <Name>M2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for band 2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.M3" indexed="false">
+         <Name>M3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for band 3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.M4" indexed="false">
+         <Name>M4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for band 4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.N1" indexed="false">
+         <Name>N1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Possible number of detections for band 1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.N2" indexed="false">
+         <Name>N2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Possible number of detections for band 2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.N3" indexed="false">
+         <Name>N3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Possible number of detections for band 3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.N4" indexed="false">
+         <Name>N4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Possible number of detections for band 4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.SQL1" indexed="false">
+         <Name>SQL1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for band 1 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.SQL2" indexed="false">
+         <Name>SQL2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for band 2 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.SQL3" indexed="false">
+         <Name>SQL3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for band 3 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.SQL4" indexed="false">
+         <Name>SQL4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for band 4 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.MF1" indexed="false">
+         <Name>MF1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calc mathod flag for band 1 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.MF2" indexed="false">
+         <Name>MF2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calc mathod flag for band 2 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.MF3" indexed="false">
+         <Name>MF3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calc mathod flag for band 3 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_hrc_inter.MF4" indexed="false">
+         <Name>MF4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calc mathod flag for band 4 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="glimpse1_hrc">
+      <Name>glimpse1_hrc</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the GLIMPSEI Highly Reliable Catalog]]></Description>
+      <Column ID="glimpse1_hrc.srcName" indexed="false">
+         <Name>srcName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[GLIMPSEI Highly Reliable Catalogue source name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number in the HRC]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.tmassName" indexed="false">
+         <Name>tmassName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Source name from 2MASS All-Sky point source catalog (PSC)]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.tmassID" indexed="false">
+         <Name>tmassID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique identification number for the 2MASS source from the 2MASS All-Sky PSC]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.l" indexed="false">
+         <Name>l</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LON</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.b" indexed="false">
+         <Name>b</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LAT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.l_err" indexed="false">
+         <Name>l_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic longitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.b_err" indexed="false">
+         <Name>b_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic latitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Right Ascension (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Declination (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.ra_err" indexed="false">
+         <Name>ra_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Right Ascension]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.dec_err" indexed="false">
+         <Name>dec_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Declination]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.conf" indexed="false">
+         <Name>conf</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Close source flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.magJ" indexed="false">
+         <Name>magJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.magJ_err" indexed="false">
+         <Name>magJ_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.magH" indexed="false">
+         <Name>magH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.magH_err" indexed="false">
+         <Name>magH_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.magK" indexed="false">
+         <Name>magK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.magKs_err" indexed="false">
+         <Name>magKs_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.mag3_6" indexed="false">
+         <Name>mag3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.mag3_6_err" indexed="false">
+         <Name>mag3_6_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.mag4_5" indexed="false">
+         <Name>mag4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.mag4_5_err" indexed="false">
+         <Name>mag4_5_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.mag5_8" indexed="false">
+         <Name>mag5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.mag5_8_err" indexed="false">
+         <Name>mag5_8_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.mag8_0" indexed="false">
+         <Name>mag8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.mag8_0_err" indexed="false">
+         <Name>mag8_0_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.FJ" indexed="false">
+         <Name>FJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.FJ_err" indexed="false">
+         <Name>FJ_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.FH" indexed="false">
+         <Name>FH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.FH_err" indexed="false">
+         <Name>FH_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.FKs" indexed="false">
+         <Name>FKs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.FKs_err" indexed="false">
+         <Name>FKs_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F3_6" indexed="false">
+         <Name>F3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F3_6_err" indexed="false">
+         <Name>F3_6_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F4_5" indexed="false">
+         <Name>F4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F4_5_err" indexed="false">
+         <Name>F4_5_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F5_8" indexed="false">
+         <Name>F5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F5_8_err" indexed="false">
+         <Name>F5_8_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F8_0" indexed="false">
+         <Name>F8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F8_0_err" indexed="false">
+         <Name>F8_0_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F3_6_rms" indexed="false">
+         <Name>F3_6_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 3.6um IRAC (Band 1)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F4_5_rms" indexed="false">
+         <Name>F4_5_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 4.5um IRAC (Band 2)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F5_8_rms" indexed="false">
+         <Name>F5_8_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 5.8um IRAC (Band 3)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.F8_0_rms" indexed="false">
+         <Name>F8_0_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 8.0um IRAC (Band 4)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.sky3_6" indexed="false">
+         <Name>sky3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 3.6um IRAC (Band 1)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.sky4_5" indexed="false">
+         <Name>sky4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 4.5um IRAC (Band 2)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.sky5_8" indexed="false">
+         <Name>sky5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 5.8um IRAC (Band 3)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.sky8_0" indexed="false">
+         <Name>sky8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 8.0um IRAC (Band 4)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SNJ" indexed="false">
+         <Name>SNJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SNH" indexed="false">
+         <Name>SNH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SNKs" indexed="false">
+         <Name>SNKs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SN3_6" indexed="false">
+         <Name>SN3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SN4_5" indexed="false">
+         <Name>SN4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SN5_8" indexed="false">
+         <Name>SN5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SN8_0" indexed="false">
+         <Name>SN8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.srcdens3_6" indexed="false">
+         <Name>srcdens3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 3.6um IRAC (Band 1)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.srcdens4_5" indexed="false">
+         <Name>srcdens4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 4.5um IRAC (Band 2)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.srcdens5_8" indexed="false">
+         <Name>srcdens5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 5.8um IRAC (Band 3)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.srcdens8_0" indexed="false">
+         <Name>srcdens8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 8.0um IRAC (Band 4)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.M3_6" indexed="false">
+         <Name>M3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.M4_5" indexed="false">
+         <Name>M4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.M5_8" indexed="false">
+         <Name>M5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.M8_0" indexed="false">
+         <Name>M8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.N3_6" indexed="false">
+         <Name>N3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.N4_5" indexed="false">
+         <Name>N4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.N5_8" indexed="false">
+         <Name>N5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.N8_0" indexed="false">
+         <Name>N8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SQFJ" indexed="false">
+         <Name>SQFJ</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SQFH" indexed="false">
+         <Name>SQFH</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SQFKs" indexed="false">
+         <Name>SQFKs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SQF3_6" indexed="false">
+         <Name>SQF3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SQF4_5" indexed="false">
+         <Name>SQF4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SQF5_8" indexed="false">
+         <Name>SQF5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.SQF8_0" indexed="false">
+         <Name>SQF8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.MF3_6" indexed="false">
+         <Name>MF3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.MF4_5" indexed="false">
+         <Name>MF4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.MF5_8" indexed="false">
+         <Name>MF5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse1_hrc.MF8_0" indexed="false">
+         <Name>MF8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="glimpse2_mca">
+      <Name>glimpse2_mca</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the GLIMPSEII More Complete Archive]]></Description>
+      <Column ID="glimpse2_mca.srcName" indexed="false">
+         <Name>srcName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[GLIMPSEI Highly Reliable Catalogue source name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number in the HRC]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.tmassName" indexed="false">
+         <Name>tmassName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Source name from 2MASS All-Sky point source catalog (PSC)]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.tmassID" indexed="false">
+         <Name>tmassID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique identification number for the 2MASS source from the 2MASS All-Sky PSC]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.l" indexed="false">
+         <Name>l</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LON</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.b" indexed="false">
+         <Name>b</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LAT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.l_err" indexed="false">
+         <Name>l_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic longitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.b_err" indexed="false">
+         <Name>b_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic latitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Right Ascension (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Declination (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.ra_err" indexed="false">
+         <Name>ra_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Right Ascension]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.dec_err" indexed="false">
+         <Name>dec_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Declination]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.conf" indexed="false">
+         <Name>conf</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Close source flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.magJ" indexed="false">
+         <Name>magJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.magJ_err" indexed="false">
+         <Name>magJ_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.magH" indexed="false">
+         <Name>magH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.magH_err" indexed="false">
+         <Name>magH_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.magK" indexed="false">
+         <Name>magK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.magKs_err" indexed="false">
+         <Name>magKs_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.mag3_6" indexed="false">
+         <Name>mag3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.mag3_6_err" indexed="false">
+         <Name>mag3_6_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.mag4_5" indexed="false">
+         <Name>mag4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.mag4_5_err" indexed="false">
+         <Name>mag4_5_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.mag5_8" indexed="false">
+         <Name>mag5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.mag5_8_err" indexed="false">
+         <Name>mag5_8_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.mag8_0" indexed="false">
+         <Name>mag8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.mag8_0_err" indexed="false">
+         <Name>mag8_0_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) 1 sigma error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.FJ" indexed="false">
+         <Name>FJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.FJ_err" indexed="false">
+         <Name>FJ_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.FH" indexed="false">
+         <Name>FH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.FH_err" indexed="false">
+         <Name>FH_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.FKs" indexed="false">
+         <Name>FKs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.FKs_err" indexed="false">
+         <Name>FKs_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F3_6" indexed="false">
+         <Name>F3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F3_6_err" indexed="false">
+         <Name>F3_6_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F4_5" indexed="false">
+         <Name>F4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F4_5_err" indexed="false">
+         <Name>F4_5_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F5_8" indexed="false">
+         <Name>F5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F5_8_err" indexed="false">
+         <Name>F5_8_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F8_0" indexed="false">
+         <Name>F8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) flux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F8_0_err" indexed="false">
+         <Name>F8_0_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) 1 sigma error]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F3_6_rms" indexed="false">
+         <Name>F3_6_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 3.6um IRAC (Band 1)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F4_5_rms" indexed="false">
+         <Name>F4_5_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 4.5um IRAC (Band 2)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F5_8_rms" indexed="false">
+         <Name>F5_8_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 5.8um IRAC (Band 3)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.F8_0_rms" indexed="false">
+         <Name>F8_0_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS deviation of the individual detections from the final flux for 8.0um IRAC (Band 4)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.sky3_6" indexed="false">
+         <Name>sky3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 3.6um IRAC (Band 1)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.sky4_5" indexed="false">
+         <Name>sky4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 4.5um IRAC (Band 2)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.sky5_8" indexed="false">
+         <Name>sky5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 5.8um IRAC (Band 3)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.sky8_0" indexed="false">
+         <Name>sky8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky background for 8.0um IRAC (Band 4)]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SNJ" indexed="false">
+         <Name>SNJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SNH" indexed="false">
+         <Name>SNH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SNKs" indexed="false">
+         <Name>SNKs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SN3_6" indexed="false">
+         <Name>SN3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[3.6um IRAC (Band 1) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SN4_5" indexed="false">
+         <Name>SN4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[4.5um IRAC (Band 2) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SN5_8" indexed="false">
+         <Name>SN5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[5.8um IRAC (Band 3) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SN8_0" indexed="false">
+         <Name>SN8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[8.0um IRAC (Band 4) Signal/Noise]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.srcdens3_6" indexed="false">
+         <Name>srcdens3_6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 3.6um IRAC (Band 1)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.srcdens4_5" indexed="false">
+         <Name>srcdens4_5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 4.5um IRAC (Band 2)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.srcdens5_8" indexed="false">
+         <Name>srcdens5_8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 5.8um IRAC (Band 3)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.srcdens8_0" indexed="false">
+         <Name>srcdens8_0</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for 8.0um IRAC (Band 4)]]></Description>
+         <Units>arcmin**-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.M3_6" indexed="false">
+         <Name>M3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.M4_5" indexed="false">
+         <Name>M4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.M5_8" indexed="false">
+         <Name>M5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.M8_0" indexed="false">
+         <Name>M8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.N3_6" indexed="false">
+         <Name>N3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.N4_5" indexed="false">
+         <Name>N4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.N5_8" indexed="false">
+         <Name>N5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.N8_0" indexed="false">
+         <Name>N8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of possible detections for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SQFJ" indexed="false">
+         <Name>SQFJ</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC J Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SQFH" indexed="false">
+         <Name>SQFH</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC H Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SQFKs" indexed="false">
+         <Name>SQFKs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2MASS All-Sky PSC Ks Band Source Quality Flag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SQF3_6" indexed="false">
+         <Name>SQF3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SQF4_5" indexed="false">
+         <Name>SQF4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SQF5_8" indexed="false">
+         <Name>SQF5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.SQF8_0" indexed="false">
+         <Name>SQF8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.MF3_6" indexed="false">
+         <Name>MF3_6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 3.6um IRAC (Band 1)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.MF4_5" indexed="false">
+         <Name>MF4_5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 4.5um IRAC (Band 2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.MF5_8" indexed="false">
+         <Name>MF5_8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 5.8um IRAC (Band 3)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse2_mca.MF8_0" indexed="false">
+         <Name>MF8_0</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calculation method flag 8.0um IRAC (Band 4)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="glimpse_mca_inter">
+      <Name>glimpse_mca_inter</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the GLIMPSE More Complete Archive (intermediate)]]></Description>
+      <Column ID="glimpse_mca_inter.srcName" indexed="false">
+         <Name>srcName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[GLIMPSE More Complete Archive source name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number in the MCA]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.l" indexed="false">
+         <Name>l</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LON</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.b" indexed="false">
+         <Name>b</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LAT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.l_err" indexed="false">
+         <Name>l_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic longitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.b_err" indexed="false">
+         <Name>b_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Galactic latitude]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Right Ascension (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Declination (J2000)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.ra_err" indexed="false">
+         <Name>ra_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Right Ascension]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.dec_err" indexed="false">
+         <Name>dec_err</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in Declination]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.conf" indexed="false">
+         <Name>conf</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Confusion flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.mag1" indexed="false">
+         <Name>mag1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Magnitude in IRAC band 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.mag1_err" indexed="false">
+         <Name>mag1_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma mag error (IRAC band 1)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.mag2" indexed="false">
+         <Name>mag2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Magnitude in IRAC band 2]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.mag2_err" indexed="false">
+         <Name>mag2_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma mag error (IRAC band 2)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.mag3" indexed="false">
+         <Name>mag3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Magnitude in IRAC band 3]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.mag3_err" indexed="false">
+         <Name>mag3_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma mag error (IRAC band 3)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.mag4" indexed="false">
+         <Name>mag4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Magnitude in IRAC band 4]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.mag4_err" indexed="false">
+         <Name>mag4_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma mag error (IRAC band 4)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F1" indexed="false">
+         <Name>F1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in IRAC band 1]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F1_err" indexed="false">
+         <Name>F1_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma flux error (IRAC band 1)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F2" indexed="false">
+         <Name>F2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in IRAC band 2]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F2_err" indexed="false">
+         <Name>F2_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma flux error (IRAC band 2)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F3" indexed="false">
+         <Name>F3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in IRAC band 3]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F3_err" indexed="false">
+         <Name>F3_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma flux error (IRAC band 3)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F4" indexed="false">
+         <Name>F4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in IRAC band 4]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F4_err" indexed="false">
+         <Name>F4_err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1sigma flux error (IRAC band 4)]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F1_rms" indexed="false">
+         <Name>F1_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS dev. of detection from F1]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F2_rms" indexed="false">
+         <Name>F2_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS dev. of detection from F2]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F3_rms" indexed="false">
+         <Name>F3_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS dev. of detection from F3]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.F4_rms" indexed="false">
+         <Name>F4_rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS dev. of detection from F4]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.sky1" indexed="false">
+         <Name>sky1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky bkg. for band 1 flux]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.sky2" indexed="false">
+         <Name>sky2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky bkg. for band 2 flux]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.sky3" indexed="false">
+         <Name>sky3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky bkg. for band 3 flux]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.sky4" indexed="false">
+         <Name>sky4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local sky bkg. for band 4 flux]]></Description>
+         <Units>MJy/sr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.SN1" indexed="false">
+         <Name>SN1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Signal/Noise for band 1 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.SN2" indexed="false">
+         <Name>SN2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Signal/Noise for band 2 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.SN3" indexed="false">
+         <Name>SN3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Signal/Noise for band 3 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.SN4" indexed="false">
+         <Name>SN4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Signal/Noise for band 4 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.srcdens1" indexed="false">
+         <Name>srcdens1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for band 1]]></Description>
+         <Units>#/sqamin</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.srcdens2" indexed="false">
+         <Name>srcdens2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for band 2]]></Description>
+         <Units>#/sqamin</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.srcdens3" indexed="false">
+         <Name>srcdens3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for band 3]]></Description>
+         <Units>#/sqamin</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.srcdens4" indexed="false">
+         <Name>srcdens4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Local source density for band 4]]></Description>
+         <Units>#/sqamin</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.M1" indexed="false">
+         <Name>M1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for band 1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.M2" indexed="false">
+         <Name>M2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for band 2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.M3" indexed="false">
+         <Name>M3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for band 3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.M4" indexed="false">
+         <Name>M4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of detections for band 4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.N1" indexed="false">
+         <Name>N1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Possible number of detections for band 1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.N2" indexed="false">
+         <Name>N2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Possible number of detections for band 2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.N3" indexed="false">
+         <Name>N3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Possible number of detections for band 3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.N4" indexed="false">
+         <Name>N4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Possible number of detections for band 4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.SQL1" indexed="false">
+         <Name>SQL1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for band 1 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.SQL2" indexed="false">
+         <Name>SQL2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for band 2 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.SQL3" indexed="false">
+         <Name>SQL3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for band 3 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.SQL4" indexed="false">
+         <Name>SQL4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source Quality Flag for band 4 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.MF1" indexed="false">
+         <Name>MF1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calc mathod flag for band 1 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.MF2" indexed="false">
+         <Name>MF2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calc mathod flag for band 2 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.MF3" indexed="false">
+         <Name>MF3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calc mathod flag for band 3 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="glimpse_mca_inter.MF4" indexed="false">
+         <Name>MF4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flux calc mathod flag for band 4 flux]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

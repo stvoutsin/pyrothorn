@@ -1,0 +1,1934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>MGC</Name>
+   <Description></Description>
+
+   <Table ID="mgcBrightSpec">
+      <Name>mgcBrightSpec</Name>
+      <Description><![CDATA[ Combination of extraction parameters that are unique to MGC_BRIGHT and the MGC redshift catalogue]]></Description>
+      <Column ID="mgcBrightSpec.MGCID" indexed="true">
+         <Name>MGCID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[MGC object ID]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.QUALITY" indexed="false">
+         <Name>QUALITY</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Quality class]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.HLRADIUS" indexed="false">
+         <Name>HLRADIUS</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of half-light ellipse]]></Description>
+         <Units>pixel</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.INEXR" indexed="false">
+         <Name>INEXR</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Exclusion region flag (0 exclude/ 1 keep)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.MU_EFF" indexed="false">
+         <Name>MU_EFF</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Effective surface brightness]]></Description>
+         <Units>mag arcsec^-2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_N" indexed="false">
+         <Name>SDSS_N</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of SDSS objects matched to MGC object]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_OBJID" indexed="false">
+         <Name>SDSS_OBJID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[SDSS PhotoObject ID]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_RUN" indexed="false">
+         <Name>SDSS_RUN</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SDSS run number]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_RERUN" indexed="false">
+         <Name>SDSS_RERUN</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SDSS rerun number]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_CAMCOL" indexed="false">
+         <Name>SDSS_CAMCOL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SDSS camera column]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_FIELD" indexed="false">
+         <Name>SDSS_FIELD</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SDSS field number]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_RA" indexed="false">
+         <Name>SDSS_RA</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[SDSS object right ascension in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_DEC" indexed="false">
+         <Name>SDSS_DEC</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[SDSS object declination in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PSFMAG_U" indexed="false">
+         <Name>SDSS_PSFMAG_U</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected PSF magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PSFMAG_G" indexed="false">
+         <Name>SDSS_PSFMAG_G</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected PSF magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PSFMAG_R" indexed="false">
+         <Name>SDSS_PSFMAG_R</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected PSF magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PSFMAG_I" indexed="false">
+         <Name>SDSS_PSFMAG_I</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected PSF magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PSFMAG_Z" indexed="false">
+         <Name>SDSS_PSFMAG_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected PSF magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PETMAG_U" indexed="false">
+         <Name>SDSS_PETMAG_U</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected Petrosian magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PETMAG_G" indexed="false">
+         <Name>SDSS_PETMAG_G</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected Petrosian magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PETMAG_R" indexed="false">
+         <Name>SDSS_PETMAG_R</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected Petrosian magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PETMAG_I" indexed="false">
+         <Name>SDSS_PETMAG_I</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected Petrosian magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PETMAG_Z" indexed="false">
+         <Name>SDSS_PETMAG_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected Petrosian magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_MODMAG_U" indexed="false">
+         <Name>SDSS_MODMAG_U</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected model magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_MODMAG_G" indexed="false">
+         <Name>SDSS_MODMAG_G</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected model magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_MODMAG_R" indexed="false">
+         <Name>SDSS_MODMAG_R</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected model magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_MODMAG_I" indexed="false">
+         <Name>SDSS_MODMAG_I</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected model magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_MODMAG_Z" indexed="false">
+         <Name>SDSS_MODMAG_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS extinction corrected model magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_EXTINC_U" indexed="false">
+         <Name>SDSS_EXTINC_U</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS Galactic extinction correction in mag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_EXTINC_G" indexed="false">
+         <Name>SDSS_EXTINC_G</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS Galactic extinction correction in mag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_EXTINC_R" indexed="false">
+         <Name>SDSS_EXTINC_R</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS Galactic extinction correction in mag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_EXTINC_I" indexed="false">
+         <Name>SDSS_EXTINC_I</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS Galactic extinction correction in mag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_EXTINC_Z" indexed="false">
+         <Name>SDSS_EXTINC_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS Galactic extinction correction in mag]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PETR50_U" indexed="false">
+         <Name>SDSS_PETR50_U</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS radius containing 50% Petrosian flux in arcsec]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PETR50_G" indexed="false">
+         <Name>SDSS_PETR50_G</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS radius containing 50% Petrosian flux in arcsec]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PETR50_R" indexed="false">
+         <Name>SDSS_PETR50_R</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS radius containing 50% Petrosian flux in arcsec]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PETR50_I" indexed="false">
+         <Name>SDSS_PETR50_I</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS radius containing 50% Petrosian flux in arcsec]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_PETR50_Z" indexed="false">
+         <Name>SDSS_PETR50_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS radius containing 50% Petrosian flux in arcsec]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_TYPE" indexed="false">
+         <Name>SDSS_TYPE</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SDSS morphological classification]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_CLASS" indexed="false">
+         <Name>SDSS_CLASS</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[MGC translation of SDSS_TYPE]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_SPECCLASS" indexed="false">
+         <Name>SDSS_SPECCLASS</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SDSS spectroscopic classification]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_SPCLASS" indexed="false">
+         <Name>SDSS_SPCLASS</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[MGC translation of SDSS_SPECCLASS]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_N" indexed="false">
+         <Name>TDFGRS_N</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of 2dFGRS objects/spectra for this MGC object]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_NAME" indexed="false">
+         <Name>TDFGRS_NAME</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[2dFGRS object name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_SEQNUM" indexed="false">
+         <Name>TDFGRS_SEQNUM</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[2dFGRS sequence number]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_RA" indexed="false">
+         <Name>TDFGRS_RA</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[2dFGRS object right ascension in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_DEC" indexed="false">
+         <Name>TDFGRS_DEC</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[2dFGRS object declination in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_UKST" indexed="false">
+         <Name>TDFGRS_UKST</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[UKST survey field number]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_BJG" indexed="false">
+         <Name>TDFGRS_BJG</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2dFGRS final b_J magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDGRS_BJSEL" indexed="false">
+         <Name>TDGRS_BJSEL</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2dFGRS final extinction corrected b_J magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_SBBJMAG" indexed="false">
+         <Name>TDFGRS_SBBJMAG</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SSS b_J magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_SRRMAG" indexed="false">
+         <Name>TDFGRS_SRRMAG</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SSS R magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDGRS_IGAL" indexed="false">
+         <Name>TDGRS_IGAL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2dFGRS classification]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_CLASS" indexed="false">
+         <Name>TDFGRS_CLASS</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[MGC translation of TDFGRS_IGAL]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_NAME" indexed="false">
+         <Name>TQZ_NAME</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[2QZ object name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_RA" indexed="false">
+         <Name>TQZ_RA</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[2QZ object right ascension in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_DEC" indexed="false">
+         <Name>TQZ_DEC</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[2QZ object declination in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_UKST" indexed="false">
+         <Name>TQZ_UKST</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[UKST survey field number]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_BJ" indexed="false">
+         <Name>TQZ_BJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2QZ bJ magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_UMBJ" indexed="false">
+         <Name>TQZ_UMBJ</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2QZ U-bJ colour]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_BJMR" indexed="false">
+         <Name>TQZ_BJMR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2QZ bJ-R colour]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_DUST" indexed="false">
+         <Name>TQZ_DUST</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2QZ E(B-V)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_NOBS" indexed="false">
+         <Name>TQZ_NOBS</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of 2QZ spectra for this MGC object]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_IDENT" indexed="false">
+         <Name>TQZ_IDENT</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[2QZ identification]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_CLASS" indexed="false">
+         <Name>TQZ_CLASS</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[MGC translation of TQZ_IDENT]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.NED_N" indexed="false">
+         <Name>NED_N</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of NED objects matched to this MGC object]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.NED_NAME" indexed="false">
+         <Name>NED_NAME</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[NED object name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.NED_RA" indexed="false">
+         <Name>NED_RA</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[NED object right ascension in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.NED_DEC" indexed="false">
+         <Name>NED_DEC</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[NED object declination in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.NED_IDENT" indexed="false">
+         <Name>NED_IDENT</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[NED identification]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.NED_CLASS" indexed="false">
+         <Name>NED_CLASS</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[MGC translation of NED_IDENT]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.PF_NAME" indexed="false">
+         <Name>PF_NAME</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[PFr object name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.PF_RA" indexed="false">
+         <Name>PF_RA</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[PFr object right ascension in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.PF_DEC" indexed="false">
+         <Name>PF_DEC</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[PFr object declination in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.PF_R" indexed="false">
+         <Name>PF_R</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PFr R magnitude from USNO]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.PF_K" indexed="false">
+         <Name>PF_K</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PFr K magnitude from 2MASS]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.PF_JMK" indexed="false">
+         <Name>PF_JMK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PFr J-K colour from 2MASS]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.LSBG_NAME" indexed="false">
+         <Name>LSBG_NAME</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[LSBG object name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.LSBG_RA" indexed="false">
+         <Name>LSBG_RA</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[LSBG object right ascension in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.LSBG_DEC" indexed="false">
+         <Name>LSBG_DEC</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[LSBG object declination in deg (J2000)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.LSBG_BTOT" indexed="false">
+         <Name>LSBG_BTOT</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[LSBG total B magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.LSBG_MUCEN" indexed="false">
+         <Name>LSBG_MUCEN</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[LSBG central surface brightness in mag/arcsec^2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.LSBG_MUEFF" indexed="false">
+         <Name>LSBG_MUEFF</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[LSBG effective surface brightness]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.LSBG_REFF" indexed="false">
+         <Name>LSBG_REFF</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[LSBG effective radius in arcsec]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.MGCZ_ZHELIO" indexed="false">
+         <Name>MGCZ_ZHELIO</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[MGCz heliocentric redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.MGCZ_ZQUAL" indexed="false">
+         <Name>MGCZ_ZQUAL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[MGCz redshift quality]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_Z" indexed="false">
+         <Name>SDSS_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.SDSS_ZQUAL" indexed="false">
+         <Name>SDSS_ZQUAL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SDSS redshift quality]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_ZHELIO" indexed="false">
+         <Name>TDFGRS_ZHELIO</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2dFGRS heliocentric redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TDFGRS_ZQUAL" indexed="false">
+         <Name>TDFGRS_ZQUAL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2dFGRS redshift quality]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.BESTTQZ_Z" indexed="false">
+         <Name>BESTTQZ_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2qz redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.TQZ_ZQUAL" indexed="false">
+         <Name>TQZ_ZQUAL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[2QZ redshift quality]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.NED_ZHELIO" indexed="false">
+         <Name>NED_ZHELIO</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[NED heliocentric redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.NED_ZQUAL" indexed="false">
+         <Name>NED_ZQUAL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[NED redshift quality]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.PF_Z" indexed="false">
+         <Name>PF_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PFr redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.PF_ZQUAL" indexed="false">
+         <Name>PF_ZQUAL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[PFr redshift quality]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.LSBG_Z" indexed="false">
+         <Name>LSBG_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[LSBG heliocentric redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.LSBG_ZQUAL" indexed="false">
+         <Name>LSBG_ZQUAL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[LSBG redshift quality]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.ZSOURCE" indexed="false">
+         <Name>ZSOURCE</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Identifier for best redshift and quality]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.BEST_Z" indexed="false">
+         <Name>BEST_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Best redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.BEST_ZQUAL" indexed="false">
+         <Name>BEST_ZQUAL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Quality of best redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcBrightSpec.N_SPEC" indexed="false">
+         <Name>N_SPEC</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Total number of spectra for this object]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="mgcDetection">
+      <Name>mgcDetection</Name>
+      <Description><![CDATA[ Table of main extraction parameters for all sources in MGC_BRIGHT and MGC_FAINT http://www.eso.org/~jliske/mgc]]></Description>
+      <Column ID="mgcDetection.MGCID" indexed="true">
+         <Name>MGCID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[MGC object ID]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.MGCFN" indexed="false">
+         <Name>MGCFN</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[MGC field number]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.X_IMAGE" indexed="false">
+         <Name>X_IMAGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Object x position]]></Description>
+         <Units>pixel</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.Y_IMAGE" indexed="false">
+         <Name>Y_IMAGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Object y position]]></Description>
+         <Units>pixel</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.MAG_ISO" indexed="false">
+         <Name>MAG_ISO</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.MAG_ISO_DC" indexed="false">
+         <Name>MAG_ISO_DC</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[MAG_ISO corrected for extinction]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.MAG_ISOCOR" indexed="false">
+         <Name>MAG_ISOCOR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gaussian corrected isophotal magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.MAG_ISOCOR_DC" indexed="false">
+         <Name>MAG_ISOCOR_DC</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[MAG_ISOCOR corrected for extinction]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.MAG_AUTO" indexed="false">
+         <Name>MAG_AUTO</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Kron-like elliptical aperture magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.MAG_AUTO_DC" indexed="false">
+         <Name>MAG_AUTO_DC</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[MAG_AUTO corrected for extinction]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.B_MGC" indexed="false">
+         <Name>B_MGC</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Best of MAG_AUTO and MAG_ISOCOR]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.B_MGC_DC" indexed="false">
+         <Name>B_MGC_DC</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[B_MGC corrected for extinction]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.MAG_ERR" indexed="false">
+         <Name>MAG_ERR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error for B_MGC]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.BACKGRND" indexed="false">
+         <Name>BACKGRND</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Background at object position]]></Description>
+         <Units>count</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.THRESH" indexed="false">
+         <Name>THRESH</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Detection threshold above background]]></Description>
+         <Units>count</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.ISOAREA_IMAGE" indexed="false">
+         <Name>ISOAREA_IMAGE</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Isophotal area above analysis threshold]]></Description>
+         <Units>pixel^2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Object right ascension (J2000)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Object declination (J2000)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.raB1950" indexed="false">
+         <Name>raB1950</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Object right ascension (B1950)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.decB1950" indexed="false">
+         <Name>decB1950</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Object declination (B1950)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.A_IMAGE" indexed="false">
+         <Name>A_IMAGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux rms along major axis]]></Description>
+         <Units>pixel</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.B_IMAGE" indexed="false">
+         <Name>B_IMAGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux rms along minor axis]]></Description>
+         <Units>pixel</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.THETA_IMAGE" indexed="false">
+         <Name>THETA_IMAGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position angle wrt x axis]]></Description>
+         <Units>deg</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.ERRA_IMAGE" indexed="false">
+         <Name>ERRA_IMAGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position error along major axis]]></Description>
+         <Units>pixel</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.ERRB_IMAGE" indexed="false">
+         <Name>ERRB_IMAGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Position error along minor axis]]></Description>
+         <Units>pixel</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.ISOAREA_WORLD" indexed="false">
+         <Name>ISOAREA_WORLD</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal area above analysis threshold]]></Description>
+         <Units>deg^2</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.FLAGS" indexed="false">
+         <Name>FLAGS</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Extraction flags]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.FWHM_IMAGE" indexed="false">
+         <Name>FWHM_IMAGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[FWHM assuming a gaussian core]]></Description>
+         <Units>pixel</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.ELLIPTICITY" indexed="false">
+         <Name>ELLIPTICITY</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1 - B_IMAGE/A_IMAGE]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.STEL" indexed="false">
+         <Name>STEL</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stellaricity]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.CCD" indexed="false">
+         <Name>CCD</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[CCD number]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcDetection.CLASS" indexed="false">
+         <Name>CLASS</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Classification parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="mgcGalaxyStruct">
+      <Name>mgcGalaxyStruct</Name>
+      <Description><![CDATA[ Galaxy absolute and structural parameters for 10095 B<20 galaxies in the MGC measured using GIM2D (Simard et al. 2002, ApJS, 142, ]]></Description>
+      <Column ID="mgcGalaxyStruct.MGCID" indexed="true">
+         <Name>MGCID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[MGC object ID]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.MGC_HLR_TRUE" indexed="false">
+         <Name>MGC_HLR_TRUE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Seeing corrected Half light radius]]></Description>
+         <Units>arcsecs</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.MGC_SEEING" indexed="false">
+         <Name>MGC_SEEING</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Seeing of MGC field]]></Description>
+         <Units>arcsecs</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.MGC_SPEC_TYPE" indexed="false">
+         <Name>MGC_SPEC_TYPE</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Best spectral type fit from Poggianti (1998)sample (type+age, i.e., el150 = E/S0 15.0Gyrs)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.MGC_B_KCORR" indexed="false">
+         <Name>MGC_B_KCORR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[MGC B-band K-correction]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.MGC_BEST_Z" indexed="false">
+         <Name>MGC_BEST_Z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Best redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.MGC_BEST_ZQUAL" indexed="false">
+         <Name>MGC_BEST_ZQUAL</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Quality of best redshift (0-2 = BAD, 3-5=GOOD, 9=Not observed)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPt_u" indexed="false">
+         <Name>absMagPt_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS u Absolute PET mag, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPt_B" indexed="false">
+         <Name>absMagPt_B</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[MGC B Absolute KRON mag, dust K &#38; E-corrected]]></Description>
+         <Units>Vega mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPt_g" indexed="false">
+         <Name>absMagPt_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS g Absolute PET mag, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPt_r" indexed="false">
+         <Name>absMagPt_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS r Absolute PET mag, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPt_i" indexed="false">
+         <Name>absMagPt_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS i Absolute PET mag, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPt_z" indexed="false">
+         <Name>absMagPt_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS z Absolute PET mag, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_SB_u" indexed="false">
+         <Name>ABS_SB_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS u Absolute PET SB, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_SB_B" indexed="false">
+         <Name>ABS_SB_B</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[MGC B Absolute KRON SB, dust K &#38; E-corrected]]></Description>
+         <Units>Vega mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_SB_g" indexed="false">
+         <Name>ABS_SB_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS g Absolute PET SB, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_SB_r" indexed="false">
+         <Name>ABS_SB_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS r Absolute PET SB, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_SB_i" indexed="false">
+         <Name>ABS_SB_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS i Absolute PET SB, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_SB_z" indexed="false">
+         <Name>ABS_SB_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS z Absolute PET SB, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPsf_u" indexed="false">
+         <Name>absMagPsf_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS u Absolute PSF mag, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPsf_g" indexed="false">
+         <Name>absMagPsf_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS g Absolute PSF mag, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPsf_r" indexed="false">
+         <Name>absMagPsf_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS r Absolute PSF mag, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPsf_i" indexed="false">
+         <Name>absMagPsf_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS i Absolute PSF mag, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.absMagPsf_z" indexed="false">
+         <Name>absMagPsf_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS z Absolute PSF mag, dust K &#38; E-corrected]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.RAD_20KPC20" indexed="false">
+         <Name>RAD_20KPC20</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1kpc radius at object distance (h=1)]]></Description>
+         <Units>arcsecs</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.D_MODULUS" indexed="false">
+         <Name>D_MODULUS</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[B proper distance to the object (h=1)]]></Description>
+         <Units>Mpc</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.SPEC_TYPE" indexed="false">
+         <Name>SPEC_TYPE</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SPD's CONTINUUM type (1=El 15.0, 2=Sa 7.4, 3=SC 2.2)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.MORPH_TYPE" indexed="false">
+         <Name>MORPH_TYPE</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SPD's EYEBALL morphology (1=E/S0, 2=Sabc, 3=Sd/Irr, 4=dE)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.TDFGRS_SEQNUM" indexed="false">
+         <Name>TDFGRS_SEQNUM</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[2dFGRS Serial number]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ETA_TYPE" indexed="false">
+         <Name>ETA_TYPE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2dFGRS Eta type]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.L_TOT" indexed="false">
+         <Name>L_TOT</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Total flux (digital units)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.L_TOTm" indexed="false">
+         <Name>L_TOTm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Total flux error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.L_TOTp" indexed="false">
+         <Name>L_TOTp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Total flux error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_FRAC" indexed="false">
+         <Name>BULGE_FRAC</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Fraction (0=pure disk)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_FRACm" indexed="false">
+         <Name>BULGE_FRACm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Fraction error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_FRACp" indexed="false">
+         <Name>BULGE_FRACp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Fraction error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_RE" indexed="false">
+         <Name>BULGE_RE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Effective Radius]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_REm" indexed="false">
+         <Name>BULGE_REm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Effective Radius error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_REp" indexed="false">
+         <Name>BULGE_REp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Effective Radius error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_E" indexed="false">
+         <Name>BULGE_E</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Ellipticity]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_Em" indexed="false">
+         <Name>BULGE_Em</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Ellipticity error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_Ep" indexed="false">
+         <Name>BULGE_Ep</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Ellipticity error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_PA" indexed="false">
+         <Name>BULGE_PA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Position Angle]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_PAm" indexed="false">
+         <Name>BULGE_PAm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Position Angle error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BULGE_PAp" indexed="false">
+         <Name>BULGE_PAp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Position Angle error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.R_D" indexed="false">
+         <Name>R_D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential Disk Scale Length]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.R_Dm" indexed="false">
+         <Name>R_Dm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential Disk Scale Length error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.R_Dp" indexed="false">
+         <Name>R_Dp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential Disk Scale Length error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.DISK_I" indexed="false">
+         <Name>DISK_I</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Disk Inclination (0=face-on)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.DISK_Im" indexed="false">
+         <Name>DISK_Im</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Disk Inclination error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.DISK_Ip" indexed="false">
+         <Name>DISK_Ip</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Disk Inclination error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.DISK_PA" indexed="false">
+         <Name>DISK_PA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Disk Position Angle]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.DISK_PAm" indexed="false">
+         <Name>DISK_PAm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Disk Position Angle error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.DISK_PAp" indexed="false">
+         <Name>DISK_PAp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Disk Position Angle error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.X_OFF" indexed="false">
+         <Name>X_OFF</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[X offset of Galaxy Centre]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.X_OFFm" indexed="false">
+         <Name>X_OFFm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[X offset error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.X_OFFp" indexed="false">
+         <Name>X_OFFp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[X offset error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.Y_OFF" indexed="false">
+         <Name>Y_OFF</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Y offset of Galaxy Centre]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.Y_OFFm" indexed="false">
+         <Name>Y_OFFm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Y offset error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.Y_OFFp" indexed="false">
+         <Name>Y_OFFp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Y offset error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BACK" indexed="false">
+         <Name>BACK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Background Level (digital units)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BACKm" indexed="false">
+         <Name>BACKm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Background Level error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BACKp" indexed="false">
+         <Name>BACKp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Background Level error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.SERSIC" indexed="false">
+         <Name>SERSIC</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sersic Index (=4 for de Vaucouleurs profile)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.SERSICm" indexed="false">
+         <Name>SERSICm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sersic Index error (-)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.SERSICp" indexed="false">
+         <Name>SERSICp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sersic Index error (+)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.CHI" indexed="false">
+         <Name>CHI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Chi^2 of GIM2D Fit]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.RHALF" indexed="false">
+         <Name>RHALF</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[GIM2D HLR]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.C1" indexed="false">
+         <Name>C1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Concentration index alpha=1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.A1" indexed="false">
+         <Name>A1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Asymmetry index (background corrected) alpha=1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.B1" indexed="false">
+         <Name>B1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Background correction applied to A1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.C2" indexed="false">
+         <Name>C2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Concentration index alpha=2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.A2" indexed="false">
+         <Name>A2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Asymmetry index (background corrected) alpha=2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.B2" indexed="false">
+         <Name>B2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Background correction applied to A2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.C3" indexed="false">
+         <Name>C3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Concentration index alpha=3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.A3" indexed="false">
+         <Name>A3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Asymmetry index (background corrected) alpha=3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.B3" indexed="false">
+         <Name>B3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Background correction applied to A3]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.C4" indexed="false">
+         <Name>C4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Concentration index alpha=4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.A4" indexed="false">
+         <Name>A4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Asymmetry index (background corrected) alpha=4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.B4" indexed="false">
+         <Name>B4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Background correction applied to A4]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_MAG_GIM2DB" indexed="false">
+         <Name>ABS_MAG_GIM2DB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[GIM2D B Absolute mag, dust and K &#38; E-corrected]]></Description>
+         <Units>Vega mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_MAG_GIM2DD" indexed="false">
+         <Name>ABS_MAG_GIM2DD</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[GIM2D B Absolute Bulge mag, dust and K &#38; E-corrected]]></Description>
+         <Units>Vega mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_MAG_GIM2D" indexed="false">
+         <Name>ABS_MAG_GIM2D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[GIM2D B Absolute Disk mag, dust and K &#38; E-corrected]]></Description>
+         <Units>Vega mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.RE_BULGE_KPC" indexed="false">
+         <Name>RE_BULGE_KPC</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge Effective Radius]]></Description>
+         <Units>kpc</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.R_D_KPC" indexed="false">
+         <Name>R_D_KPC</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential Disk Scale Length]]></Description>
+         <Units>kpc</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_CSB_BULGE" indexed="false">
+         <Name>ABS_CSB_BULGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Absolute Central Surface Brightness of Bulge]]></Description>
+         <Units>Vega mag/sq arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_ESB_BULGE" indexed="false">
+         <Name>ABS_ESB_BULGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Absolute Effective Surface Brightness of Bulge]]></Description>
+         <Units>Vega mag/sq arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_HLRSB_BULG" indexed="false">
+         <Name>ABS_HLRSB_BULG</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Absolute Surface Brightness at Re]]></Description>
+         <Units>Vega mag/sq arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_CSB_DISK" indexed="false">
+         <Name>ABS_CSB_DISK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Absolute Central Surface Brightness of Disk]]></Description>
+         <Units>Vega mag/sq arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_ESB_DISK" indexed="false">
+         <Name>ABS_ESB_DISK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Absolute Effective Surface Brightness of Disk]]></Description>
+         <Units>Vega mag/sq arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ABS_HLRSB_DISK" indexed="false">
+         <Name>ABS_HLRSB_DISK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Absolute Surface Brightness at 1.678alpha]]></Description>
+         <Units>Vega mag/sq arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ANCHOR_POINT" indexed="false">
+         <Name>ANCHOR_POINT</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius at which MU_BULGE=MU_DISK]]></Description>
+         <Units>kpc</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ANCHOR_SB" indexed="false">
+         <Name>ANCHOR_SB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Surface brightness at Anchor Point]]></Description>
+         <Units>Vega mag/sq arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.ANCHOR_PARITY" indexed="false">
+         <Name>ANCHOR_PARITY</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[0=OK, 1=Inverted, 2=LSB BULGE]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.SERSIC_KAPPA" indexed="false">
+         <Name>SERSIC_KAPPA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sersic profile coefficient]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.UR_TOTAL" indexed="false">
+         <Name>UR_TOTAL</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Total (u-r) Colour]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.UR_BULGE" indexed="false">
+         <Name>UR_BULGE</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bulge (u-r) colour]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.UR_DISK" indexed="false">
+         <Name>UR_DISK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Disk (u-r) colour]]></Description>
+         <Units>AB mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.SEX_FLAG" indexed="false">
+         <Name>SEX_FLAG</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SExtractor Flag]]></Description>
+         <Units>Integer</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BBDWEIGHT" indexed="false">
+         <Name>BBDWEIGHT</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Weight from MGC4 BBD]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="mgcGalaxyStruct.BBDWEIGHTERR" indexed="false">
+         <Name>BBDWEIGHTERR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in weight from MGC4 BBD]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

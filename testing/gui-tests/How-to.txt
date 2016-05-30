@@ -1,0 +1,38 @@
+# clearwing directory
+CLEARWING_NAME=clearwing
+
+# clone clearwing repo
+hg clone 'http://wfau.metagrid.co.uk/code/clearwing' "${CLEARWING_NAME?}"
+
+cd ${CLEARWING_NAME?}/src/testing
+
+
+# The regular way to run these would be to run each file from the command line, like so:
+
+python test01-simple-query-10.py
+
+python test01-simple-query-11.py
+
+python test01-simple-query-12.py
+
+python test01-simple-query-1.py
+
+python test01-simple-query-2.py
+
+python test01-simple-query-3.py
+
+python test01-simple-query-4.py
+
+python test01-simple-query-5.py
+
+python test01-simple-query-6.py
+
+python test01-simple-query-7.py
+
+python test01-simple-query-8.py
+
+python test01-simple-query-9.py
+
+
+
+

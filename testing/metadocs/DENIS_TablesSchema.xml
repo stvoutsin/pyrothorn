@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>DENIS</Name>
+   <Description></Description>
+
+   <Table ID="denisDR3Source">
+      <Name>denisDR3Source</Name>
+      <Description><![CDATA[ Contains the parameters provided in the third incremental release of the DENIS project]]></Description>
+      <Column ID="denisDR3Source.seqNum" indexed="true">
+         <Name>seqNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Sequential number (unique object ID)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Designation" indexed="false">
+         <Name>Designation</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[DENIS name, identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Image" indexed="false">
+         <Name>Image</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[DENIS image number; the image number is incremented at each image taken during the survey. In case a source results from the merging of two consecutive overlapping images (N and N+1) in the same strip (Flag_mult set to 1), the image number corresponds to the first image N.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Strip" indexed="false">
+         <Name>Strip</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[DENIS strip number]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.RAdeg" indexed="false">
+         <Name>RAdeg</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Right ascension (J2000)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.DEdeg" indexed="false">
+         <Name>DEdeg</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Declination (J2000)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Fitmag_I" indexed="false">
+         <Name>Fitmag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in I band from PSF fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Fitmag_I" indexed="false">
+         <Name>e_Fitmag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude error in I band from PSF fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Fitmag_J" indexed="false">
+         <Name>Fitmag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in J band from PSF fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Fitmag_J" indexed="false">
+         <Name>e_Fitmag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude error in J band from PSF fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Fitmag_K" indexed="false">
+         <Name>Fitmag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in K band from PSF fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Fitmag_K" indexed="false">
+         <Name>e_Fitmag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude error in K band from PSF fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Ap55mag_I" indexed="false">
+         <Name>Ap55mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in I band from 5.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Ap55mag_I" indexed="false">
+         <Name>e_Ap55mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in I band mag from 5.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Ap55mag_J" indexed="false">
+         <Name>Ap55mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in J band from 5.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Ap55mag_J" indexed="false">
+         <Name>e_Ap55mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in J band mag from 5.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Ap55mag_K" indexed="false">
+         <Name>Ap55mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in K band from 5.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Ap55mag_K" indexed="false">
+         <Name>e_Ap55mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in K band mag from 5.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Ap45mag_I" indexed="false">
+         <Name>Ap45mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in I band from 4.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Ap45mag_I" indexed="false">
+         <Name>e_Ap45mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in I band mag from 4.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Ap45mag_J" indexed="false">
+         <Name>Ap45mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in J band from 4.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Ap45mag_J" indexed="false">
+         <Name>e_Ap45mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in J band mag from 4.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Ap45mag_K" indexed="false">
+         <Name>Ap45mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in K band from 4.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Ap45mag_K" indexed="false">
+         <Name>e_Ap45mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in K band mag from 4.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Ap35mag_I" indexed="false">
+         <Name>Ap35mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in I band from 3.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Ap35mag_I" indexed="false">
+         <Name>e_Ap35mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in I band mag from 3.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Ap35mag_J" indexed="false">
+         <Name>Ap35mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in J band from 3.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Ap35mag_J" indexed="false">
+         <Name>e_Ap35mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in J band mag from 3.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Ap35mag_K" indexed="false">
+         <Name>Ap35mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Magnitude in K band from 3.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Ap35mag_K" indexed="false">
+         <Name>e_Ap35mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error in K band mag from 3.5&quot; aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Apc35mag_I" indexed="false">
+         <Name>Apc35mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[I band Magnitude in 3.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Apc35mag_I" indexed="false">
+         <Name>e_Apc35mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[I band mag error in 3.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Apc35mag_J" indexed="false">
+         <Name>Apc35mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J band Magnitude in 3.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Apc35mag_J" indexed="false">
+         <Name>e_Apc35mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J band mag error in 3.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Apc35mag_K" indexed="false">
+         <Name>Apc35mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[K band Magnitude in 3.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Apc35mag_K" indexed="false">
+         <Name>e_Apc35mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[K band mag error in 3.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Apc25mag_I" indexed="false">
+         <Name>Apc25mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[I band Magnitude in 2.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Apc25mag_I" indexed="false">
+         <Name>e_Apc25mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[I band mag error in 2.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Apc25mag_J" indexed="false">
+         <Name>Apc25mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J band Magnitude in 2.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Apc25mag_J" indexed="false">
+         <Name>e_Apc25mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J band mag error in 2.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Apc25mag_K" indexed="false">
+         <Name>Apc25mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[K band Magnitude in 2.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Apc25mag_K" indexed="false">
+         <Name>e_Apc25mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[K band mag error in 2.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Apc15mag_I" indexed="false">
+         <Name>Apc15mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[I band Magnitude in 1.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Apc15mag_I" indexed="false">
+         <Name>e_Apc15mag_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[I band mag error in 1.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Apc15mag_J" indexed="false">
+         <Name>Apc15mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J band Magnitude in 1.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Apc15mag_J" indexed="false">
+         <Name>e_Apc15mag_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J band mag error in 1.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Apc15mag_K" indexed="false">
+         <Name>Apc15mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[K band Magnitude in 1.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.e_Apc15mag_K" indexed="false">
+         <Name>e_Apc15mag_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[K band mag error in 1.5&quot; corr. aperture]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Rmag" indexed="false">
+         <Name>Rmag</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[R magnitude of USNOA2.0 nearest match]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Bmag" indexed="false">
+         <Name>Bmag</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[B magnitude of USNOA2.0 nearest match]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Qual_I" indexed="false">
+         <Name>Qual_I</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Quality flag for I band [0,100]]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Qual_J" indexed="false">
+         <Name>Qual_J</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Quality flag for J band [0,100]]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Qual_K" indexed="false">
+         <Name>Qual_K</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Quality flag for K band [0,100]]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Correl_I" indexed="false">
+         <Name>Correl_I</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Correlation to PSF for I band [0,100]]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Correl_J" indexed="false">
+         <Name>Correl_J</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Correlation to PSF for J band [0,100]]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Correl_K" indexed="false">
+         <Name>Correl_K</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Correlation to PSF for K band [0,100]]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Mcor_I" indexed="false">
+         <Name>Mcor_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Mean correlation to PSF in I band [0,1]]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Mcor_J" indexed="false">
+         <Name>Mcor_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Mean correlation to PSF in J band [0,1]]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Mcor_K" indexed="false">
+         <Name>Mcor_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Mean correlation to PSF in K band [0,1]]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Pix_x_I" indexed="false">
+         <Name>Pix_x_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Pixel x position in I band]]></Description>
+         <Units>pix</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Pix_y_I" indexed="false">
+         <Name>Pix_y_I</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Pixel y position in I band]]></Description>
+         <Units>pix</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Pix_x_J" indexed="false">
+         <Name>Pix_x_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Pixel x position in J band]]></Description>
+         <Units>pix</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Pix_y_J" indexed="false">
+         <Name>Pix_y_J</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Pixel y position in J band]]></Description>
+         <Units>pix</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Pix_x_K" indexed="false">
+         <Name>Pix_x_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Pixel x position in K band]]></Description>
+         <Units>pix</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Pix_y_K" indexed="false">
+         <Name>Pix_y_K</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Pixel y position in K band]]></Description>
+         <Units>pix</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.RAusno" indexed="false">
+         <Name>RAusno</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Right Ascension of USNOA2.0 nearest match]]></Description>
+         <Units>deg</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.DEusno" indexed="false">
+         <Name>DEusno</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Declination of USNOA2.0 nearest match]]></Description>
+         <Units>deg</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Epoch" indexed="false">
+         <Name>Epoch</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Epoch of USNOA2.0 nearest match]]></Description>
+         <Units>yr</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Dist" indexed="false">
+         <Name>Dist</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Distance to USNOA2.0 nearest match]]></Description>
+         <Units>mas</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Julian" indexed="false">
+         <Name>Julian</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Julian day for DENIS observation]]></Description>
+         <Units>JD</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Flag_I" indexed="false">
+         <Name>Flag_I</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Image and source flag in I band This flag is the concatenation of image and source flags, in hexadecimal format. For the image flag, the first two digits contain: Bit 0 - clouds during observation; Bit 1 - electronic Read-Out problem; Bit 2 - internal temperature problem; Bit 3 - very bright star; Bit 4 - bright star; Bit 5 - stray light; Bit 6 - unknown problem. For the source flag, the last two digits contain: Bit 0 - source might be a dust on mirror; Bit 1 - source is a ghost detection of a bright star; Bit 2 - source is saturated; Bit 3 - source is multiple detect.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Flag_J" indexed="false">
+         <Name>Flag_J</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Image and source flag in J band This flag is the concatenation of image and source flags, in hexadecimal format. For the image flag, the first two digits contain: Bit 0 - clouds during observation; Bit 1 - electronic Read-Out problem; Bit 2 - internal temperature problem; Bit 3 - very bright star; Bit 4 - bright star; Bit 5 - stray light; Bit 6 - unknown problem. For the source flag, the last two digits contain: Bit 0 - source might be a dust on mirror; Bit 1 - source is a ghost detection of a bright star; Bit 2 - source is saturated; Bit 3 - source is multiple detect.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Flag_K" indexed="false">
+         <Name>Flag_K</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Image and source flag in K band This flag is the concatenation of image and source flags, in hexadecimal format. For the image flag, the first two digits contain: Bit 0 - clouds during observation; Bit 1 - electronic Read-Out problem; Bit 2 - internal temperature problem; Bit 3 - very bright star; Bit 4 - bright star; Bit 5 - stray light; Bit 6 - unknown problem. For the source flag, the last two digits contain: Bit 0 - source might be a dust on mirror; Bit 1 - source is a ghost detection of a bright star; Bit 2 - source is saturated; Bit 3 - source is multiple detect.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="denisDR3Source.Flag_mult" indexed="false">
+         <Name>Flag_mult</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Multiplicity flag; if set to 1, this flag indicates that the source was detected in two consecutive images, and that the 2 measurements have been combined.]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>NVSS</Name>
+   <Description></Description>
+
+   <Table ID="nvssSource">
+      <Name>nvssSource</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the NVSS Catalog: http://cdsweb.u-strasbg.fr/cgi-bin/Cat?VIII/6]]></Description>
+      <Column ID="nvssSource.seqNo" indexed="false">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 Celestial Right Ascension]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 Celestial Declination]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.field" indexed="false">
+         <Name>field</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of the original survey image field from which the component was derived.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_FIELD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.xPos" indexed="false">
+         <Name>xPos</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[X position (RA direction) of the radio source]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">POS_CCD_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.yPos" indexed="false">
+         <Name>yPos</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Y position (Dec direction) of the radio source]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">POS_CCD_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.NVSS" indexed="false">
+         <Name>NVSS</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Source name]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.e_RAs" indexed="false">
+         <Name>e_RAs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean error on RA]]></Description>
+         <Units>s</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.e_DEcs" indexed="false">
+         <Name>e_DEcs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean error on Dec]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.S14" indexed="false">
+         <Name>S14</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Integrated 1.4GHz flux density of radio source]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">PHOT_FLUX_RADIO_1.4G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.e_S14" indexed="false">
+         <Name>e_S14</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean error on S14]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.l_MajAxis" indexed="false">
+         <Name>l_MajAxis</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Limit flag on majAxis]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_LIMIT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.majAxis" indexed="false">
+         <Name>majAxis</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Fitted (deconvolved) major axis of radio source]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MAJ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.l_MinAxis" indexed="false">
+         <Name>l_MinAxis</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Limit flag on minAxis]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_LIMIT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.minAxis" indexed="false">
+         <Name>minAxis</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Fitted (deconvolved) minor axis of radio source]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.PA" indexed="false">
+         <Name>PA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[[-90, 90] Position angle of fitted major axis]]></Description>
+         <Units>degress</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.e_majAxis" indexed="false">
+         <Name>e_majAxis</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean error on majAxis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.e_minAxis" indexed="false">
+         <Name>e_minAxis</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean error on minAxis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.e_PA" indexed="false">
+         <Name>e_PA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean error on PA]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.f_resFlux" indexed="false">
+         <Name>f_resFlux</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[[PS* ] Residual Code]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.resFlux" indexed="false">
+         <Name>resFlux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Peak residual flux, in mJy/beam]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">PHOT_FLUX_RADIO_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.polFlux" indexed="false">
+         <Name>polFlux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Integrated linearly polarized flux density]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">PHOT_FLUX_LINEAR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.polPA" indexed="false">
+         <Name>polPA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[[-90,90] The position angle of polFlux]]></Description>
+         <Units>degress</Units>
+         <UCD version="1">POS_POS-EQ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.e_polFlux" indexed="false">
+         <Name>e_polFlux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean error on polFlux]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.e_polPA" indexed="false">
+         <Name>e_polPA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean error on polPA]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="nvssSource.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

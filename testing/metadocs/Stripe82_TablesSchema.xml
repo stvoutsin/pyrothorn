@@ -1,0 +1,3582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>Stripe82</Name>
+   <Description></Description>
+
+   <Table ID="PhotoObjAll">
+      <Name>PhotoObjAll</Name>
+      <Description><![CDATA[ Contains a record describing the attributes of each photometric objec]]></Description>
+      <Column ID="PhotoObjAll.objID" indexed="false">
+         <Name>objID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique SDSS identifier composed from [skyVersion,rerun,run,camcol,field,obj].]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.skyVersion" indexed="false">
+         <Name>skyVersion</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[0 = OPDB target, 1 = OPDB best]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.run" indexed="false">
+         <Name>run</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Run number]]></Description>
+         <Units> </Units>
+         <UCD version="1">OBS_RUN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rerun" indexed="false">
+         <Name>rerun</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Rerun number]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.camcol" indexed="false">
+         <Name>camcol</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Camera column]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_ID</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.field" indexed="false">
+         <Name>field</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Field number]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_FIELD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.obj" indexed="false">
+         <Name>obj</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The object id within a field. Usually changes between reruns of the same field.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mode" indexed="false">
+         <Name>mode</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[1: primary, 2: secondary, 3: family object.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.nChild" indexed="false">
+         <Name>nChild</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of children if this is a composite object that has been deblended. BRIGHT (in a flags sense) objects also have nchild == 1, the non-BRIGHT sibling.]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.type" indexed="false">
+         <Name>type</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Morphological type classification of the object.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.probPSF" indexed="false">
+         <Name>probPSF</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Probability that the object is a star. Currently 0 if type == 3 (galaxy), 1 if type == 6 (star).]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_PROBABILITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.insideMask" indexed="false">
+         <Name>insideMask</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flag to indicate whether object is inside a mask and why]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.flags" indexed="false">
+         <Name>flags</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Photo Object Attribute Flags]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowc" indexed="false">
+         <Name>rowc</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center position (r' coordinates)]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowcErr" indexed="false">
+         <Name>rowcErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center position error (r' coordinates)]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colc" indexed="false">
+         <Name>colc</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center position (r' coordinates)]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colcErr" indexed="false">
+         <Name>colcErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center position error (r' coordinates)]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowv" indexed="false">
+         <Name>rowv</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row-component of object's velocity.]]></Description>
+         <Units>deg/day</Units>
+         <UCD version="1">POS_ANG_VEL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowvErr" indexed="false">
+         <Name>rowvErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row-component of object's velocity error]]></Description>
+         <Units>deg/day</Units>
+         <UCD version="1">POS_ANG_VEL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colv" indexed="false">
+         <Name>colv</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column-component of object's velocity.]]></Description>
+         <Units>deg/day</Units>
+         <UCD version="1">POS_ANG_VEL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colvErr" indexed="false">
+         <Name>colvErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column-component of object's velocity error]]></Description>
+         <Units>deg/day</Units>
+         <UCD version="1">POS_ANG_VEL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowc_u" indexed="false">
+         <Name>rowc_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowc_g" indexed="false">
+         <Name>rowc_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowc_r" indexed="false">
+         <Name>rowc_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowc_i" indexed="false">
+         <Name>rowc_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowc_z" indexed="false">
+         <Name>rowc_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowcErr_u" indexed="false">
+         <Name>rowcErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center error]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowcErr_g" indexed="false">
+         <Name>rowcErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center error]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowcErr_r" indexed="false">
+         <Name>rowcErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center error]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowcErr_i" indexed="false">
+         <Name>rowcErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center error]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rowcErr_z" indexed="false">
+         <Name>rowcErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Row center error]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_Y_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colc_u" indexed="false">
+         <Name>colc_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colc_g" indexed="false">
+         <Name>colc_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colc_r" indexed="false">
+         <Name>colc_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colc_i" indexed="false">
+         <Name>colc_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colc_z" indexed="false">
+         <Name>colc_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colcErr_u" indexed="false">
+         <Name>colcErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center error]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colcErr_g" indexed="false">
+         <Name>colcErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center error]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colcErr_r" indexed="false">
+         <Name>colcErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center error]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colcErr_i" indexed="false">
+         <Name>colcErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center error]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.colcErr_z" indexed="false">
+         <Name>colcErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Column center error]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">POS_CCD_X_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.sky_u" indexed="false">
+         <Name>sky_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sky flux at the center of object (allowing for siblings if blended).]]></Description>
+         <Units>maggies/arcsec^2</Units>
+         <UCD version="1">INST_SKY_LEVEL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.sky_g" indexed="false">
+         <Name>sky_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sky flux at the center of object (allowing for siblings if blended).]]></Description>
+         <Units>maggies/arcsec^2</Units>
+         <UCD version="1">INST_SKY_LEVEL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.sky_r" indexed="false">
+         <Name>sky_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sky flux at the center of object (allowing for siblings if blended).]]></Description>
+         <Units>maggies/arcsec^2</Units>
+         <UCD version="1">INST_SKY_LEVEL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.sky_i" indexed="false">
+         <Name>sky_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sky flux at the center of object (allowing for siblings if blended).]]></Description>
+         <Units>maggies/arcsec^2</Units>
+         <UCD version="1">INST_SKY_LEVEL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.sky_z" indexed="false">
+         <Name>sky_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sky flux at the center of object (allowing for siblings if blended).]]></Description>
+         <Units>maggies/arcsec^2</Units>
+         <UCD version="1">INST_SKY_LEVEL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.skyErr_u" indexed="false">
+         <Name>skyErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sky flux error]]></Description>
+         <Units>maggies/arcsec^2</Units>
+         <UCD version="1">INST_SKY_LEVEL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.skyErr_g" indexed="false">
+         <Name>skyErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sky flux error]]></Description>
+         <Units>maggies/arcsec^2</Units>
+         <UCD version="1">INST_SKY_LEVEL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.skyErr_r" indexed="false">
+         <Name>skyErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sky flux error]]></Description>
+         <Units>maggies/arcsec^2</Units>
+         <UCD version="1">INST_SKY_LEVEL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.skyErr_i" indexed="false">
+         <Name>skyErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sky flux error]]></Description>
+         <Units>maggies/arcsec^2</Units>
+         <UCD version="1">INST_SKY_LEVEL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.skyErr_z" indexed="false">
+         <Name>skyErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Sky flux error]]></Description>
+         <Units>maggies/arcsec^2</Units>
+         <UCD version="1">INST_SKY_LEVEL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.psfMag_u" indexed="false">
+         <Name>psfMag_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.psfMag_g" indexed="false">
+         <Name>psfMag_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.psfMag_r" indexed="false">
+         <Name>psfMag_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.psfMag_i" indexed="false">
+         <Name>psfMag_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.psfMag_z" indexed="false">
+         <Name>psfMag_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.psfMagErr_u" indexed="false">
+         <Name>psfMagErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF flux error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.psfMagErr_g" indexed="false">
+         <Name>psfMagErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF flux error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.psfMagErr_r" indexed="false">
+         <Name>psfMagErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF flux error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.psfMagErr_i" indexed="false">
+         <Name>psfMagErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF flux error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.psfMagErr_z" indexed="false">
+         <Name>psfMagErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF flux error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fiberMag_u" indexed="false">
+         <Name>fiberMag_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in 3 arcsec diameter fiber radius]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fiberMag_g" indexed="false">
+         <Name>fiberMag_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in 3 arcsec diameter fiber radius]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fiberMag_r" indexed="false">
+         <Name>fiberMag_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in 3 arcsec diameter fiber radius]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fiberMag_i" indexed="false">
+         <Name>fiberMag_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in 3 arcsec diameter fiber radius]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fiberMag_z" indexed="false">
+         <Name>fiberMag_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in 3 arcsec diameter fiber radius]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fiberMagErr_u" indexed="false">
+         <Name>fiberMagErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in 3 arcsec diameter fiber radius error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fiberMagErr_g" indexed="false">
+         <Name>fiberMagErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in 3 arcsec diameter fiber radius error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fiberMagErr_r" indexed="false">
+         <Name>fiberMagErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in 3 arcsec diameter fiber radius error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fiberMagErr_i" indexed="false">
+         <Name>fiberMagErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in 3 arcsec diameter fiber radius error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fiberMagErr_z" indexed="false">
+         <Name>fiberMagErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in 3 arcsec diameter fiber radius error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroMag_u" indexed="false">
+         <Name>petroMag_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroMag_g" indexed="false">
+         <Name>petroMag_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroMag_r" indexed="false">
+         <Name>petroMag_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroMag_i" indexed="false">
+         <Name>petroMag_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroMag_z" indexed="false">
+         <Name>petroMag_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroMagErr_u" indexed="false">
+         <Name>petroMagErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian flux error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroMagErr_g" indexed="false">
+         <Name>petroMagErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian flux error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroMagErr_r" indexed="false">
+         <Name>petroMagErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian flux error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroMagErr_i" indexed="false">
+         <Name>petroMagErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian flux error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroMagErr_z" indexed="false">
+         <Name>petroMagErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian flux error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroRad_u" indexed="false">
+         <Name>petroRad_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroRad_g" indexed="false">
+         <Name>petroRad_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroRad_r" indexed="false">
+         <Name>petroRad_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroRad_i" indexed="false">
+         <Name>petroRad_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroRad_z" indexed="false">
+         <Name>petroRad_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroRadErr_u" indexed="false">
+         <Name>petroRadErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroRadErr_g" indexed="false">
+         <Name>petroRadErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroRadErr_r" indexed="false">
+         <Name>petroRadErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroRadErr_i" indexed="false">
+         <Name>petroRadErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroRadErr_z" indexed="false">
+         <Name>petroRadErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Petrosian radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR50_u" indexed="false">
+         <Name>petroR50_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius containing 50% of Petrosian flux]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR50_g" indexed="false">
+         <Name>petroR50_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius containing 50% of Petrosian flux]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR50_r" indexed="false">
+         <Name>petroR50_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius containing 50% of Petrosian flux]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR50_i" indexed="false">
+         <Name>petroR50_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius containing 50% of Petrosian flux]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR50_z" indexed="false">
+         <Name>petroR50_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius containing 50% of Petrosian flux]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR50Err_u" indexed="false">
+         <Name>petroR50Err_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in radius with 50% of Petrosian flux error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR50Err_g" indexed="false">
+         <Name>petroR50Err_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in radius with 50% of Petrosian flux error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR50Err_r" indexed="false">
+         <Name>petroR50Err_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in radius with 50% of Petrosian flux error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR50Err_i" indexed="false">
+         <Name>petroR50Err_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in radius with 50% of Petrosian flux error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR50Err_z" indexed="false">
+         <Name>petroR50Err_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in radius with 50% of Petrosian flux error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR90_u" indexed="false">
+         <Name>petroR90_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius containing 90% of Petrosian flux]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR90_g" indexed="false">
+         <Name>petroR90_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius containing 90% of Petrosian flux]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR90_r" indexed="false">
+         <Name>petroR90_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius containing 90% of Petrosian flux]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR90_i" indexed="false">
+         <Name>petroR90_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius containing 90% of Petrosian flux]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR90_z" indexed="false">
+         <Name>petroR90_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Radius containing 90% of Petrosian flux]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR90Err_u" indexed="false">
+         <Name>petroR90Err_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in radius with 90% of Petrosian flux error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR90Err_g" indexed="false">
+         <Name>petroR90Err_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in radius with 90% of Petrosian flux error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR90Err_r" indexed="false">
+         <Name>petroR90Err_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in radius with 90% of Petrosian flux error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR90Err_i" indexed="false">
+         <Name>petroR90Err_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in radius with 90% of Petrosian flux error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.petroR90Err_z" indexed="false">
+         <Name>petroR90Err_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in radius with 90% of Petrosian flux error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.q_u" indexed="false">
+         <Name>q_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes Q parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.q_g" indexed="false">
+         <Name>q_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes Q parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.q_r" indexed="false">
+         <Name>q_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes Q parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.q_i" indexed="false">
+         <Name>q_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes Q parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.q_z" indexed="false">
+         <Name>q_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes Q parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.qErr_u" indexed="false">
+         <Name>qErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes Q parameter error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.qErr_g" indexed="false">
+         <Name>qErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes Q parameter error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.qErr_r" indexed="false">
+         <Name>qErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes Q parameter error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.qErr_i" indexed="false">
+         <Name>qErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes Q parameter error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.qErr_z" indexed="false">
+         <Name>qErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes Q parameter error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.u_u" indexed="false">
+         <Name>u_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes U parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.u_g" indexed="false">
+         <Name>u_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes U parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.u_r" indexed="false">
+         <Name>u_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes U parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.u_i" indexed="false">
+         <Name>u_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes U parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.u_z" indexed="false">
+         <Name>u_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes U parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.uErr_u" indexed="false">
+         <Name>uErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes U parameter error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.uErr_g" indexed="false">
+         <Name>uErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes U parameter error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.uErr_r" indexed="false">
+         <Name>uErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes U parameter error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.uErr_i" indexed="false">
+         <Name>uErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes U parameter error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.uErr_z" indexed="false">
+         <Name>uErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stokes U parameter error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1_u" indexed="false">
+         <Name>mE1_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E1 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1_g" indexed="false">
+         <Name>mE1_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E1 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1_r" indexed="false">
+         <Name>mE1_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E1 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1_i" indexed="false">
+         <Name>mE1_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E1 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1_z" indexed="false">
+         <Name>mE1_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E1 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2_u" indexed="false">
+         <Name>mE2_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2_g" indexed="false">
+         <Name>mE2_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2_r" indexed="false">
+         <Name>mE2_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2_i" indexed="false">
+         <Name>mE2_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2_z" indexed="false">
+         <Name>mE2_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1E1Err_u" indexed="false">
+         <Name>mE1E1Err_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E1/E1 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1E1Err_g" indexed="false">
+         <Name>mE1E1Err_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E1/E1 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1E1Err_r" indexed="false">
+         <Name>mE1E1Err_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E1/E1 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1E1Err_i" indexed="false">
+         <Name>mE1E1Err_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E1/E1 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1E1Err_z" indexed="false">
+         <Name>mE1E1Err_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E1/E1 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1E2Err_u" indexed="false">
+         <Name>mE1E2Err_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E1/E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1E2Err_g" indexed="false">
+         <Name>mE1E2Err_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E1/E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1E2Err_r" indexed="false">
+         <Name>mE1E2Err_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E1/E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1E2Err_i" indexed="false">
+         <Name>mE1E2Err_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E1/E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1E2Err_z" indexed="false">
+         <Name>mE1E2Err_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E1/E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2E2Err_u" indexed="false">
+         <Name>mE2E2Err_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E2/E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2E2Err_g" indexed="false">
+         <Name>mE2E2Err_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E2/E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2E2Err_r" indexed="false">
+         <Name>mE2E2Err_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E2/E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2E2Err_i" indexed="false">
+         <Name>mE2E2Err_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E2/E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2E2Err_z" indexed="false">
+         <Name>mE2E2Err_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Covariance in E2/E2 shape measure]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCc_u" indexed="false">
+         <Name>mRrCc_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive (&lt;r^2&gt; + &lt;c^2&gt;)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCc_g" indexed="false">
+         <Name>mRrCc_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive (&lt;r^2&gt; + &lt;c^2&gt;)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCc_r" indexed="false">
+         <Name>mRrCc_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive (&lt;r^2&gt; + &lt;c^2&gt;)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCc_i" indexed="false">
+         <Name>mRrCc_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive (&lt;r^2&gt; + &lt;c^2&gt;)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCc_z" indexed="false">
+         <Name>mRrCc_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive (&lt;r^2&gt; + &lt;c^2&gt;)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCcErr_u" indexed="false">
+         <Name>mRrCcErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in adaptive (&lt;r^2&gt; + &lt;c^2&gt;)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCcErr_g" indexed="false">
+         <Name>mRrCcErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in adaptive (&lt;r^2&gt; + &lt;c^2&gt;)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCcErr_r" indexed="false">
+         <Name>mRrCcErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in adaptive (&lt;r^2&gt; + &lt;c^2&gt;)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCcErr_i" indexed="false">
+         <Name>mRrCcErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in adaptive (&lt;r^2&gt; + &lt;c^2&gt;)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCcErr_z" indexed="false">
+         <Name>mRrCcErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in adaptive (&lt;r^2&gt; + &lt;c^2&gt;)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mCr4_u" indexed="false">
+         <Name>mCr4_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive fourth moment of object]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mCr4_g" indexed="false">
+         <Name>mCr4_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive fourth moment of object]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mCr4_r" indexed="false">
+         <Name>mCr4_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive fourth moment of object]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mCr4_i" indexed="false">
+         <Name>mCr4_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive fourth moment of object]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mCr4_z" indexed="false">
+         <Name>mCr4_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive fourth moment of object]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1PSF_u" indexed="false">
+         <Name>mE1PSF_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E1 for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1PSF_g" indexed="false">
+         <Name>mE1PSF_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E1 for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1PSF_r" indexed="false">
+         <Name>mE1PSF_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E1 for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1PSF_i" indexed="false">
+         <Name>mE1PSF_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E1 for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE1PSF_z" indexed="false">
+         <Name>mE1PSF_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E1 for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2PSF_u" indexed="false">
+         <Name>mE2PSF_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E2 for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2PSF_g" indexed="false">
+         <Name>mE2PSF_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E2 for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2PSF_r" indexed="false">
+         <Name>mE2PSF_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E2 for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2PSF_i" indexed="false">
+         <Name>mE2PSF_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E2 for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mE2PSF_z" indexed="false">
+         <Name>mE2PSF_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive E2 for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCcPSF_u" indexed="false">
+         <Name>mRrCcPSF_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive (&lt;r^2&gt; + &lt;c^2&gt;) for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCcPSF_g" indexed="false">
+         <Name>mRrCcPSF_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive (&lt;r^2&gt; + &lt;c^2&gt;) for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCcPSF_r" indexed="false">
+         <Name>mRrCcPSF_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive (&lt;r^2&gt; + &lt;c^2&gt;) for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCcPSF_i" indexed="false">
+         <Name>mRrCcPSF_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive (&lt;r^2&gt; + &lt;c^2&gt;) for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mRrCcPSF_z" indexed="false">
+         <Name>mRrCcPSF_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive (&lt;r^2&gt; + &lt;c^2&gt;) for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mCr4PSF_u" indexed="false">
+         <Name>mCr4PSF_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive fourth moment for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mCr4PSF_g" indexed="false">
+         <Name>mCr4PSF_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive fourth moment for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mCr4PSF_r" indexed="false">
+         <Name>mCr4PSF_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive fourth moment for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mCr4PSF_i" indexed="false">
+         <Name>mCr4PSF_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive fourth moment for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.mCr4PSF_z" indexed="false">
+         <Name>mCr4PSF_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Adaptive fourth moment for PSF]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowc_u" indexed="false">
+         <Name>isoRowc_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal row centroid]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowc_g" indexed="false">
+         <Name>isoRowc_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal row centroid]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowc_r" indexed="false">
+         <Name>isoRowc_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal row centroid]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowc_i" indexed="false">
+         <Name>isoRowc_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal row centroid]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowc_z" indexed="false">
+         <Name>isoRowc_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal row centroid]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowcErr_u" indexed="false">
+         <Name>isoRowcErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal row centroid error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowcErr_g" indexed="false">
+         <Name>isoRowcErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal row centroid error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowcErr_r" indexed="false">
+         <Name>isoRowcErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal row centroid error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowcErr_i" indexed="false">
+         <Name>isoRowcErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal row centroid error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowcErr_z" indexed="false">
+         <Name>isoRowcErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal row centroid error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowcGrad_u" indexed="false">
+         <Name>isoRowcGrad_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in row centroid with isophote]]></Description>
+         <Units>pix/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowcGrad_g" indexed="false">
+         <Name>isoRowcGrad_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in row centroid with isophote]]></Description>
+         <Units>pix/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowcGrad_r" indexed="false">
+         <Name>isoRowcGrad_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in row centroid with isophote]]></Description>
+         <Units>pix/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowcGrad_i" indexed="false">
+         <Name>isoRowcGrad_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in row centroid with isophote]]></Description>
+         <Units>pix/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoRowcGrad_z" indexed="false">
+         <Name>isoRowcGrad_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in row centroid with isophote]]></Description>
+         <Units>pix/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColc_u" indexed="false">
+         <Name>isoColc_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal column centroid]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColc_g" indexed="false">
+         <Name>isoColc_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal column centroid]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColc_r" indexed="false">
+         <Name>isoColc_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal column centroid]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColc_i" indexed="false">
+         <Name>isoColc_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal column centroid]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColc_z" indexed="false">
+         <Name>isoColc_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal column centroid]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColcErr_u" indexed="false">
+         <Name>isoColcErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal column centroid error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColcErr_g" indexed="false">
+         <Name>isoColcErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal column centroid error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColcErr_r" indexed="false">
+         <Name>isoColcErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal column centroid error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColcErr_i" indexed="false">
+         <Name>isoColcErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal column centroid error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColcErr_z" indexed="false">
+         <Name>isoColcErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal column centroid error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>pix</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColcGrad_u" indexed="false">
+         <Name>isoColcGrad_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in column centroid with isophote]]></Description>
+         <Units>pix/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColcGrad_g" indexed="false">
+         <Name>isoColcGrad_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in column centroid with isophote]]></Description>
+         <Units>pix/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColcGrad_r" indexed="false">
+         <Name>isoColcGrad_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in column centroid with isophote]]></Description>
+         <Units>pix/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColcGrad_i" indexed="false">
+         <Name>isoColcGrad_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in column centroid with isophote]]></Description>
+         <Units>pix/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoColcGrad_z" indexed="false">
+         <Name>isoColcGrad_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in column centroid with isophote]]></Description>
+         <Units>pix/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoA_u" indexed="false">
+         <Name>isoA_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal major axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoA_g" indexed="false">
+         <Name>isoA_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal major axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoA_r" indexed="false">
+         <Name>isoA_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal major axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoA_i" indexed="false">
+         <Name>isoA_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal major axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoA_z" indexed="false">
+         <Name>isoA_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal major axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoAErr_u" indexed="false">
+         <Name>isoAErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal major axis error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoAErr_g" indexed="false">
+         <Name>isoAErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal major axis error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoAErr_r" indexed="false">
+         <Name>isoAErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal major axis error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoAErr_i" indexed="false">
+         <Name>isoAErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal major axis error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoAErr_z" indexed="false">
+         <Name>isoAErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal major axis error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoB_u" indexed="false">
+         <Name>isoB_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal minor axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_SMIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoB_g" indexed="false">
+         <Name>isoB_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal minor axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_SMIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoB_r" indexed="false">
+         <Name>isoB_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal minor axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_SMIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoB_i" indexed="false">
+         <Name>isoB_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal minor axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_SMIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoB_z" indexed="false">
+         <Name>isoB_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal minor axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_SMIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoBErr_u" indexed="false">
+         <Name>isoBErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal minor axis error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_SMIN_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoBErr_g" indexed="false">
+         <Name>isoBErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal minor axis error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_SMIN_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoBErr_r" indexed="false">
+         <Name>isoBErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal minor axis error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_SMIN_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoBErr_i" indexed="false">
+         <Name>isoBErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal minor axis error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_SMIN_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoBErr_z" indexed="false">
+         <Name>isoBErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal minor axis error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_SMIN_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoAGrad_u" indexed="false">
+         <Name>isoAGrad_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in major axis at the isophote]]></Description>
+         <Units>arcsec/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoAGrad_g" indexed="false">
+         <Name>isoAGrad_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in major axis at the isophote]]></Description>
+         <Units>arcsec/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoAGrad_r" indexed="false">
+         <Name>isoAGrad_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in major axis at the isophote]]></Description>
+         <Units>arcsec/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoAGrad_i" indexed="false">
+         <Name>isoAGrad_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in major axis at the isophote]]></Description>
+         <Units>arcsec/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoAGrad_z" indexed="false">
+         <Name>isoAGrad_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in major axis at the isophote]]></Description>
+         <Units>arcsec/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoBGrad_u" indexed="false">
+         <Name>isoBGrad_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in minor axis at the isophote]]></Description>
+         <Units>arcsec/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoBGrad_g" indexed="false">
+         <Name>isoBGrad_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in minor axis at the isophote]]></Description>
+         <Units>arcsec/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoBGrad_r" indexed="false">
+         <Name>isoBGrad_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in minor axis at the isophote]]></Description>
+         <Units>arcsec/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoBGrad_i" indexed="false">
+         <Name>isoBGrad_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in minor axis at the isophote]]></Description>
+         <Units>arcsec/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoBGrad_z" indexed="false">
+         <Name>isoBGrad_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in minor axis at the isophote]]></Description>
+         <Units>arcsec/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhi_u" indexed="false">
+         <Name>isoPhi_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhi_g" indexed="false">
+         <Name>isoPhi_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhi_r" indexed="false">
+         <Name>isoPhi_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhi_i" indexed="false">
+         <Name>isoPhi_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhi_z" indexed="false">
+         <Name>isoPhi_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhiErr_u" indexed="false">
+         <Name>isoPhiErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhiErr_g" indexed="false">
+         <Name>isoPhiErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhiErr_r" indexed="false">
+         <Name>isoPhiErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhiErr_i" indexed="false">
+         <Name>isoPhiErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhiErr_z" indexed="false">
+         <Name>isoPhiErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhiGrad_u" indexed="false">
+         <Name>isoPhiGrad_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in positional angle with isophote]]></Description>
+         <Units>deg/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhiGrad_g" indexed="false">
+         <Name>isoPhiGrad_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in positional angle with isophote]]></Description>
+         <Units>deg/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhiGrad_r" indexed="false">
+         <Name>isoPhiGrad_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in positional angle with isophote]]></Description>
+         <Units>deg/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhiGrad_i" indexed="false">
+         <Name>isoPhiGrad_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in positional angle with isophote]]></Description>
+         <Units>deg/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.isoPhiGrad_z" indexed="false">
+         <Name>isoPhiGrad_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient in positional angle with isophote]]></Description>
+         <Units>deg/(mag/arcsec^2)</Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVRad_u" indexed="false">
+         <Name>deVRad_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit scale radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVRad_g" indexed="false">
+         <Name>deVRad_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit scale radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVRad_r" indexed="false">
+         <Name>deVRad_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit scale radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVRad_i" indexed="false">
+         <Name>deVRad_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit scale radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVRad_z" indexed="false">
+         <Name>deVRad_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit scale radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVRadErr_u" indexed="false">
+         <Name>deVRadErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit scale radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVRadErr_g" indexed="false">
+         <Name>deVRadErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit scale radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVRadErr_r" indexed="false">
+         <Name>deVRadErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit scale radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVRadErr_i" indexed="false">
+         <Name>deVRadErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit scale radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVRadErr_z" indexed="false">
+         <Name>deVRadErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit scale radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVAB_u" indexed="false">
+         <Name>deVAB_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVAB_g" indexed="false">
+         <Name>deVAB_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVAB_r" indexed="false">
+         <Name>deVAB_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVAB_i" indexed="false">
+         <Name>deVAB_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVAB_z" indexed="false">
+         <Name>deVAB_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVABErr_u" indexed="false">
+         <Name>deVABErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit a/b error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVABErr_g" indexed="false">
+         <Name>deVABErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit a/b error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVABErr_r" indexed="false">
+         <Name>deVABErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit a/b error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVABErr_i" indexed="false">
+         <Name>deVABErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit a/b error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVABErr_z" indexed="false">
+         <Name>deVABErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit a/b error]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVPhi_u" indexed="false">
+         <Name>deVPhi_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVPhi_g" indexed="false">
+         <Name>deVPhi_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVPhi_r" indexed="false">
+         <Name>deVPhi_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVPhi_i" indexed="false">
+         <Name>deVPhi_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVPhi_z" indexed="false">
+         <Name>deVPhi_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVPhiErr_u" indexed="false">
+         <Name>deVPhiErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVPhiErr_g" indexed="false">
+         <Name>deVPhiErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVPhiErr_r" indexed="false">
+         <Name>deVPhiErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVPhiErr_i" indexed="false">
+         <Name>deVPhiErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVPhiErr_z" indexed="false">
+         <Name>deVPhiErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVMag_u" indexed="false">
+         <Name>deVMag_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs magnitude fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVMag_g" indexed="false">
+         <Name>deVMag_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs magnitude fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVMag_r" indexed="false">
+         <Name>deVMag_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs magnitude fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVMag_i" indexed="false">
+         <Name>deVMag_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs magnitude fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVMag_z" indexed="false">
+         <Name>deVMag_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs magnitude fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVMagErr_u" indexed="false">
+         <Name>deVMagErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs magnitude fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U_ERROR_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVMagErr_g" indexed="false">
+         <Name>deVMagErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs magnitude fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G_ERROR_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVMagErr_r" indexed="false">
+         <Name>deVMagErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs magnitude fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R_ERROR_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVMagErr_i" indexed="false">
+         <Name>deVMagErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs magnitude fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I_ERROR_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.deVMagErr_z" indexed="false">
+         <Name>deVMagErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs magnitude fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z_ERROR_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expRad_u" indexed="false">
+         <Name>expRad_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponetial fit scale radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expRad_g" indexed="false">
+         <Name>expRad_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponetial fit scale radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expRad_r" indexed="false">
+         <Name>expRad_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponetial fit scale radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expRad_i" indexed="false">
+         <Name>expRad_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponetial fit scale radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expRad_z" indexed="false">
+         <Name>expRad_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponetial fit scale radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expRadErr_u" indexed="false">
+         <Name>expRadErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponetial fit scale radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expRadErr_g" indexed="false">
+         <Name>expRadErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponetial fit scale radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expRadErr_r" indexed="false">
+         <Name>expRadErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponetial fit scale radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expRadErr_i" indexed="false">
+         <Name>expRadErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponetial fit scale radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expRadErr_z" indexed="false">
+         <Name>expRadErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponetial fit scale radius error]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expAB_u" indexed="false">
+         <Name>expAB_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expAB_g" indexed="false">
+         <Name>expAB_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expAB_r" indexed="false">
+         <Name>expAB_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expAB_i" indexed="false">
+         <Name>expAB_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expAB_z" indexed="false">
+         <Name>expAB_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expABErr_u" indexed="false">
+         <Name>expABErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expABErr_g" indexed="false">
+         <Name>expABErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expABErr_r" indexed="false">
+         <Name>expABErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expABErr_i" indexed="false">
+         <Name>expABErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expABErr_z" indexed="false">
+         <Name>expABErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit a/b]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expPhi_u" indexed="false">
+         <Name>expPhi_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expPhi_g" indexed="false">
+         <Name>expPhi_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expPhi_r" indexed="false">
+         <Name>expPhi_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expPhi_i" indexed="false">
+         <Name>expPhi_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expPhi_z" indexed="false">
+         <Name>expPhi_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit position angle (+N thru E)]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expPhiErr_u" indexed="false">
+         <Name>expPhiErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expPhiErr_g" indexed="false">
+         <Name>expPhiErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expPhiErr_r" indexed="false">
+         <Name>expPhiErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expPhiErr_i" indexed="false">
+         <Name>expPhiErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expPhiErr_z" indexed="false">
+         <Name>expPhiErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit position angle error. PLACEHOLDER, set to -9999 or -1000]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">FIT_PARAM_POS_ANG_GENERAL_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expMag_u" indexed="false">
+         <Name>expMag_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expMag_g" indexed="false">
+         <Name>expMag_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expMag_r" indexed="false">
+         <Name>expMag_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expMag_i" indexed="false">
+         <Name>expMag_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expMag_z" indexed="false">
+         <Name>expMag_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expMagErr_u" indexed="false">
+         <Name>expMagErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expMagErr_g" indexed="false">
+         <Name>expMagErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expMagErr_r" indexed="false">
+         <Name>expMagErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expMagErr_i" indexed="false">
+         <Name>expMagErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.expMagErr_z" indexed="false">
+         <Name>expMagErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.modelMag_u" indexed="false">
+         <Name>modelMag_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[better of DeV/Exp magnitude fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.modelMag_g" indexed="false">
+         <Name>modelMag_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[better of DeV/Exp magnitude fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.modelMag_r" indexed="false">
+         <Name>modelMag_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[better of DeV/Exp magnitude fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.modelMag_i" indexed="false">
+         <Name>modelMag_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[better of DeV/Exp magnitude fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.modelMag_z" indexed="false">
+         <Name>modelMag_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[better of DeV/Exp magnitude fit]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.modelMagErr_u" indexed="false">
+         <Name>modelMagErr_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[better of DeV/Exp magnitude fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.modelMagErr_g" indexed="false">
+         <Name>modelMagErr_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[better of DeV/Exp magnitude fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.modelMagErr_r" indexed="false">
+         <Name>modelMagErr_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[better of DeV/Exp magnitude fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.modelMagErr_i" indexed="false">
+         <Name>modelMagErr_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[better of DeV/Exp magnitude fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.modelMagErr_z" indexed="false">
+         <Name>modelMagErr_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[better of DeV/Exp magnitude fit error]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.texture_u" indexed="false">
+         <Name>texture_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Texture parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.texture_g" indexed="false">
+         <Name>texture_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Texture parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.texture_r" indexed="false">
+         <Name>texture_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Texture parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.texture_i" indexed="false">
+         <Name>texture_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Texture parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.texture_z" indexed="false">
+         <Name>texture_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Texture parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLStar_u" indexed="false">
+         <Name>lnLStar_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Star ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLStar_g" indexed="false">
+         <Name>lnLStar_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Star ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLStar_r" indexed="false">
+         <Name>lnLStar_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Star ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLStar_i" indexed="false">
+         <Name>lnLStar_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Star ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLStar_z" indexed="false">
+         <Name>lnLStar_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Star ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLExp_u" indexed="false">
+         <Name>lnLExp_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential disk fit ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLExp_g" indexed="false">
+         <Name>lnLExp_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential disk fit ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLExp_r" indexed="false">
+         <Name>lnLExp_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential disk fit ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLExp_i" indexed="false">
+         <Name>lnLExp_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential disk fit ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLExp_z" indexed="false">
+         <Name>lnLExp_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exponential disk fit ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLDeV_u" indexed="false">
+         <Name>lnLDeV_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLDeV_g" indexed="false">
+         <Name>lnLDeV_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLDeV_r" indexed="false">
+         <Name>lnLDeV_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLDeV_i" indexed="false">
+         <Name>lnLDeV_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.lnLDeV_z" indexed="false">
+         <Name>lnLDeV_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[DeVaucouleurs fit ln(likelihood)]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_GOODNESS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fracDeV_u" indexed="false">
+         <Name>fracDeV_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Weight of deV component in best composite model]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_FLUX_RATIO</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fracDeV_g" indexed="false">
+         <Name>fracDeV_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Weight of deV component in best composite model]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_FLUX_RATIO</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fracDeV_r" indexed="false">
+         <Name>fracDeV_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Weight of deV component in best composite model]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_FLUX_RATIO</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fracDeV_i" indexed="false">
+         <Name>fracDeV_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Weight of deV component in best composite model]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_FLUX_RATIO</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fracDeV_z" indexed="false">
+         <Name>fracDeV_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Weight of deV component in best composite model]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_FLUX_RATIO</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.flags_u" indexed="false">
+         <Name>flags_u</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Object detection flags per band]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.flags_g" indexed="false">
+         <Name>flags_g</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Object detection flags per band]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.flags_r" indexed="false">
+         <Name>flags_r</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Object detection flags per band]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.flags_i" indexed="false">
+         <Name>flags_i</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Object detection flags per band]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.flags_z" indexed="false">
+         <Name>flags_z</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Object detection flags per band]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.type_u" indexed="false">
+         <Name>type_u</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Object type classification per band]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.type_g" indexed="false">
+         <Name>type_g</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Object type classification per band]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.type_r" indexed="false">
+         <Name>type_r</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Object type classification per band]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.type_i" indexed="false">
+         <Name>type_i</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Object type classification per band]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.type_z" indexed="false">
+         <Name>type_z</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Object type classification per band]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.probPSF_u" indexed="false">
+         <Name>probPSF_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Probablity object is a star in each filter.]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_PROBABILITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.probPSF_g" indexed="false">
+         <Name>probPSF_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Probablity object is a star in each filter.]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_PROBABILITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.probPSF_r" indexed="false">
+         <Name>probPSF_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Probablity object is a star in each filter.]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_PROBABILITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.probPSF_i" indexed="false">
+         <Name>probPSF_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Probablity object is a star in each filter.]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_PROBABILITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.probPSF_z" indexed="false">
+         <Name>probPSF_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Probablity object is a star in each filter.]]></Description>
+         <Units> </Units>
+         <UCD version="1">STAT_PROBABILITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.status" indexed="false">
+         <Name>status</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Status of the object in the survey]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 right ascension (r')]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 declination (r')]]></Description>
+         <Units>deg</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector for ra+dec]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_CART_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector for ra+dec]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_CART_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector for ra+dec]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_CART_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.offsetRa_u" indexed="false">
+         <Name>offsetRa_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[filter position ra minus final ra (* cos(dec))]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.offsetRa_g" indexed="false">
+         <Name>offsetRa_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[filter position ra minus final ra (* cos(dec))]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.offsetRa_r" indexed="false">
+         <Name>offsetRa_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[filter position ra minus final ra (* cos(dec))]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.offsetRa_i" indexed="false">
+         <Name>offsetRa_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[filter position ra minus final ra (* cos(dec))]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.offsetRa_z" indexed="false">
+         <Name>offsetRa_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[filter position ra minus final ra (* cos(dec))]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.offsetDec_u" indexed="false">
+         <Name>offsetDec_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[filter position dec minus final dec]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.offsetDec_g" indexed="false">
+         <Name>offsetDec_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[filter position dec minus final dec]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.offsetDec_r" indexed="false">
+         <Name>offsetDec_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[filter position dec minus final dec]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.offsetDec_i" indexed="false">
+         <Name>offsetDec_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[filter position dec minus final dec]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.offsetDec_z" indexed="false">
+         <Name>offsetDec_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[filter position dec minus final dec]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.primTarget" indexed="false">
+         <Name>primTarget</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Bit mask of primary target categories the object was selected in.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.secTarget" indexed="false">
+         <Name>secTarget</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Bit mask of secondary target categories the object was selected in.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.extinction_u" indexed="false">
+         <Name>extinction_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Extinction in each filter]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_EXTINCTION_GAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.extinction_g" indexed="false">
+         <Name>extinction_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Extinction in each filter]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_EXTINCTION_GAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.extinction_r" indexed="false">
+         <Name>extinction_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Extinction in each filter]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_EXTINCTION_GAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.extinction_i" indexed="false">
+         <Name>extinction_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Extinction in each filter]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_EXTINCTION_GAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.extinction_z" indexed="false">
+         <Name>extinction_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Extinction in each filter]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_EXTINCTION_GAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.priority" indexed="false">
+         <Name>priority</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Priority bits]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.rho" indexed="false">
+         <Name>rho</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Log size for surface brightness: 5xlog(Petro radius in i band)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.nProf_u" indexed="false">
+         <Name>nProf_u</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of Profile Bins]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.nProf_g" indexed="false">
+         <Name>nProf_g</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of Profile Bins]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.nProf_r" indexed="false">
+         <Name>nProf_r</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of Profile Bins]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.nProf_i" indexed="false">
+         <Name>nProf_i</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of Profile Bins]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.nProf_z" indexed="false">
+         <Name>nProf_z</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of Profile Bins]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.loadVersion" indexed="false">
+         <Name>loadVersion</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Load Version]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_VERSION</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[20-deep hierarchical trangular mesh ID of this object]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_HTM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.fieldID" indexed="false">
+         <Name>fieldID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Link to the field this object is in]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_FIELD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.parentID" indexed="false">
+         <Name>parentID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Pointer to parent (if object deblended) or BRIGHT detection (if object has one), else 0]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_PARENT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.specObjID" indexed="false">
+         <Name>specObjID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Pointer to the spectrum of object, if exists, else 0]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_CATALOG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.u" indexed="false">
+         <Name>u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Shorthand alias for modelMag]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.g" indexed="false">
+         <Name>g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Shorthand alias for modelMag]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.r" indexed="false">
+         <Name>r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Shorthand alias for modelMag]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.i" indexed="false">
+         <Name>i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Shorthand alias for modelMag]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.z" indexed="false">
+         <Name>z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Shorthand alias for modelMag]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z_FIT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.err_u" indexed="false">
+         <Name>err_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in modelMag alias]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.err_g" indexed="false">
+         <Name>err_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in modelMag alias]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.err_r" indexed="false">
+         <Name>err_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in modelMag alias]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.err_i" indexed="false">
+         <Name>err_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in modelMag alias]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.err_z" indexed="false">
+         <Name>err_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in modelMag alias]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z_ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.dered_u" indexed="false">
+         <Name>dered_u</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Simplified mag, corrected for extinction: modelMag-extinction]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.dered_g" indexed="false">
+         <Name>dered_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Simplified mag, corrected for extinction: modelMag-extinction]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.dered_r" indexed="false">
+         <Name>dered_r</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Simplified mag, corrected for extinction: modelMag-extinction]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.dered_i" indexed="false">
+         <Name>dered_i</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Simplified mag, corrected for extinction: modelMag-extinction]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="PhotoObjAll.dered_z" indexed="false">
+         <Name>dered_z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Simplified mag, corrected for extinction: modelMag-extinction]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_SDSS_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

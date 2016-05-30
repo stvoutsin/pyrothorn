@@ -1,0 +1,2566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>F287</Name>
+   <Description></Description>
+
+   <Table ID="Class">
+      <Name>Class</Name>
+      <Description><![CDATA[ Contains individual class description for any detection in the field F287]]></Description>
+      <Column ID="Class.classID" indexed="true">
+         <Name>classID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Classification flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Class.description" indexed="false">
+         <Name>description</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Image Type, eg. &quot;non-stellar&quot;, &quot;stellar&quot;...]]></Description>
+         <Units> </Units>
+         <UCD version="1">IMAGE_TYPE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="SourceXDetection">
+      <Name>SourceXDetection</Name>
+      <Description><![CDATA[ Cross-neighbours between F287 Source and Detection tables]]></Description>
+      <Column ID="SourceXDetection.masterObjID" indexed="false">
+         <Name>masterObjID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[The object identifier from the Source table]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="SourceXDetection.slaveObjID" indexed="false">
+         <Name>slaveObjID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[The object identifier from the Detection table]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_CATALOG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="SourceXDetection.distanceMins" indexed="false">
+         <Name>distanceMins</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The angular separation of the cross-neighbour]]></Description>
+         <Units>arcminutes</Units>
+         <UCD version="1">POS_ANG_DIST_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="Source">
+      <Name>Source</Name>
+      <Description><![CDATA[ Contains merged sources for the set of UBRI stacks in the F287]]></Description>
+      <Column ID="Source.objID" indexed="true">
+         <Name>objID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique identifier of merged source]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.objIDU" indexed="false">
+         <Name>objIDU</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[objID for U band stack detection merged into this object]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_ASSOCIATED</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.objIDB" indexed="false">
+         <Name>objIDB</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[objID for B band stack detection merged into this object]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_ASSOCIATED</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.objIDR" indexed="false">
+         <Name>objIDR</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[objID for R band stack detection merged into this object]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_ASSOCIATED</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.objIDI" indexed="false">
+         <Name>objIDI</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[objID for I band stack detection merged into this object]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_ASSOCIATED</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.htmId" indexed="false">
+         <Name>htmId</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (20-deep) of centroid]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.ra" indexed="true">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Mean RA, computed from detections merged in this catalogue]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.dec" indexed="true">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Mean Dec, computed from detections merged in this catalogue]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cartesian x of unit (ra,dec) vector on celestial sphere]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cartesian y of unit (ra,dec) vector on celestial sphere]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cartesian z of unit (ra,dec) vector on celestial sphere]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.classMagU" indexed="false">
+         <Name>classMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[U band colour-corrected magnitude selected by U image class]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.classMagB" indexed="true">
+         <Name>classMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[B band colour-corrected magnitude selected by B image class]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_BJ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.classMagR" indexed="false">
+         <Name>classMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[R band colour-corrected magnitude selected by R image class]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.classMagI" indexed="true">
+         <Name>classMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[I band colour-corrected magnitude selected by I image class]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.gCorMagU" indexed="false">
+         <Name>gCorMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[U band colour-corrected magnitude assuming object is galaxy]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.gCorMagB" indexed="true">
+         <Name>gCorMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[B band colour-corrected magnitude assuming object is galaxy]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_BJ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.gCorMagR" indexed="false">
+         <Name>gCorMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[R band colour-corrected magnitude assuming object is galaxy]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.gCorMagI" indexed="true">
+         <Name>gCorMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[I band colour-corrected magnitude assuming object is galaxy]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.sCorMagU" indexed="false">
+         <Name>sCorMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[U band colour-corrected magnitude assuming object is star]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.sCorMagB" indexed="true">
+         <Name>sCorMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[B band colour-corrected magnitude assuming object is star]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_BJ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.sCorMagR" indexed="false">
+         <Name>sCorMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[R band colour-corrected magnitude assuming object is star]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.sCorMagI" indexed="true">
+         <Name>sCorMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[I band colour-corrected magnitude assuming object is star]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.meanClass" indexed="false">
+         <Name>meanClass</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Discrete image class code based on ranges of meanClassStat]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.meanClassStat" indexed="false">
+         <Name>meanClassStat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[N(0,1) sum of available individual stack profile statistics, prfStat]]></Description>
+         <Units>N(0,1)</Units>
+         <UCD version="1">CLASS_STAR/GALAXY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.classU" indexed="false">
+         <Name>classU</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Image classification from U band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.classB" indexed="false">
+         <Name>classB</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Image classification from B band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.classR" indexed="false">
+         <Name>classR</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Image classification from R band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.classI" indexed="false">
+         <Name>classI</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Image classification from I band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.ellipU" indexed="false">
+         <Name>ellipU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Ellipticity of U band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHYS_ELLIPTICITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.ellipB" indexed="false">
+         <Name>ellipB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Ellipticity of B band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHYS_ELLIPTICITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.ellipR" indexed="false">
+         <Name>ellipR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Ellipticity of R band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHYS_ELLIPTICITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.ellipI" indexed="false">
+         <Name>ellipI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Ellipticity of I band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHYS_ELLIPTICITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.qualU" indexed="false">
+         <Name>qualU</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Bitwise quality flag from U band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_QUALITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.qualB" indexed="false">
+         <Name>qualB</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Bitwise quality flag from B band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_QUALITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.qualR" indexed="false">
+         <Name>qualR</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Bitwise quality flag from R band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_QUALITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.qualI" indexed="false">
+         <Name>qualI</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Bitwise quality flag from I band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_QUALITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.blendU" indexed="false">
+         <Name>blendU</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Blend flag from U band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MULT_INDEX</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.blendB" indexed="false">
+         <Name>blendB</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Blend flag from B band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MULT_INDEX</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.blendR" indexed="false">
+         <Name>blendR</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Blend flag from R band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MULT_INDEX</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.blendI" indexed="false">
+         <Name>blendI</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Blend flag from I band detection]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MULT_INDEX</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.prfStatU" indexed="false">
+         <Name>prfStatU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Profile statistic from U band detection]]></Description>
+         <Units>N(0,1)</Units>
+         <UCD version="1">CLASS_STAR/GALAXY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.prfStatB" indexed="false">
+         <Name>prfStatB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Profile statistic from B band detection]]></Description>
+         <Units>N(0,1)</Units>
+         <UCD version="1">CLASS_STAR/GALAXY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.prfStatR" indexed="false">
+         <Name>prfStatR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Profile statistic from R band detection]]></Description>
+         <Units>N(0,1)</Units>
+         <UCD version="1">CLASS_STAR/GALAXY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.prfStatI" indexed="true">
+         <Name>prfStatI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Profile statistic from I band detection]]></Description>
+         <Units>N(0,1)</Units>
+         <UCD version="1">CLASS_STAR/GALAXY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.meansCorMagU" indexed="false">
+         <Name>meansCorMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean colour-corrected stellar U magnitude over available epochs]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.sigsCorMagU" indexed="false">
+         <Name>sigsCorMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation on meansCorMagU]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.madsCorMagU" indexed="false">
+         <Name>madsCorMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Median absolute deviation on meansCorMagU]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.skewsCorMagU" indexed="false">
+         <Name>skewsCorMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Skewness of the distribution of sCorMagU]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.meangCorMagU" indexed="false">
+         <Name>meangCorMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean colour-corrected galaxian U magnitude over available epochs]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.siggCorMagU" indexed="false">
+         <Name>siggCorMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation on meangCorMagU]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.madgCorMagU" indexed="false">
+         <Name>madgCorMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Median absolute deviation on meangCorMagU]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.skewgCorMagU" indexed="false">
+         <Name>skewgCorMagU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Skewness of the distribution of gCorMagU]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.numObsU" indexed="false">
+         <Name>numObsU</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of observations available in U band]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.meansCorMagB" indexed="false">
+         <Name>meansCorMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean colour-corrected stellar B magnitude over available epochs]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_B</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.sigsCorMagB" indexed="false">
+         <Name>sigsCorMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation on meansCorMagB]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.madsCorMagB" indexed="false">
+         <Name>madsCorMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Median absolute deviation on meansCorMagB]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.skewsCorMagB" indexed="false">
+         <Name>skewsCorMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Skewness of the distribution of sCorMagB]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.meangCorMagB" indexed="false">
+         <Name>meangCorMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean colour-corrected galaxian B magnitude over available epochs]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_B</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.siggCorMagB" indexed="false">
+         <Name>siggCorMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation on meangCorMagB]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.madgCorMagB" indexed="false">
+         <Name>madgCorMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Median absolute deviation on meangCorMagB]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.skewgCorMagB" indexed="false">
+         <Name>skewgCorMagB</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Skewness of the distribution of gCorMagB]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.numObsB" indexed="false">
+         <Name>numObsB</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of observations available in B band]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.meansCorMagR" indexed="false">
+         <Name>meansCorMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean colour-corrected stellar R magnitude over available epochs]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.sigsCorMagR" indexed="false">
+         <Name>sigsCorMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation on meansCorMagR]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.madsCorMagR" indexed="false">
+         <Name>madsCorMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Median absolute deviation on meansCorMagR]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.skewsCorMagR" indexed="false">
+         <Name>skewsCorMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Skewness of the distribution of sCorMagR]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.meangCorMagR" indexed="false">
+         <Name>meangCorMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean colour-corrected galaxian R magnitude over available epochs]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.siggCorMagR" indexed="false">
+         <Name>siggCorMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation on meangCorMagR]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.madgCorMagR" indexed="false">
+         <Name>madgCorMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Median absolute deviation on meangCorMagR]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.skewgCorMagR" indexed="false">
+         <Name>skewgCorMagR</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Skewness of the distribution of gCorMagR]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.numObsR" indexed="false">
+         <Name>numObsR</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of observations available in R band]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.meansCorMagI" indexed="false">
+         <Name>meansCorMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean colour-corrected stellar I magnitude over available epochs]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.sigsCorMagI" indexed="false">
+         <Name>sigsCorMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation on meansCorMagI]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.madsCorMagI" indexed="false">
+         <Name>madsCorMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Median absolute deviation on meansCorMagI]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.skewsCorMagI" indexed="false">
+         <Name>skewsCorMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Skewness of the distribution of sCorMagI]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.meangCorMagI" indexed="false">
+         <Name>meangCorMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean colour-corrected galaxian I magnitude over available epochs]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PHG_I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.siggCorMagI" indexed="false">
+         <Name>siggCorMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard deviation on meangCorMagI]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.madgCorMagI" indexed="false">
+         <Name>madgCorMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Median absolute deviation on meangCorMagI]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">ERROR</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.skewgCorMagI" indexed="false">
+         <Name>skewgCorMagI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Skewness of the distribution of gCorMagI]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.numObsI" indexed="false">
+         <Name>numObsI</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of observations available in I band]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Source.variableClass" indexed="false">
+         <Name>variableClass</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Classification of objects. -1 non-variable, 1 variable, -3 prob variable, -2 prob non-variable, -9 not measured]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="SourceNeighbours">
+      <Name>SourceNeighbours</Name>
+      <Description><![CDATA[ Cross-neighbours between F287 Source objects]]></Description>
+      <Column ID="SourceNeighbours.masterObjID" indexed="false">
+         <Name>masterObjID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[The object identifier from the Source table]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="SourceNeighbours.slaveObjID" indexed="false">
+         <Name>slaveObjID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[The object identifier from the Source table]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_CATALOG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="SourceNeighbours.distanceMins" indexed="false">
+         <Name>distanceMins</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The angular separation of the cross-neighbour]]></Description>
+         <Units>arcminutes</Units>
+         <UCD version="1">POS_ANG_DIST_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="KnownQSO">
+      <Name>KnownQSO</Name>
+      <Description><![CDATA[ Contains quasar sources obtained from the VII/258]]></Description>
+      <Column ID="KnownQSO.qsoID" indexed="true">
+         <Name>qsoID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique identifier for each QSO assigned in the SVS]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.radioDetect" indexed="false">
+         <Name>radioDetect</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Detected in radio (0=no; 1=yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.name" indexed="false">
+         <Name>name</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Most common name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[RA (J2000.0) of the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Dec (J2000.0) of the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cartesian x of unit (ra,dec) vector on celestial sphere]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cartesian y of unit (ra,dec) vector on celestial sphere]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cartesian z of unit (ra,dec) vector on celestial sphere]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.htmId" indexed="false">
+         <Name>htmId</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (20-deep) of centroid]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.posCode" indexed="false">
+         <Name>posCode</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Position code: A=approximate, O=optical, R=radio (O,R have accuracy better than 1 arcsec)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.flux6cm" indexed="false">
+         <Name>flux6cm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in the 6cm (5GHz) band]]></Description>
+         <Units>Jansky</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.refFlux6cm" indexed="false">
+         <Name>refFlux6cm</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Reference for flux6cm]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.flux20cm" indexed="false">
+         <Name>flux20cm</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Flux in the 20cm (1.4GHz) band]]></Description>
+         <Units>Jansky</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.refFlux20cm" indexed="false">
+         <Name>refFlux20cm</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Reference for flux20cm]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.zMethod" indexed="false">
+         <Name>zMethod</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Limit (&lt;) or method flag (*=measured by slitless spectrscopy) on z]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.z" indexed="false">
+         <Name>z</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Spectroscopic redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.spClass" indexed="false">
+         <Name>spClass</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Spectroscopic classification]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.typeVmag" indexed="false">
+         <Name>typeVmag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Type of photometry of vMag (*=photographic; B=blue; R=red; I,J or K=infrared; O=photographic O or J)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.vMag" indexed="false">
+         <Name>vMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Apparent magnitude in passband typeVmag]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.bmv" indexed="false">
+         <Name>bmv</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Colour index (B-V)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.umb" indexed="false">
+         <Name>umb</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Colour index (U-B)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.absMag" indexed="false">
+         <Name>absMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Absolute magnitude (H_0=50 km/s/Mpc; q_0=0)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.refChart" indexed="false">
+         <Name>refChart</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Finder chart reference]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.refMags" indexed="false">
+         <Name>refMags</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Reference for the photometry]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.refZ" indexed="false">
+         <Name>refZ</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Reference for the redshift]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="KnownQSO.raDec1950" indexed="false">
+         <Name>raDec1950</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Sexagesimal RA/Dec at equinox B1950.0]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="Plate">
+      <Name>Plate</Name>
+      <Description><![CDATA[ Contains information about each plate measurement used in the F287 survey]]></Description>
+      <Column ID="Plate.plateNum" indexed="true">
+         <Name>plateNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique plate number assigned by UK Schmidt Telescope Unit (NB: 1,2,3 or 4 = deep stack in U,B,R or I)]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_PLATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.dateMeas" indexed="false">
+         <Name>dateMeas</Name>
+         <Datatype>dateTime</Datatype>
+         <Description><![CDATA[Measurement date]]></Description>
+         <Units>YYYY-MM-DD</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.timeMeas" indexed="false">
+         <Name>timeMeas</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Measurement time (local), eg. 15:33:47]]></Description>
+         <Units>HH:MM:SS</Units>
+         <UCD version="1">TIME_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.instrument" indexed="false">
+         <Name>instrument</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of scanning machine]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_ID</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.softVersion" indexed="false">
+         <Name>softVersion</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Software version, eg. /home/scosdev/v033]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_VERSION</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.operator" indexed="false">
+         <Name>operator</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Machine operator's username]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_HUMAN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.scanMaterial" indexed="false">
+         <Name>scanMaterial</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Photographic medium, eg. Original glass, Copy film, Copy glass]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.filterID" indexed="false">
+         <Name>filterID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique filter identification number]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_FILTER_CODE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.raPnt" indexed="false">
+         <Name>raPnt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean plate centre RA]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.decPnt" indexed="false">
+         <Name>decPnt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean plate centre Dec]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.radecSys" indexed="false">
+         <Name>radecSys</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Co-ordinate system of raPnt/decPnt, eg. FK4]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_REFERENCE-SYSTEM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.equinox" indexed="false">
+         <Name>equinox</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Equinox of raPnt and decPnt]]></Description>
+         <Units>year</Units>
+         <UCD version="1">TIME_EQUINOX</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.eqTsys" indexed="false">
+         <Name>eqTsys</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Time system of equinox, eg. BESSELIAN]]></Description>
+         <Units> </Units>
+         <UCD version="1">NOTE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.utDateObs" indexed="false">
+         <Name>utDateObs</Name>
+         <Datatype>dateTime</Datatype>
+         <Description><![CDATA[UT date of observation]]></Description>
+         <Units>YYYY-MM-DD</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lstObs" indexed="false">
+         <Name>lstObs</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Local sidereal time at start of exposure, eg. 2336]]></Description>
+         <Units>24-hour</Units>
+         <UCD version="1">TIME_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.expLength" indexed="false">
+         <Name>expLength</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Exposure time]]></Description>
+         <Units>minutes</Units>
+         <UCD version="1">TIME_EXPTIME</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.epoch" indexed="false">
+         <Name>epoch</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Epoch of observation]]></Description>
+         <Units>years</Units>
+         <UCD version="1">TIME_EPOCH</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.domeTemp" indexed="false">
+         <Name>domeTemp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Dome temp at observation]]></Description>
+         <Units>Kelvin</Units>
+         <UCD version="1">OBS_CONDITIONS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.domePressure" indexed="false">
+         <Name>domePressure</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Dome pressure at observation]]></Description>
+         <Units>mBar</Units>
+         <UCD version="1">OBS_CONDITIONS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.domeHumid" indexed="false">
+         <Name>domeHumid</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Dome relative humidity at obsevation time]]></Description>
+         <Units> </Units>
+         <UCD version="1">OBS_CONDITIONS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.tropl" indexed="false">
+         <Name>tropl</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Tropospheric lapse rate]]></Description>
+         <Units>K/m</Units>
+         <UCD version="1">MODEL_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.mjd" indexed="false">
+         <Name>mjd</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Modified Julian Date at mid exposure]]></Description>
+         <Units>Julian days</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.focusNX" indexed="false">
+         <Name>focusNX</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of scan focus points in X]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.focusNY" indexed="false">
+         <Name>focusNY</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of scan focus points in Y]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.calType" indexed="false">
+         <Name>calType</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Intensity calibration wedge fit type, eg. SPLINE]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.stepWdg" indexed="false">
+         <Name>stepWdg</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Intensity calibration step-wedge type, eg. kpno]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.nSteps" indexed="false">
+         <Name>nSteps</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of intensity calibration wedge steps]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.orientation" indexed="false">
+         <Name>orientation</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[SuperCOSMOS plate orientation, eg. news]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.emulpos" indexed="false">
+         <Name>emulpos</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[SuperCOSMOS emulsion position, eg. up]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.sosp" indexed="false">
+         <Name>sosp</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SuperCOSMOS start of scan CCD pixel number]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.stepsize" indexed="false">
+         <Name>stepsize</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SuperCOSMOS nominal pixel size]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">INST_PIXSIZE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.scanlen" indexed="false">
+         <Name>scanlen</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[SuperCOSMOS CCD lane scan length]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">INST_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.aXmin" indexed="false">
+         <Name>aXmin</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SuperCOSMOS XMIN of measured area]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.aXmax" indexed="false">
+         <Name>aXmax</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SuperCOSMOS XMAX of measured area]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.aYmin" indexed="false">
+         <Name>aYmin</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SuperCOSMOS YMIN of measured area]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.aYmax" indexed="false">
+         <Name>aYmax</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SuperCOSMOS YMAX of measured area]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.xPnt" indexed="false">
+         <Name>xPnt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Centre of scan area in X]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.yPnt" indexed="false">
+         <Name>yPnt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Centre of scan area in Y]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.areaCut" indexed="false">
+         <Name>areaCut</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Minimum area of detected object]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.apParam" indexed="false">
+         <Name>apParam</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Areal profile parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.dbParam" indexed="false">
+         <Name>dbParam</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Deblending parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.dbAmin" indexed="false">
+         <Name>dbAmin</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Minimum area of parent image that can be deblended]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.dbAmax" indexed="false">
+         <Name>dbAmax</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Maximum area of parent image that can be deblended]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.dbAcut" indexed="false">
+         <Name>dbAcut</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Minimum area of deblended object detection]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.dbLevel" indexed="false">
+         <Name>dbLevel</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of rethresholding levels for deblending]]></Description>
+         <Units> </Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.skySquare" indexed="false">
+         <Name>skySquare</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Blocksize (one side) of sky background]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.skyDefn" indexed="false">
+         <Name>skyDefn</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Method of defining sky, eg. &quot;median&quot;]]></Description>
+         <Units> </Units>
+         <UCD version="1">REDUCT_METHOD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.skyFilter" indexed="false">
+         <Name>skyFilter</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Box filter weights for sky determination]]></Description>
+         <Units> </Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.fThresh" indexed="false">
+         <Name>fThresh</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Sky filtering parameter]]></Description>
+         <Units> </Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.fSclen" indexed="false">
+         <Name>fSclen</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Scale size for iterative filter application]]></Description>
+         <Units> </Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.pCut" indexed="false">
+         <Name>pCut</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Threshold &quot;percentage cut&quot; for pixel analysis]]></Description>
+         <Units>percent</Units>
+         <UCD version="1">STAT_%REJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.starCat" indexed="false">
+         <Name>starCat</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of reference star catalogue used for astrometric fit]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_CATALOG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.brightLim" indexed="false">
+         <Name>brightLim</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Bright mag limit for selected astrometric refstars]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_MAG_LIMIT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.faintLim" indexed="false">
+         <Name>faintLim</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Faint limit for selected refstars]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_MAG_LIMIT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.equinRef" indexed="false">
+         <Name>equinRef</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Equinox of refstar positions]]></Description>
+         <Units> </Units>
+         <UCD version="1">TIME_EQUINOX</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.tSysRef" indexed="false">
+         <Name>tSysRef</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Time system of equinox of refstar positions, eg. JULIAN]]></Description>
+         <Units> </Units>
+         <UCD version="1">NOTE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.maxIter" indexed="false">
+         <Name>maxIter</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Maximum no. of iterations for non-linear astrometric fit]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.rCritIni" indexed="false">
+         <Name>rCritIni</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Initial matching tolerance for refstars]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.rCritAbs" indexed="false">
+         <Name>rCritAbs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Absolute object rejection criterion]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.rCritRel" indexed="false">
+         <Name>rCritRel</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Relative object rejection criterion]]></Description>
+         <Units> </Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.rCritFin" indexed="false">
+         <Name>rCritFin</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Final residual tolerance]]></Description>
+         <Units>sigma</Units>
+         <UCD version="1">REDUCT_PARAM</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.distType" indexed="false">
+         <Name>distType</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Radial distortion term in solution, eg. R/TAN(R)]]></Description>
+         <Units> </Units>
+         <UCD version="1">MODEL_CORRECTION</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.scdGrid" indexed="false">
+         <Name>scdGrid</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Non-linear distortion mask filename]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_FILE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.raCol" indexed="false">
+         <Name>raCol</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of RA column in reference catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.decCol" indexed="false">
+         <Name>decCol</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of Dec column in reference catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.raPMCol" indexed="false">
+         <Name>raPMCol</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of RA proper motion column in reference catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.decPMCol" indexed="false">
+         <Name>decPMCol</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of Dec proper motion column in reference catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.plxCol" indexed="false">
+         <Name>plxCol</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of parallax column in reference catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.rvCol" indexed="false">
+         <Name>rvCol</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of radial velocity column in reference catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.magCol" indexed="false">
+         <Name>magCol</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of magnitude column in reference catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1">REMARKS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.cEquinox" indexed="false">
+         <Name>cEquinox</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Catalogue equinox]]></Description>
+         <Units>year</Units>
+         <UCD version="1">TIME_EQUINOX</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.cEqTSys" indexed="false">
+         <Name>cEqTSys</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Catalogue equinox time system, eg. JULIAN]]></Description>
+         <Units> </Units>
+         <UCD version="1">NOTE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.cEpoch" indexed="false">
+         <Name>cEpoch</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Catalogue epoch]]></Description>
+         <Units>year</Units>
+         <UCD version="1">TIME_EPOCH</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.cEpTSys" indexed="false">
+         <Name>cEpTSys</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Catalogue epoch time system, eg. JULIAN]]></Description>
+         <Units> </Units>
+         <UCD version="1">NOTE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.starsInit" indexed="false">
+         <Name>starsInit</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of refstars in initial astrometric solution]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.starsSelec" indexed="false">
+         <Name>starsSelec</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of refstars initially selected]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.starsUsed" indexed="false">
+         <Name>starsUsed</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of refstars in final astrometric solution]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.coeffs1" indexed="false">
+         <Name>coeffs1</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[1st coefficient of astrometric fit for XY to obs. xi,eta]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.coeffs2" indexed="false">
+         <Name>coeffs2</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[2nd coefficient of astrometric fit for XY to obs. xi,eta]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.coeffs3" indexed="false">
+         <Name>coeffs3</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[3rd coefficient of astrometric fit for XY to obs. xi,eta]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.coeffs4" indexed="false">
+         <Name>coeffs4</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[4th coefficient of astrometric fit for XY to obs. xi,eta]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.coeffs5" indexed="false">
+         <Name>coeffs5</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[5th coefficient of astrometric fit for XY to obs. xi,eta]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.coeffs6" indexed="false">
+         <Name>coeffs6</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[6th coefficient of astrometric fit for XY to obs. xi,eta]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.cubicDist" indexed="false">
+         <Name>cubicDist</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cubic coefficient of radial distortion]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.obsRaPnt" indexed="false">
+         <Name>obsRaPnt</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Observed plate centre RA]]></Description>
+         <Units>radians</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.obsDecPnt" indexed="false">
+         <Name>obsDecPnt</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Observed plate centre Dec]]></Description>
+         <Units>radians</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.shiftPnt" indexed="false">
+         <Name>shiftPnt</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Shift of from nominal to fitted plate centre]]></Description>
+         <Units>radians</Units>
+         <UCD version="1">POS_OFFSET</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.areaMin" indexed="false">
+         <Name>areaMin</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Minimum object area in IAM file]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.areaMax" indexed="false">
+         <Name>areaMax</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Maximum object area in IAM file]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.magMin" indexed="false">
+         <Name>magMin</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Minimum instrumental mag in IAM file]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_MAG_LIMIT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.magMax" indexed="false">
+         <Name>magMax</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Maximum instrumental mag in IAM file]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_MAG_LIMIT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.ellipMin" indexed="false">
+         <Name>ellipMin</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Minimum object ellipticity in IAM file]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHYS_ELLIPTICITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.ellipMax" indexed="false">
+         <Name>ellipMax</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Maximum object ellipticity in IAM file]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHYS_ELLIPTICITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.ellipMode" indexed="false">
+         <Name>ellipMode</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Modal object ellipticity in IAM file]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHYS_ELLIPTICITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.orientMode" indexed="false">
+         <Name>orientMode</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Modal orientation in IAM file]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.ellipMed" indexed="false">
+         <Name>ellipMed</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Median ellipticity in IAM file]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHYS_ELLIPTICITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.orientMed" indexed="false">
+         <Name>orientMed</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Median orientation in IAM file]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.ellipMean" indexed="false">
+         <Name>ellipMean</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean object ellipticity in IAM file]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHYS_ELLIPTICITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.orientMean" indexed="false">
+         <Name>orientMean</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean orientation in IAM file]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.objNum" indexed="false">
+         <Name>objNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects detected on plate]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.nParents" indexed="false">
+         <Name>nParents</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of parent objects detected on plate]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane1Count" indexed="false">
+         <Name>lane1Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 1 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane2Count" indexed="false">
+         <Name>lane2Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 2 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane3Count" indexed="false">
+         <Name>lane3Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 3 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane4Count" indexed="false">
+         <Name>lane4Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 4 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane5Count" indexed="false">
+         <Name>lane5Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 5 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane6Count" indexed="false">
+         <Name>lane6Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 6 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane7Count" indexed="false">
+         <Name>lane7Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 7 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane8Count" indexed="false">
+         <Name>lane8Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 8 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane9Count" indexed="false">
+         <Name>lane9Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 9 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane10Count" indexed="false">
+         <Name>lane10Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 10 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane11Count" indexed="false">
+         <Name>lane11Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 11 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane12Count" indexed="false">
+         <Name>lane12Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 12 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane13Count" indexed="false">
+         <Name>lane13Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 13 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane14Count" indexed="false">
+         <Name>lane14Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 14 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane15Count" indexed="false">
+         <Name>lane15Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 15 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane16Count" indexed="false">
+         <Name>lane16Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 16 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane17Count" indexed="false">
+         <Name>lane17Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 17 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane18Count" indexed="false">
+         <Name>lane18Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 18 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane19Count" indexed="false">
+         <Name>lane19Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 19 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane20Count" indexed="false">
+         <Name>lane20Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 20 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane21Count" indexed="false">
+         <Name>lane21Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 21 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane22Count" indexed="false">
+         <Name>lane22Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 22 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane23Count" indexed="false">
+         <Name>lane23Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 23 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane24Count" indexed="false">
+         <Name>lane24Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 24 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane25Count" indexed="false">
+         <Name>lane25Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 25 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane26Count" indexed="false">
+         <Name>lane26Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 26 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane27Count" indexed="false">
+         <Name>lane27Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 27 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane28Count" indexed="false">
+         <Name>lane28Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 28 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane29Count" indexed="false">
+         <Name>lane29Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 29 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.lane30Count" indexed="false">
+         <Name>lane30Count</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of objects in lane 30 of plate scan]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.astResidX" indexed="false">
+         <Name>astResidX</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Residual of astrometric fit in X]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">FIT_RESIDUAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.astResidY" indexed="false">
+         <Name>astResidY</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Residual of astrometric fit in Y]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">FIT_RESIDUAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.nCalCoeffs" indexed="false">
+         <Name>nCalCoeffs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of photometric calibration coefficients]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.CalXK" indexed="false">
+         <Name>CalXK</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Stationary point in profile cal. curve]]></Description>
+         <Units>inst. profile mag</Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.gradient" indexed="false">
+         <Name>gradient</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Gradient of linear portion of profile cal. curve]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.getCal1" indexed="false">
+         <Name>getCal1</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[1st profile calibration polynomial coefficient]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.getCal2" indexed="false">
+         <Name>getCal2</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[2nd profile calibration polynomial coefficient]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.getCal3" indexed="false">
+         <Name>getCal3</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[3rd profile calibration polynomial coefficient]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.getCal4" indexed="false">
+         <Name>getCal4</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[4th profile calibration polynomial coefficient]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.getCal5" indexed="false">
+         <Name>getCal5</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[5th profile calibration polynomial coefficient]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.getCal6" indexed="false">
+         <Name>getCal6</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[6th profile calibration polynomial coefficient]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.ffZp" indexed="false">
+         <Name>ffZp</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Field-to-field zeropoint]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_ZPT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.galZp" indexed="false">
+         <Name>galZp</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Zeropoint of galaxy instrumental scale]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_ZPT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.galGrad" indexed="false">
+         <Name>galGrad</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Gradient of galaxy instrumental mag scale]]></Description>
+         <Units>mags per instrumental mag</Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Plate.directory" indexed="false">
+         <Name>directory</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of directory in flat-file system of source data.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_FILE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="Detection">
+      <Name>Detection</Name>
+      <Description><![CDATA[ Contains individual detections for every plate and stack in the field F287]]></Description>
+      <Column ID="Detection.objID" indexed="true">
+         <Name>objID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique object identification number (combination of plateNum and recNum)]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.plateNum" indexed="false">
+         <Name>plateNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Plate ID of the plate that this detection came from]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_PLATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.filterID" indexed="false">
+         <Name>filterID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique filter identification number]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_FILTER_CODE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.parentID" indexed="true">
+         <Name>parentID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[objID of parent object, = objID for parent/undeblended (ie. not child) object]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_PARENT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.recNum" indexed="false">
+         <Name>recNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The record number in the original IAM file]]></Description>
+         <Units> </Units>
+         <UCD version="1">RECORD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ra" indexed="true">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Right Ascension]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.dec" indexed="true">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Declination]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.htmId" indexed="false">
+         <Name>htmId</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (20-deep) of centroid]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cartesian x of unit (ra,dec) vector on celestial sphere]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cartesian y of unit (ra,dec) vector on celestial sphere]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cartesian z of unit (ra,dec) vector on celestial sphere]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.xmin" indexed="false">
+         <Name>xmin</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Leftmost extent of image on plate]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.xmax" indexed="false">
+         <Name>xmax</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Rightmost extent of image on plate]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ymin" indexed="false">
+         <Name>ymin</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Bottommost extent of image on plate]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ymax" indexed="false">
+         <Name>ymax</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Topmost extent of image on plate]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.area" indexed="true">
+         <Name>area</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Area within detection isophote]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ipeak" indexed="false">
+         <Name>ipeak</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Intensity of brightest pixel above sky]]></Description>
+         <Units>instrumental units</Units>
+         <UCD version="1">PHOT_INTENSITY_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.cosmag" indexed="false">
+         <Name>cosmag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Isophotal magnitude]]></Description>
+         <Units>instrumental units</Units>
+         <UCD version="1">PHOT_PHG_MAG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.isky" indexed="false">
+         <Name>isky</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Estimate of sky intensity at (xCen, yCen)]]></Description>
+         <Units> </Units>
+         <UCD version="1">PHOT_SB_SKY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.xCen" indexed="false">
+         <Name>xCen</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Intensity-weighted X-centroid of image]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.yCen" indexed="false">
+         <Name>yCen</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Intensity-weighted Y-centroid of image]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">POS_PLATE_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.aU" indexed="false">
+         <Name>aU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of unweighted fitted ellipse]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.bU" indexed="false">
+         <Name>bU</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-minor axis of unweighted fitted ellipse]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">EXTENSION_SMIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.thetaU" indexed="false">
+         <Name>thetaU</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Position angle (wrt x-axis) of unweighted fitted ellipse]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.aI" indexed="false">
+         <Name>aI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis of intensity-weighted fitted ellip.]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.bI" indexed="false">
+         <Name>bI</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-minor axis of intensity-weighted fitted ellip.]]></Description>
+         <Units>microns</Units>
+         <UCD version="1">EXTENSION_SMIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.thetaI" indexed="false">
+         <Name>thetaI</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Position angle (wrt x-axis) of intensity-weighted fitted ellipse]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.class" indexed="false">
+         <Name>class</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Classification flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CLASS_OBJECT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.pa" indexed="false">
+         <Name>pa</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Celestial position angle (E of N)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ap1" indexed="false">
+         <Name>ap1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Area above 1st areal profile threshold]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ap2" indexed="false">
+         <Name>ap2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Area above 2nd areal profile threshold]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ap3" indexed="false">
+         <Name>ap3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Area above 3rd areal profile threshold]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ap4" indexed="false">
+         <Name>ap4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Area above 4th areal profile threshold]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ap5" indexed="false">
+         <Name>ap5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Area above 5th areal profile threshold]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ap6" indexed="false">
+         <Name>ap6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Area above 6th areal profile threshold]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ap7" indexed="false">
+         <Name>ap7</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Area above 7th areal profile threshold]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.ap8" indexed="false">
+         <Name>ap8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Area above 8th areal profile threshold]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1">EXTENSION_AREA</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.blend" indexed="false">
+         <Name>blend</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Deblend flag: -n=parent of n children; +n = nth child of a parent]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MULT_INDEX</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.quality" indexed="false">
+         <Name>quality</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Bitwise quality flag]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_QUALITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.prfStat" indexed="false">
+         <Name>prfStat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Profile statistic]]></Description>
+         <Units>N(0,1)</Units>
+         <UCD version="1">CLASS_STAR/GALAXY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.prfMag" indexed="false">
+         <Name>prfMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Profile magnitude]]></Description>
+         <Units>instrumental units</Units>
+         <UCD version="1">PHOT_PHG_MAG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.gMag" indexed="false">
+         <Name>gMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Magnitude calculated on assumption object is galaxy]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">MODEL_MAG_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.sMag" indexed="false">
+         <Name>sMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Magnitude calculated on assumption object is star]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">MODEL_MAG_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.gCorMag" indexed="false">
+         <Name>gCorMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Colour-corrected magnitude calculated on assumption object is galaxy]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">MODEL_MAG_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Detection.sCorMag" indexed="false">
+         <Name>sCorMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Colour-corrected magnitude calculated on assumption object is star]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">MODEL_MAG_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="SourceXKnownQSO">
+      <Name>SourceXKnownQSO</Name>
+      <Description><![CDATA[ Cross-neighbours between F287 Source objects and the table of known QSOs]]></Description>
+      <Column ID="SourceXKnownQSO.masterObjID" indexed="false">
+         <Name>masterObjID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[The object identifier from the F287 Source table]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="SourceXKnownQSO.slaveObjID" indexed="false">
+         <Name>slaveObjID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The object identifier (qsoID) from F287.KnownQSO]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_CATALOG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="SourceXKnownQSO.distanceMins" indexed="false">
+         <Name>distanceMins</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The angular separation of the cross-neighbour]]></Description>
+         <Units>arcminutes</Units>
+         <UCD version="1">POS_ANG_DIST_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="Quality">
+      <Name>Quality</Name>
+      <Description><![CDATA[ Contains information about the quality of an F287 detection]]></Description>
+      <Column ID="Quality.bitSet" indexed="true">
+         <Name>bitSet</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Bits which signify the existance of particular events if set to 1]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Quality.increment" indexed="false">
+         <Name>increment</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Decimal increment corresponding to the bit set]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Quality.event" indexed="false">
+         <Name>event</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Descriptions of the events]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Quality.severity" indexed="false">
+         <Name>severity</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Classifications of the events]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Quality.comments" indexed="false">
+         <Name>comments</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Detailed information about the events]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

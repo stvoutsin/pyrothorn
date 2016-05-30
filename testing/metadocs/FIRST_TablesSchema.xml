@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>FIRST</Name>
+   <Description></Description>
+
+   <Table ID="first08Jul16Source">
+      <Name>first08Jul16Source</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the FIRST Survey Catalog: 08Jul16 Version]]></Description>
+      <Column ID="first08Jul16Source.fieldName" indexed="false">
+         <Name>fieldName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of the coadded image containing the source (encodes the position of the field center).]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_IMAGE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 Celestial Right Ascension]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 Celestial Declination]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.sourceProb" indexed="false">
+         <Name>sourceProb</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[probability that the source is spurious (most commonly because it is a sidelobe of of a nearby bright source.) Low values mean the source is unlikely to be spurious.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.fPeak" indexed="false">
+         <Name>fPeak</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[peak flux densities]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">PHOT_FLUX_RADIO_1.4G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.fInt" indexed="false">
+         <Name>fInt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[integrated flux densities]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">PHOT_FLUX_RADIO_1.4G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.rms" indexed="false">
+         <Name>rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[local noise estimate at the source position]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">INST_NOISE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.maj" indexed="false">
+         <Name>maj</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[major axes derived from the elliptical Gaussian model for the source after deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MAJ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.min" indexed="false">
+         <Name>min</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[minor axes derived from the elliptical Gaussian model for the source after deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.pa" indexed="false">
+         <Name>pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[position angle (east of north) derived from the elliptical Gaussian model for the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.fMaj" indexed="false">
+         <Name>fMaj</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[major axes derived from the elliptical Gaussian model for the source before deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MAJ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.fMin" indexed="false">
+         <Name>fMin</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[minor axes derived from the elliptical Gaussian model for the source before deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.fPA" indexed="false">
+         <Name>fPA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[position angle (east of north) derived from the elliptical Gaussian model for the source before deconvolution.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.sdssMatches" indexed="false">
+         <Name>sdssMatches</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[number of matches within a fiducial radius (8 arcsec) with SDSS DR6]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.sdssSep" indexed="false">
+         <Name>sdssSep</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[separation of the nearest match in SDSS DR6 from the FIRST position]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.sdssMag" indexed="false">
+         <Name>sdssMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS i magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.sdssClass" indexed="false">
+         <Name>sdssClass</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[morphological classification in SDSS DR6 (s=stellar, g=nonstellar/galaxy)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.gsc2Matches" indexed="false">
+         <Name>gsc2Matches</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[number of matches within a fiducial radius (10 arcsec) with GSC-2 version 2.3.2]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.gsc2Sep" indexed="false">
+         <Name>gsc2Sep</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[separation of the nearest match in GSC-2 version 2.3.2 from the FIRST position]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.gsc2Mag" indexed="false">
+         <Name>gsc2Mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[GSC2 F magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.gsc2Class" indexed="false">
+         <Name>gsc2Class</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[morphological classification in GSC-2 version 2.3.2 (s=stellar, g=nonstellar/galaxy)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.twomassMatches" indexed="false">
+         <Name>twomassMatches</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[number of matches within a fiducial radius (8 arcsec) with 2MASS]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.twomassSep" indexed="false">
+         <Name>twomassSep</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[separation of the nearest match in 2MASS from the FIRST position]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="first08Jul16Source.twomassMag" indexed="false">
+         <Name>twomassMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS K magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="firstSource">
+      <Name>firstSource</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the FIRST Survey Catalog: 03Apr11 Version]]></Description>
+      <Column ID="firstSource.fieldName" indexed="false">
+         <Name>fieldName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of the coadded image containing the source (encodes the position of the field center).]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_IMAGE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 Celestial Right Ascension]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 Celestial Declination]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.warnFlag" indexed="false">
+         <Name>warnFlag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Warning flag indicating that the source may be a sidelobe of a nearby bright source.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.fPeak" indexed="false">
+         <Name>fPeak</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[peak flux densities]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">PHOT_FLUX_RADIO_1.4G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.fInt" indexed="false">
+         <Name>fInt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[integrated flux densities]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">PHOT_FLUX_RADIO_1.4G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.rms" indexed="false">
+         <Name>rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[local noise estimate at the source position]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">INST_NOISE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.maj" indexed="false">
+         <Name>maj</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[major axes derived from the elliptical Gaussian model for the source after deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MAJ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.min" indexed="false">
+         <Name>min</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[minor axes derived from the elliptical Gaussian model for the source after deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.pa" indexed="false">
+         <Name>pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[position angle (east of north) derived from the elliptical Gaussian model for the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.fMaj" indexed="false">
+         <Name>fMaj</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[major axes derived from the elliptical Gaussian model for the source before deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MAJ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.fMin" indexed="false">
+         <Name>fMin</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[minor axes derived from the elliptical Gaussian model for the source before deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource.fPA" indexed="false">
+         <Name>fPA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[position angle (east of north) derived from the elliptical Gaussian model for the source before deconvolution.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="firstSource12Feb16">
+      <Name>firstSource12Feb16</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the FIRST Survey Catalog: 12Feb16 Version]]></Description>
+      <Column ID="firstSource12Feb16.fieldName" indexed="false">
+         <Name>fieldName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of the coadded image containing the source (encodes the position of the field center).]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_IMAGE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.seqNo" indexed="true">
+         <Name>seqNo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[sequential object number]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 Celestial Right Ascension]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 Celestial Declination]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.sourceProb" indexed="false">
+         <Name>sourceProb</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[probability that the source is spurious (most commonly because it is a sidelobe of of a nearby bright source.) Low values mean the source is unlikely to be spurious.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.fPeak" indexed="false">
+         <Name>fPeak</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[peak flux densities]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">PHOT_FLUX_RADIO_1.4G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.fInt" indexed="false">
+         <Name>fInt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[integrated flux densities]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">PHOT_FLUX_RADIO_1.4G</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.rms" indexed="false">
+         <Name>rms</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[local noise estimate at the source position]]></Description>
+         <Units>mJy</Units>
+         <UCD version="1">INST_NOISE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.maj" indexed="false">
+         <Name>maj</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[major axes derived from the elliptical Gaussian model for the source after deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MAJ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.min" indexed="false">
+         <Name>min</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[minor axes derived from the elliptical Gaussian model for the source after deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.pa" indexed="false">
+         <Name>pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[position angle (east of north) derived from the elliptical Gaussian model for the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.fMaj" indexed="false">
+         <Name>fMaj</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[major axes derived from the elliptical Gaussian model for the source before deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MAJ</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.fMin" indexed="false">
+         <Name>fMin</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[minor axes derived from the elliptical Gaussian model for the source before deconvolution.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_FWHM_MIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.fPA" indexed="false">
+         <Name>fPA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[position angle (east of north) derived from the elliptical Gaussian model for the source before deconvolution.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.sdssMatches" indexed="false">
+         <Name>sdssMatches</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[number of matches within a fiducial radius (8 arcsec) with SDSS DR6]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.sdssSep" indexed="false">
+         <Name>sdssSep</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[separation of the nearest match in SDSS DR6 from the FIRST position]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.sdssMag" indexed="false">
+         <Name>sdssMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[SDSS i magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.sdssClass" indexed="false">
+         <Name>sdssClass</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[morphological classification in SDSS DR6 (s=stellar, g=nonstellar/galaxy)]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.twomassMatches" indexed="false">
+         <Name>twomassMatches</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[number of matches within a fiducial radius (8 arcsec) with 2MASS]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.twomassSep" indexed="false">
+         <Name>twomassSep</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[separation of the nearest match in 2MASS from the FIRST position]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="firstSource12Feb16.twomassMag" indexed="false">
+         <Name>twomassMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2MASS K magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+
