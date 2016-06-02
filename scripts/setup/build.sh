@@ -27,6 +27,7 @@
     # ** this should be in the container **
     source /etc/bashrc
 
+    yum install -y git
 
     echo "*** Checkout a copy of our source code. [build.sh] ***"
 # -----------------------------------------------------
@@ -39,6 +40,7 @@
     then
         cat > "${HOME:?}/firethorn.settings" << EOF
 FIRETHORN_CODE=/projects/firethorn
+PYROTHORN_CODE=/projects/firethorn/pyrothorn
 EOF
     fi
 
@@ -245,8 +247,25 @@ EOF
 # Build our pyrothorn container.
 #[root@builder]
 
+
+
+    #
+    # Clone our repository.
+    source "${HOME:?}/firethorn.settings"
+    if [ ! -e "${PYROTHORN_CODE:?}" ]
+    then
+        pushd "${FIRETHORN_CODE:?}"
+
+  	git clone https://github.com/stvoutsin/pyrothorn.git 
+
+        popd
+    fi
+  
+
     source "${HOME:?}/firethorn.settings"
     pushd "${FIRETHORN_CODE:?}"
+        
+        source "bin/util.sh"
 
         if [ $(docker images | grep -c '^firethorn/pyrothorn') -eq 0 ]
         then
@@ -254,7 +273,7 @@ EOF
             echo "# Building pyrothorn image"
             docker build \
                 --tag firethorn/pyrothorn:$(getversion) \
-                integration/005/testing/pyrothorn
+                pyrothorn
 
         fi
     popd

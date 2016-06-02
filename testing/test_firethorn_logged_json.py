@@ -7,19 +7,18 @@ try:
     sys.path.insert(0, os.path.dirname(__file__))
     sys.path.insert(0, os.path.abspath(os.path.join(testdir, configdir)))
     import os.path
-    from pyrothorn.selenium import webdriver
-    from pyrothorn.selenium.webdriver.common.by import By
-    from pyrothorn.selenium.webdriver.common.keys import Keys
-    from pyrothorn.selenium.webdriver.support.ui import Select
-    from pyrothorn.selenium.common.exceptions import NoSuchElementException
+    from selenium import webdriver
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.common.keys import Keys
+    from selenium.webdriver.support.ui import Select
+    from selenium.common.exceptions import NoSuchElementException
     import unittest, time, re
-    from pyrothorn.selenium.webdriver.common.action_chains import ActionChains
-    from pyrothorn.selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
-    from pyrothorn.selenium.webdriver.support import expected_conditions as EC # available since 2.26.0
+    from selenium.webdriver.common.action_chains import ActionChains
+    from selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
+    from selenium.webdriver.support import expected_conditions as EC # available since 2.26.0
     import logging
     import urllib2
     import json
-    import pyrothorn.pyroquery
     import urllib
     from pyrothorn.pyroquery. import firethornEngine
     from pyrothorn.pyroquery import queryEngine
@@ -96,7 +95,7 @@ class test_firethorn(unittest.TestCase):
             logging.info("Setting up Firethorn Environment..")
             
             if (self.use_preset_params):
-                fEng = pyrothorn.firethornEngine.FirethornEngine(config.jdbcspace, config.adqlspace, config.adqlschema, config.query_schema, config.schema_name, config.schema_alias, config.driver)
+                fEng = firethornEngine.FirethornEngine(config.jdbcspace, config.adqlspace, config.adqlschema, config.query_schema, config.schema_name, config.schema_alias, config.driver)
                 fEng.printClassVars()
                 
             else:
@@ -109,7 +108,7 @@ class test_firethorn(unittest.TestCase):
                             with open(config.stored_env_config) as data_file:    
                                 data = json.load(data_file)
                             if ('jdbcspace' in data) and ('query_schema' in data) and ('adqlspace' in data):
-                                fEng = pyrothorn.firethornEngine.FirethornEngine(jdbcspace=data['jdbcspace'], adqlspace=data['adqlspace'], query_schema = data['query_schema'], driver = config.driver )
+                                fEng = firethornEngine.FirethornEngine(jdbcspace=data['jdbcspace'], adqlspace=data['adqlspace'], query_schema = data['query_schema'], driver = config.driver )
                                 if (config.test_is_continuation):
                                     queryrunID = data['queryrunID']
                                 else :
@@ -125,7 +124,7 @@ class test_firethorn(unittest.TestCase):
                         
                     if (valid_config_found==False):  
                         queryrunID = get_a_uuid() 
-			fEng = pyrothorn.firethornEngine.FirethornEngine(driver = config.driver)
+			fEng = firethornEngine.FirethornEngine(driver = config.driver)
                         fEng.setUpFirethornEnvironment( config.resourcename , config.resourceuri, config.catalogname, config.ogsadainame, config.adqlspacename, config.jdbccatalogname, config.jdbcschemaname, config.metadocfile)
                     if (self.include_neighbours):
                         self.import_neighbours(sqlEng, fEng)
@@ -133,7 +132,7 @@ class test_firethorn(unittest.TestCase):
                     fEng.printClassVars()
                             
                 else:
-                    fEng = pyrothorn.firethornEngine.FirethornEngine( schema_name=config.schema_name, schema_alias=config.schema_alias,driver = config.driver )
+                    fEng = firethornEngine.FirethornEngine( schema_name=config.schema_name, schema_alias=config.schema_alias,driver = config.driver )
 		    queryrunID = get_a_uuid() 
                     fEng.setUpFirethornEnvironment( config.resourcename , config.resourceuri, config.catalogname, config.ogsadainame, config.adqlspacename, config.jdbccatalogname, config.jdbcschemaname, config.metadocfile, config.jdbc_resource_user, config.jdbc_resource_pass)
                     fEng.printClassVars()

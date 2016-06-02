@@ -3,19 +3,18 @@ configdir = '../'
 testdir = os.path.dirname(__file__)
 sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, configdir)))
-from pyrothorn.selenium import webdriver
-from pyrothorn.selenium.webdriver.common.by import By
-from pyrothorn.selenium.webdriver.common.keys import Keys
-from pyrothorn.selenium.webdriver.support.ui import Select
-from pyrothorn.selenium.common.exceptions import NoSuchElementException
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
-from pyrothorn.selenium.webdriver.common.action_chains import ActionChains
-from pyrothorn.selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
-from pyrothorn.selenium.webdriver.support import expected_conditions as EC # available since 2.26.0
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
+from selenium.webdriver.support import expected_conditions as EC # available since 2.26.0
 import logging
 import urllib2
 import json
-import pyrothorn.pyroquery
 import urllib
 from pyrothorn.pyroquery import firethornEngine
 from pyrothorn.pyroquery import queryEngine
@@ -42,10 +41,10 @@ class test_firethorn(unittest.TestCase):
 
     def test_sample_firethorn_query(self):
         if (self.use_preset_params):
-            fEng = pyrothorn.firethornEngine.FirethornEngine(config.jdbcspace, config.adqlspace, config.adqlschema, config.query_schema, config.schema_name, config.schema_alias)
+            fEng = firethornEngine.FirethornEngine(config.jdbcspace, config.adqlspace, config.adqlschema, config.query_schema, config.schema_name, config.schema_alias)
             fEng.printClassVars()
         else:
-            fEng = pyrothorn.firethornEngine.FirethornEngine()
+            fEng = firethornEngine.FirethornEngine()
             fEng.setUpFirethornEnvironment( config.resourcename , config.resourceuri, config.catalogname, config.ogsadainame, config.adqlspacename, config.jdbccatalogname, config.jdbcschemaname, config.metadocfile)
             fEng.printClassVars()
         qEng = queryEngine.QueryEngine()
@@ -58,7 +57,7 @@ class test_firethorn(unittest.TestCase):
       
         logging.info("Setting up Firethorn Environment..")
 
-        fEng = pyrothorn.firethornEngine.FirethornEngine(config.jdbcspace, config.adqlspace, config.adqlschema, config.query_schema, config.schema_name, config.schema_alias)
+        fEng = firethornEngine.FirethornEngine(config.jdbcspace, config.adqlspace, config.adqlschema, config.query_schema, config.schema_name, config.schema_alias)
         fEng.printClassVars()
         
         logging.info("")
@@ -89,7 +88,7 @@ class test_firethorn(unittest.TestCase):
         log_sql_query = config.stored_queries_query
         logging.info("Setting up Firethorn Environment..")
 
-        fEng = pyrothorn.firethornEngine.FirethornEngine(config.jdbcspace, config.adqlspace, config.adqlschema, config.query_schema, config.schema_name, config.schema_alias)
+        fEng = firethornEngine.FirethornEngine(config.jdbcspace, config.adqlspace, config.adqlschema, config.query_schema, config.schema_name, config.schema_alias)
         fEng.printClassVars()
         
         logging.info("")

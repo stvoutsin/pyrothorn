@@ -17,7 +17,9 @@ setup(
     license = "BSD",
     keywords = "pyrothorn firethorn vo",
     url = "http://wfau.metagrid.co.uk/code/firethorn",
-    packages=['pyrothorn', 'pyrothorn.pyroquery', 'pyrothorn.mssql', 'pyrothorn.misc', 'pyrothorn.generators', 'pyrothorn.selenium'],
+    packages=['pyrothorn', 'pyrothorn.pyroquery', 'pyrothorn.mssql', 'pyrothorn.misc', 'pyrothorn.generators'],
+    tests_require=['selenium'],
+    install_requires=['selenium'],
     long_description=read('README'),
     classifiers=[
         "Development Status :: 1 - Alpha",

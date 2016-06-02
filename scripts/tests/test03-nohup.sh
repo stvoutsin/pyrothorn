@@ -21,4 +21,6 @@
 
 cd /home/pyrothorn/
 
+python setup.py install
+
 python testing/test_firethorn_logged_sql.py > logs/logfile.txt

@@ -7,15 +7,15 @@ try:
     sys.path.insert(0, os.path.dirname(__file__))
     sys.path.insert(0, os.path.abspath(os.path.join(testdir, configdir)))
     import os.path
-    from pyrothorn.selenium import webdriver
-    from pyrothorn.selenium.webdriver.common.by import By
-    from pyrothorn.selenium.webdriver.common.keys import Keys
-    from pyrothorn.selenium.webdriver.support.ui import Select
-    from pyrothorn.selenium.common.exceptions import NoSuchElementException
+    from selenium import webdriver
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.common.keys import Keys
+    from selenium.webdriver.support.ui import Select
+    from selenium.common.exceptions import NoSuchElementException
     import unittest, time, re
-    from pyrothorn.selenium.webdriver.common.action_chains import ActionChains
-    from pyrothorn.selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
-    from pyrothorn.selenium.webdriver.support import expected_conditions as EC # available since 2.26.0
+    from selenium.webdriver.common.action_chains import ActionChains
+    from selenium.webdriver.support.ui import WebDriverWait # available since 2.4.0
+    from selenium.webdriver.support import expected_conditions as EC # available since 2.26.0
     import logging
     import urllib2
     import json
