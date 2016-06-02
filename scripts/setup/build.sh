@@ -43,6 +43,7 @@ FIRETHORN_CODE=/projects/firethorn
 PYROTHORN_CODE=/projects/firethorn/pyrothorn
 EOF
     fi
+    
 
     #
     # Clone our repository.
@@ -260,7 +261,14 @@ EOF
 
         popd
     fi
-  
+
+    source "${HOME:?}/firethorn.settings"
+    pushd "${PYROTHORN_CODE:?}"
+
+       git pull
+
+    popd
+
 
     source "${HOME:?}/firethorn.settings"
     pushd "${FIRETHORN_CODE:?}"
