@@ -47,6 +47,7 @@ if [ "$1" == "--help" ]; then
   echo "07 - Perform 06 test, but also run a taplint validation test"
   echo "08 - Build a TAP Service for a given catalogue. (Uses secret.store database credentials)"
   echo "09 - Build a Clearwing (webpy interface) container"
+  echo "10 - Create Firethorn chain"
   return 0
 fi
 
@@ -153,7 +154,9 @@ else
 
         fi
       
-
+    elif [ $testname -eq 10 ];
+    then
+        echo -n "Firethorn services created"
     else 
         source setup/setup-pyro.sh
         source tests/$testname
