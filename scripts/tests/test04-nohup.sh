@@ -63,12 +63,12 @@ do
 
     echo "Running query.."
     #
-    # Create the query.
+     the query.
     curl \
     --header "firethorn.auth.identity:${identity:?}" \
     --header "firethorn.auth.community:${community:?}" \
-    --data   "adql.schema.query.create.mode=AUTO" \
-    --data-urlencode "adql.schema.query.create.query=${adqltext:?}" \
+    --data   "adql.query.mode=AUTO" \
+    --data-urlencode "adql.query.input=${adqltext:?}" \
     "${endpointurl:?}/${queryschema:?}/queries/create" \
      | bin/pp | tee query-job.json
 
@@ -80,8 +80,8 @@ do
     curl \
     --header "firethorn.auth.identity:${identity:?}" \
     --header "firethorn.auth.community:${community:?}" \
-    --data   "adql.schema.query.create.mode=AUTO" \
-    --data-urlencode "adql.schema.query.create.query=${adqltext:?}" \
+    --data   "adql.query.mode=AUTO" \
+    --data-urlencode "adql.query.input=${adqltext:?}" \
     "${endpointurl:?}/${queryschema:?}/queries/create" \
      | bin/pp | tee query-job.json
 
@@ -92,7 +92,7 @@ do
     curl \
     --header "firethorn.auth.identity:${identity:?}" \
     --header "firethorn.auth.community:${community:?}" \
-    --data-urlencode "adql.query.update.status=RUNNING" \
+    --data-urlencode "adql.query.status=RUNNING" \
     "${endpointurl:?}/${queryident:?}" 
             
     sleep 1
