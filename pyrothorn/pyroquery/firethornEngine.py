@@ -107,7 +107,7 @@ class FirethornEngine(object):
  				     "urn:jdbc.copy.depth" : config.adql_copy_depth,
                                      "jdbc.connection.url" : resourceuri,
                                      "jdbc.catalog.name" : catalogname,
-                                     "jdbc.resource.create.name" : ogsadainame,
+                                     "jdbc.resource.name" : ogsadainame,
                                      "jdbc.connection.driver" : self.driver,
                                      "jdbc.connection.user" : jdbc_resource_user,
                                      "jdbc.connection.pass" : jdbc_resource_pass
