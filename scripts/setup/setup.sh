@@ -23,32 +23,6 @@
 
   echo "*** Installing tools [setup.sh] ***"
    
-# -----------------------------------------
-# Install admin tools.
-#
-    yum -y install htop
-    yum -y install pwgen
-    
-# -----------------------------------------------------
-# Install and start the HAVEGE entropy generator.
-# http://redmine.roe.ac.uk/issues/828
-# http://blog-ftweedal.rhcloud.com/2014/05/more-entropy-with-haveged/
-# http://stackoverflow.com/questions/26021181/not-enough-entropy-to-support-dev-random-in-docker-containers-running-in-boot2d/
-#
-    yum install -y haveged
-    systemctl start haveged.service
-
-    echo "*** Installing & starting docker [setup.sh] ***"
-# -----------------------------------------------------
-# Install and start Docker.
-#
-    yum install -y https://kojipkgs.fedoraproject.org//packages/docker-io/1.6.2/3.gitc3ca5bb.fc21/x86_64/docker-io-1.6.2-3.gitc3ca5bb.fc21.x86_64.rpm
-	
-
-    systemctl enable docker.service
-    systemctl start  docker.service
-    systemctl status docker.service
-
 
 # -----------------------------------------------------
 # Remove existing docker containers and images
@@ -87,30 +61,6 @@
     chcon -t svirt_sandbox_file_t "/var/local/projects" 
     chcon -t svirt_sandbox_file_t "/var/local/cache" 
 
-# -----------------------------------------------------
-# Install the selinux-dockersock SELinux policy.
-# https://github.com/dpw/selinux-dockersock
-#
-    # Test if present
-    # semodule -l | grep dockersock
-
-    yum install -y git
-    yum install -y make
-    yum install -y checkpolicy
-    yum install -y policycoreutils policycoreutils-python
-    
-    pushd /var/local/projects
-
-        git clone https://github.com/dpw/selinux-dockersock
-
-        pushd selinux-dockersock
-
-            make dockersock.pp
-
-            semodule -i dockersock.pp
-
-        popd
-    popd
 
     chmod a+r "${HOME:?}/setup/build.sh" 
     chcon -t svirt_sandbox_file_t "${HOME:?}/setup/build.sh" 

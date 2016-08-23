@@ -105,7 +105,7 @@ class FirethornEngine(object):
 	    if jdbc_resource_user!="" and jdbc_resource_pass!="":
                 data = urllib.urlencode({config.resource_create_name_params['http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json'] : resourcename,
  				     "urn:jdbc.copy.depth" : config.adql_copy_depth,
-                                     "jdbc.resource.create.url" : resourceuri,
+                                     "jdbc.connection.url" : resourceuri,
                                      "jdbc.catalog.name" : catalogname,
                                      "jdbc.resource.create.name" : ogsadainame,
                                      "jdbc.connection.driver" : self.driver,
@@ -117,7 +117,7 @@ class FirethornEngine(object):
 	    else :
                 data = urllib.urlencode({config.resource_create_name_params['http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json'] : resourcename ,
                                      "urn:jdbc.copy.depth" : config.adql_copy_depth,
-                                     "jdbc.resource.create.url" : resourceuri,
+                                     "jdbc.connection.url" : resourceuri,
                                      "jdbc.catalog.name" : catalogname,
 				     "jdbc.connection.driver" : self.driver,
 

@@ -27,7 +27,7 @@
     # ** this should be in the container **
     source /etc/bashrc
 
-    yum install -y git
+    dnf install -y git
 
     echo "*** Checkout a copy of our source code. [build.sh] ***"
 # -----------------------------------------------------
@@ -214,11 +214,11 @@ EOF
     pushd "${FIRETHORN_CODE:?}"
 
         pushd firethorn-ogsadai/webapp
-            mvn -D "docker.host=http://${dockerip:?}:2375" docker:package
+            mvn -D "docker.host=tcp://${dockerip:?}:2375" docker:package
         popd
         
         pushd firethorn-webapp
-            mvn -D "docker.host=http://${dockerip:?}:2375" docker:package
+            mvn -D "docker.host=tcp://${dockerip:?}:2375" docker:package
         popd
 
     popd
@@ -257,7 +257,7 @@ EOF
     then
         pushd "${FIRETHORN_CODE:?}"
 
-  	git clone https://github.com/stvoutsin/pyrothorn.git 
+  	git clone -b 1.1 https://github.com/stvoutsin/pyrothorn.git 
 
         popd
     fi
