@@ -1,9 +1,8 @@
-# Pyrothorn
 Pyrothorn is a testing suite for the Firethorn project (http://wfau.metagrid.co.uk/code/firethorn).
 Consists of pyrothorn source code that handles querying through Firethorn, SQLServer, MySQL & TAP, and scripts to setup and run Docker test chain for all different test cases, or deployment.
 
 
-# Usage Example:  
+Usage Example:  
 
 run.sh testname branch version additional_param
 
