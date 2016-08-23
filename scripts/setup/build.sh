@@ -27,7 +27,7 @@
     # ** this should be in the container **
     source /etc/bashrc
 
-    dnf install -y git
+    yum install -y git
 
     echo "*** Checkout a copy of our source code. [build.sh] ***"
 # -----------------------------------------------------
