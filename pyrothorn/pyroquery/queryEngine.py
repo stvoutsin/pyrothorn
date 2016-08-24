@@ -189,25 +189,26 @@ class QueryEngine(object):
         
         try:
     
-            data = urllib.urlencode({ query_status_update : "RUNNING"})
-            
-            #data = urllib.urlencode({ query_status_update : "RUNNING", 'adql.query.update.delay.every' : '10000', 'adql.query.update.delay.first':'10000', 'adql.query.update.delay.last':'10000'})
+            data = urllib.urlencode({ query_status_update : "COMPLETED", "adql.query.wait.time" : 60000})
+
+            #data = urllib.urlencode({ query_status_update : "RUNNING", 'adql.query.update.delay.every' : '10000', 'adql.query.update.delay.first':'10000', 'adql.query.update.delay.la$
             request = urllib2.Request(url, data, headers={"Accept" : "application/json", "firethorn.auth.identity" : test_email, "firethorn.auth.community" : "public (unknown)"})
             f_update = urllib2.urlopen(request)
             query_json =  json.loads(f_update.read())
             query_status = query_json["status"]
             logging.info("Started query:" + url)
-            
-       
-            while query_status=="PENDING" or query_status=="RUNNING" and elapsed_time<MAX_ELAPSED_TIME:
+
+
+            while query_status=="QUEUED" or query_status=="RUNNING" and elapsed_time<MAX_ELAPSED_TIME:
                 query_json = json.loads(get_status(url))
-                query_status= query_json["status"] 
+                query_status= query_json["status"]
                 time.sleep(delay)
                 if elapsed_time>MIN_ELAPSED_TIME_BEFORE_REDUCE and delay<MAX_DELAY:
                     delay = delay + delay
                 elapsed_time = int(time.time() - start_time)
-            
+
             logging.info("Finished query:" + url)
+
           
             if query_status=="ERROR" or query_status=="FAILED":
                 return {'Code' :-1,  'Content' : 'Query error: A problem occurred while running your query' }
