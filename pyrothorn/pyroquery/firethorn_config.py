@@ -58,7 +58,7 @@ query_limit_time_param = "adql.query.limit.time"
 query_mode_param = "adql.query.mode"
 
 query_param = "adql.query.input"
-query_status_update = "adql.query.status"
+query_status_update = "adql.query.status.next"
 
 schema_create_uri = '/schemas/create'
 table_create_uri = '/tables/create'

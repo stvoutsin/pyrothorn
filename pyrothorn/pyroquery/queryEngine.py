@@ -93,7 +93,14 @@ class QueryEngine(object):
         result_adql_table = ""
         query_identity = ""
         datatable = []
-        
+        error_message = None
+
+        def read_json(url):
+            request2 = urllib2.Request(url, headers={"Accept" : "application/json", "firethorn.auth.identity" : test_email, "firethorn.auth.community" : "public (unknown)"})
+            f_read = urllib2.urlopen(request2)
+            query_json = f_read.read()
+            f_read.close()
+            return query_json        
 
         try :
             from datetime import datetime
@@ -117,7 +124,7 @@ class QueryEngine(object):
             f_updt.close()
 
             query_loop_results = self.start_query_loop(query_identity)
-            results_adql_url = query_create_result["results"]["adql"]
+            results_adql_url = json.loads(read_json(query_identity)).get("results",None).get("table",None)
             
             if query_loop_results.get("Code", "") !="":
                 if query_loop_results.get("Code", "") ==-1:
@@ -195,7 +202,7 @@ class QueryEngine(object):
             request = urllib2.Request(url, data, headers={"Accept" : "application/json", "firethorn.auth.identity" : test_email, "firethorn.auth.community" : "public (unknown)"})
             f_update = urllib2.urlopen(request)
             query_json =  json.loads(f_update.read())
-            query_status = query_json["status"]
+            query_status = "QUEUED"
             logging.info("Started query:" + url)
 
 
@@ -217,7 +224,7 @@ class QueryEngine(object):
             elif query_status=="EDITING":
                 return {'Code' :-1,  'Content' :  query_json["syntax"]["status"] + ' - ' + query_json["syntax"]["friendly"] }
             elif query_status=="COMPLETED":
-                return {'Code' :1,  'Content' : query_json["results"]["datatable"] }
+                return {'Code' :1,  'Content' : query_json["results"]["formats"]["datatable"] }
             elif elapsed_time>=MAX_ELAPSED_TIME:
                 return {'Code' :-1,  'Content' : 'Query error: Max run time (' + str(MAX_ELAPSED_TIME) + ' seconds) exceeded' }
             else:
