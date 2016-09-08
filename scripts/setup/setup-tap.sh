@@ -18,7 +18,7 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-catalogue=$1
+catalogue=ATLASDR1
 
 if [ "$catalogue" != "DEFAULT" ]
   then
@@ -48,7 +48,7 @@ chcon -t svirt_sandbox_file_t "${HOME:?}/tap_service"
 
 chmod a+r "${HOME:?}/tap_service"
 
-ip=$(ip -f inet -o addr show eth0|cut -d\  -f 7 | cut -d/ -f 1)
+ip=$(hostname -i)
 
 # -----------------------------------------------------
 # Start our test container.
@@ -71,7 +71,7 @@ ip=$(ip -f inet -o addr show eth0|cut -d\  -f 7 | cut -d/ -f 1)
         --env "metadata=${metadata?}" \
         --env "endpointurl=http://${firelink:?}:8080/firethorn" \
         --env "catalogue=${catalogue:?}" \
-        --env "ip=${ip:?}" \
+        --env "ip=http://${ip:?}" \
         --link "${firename:?}:${firelink:?}" \
         "firethorn/tester:1.1" \
         bash -C ${setupdir:?}/build-tap.sh

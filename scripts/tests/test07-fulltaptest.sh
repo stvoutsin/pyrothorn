@@ -151,7 +151,7 @@ mkdir -p /var/logs/${pyroname:?}
 
 echo "*** Run pyrothorn [test06-taptest.sh] ***"
 
-chmod a+r "${HOME:?}/tests/test07-taplint" 
+chmod a+r "${HOME:?}/tests/test07-taplint.sh" 
 chcon -t svirt_sandbox_file_t "${HOME:?}/tests/test07-taplint.sh" 
 
 
