@@ -83,6 +83,7 @@
     pyroname=pyrothorn
     storedqueriesname=maria
     pyrosqlname=mikaela
+    firepache=firepache
 
     metalink=albert
     userlink=edward
@@ -91,6 +92,7 @@
     firelink=peter
     storedquerieslink=john
     pyrosqllink=mike
+    firepachelink=firepachelink
 
     metatype=mssql
     metadata=$(secret 'firethorn.meta.data')
