@@ -131,7 +131,7 @@ class test_firethorn(unittest.TestCase):
                     sql_error_message =  ""
                     logging.info("Query : " +  query)
                     self.total_queries = self.total_queries + 1
-                    """
+                    
                     try:
                         check_duplicate_query = "select count(*), queryid, query_count from queries where query_hash='" + querymd5 + "' and queryrunID='" + queryrunID + "'"
                         query_duplicates_found_row = reporting_sqlEng.execute_sql_query(check_duplicate_query, config.reporting_database)[0]
@@ -143,7 +143,7 @@ class test_firethorn(unittest.TestCase):
                         query_duplicates_found = 0
                         queryid = None
                         query_count = 0
-                    """
+                    
                     query_duplicates_found=0
                     if (query_duplicates_found<=0):
                         continue_from_here_flag = True
