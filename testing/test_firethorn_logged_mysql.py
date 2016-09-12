@@ -102,7 +102,7 @@ class test_firethorn(unittest.TestCase):
             firethorn_version = ""
 	    continue_from_here_flag = False
 
-
+              
             try:
                 if (config.test_is_continuation):
                     total_unique_queries_qry = "select count(*) from queries where  queryrunID='" + queryrunID + "'"
@@ -119,7 +119,6 @@ class test_firethorn(unittest.TestCase):
             jsondata=[]
             with open(config.logged_queries_json_file ) as f:
                 data = json.load(f)
-
                 for line in data:
                     query = line["query"]
                     qEng = queryEngine.QueryEngine()
@@ -132,7 +131,7 @@ class test_firethorn(unittest.TestCase):
                     sql_error_message =  ""
                     logging.info("Query : " +  query)
                     self.total_queries = self.total_queries + 1
-
+                    """
                     try:
                         check_duplicate_query = "select count(*), queryid, query_count from queries where query_hash='" + querymd5 + "' and queryrunID='" + queryrunID + "'"
                         query_duplicates_found_row = reporting_sqlEng.execute_sql_query(check_duplicate_query, config.reporting_database)[0]
@@ -144,7 +143,8 @@ class test_firethorn(unittest.TestCase):
                         query_duplicates_found = 0
                         queryid = None
                         query_count = 0
-
+                    """
+                    query_duplicates_found=0
                     if (query_duplicates_found<=0):
                         continue_from_here_flag = True
                         mysql_duration = 0
@@ -160,7 +160,6 @@ class test_firethorn(unittest.TestCase):
                         self.total_unique_queries = self.total_unique_queries+1
 
                         try :
-                            logging.info(query)
 	            	    logging.info("---------------------- Starting Query Test ----------------------")
 	            	    mysql_start_time = time.time()
 	            	    query_timestamp = datetime.datetime.fromtimestamp(mysql_start_time).strftime('%Y-%m-%d %H:%M:%S')
@@ -168,7 +167,7 @@ class test_firethorn(unittest.TestCase):
 	            	    with Timeout(config.sql_timeout):
 	            	        mysql_row_length, mysql_error_message = mysqlEng.execute_sql_query_get_rows(query, config.test_database, config.sql_rowlimit, config.sql_timeout)
 	            	    logging.info("Completed MySQL query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
-	            	    logging.info("SQL Query: " + str(mysql_row_length) + " row(s) returned. ")
+	            	    logging.info("MySQL Query: " + str(mysql_row_length) + " row(s) returned. ")
 	            	    mysql_duration = float(time.time() - mysql_start_time)
 
 	                except Exception as e:
@@ -189,7 +188,7 @@ class test_firethorn(unittest.TestCase):
                             with Timeout(config.sql_timeout):
                                 sqlserver_row_length, sqlserver_error_message = sqlserverEng.execute_sql_query_get_rows(query, config.test_database, config.sql_rowlimit, config.sql_timeout)
                             logging.info("Completed SQL Server query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
-                            logging.info("SQL Query: " + str(sqlserver_row_length) + " row(s) returned. ")
+                            logging.info("SQL Server Query: " + str(sqlserver_row_length) + " row(s) returned. ")
                             sqlserver_duration = float(time.time() - sqlserver_start_time)
 
                         except Exception as e:
