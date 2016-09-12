@@ -157,7 +157,7 @@ else
     elif [ $testname -eq 10 ];
     then
         echo -n "Firethorn services created"
-    elif [ $testname -eq 01 ];
+    elif [ $testname -eq 11 ];
     then 
 	source setup/setup-pyro.sh
         source tests/test11-mysql.sh

@@ -111,7 +111,7 @@ stored_queries_dbserver_password = "${storedqueriespass:?}"
 stored_queries_dbserver_port = "${storedqueriesport:?}" 
 stored_queries_database = "${storedqueriesdata:?}" 
 stored_queries_query = "select * from webqueries where dbname like 'ATLAS%' and query not like '%dr%' and query not like '%best%'" 
-logged_queries_txt_file = "/testing/query_logs/mysql-ukidss.json" 
+logged_queries_txt_file = "testing/query_logs/mysql-ukidss.json" 
 
 ### Firethorn Live test Configuration ###
 
