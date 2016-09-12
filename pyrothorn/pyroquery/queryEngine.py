@@ -221,7 +221,7 @@ class QueryEngine(object):
                 if (query_json["syntax"]["status"]=="PARSE_ERROR"):
                     return {'Code' :-1,  'Content' : 'Query error: ' + query_json["syntax"]["status"] + ' - ' + query_json["syntax"]["friendly"] }
                 else:
-                    return {'Code' :-1,  'Content' : 'Query error: A problem occurred while running your query'
+                    return {'Code' :-1,  'Content' : 'Query error: A problem occurred while running your query'}
             elif query_status=="CANCELLED":
                 return {'Code' :1,  'Content' : 'Query error: Query has been canceled' }
             elif query_status=="EDITING":
