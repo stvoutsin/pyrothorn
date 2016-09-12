@@ -42,7 +42,7 @@ try:
         r_uuid = base64.urlsafe_b64encode(uuid.uuid4().bytes)
         return r_uuid.replace('=', '')
 except Exception as e:
-    logging.info(e)
+    logging.exception(e)
 
 class Timeout():
     """Timeout class using ALARM signal."""
@@ -87,82 +87,19 @@ class test_firethorn(unittest.TestCase):
             queryrunID = ""
 	    logged_queries=[]
             logged_query_sqlEng = sqlEngine.SQLEngine(config.stored_queries_dbserver, config.stored_queries_dbserver_username, config.stored_queries_dbserver_password, config.stored_queries_dbserver_port)
-            sqlEng = sqlEngine.SQLEngine(config.test_dbserver, config.test_dbserver_username, config.test_dbserver_password, config.test_dbserver_port, "MySQL")
+            sqlserverEng = sqlEngine.SQLEngine(config.test_dbserver, config.test_dbserver_username, config.test_dbserver_password, config.test_dbserver_port)
+            mysqlEng = sqlEngine.SQLEngine(config.second_test_dbserver, config.second_test_dbserver_username, config.second_test_dbserver_password, config.second_test_dbserver_port)
             reporting_sqlEng = sqlEngine.SQLEngine(config.reporting_dbserver, config.reporting_dbserver_username, config.reporting_dbserver_password, config.reporting_dbserver_port, "MySQL")
             fEng=None
             
             log_sql_query = config.stored_queries_query
             logging.info("Setting up Testing Environment..")
             
-            if (self.use_preset_params):
-                fEng = firethornEngine.FirethornEngine(config.jdbcspace, config.adqlspace, config.adqlschema, config.query_schema, config.schema_name, config.schema_alias, config.driver)
-                fEng.printClassVars()
-                
-            else:
-                
-                if (self.use_cached_firethorn_env):
-                    try:
-                        if (os.path.isfile(config.stored_env_config)):
-                            data = []
-                            
-                            with open(config.stored_env_config) as data_file:    
-                                data = json.load(data_file)
-                            if ('jdbcspace' in data) and ('query_schema' in data) and ('adqlspace' in data):
-                                fEng = firethornEngine.FirethornEngine(jdbcspace=data['jdbcspace'], adqlspace=data['adqlspace'], query_schema = data['query_schema'], driver = config.driver )
-                                if (config.test_is_continuation):
-                                    queryrunID = data['queryrunID']
-                                else :
-				    queryrunID = get_a_uuid()
-				logging.info("Firethorn Environment loaded from cached config file: " + config.stored_env_config)
-                                valid_config_found = True
-                            else :
-                                valid_config_found = False
-                        else :
-                            valid_config_found = False   
-                    except Exception as e:
-                        valid_config_found = False     
-                        
-                    if (valid_config_found==False):  
-                        queryrunID = get_a_uuid() 
-			fEng = firethornEngine.FirethornEngine(driver = config.driver)
-                        fEng.setUpFirethornEnvironment( config.resourcename , config.resourceuri, config.catalogname, config.ogsadainame, config.adqlspacename, config.jdbccatalogname, config.jdbcschemaname, config.metadocfile)
-                    if (self.include_neighbours):
-                        self.import_neighbours(sqlEng, fEng)
-                            
-                    fEng.printClassVars()
-                            
-                else:
-                    fEng = firethornEngine.FirethornEngine( schema_name=config.schema_name, schema_alias=config.schema_alias,driver = config.driver )
-		    queryrunID = get_a_uuid() 
-                    fEng.setUpFirethornEnvironment( config.resourcename , config.resourceuri, config.catalogname, config.ogsadainame, config.adqlspacename, config.jdbccatalogname, config.jdbcschemaname, config.metadocfile, config.jdbc_resource_user, config.jdbc_resource_pass)
-                    fEng.printClassVars()
-                    if (self.include_neighbours):
-                        self.import_neighbours(sqlEng, fEng)
-            
-            self.store_environment_config(fEng, config.stored_env_config, queryrunID)
-	    try:
-
-                java_version = fEng.getAttribute(web_services_sys_info, "java")["version"]
-                sys_platform = fEng.getAttribute(web_services_sys_info, "system")["platform"]
-                sys_timestamp = fEng.getAttribute(web_services_sys_info, "system")["time"]
-                firethorn_changeset = fEng.getAttribute(web_services_sys_info, "build")["changeset"]
-                firethorn_version = fEng.getAttribute(web_services_sys_info, "build")["version"]
-            except Exception as e:
-		java_version = ""
-                sys_platform = ""
-                sys_timestamp = ""
-                firethorn_changeset = ""
-                firethorn_version = ""
-	        logging.info(e)
-            logging.info("")
-       
-
-	    #logged_query_sqlEng.execute_sql_query(log_sql_query, config.stored_queries_database, limit=None)           
-	    #logged_queries_cols = logged_query_sqlEng.execute_sql_query("SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('dbo.webqueries') ", config.stored_queries_database, limit=None)
-	    #logging.info(logged_queries_cols)
-            #total_available_queries = 0
-	    #logging.info("Found " + str(total_available_queries)  + " available queries for " + config.stored_queries_database)
-	    logging.info("") 		    
+            java_version = ""
+            sys_platform = ""
+            sys_timestamp = ""
+            firethorn_changeset = ""
+            firethorn_version = ""
 	    continue_from_here_flag = False
 
 
@@ -185,7 +122,6 @@ class test_firethorn(unittest.TestCase):
 
                 for line in data:
                     query = line["query"]
-                    expected_rows = line["rows"]
                     qEng = queryEngine.QueryEngine()
                     query = str(query.strip())
                     querymd5 = self.md5String(query)
@@ -197,31 +133,43 @@ class test_firethorn(unittest.TestCase):
                     logging.info("Query : " +  query)
                     self.total_queries = self.total_queries + 1
 
-                    if True:
+                    try:
+                        check_duplicate_query = "select count(*), queryid, query_count from queries where query_hash='" + querymd5 + "' and queryrunID='" + queryrunID + "'"
+                        query_duplicates_found_row = reporting_sqlEng.execute_sql_query(check_duplicate_query, config.reporting_database)[0]
+                        query_duplicates_found = query_duplicates_found_row[0]
+                        queryid = query_duplicates_found_row[1]
+                        query_count = query_duplicates_found_row[2]
+                    except Exception as e:
+                        logging.exception(e)
+                        query_duplicates_found = 0
+                        queryid = None
+                        query_count = 0
+
+                    if (query_duplicates_found<=0):
                         continue_from_here_flag = True
-                        sql_duration = 0
-                        firethorn_duration = 0
+                        mysql_duration = 0
+                        sqlserver_duration = 0
                         test_passed = -1
                         test_skipped = False
-                        sql_start_time = time.time()
-                        query_timestamp = datetime.datetime.fromtimestamp(sql_start_time).strftime('%Y-%m-%d %H:%M:%S')
-                        sql_row_length = -1
-                        sql_error_message = ""
-                        firethorn_error_message = ""
+                        mysql_start_time = time.time()
+                        query_timestamp = datetime.datetime.fromtimestamp(mysql_start_time).strftime('%Y-%m-%d %H:%M:%S')
+                        mysql_row_length = -1
+                        sqlserver_row_length = -1
+                        mysql_error_message = ""
+                        sqlserver_error_message = ""
                         self.total_unique_queries = self.total_unique_queries+1
 
                         try :
                             logging.info(query)
 	            	    logging.info("---------------------- Starting Query Test ----------------------")
-	            	    sql_start_time = time.time()
-	            	    query_timestamp = datetime.datetime.fromtimestamp(sql_start_time).strftime('%Y-%m-%d %H:%M:%S')
-	            	    logging.info("Starting sql query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
+	            	    mysql_start_time = time.time()
+	            	    query_timestamp = datetime.datetime.fromtimestamp(mysql_start_time).strftime('%Y-%m-%d %H:%M:%S')
+	            	    logging.info("Starting MySQL query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 	            	    with Timeout(config.sql_timeout):
-	            	        sql_row_length, sql_error_message = sqlEng.execute_sql_query_get_rows(query, config.test_database, config.sql_rowlimit, config.sql_timeout)
-	            	    logging.info("Completed sql query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
-	            	    logging.info("SQL Query: " + str(sql_row_length) + " row(s) returned. ")
-	            	    sql_duration = float(time.time() - sql_start_time)
-                            logging.info("Expected: " + str(expected_rows) + " row(s).")
+	            	        mysql_row_length, mysql_error_message = mysqlEng.execute_sql_query_get_rows(query, config.test_database, config.sql_rowlimit, config.sql_timeout)
+	            	    logging.info("Completed MySQL query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
+	            	    logging.info("SQL Query: " + str(mysql_row_length) + " row(s) returned. ")
+	            	    mysql_duration = float(time.time() - mysql_start_time)
 
 	                except Exception as e:
                             logging.exception(e)
@@ -231,11 +179,29 @@ class test_firethorn(unittest.TestCase):
                             else :
                                 logging.info("Error caught while running sql query")
 
-                        
+                       
                         logging.info("")
 
+                        try :
+                            sqlserver_start_time = time.time()
+                            query_timestamp = datetime.datetime.fromtimestamp(sqlserver_start_time).strftime('%Y-%m-%d %H:%M:%S')
+                            logging.info("Starting SQL Server query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
+                            with Timeout(config.sql_timeout):
+                                sqlserver_row_length, sqlserver_error_message = sqlserverEng.execute_sql_query_get_rows(query, config.test_database, config.sql_rowlimit, config.sql_timeout)
+                            logging.info("Completed SQL Server query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
+                            logging.info("SQL Query: " + str(sqlserver_row_length) + " row(s) returned. ")
+                            sqlserver_duration = float(time.time() - sqlserver_start_time)
 
-                        test_passed = (expected_rows == sql_row_length)
+                        except Exception as e:
+                            logging.exception(e)
+                            if (type(e).__name__=="Timeout"):
+                                test_skipped = True
+                                logging.info("Timeout reached while running sql query..")
+                            else :
+                                logging.info("Error caught while running sql query")
+
+
+                        test_passed = (sqlserver_row_length == mysql_row_length)
                         logging.info("---------------------- End Query Test ----------------------")
                         if test_passed:                    
 			    logging.info("Query Successful !!")
@@ -249,10 +215,10 @@ class test_firethorn(unittest.TestCase):
                         logging.info("")
                         logging.info("")
 
-                        #params = (query, queryrunID, querymd5, 1,  query_timestamp, sql_row_length, firethorn_row_length, firethorn_duration, sql_duration, test_passed, firethorn_version, str(firethorn_error_message).encode('utf-8'), str(sql_error_message).encode('utf-8'), java_version, firethorn_changeset, sys_platform, sys_timestamp )
-                        #report_query = "INSERT INTO queries (query, queryrunID, query_hash, query_count, query_timestamp, direct_sql_rows, firethorn_sql_rows, firethorn_duration, sql_duration, test_passed, firethorn_version, firethorn_error_message, sql_error_message, java_version, firethorn_changeset, sys_platform, sys_timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" 
-                        #reporting_sqlEng.execute_insert(report_query, config.reporting_database, params=params)
-                        #self.total_queries = self.total_queries + 1
+                        params = (query, queryrunID, querymd5, 1,  query_timestamp, sqlserver_row_length, mysql_row_length, mysql_duration, sqlserver_duration, test_passed, firethorn_version, str(mysql_error_message).encode('utf-8'), str(mysql_error_message).encode('utf-8'), java_version, firethorn_changeset, sys_platform, sys_timestamp )
+                        report_query = "INSERT INTO queries (query, queryrunID, query_hash, query_count, query_timestamp, direct_sql_rows, firethorn_sql_rows, firethorn_duration, sql_duration, test_passed, firethorn_version, firethorn_error_message, sql_error_message, java_version, firethorn_changeset, sys_platform, sys_timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" 
+                        reporting_sqlEng.execute_insert(report_query, config.reporting_database, params=params)
+                        self.total_queries = self.total_queries + 1
 
                     else :
                         if (queryid!=None and query_count!=None and (continue_from_here_flag==True)):
