@@ -163,7 +163,7 @@
     second_test_dbserver_password=$(secret 'second_test_dbserver_password')
     second_test_dbserver_port=$(secret 'second_test_dbserver_port')
     second_test_database=$(secret 'second_test_database')
-    second_test_driver=$(secret 'second_test_drive')
+    second_test_driver=$(secret 'second_test_driver')
 
 
 
