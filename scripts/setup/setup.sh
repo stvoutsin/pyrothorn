@@ -158,6 +158,15 @@
     vphasdbserver=$(secret 'vphasdbserver')
     firethorn_tap_base=$(secret 'firethorn_tap_base')
 
+    second_test_dbserver=$(secret 'second_test_dbserver')
+    second_test_dbserver_username=$(secret 'second_test_dbserver_username')
+    second_test_dbserver_password=$(secret 'second_test_dbserver_password')
+    second_test_dbserver_port=$(secret 'second_test_dbserver_port')
+    second_test_database=$(secret 'second_test_database')
+    second_test_driver=$(secret 'second_test_drive')
+
+
+
 EOF
 
 

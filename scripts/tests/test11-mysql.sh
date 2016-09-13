@@ -88,11 +88,12 @@ neighbours_query = """
 
 ### Second Database Configuration ###
 
-second_test_dbserver= "${datalink:?}" 
-second_test_dbserver_username = "${datauser:?}" 
-second_test_dbserver_password = "${datapass:?}" 
-second_test_dbserver_port = "${dataport:?}" 
-second_test_database = "${testrundatabase:?}" 
+second_test_dbserver= "${second_test_dbserver:?}" 
+second_test_dbserver_username = "${second_test_dbserver_username:?}" 
+second_test_dbserver_password = "${second_test_dbserver_password:?}" 
+second_test_dbserver_port = "${second_test_dbserver_port:?}" 
+second_test_database = "${second_test_database:?}" 
+second_test_driver = "${second_test_driver:?}"
 
 
 ### Reporting Database Configuration ###
