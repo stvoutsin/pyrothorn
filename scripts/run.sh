@@ -28,6 +28,16 @@ if [ -n "$4" ]; then
 input_variable=${4}
 fi
 
+input_variable2=""
+if [ -n "$5" ]; then
+input_variable2=${5}
+fi
+
+input_variable3=""
+if [ -n "$6" ]; then
+input_variable3=${6}
+fi
+
 test="secret ping"
 
 if [ "$1" == "--help" ]; then
@@ -143,7 +153,7 @@ else
 	    echo -n "Deploying clearwing container"
 	    source setup/setup-clearwing.sh ${input_variable:?}
 	    sleep 30
-	    source setup/clearwing-run.sh
+	    source setup/clearwing-run.sh  ${input_variable2:?} ${input_variable3:?}
         else
             echo -n "Please enter a version of clearwing to deploy and press [ENTER]: "
             read input_variable

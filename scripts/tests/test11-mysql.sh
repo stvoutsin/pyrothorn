@@ -1,4 +1,4 @@
-	#!/bin/bash -eu
+#!/bin/bash -eu
 # -e: Exit immediately if a command exits with a non-zero status.
 # -u: Treat unset variables as an error when substituting.
 #
@@ -163,7 +163,7 @@ echo "*** Run pyrothorn  [test01-integration.sh] ***"
 
 docker run -i -t \
     --name ${pyroname:?} \
-    --detach \
+    -it \
     --memory 512M \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
     --volume "${testbase:?}/test01-nohup.sh:/scripts/test01-nohup.sh" \
@@ -176,7 +176,7 @@ docker run -i -t \
     --link "${ogsaname:?}:${ogsalink:?}" \
     --link "${dataname:?}:${datalink:?}" \
     --link "${username:?}:${userlink:?}" \
-       firethorn/pyrothorn:${version:?} bash -c  '/scripts/test01-nohup.sh'
+       firethorn/pyrothorn:${version:?} bash -c  '/scripts/test11-nohup.sh'
 
 
 

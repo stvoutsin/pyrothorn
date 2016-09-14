@@ -162,6 +162,7 @@ class DBHelper:
  
             cnxn.close()
         except Exception as e:
+            logging.exception(e)
             cnxn.close()
             raise e
             
@@ -274,8 +275,10 @@ class SQLEngine(object):
             query_results = self._execute_query_get_cols_rows(query,database, limit, timeout)
         except pyodbc.ProgrammingError, err:
             error_message = repr(err)
+            logging.exception(err)
             return (-1, error_message)
         except Exception as e:
+            logging.exception(e)
             if (type(e).__name__=="Timeout"):
                 raise e
 
