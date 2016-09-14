@@ -19,11 +19,11 @@
 #
 #
 
-echo "*** Initialising test001 script [test01-integration.sh] ***"
+echo "*** Initialising test11 script [test11-integration.sh] ***"
 
 source ${HOME:?}/chain.properties
 
-echo "*** Creating pyrothorn properties file [test01-integration.sh] ***"
+echo "*** Creating pyrothorn properties file [test11-integration.sh] ***"
 
 pyroproperties=$(mktemp)
 cat > "${pyroproperties:?}" << EOF
@@ -144,10 +144,9 @@ schema_alias = "${testrundatabase:?}"
 EOF
 
 testbase="${HOME:?}/tests"
-testdata="${HOME:?}/tests/test-001"
 
-chmod a+r "${testbase:?}/test01-nohup.sh" 
-chcon -t svirt_sandbox_file_t "${testbase:?}/test01-nohup.sh" 
+chmod a+r "${testbase:?}/test11-nohup.sh" 
+chcon -t svirt_sandbox_file_t "${testbase:?}/test11-nohup.sh" 
 
 chmod a+r "${pyroproperties:?}" 
 chcon -t svirt_sandbox_file_t "${pyroproperties:?}" 
@@ -163,10 +162,10 @@ echo "*** Run pyrothorn  [test01-integration.sh] ***"
 
 docker run -i -t \
     --name ${pyroname:?} \
-    -it \
+    --detach \
     --memory 512M \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
-    --volume "${testbase:?}/test01-nohup.sh:/scripts/test01-nohup.sh" \
+    --volume "${testbase:?}/test11-nohup.sh:/scripts/test11-nohup.sh" \
     --volume "${testdata:?}/metadoc.xml:/metadoc.xml" \
     --volume "${testdata:?}/queries.txt:/queries.txt" \
     --volume "${pyrologs}:/home/pyrothorn/logs" \
