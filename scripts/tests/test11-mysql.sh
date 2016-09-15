@@ -153,10 +153,6 @@ chcon -t svirt_sandbox_file_t "${pyroproperties:?}"
 
 mkdir -p /var/logs/${pyroname:?}
 
-chmod a+r "${testdata:?}/metadoc.xml" 
-chmod a+r "${testdata:?}/queries.txt" 
-chcon -t svirt_sandbox_file_t "${testdata:?}/metadoc.xml" 
-chcon -t svirt_sandbox_file_t "${testdata:?}/queries.txt" 
 
 echo "*** Run pyrothorn  [test01-integration.sh] ***"
 
@@ -166,8 +162,6 @@ docker run -i -t \
     --memory 512M \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
     --volume "${testbase:?}/test11-nohup.sh:/scripts/test11-nohup.sh" \
-    --volume "${testdata:?}/metadoc.xml:/metadoc.xml" \
-    --volume "${testdata:?}/queries.txt:/queries.txt" \
     --volume "${pyrologs}:/home/pyrothorn/logs" \
     --link "${firename:?}:${firelink:?}" \
     --link "${pyrosqlname:?}:${pyrosqllink:?}" \
