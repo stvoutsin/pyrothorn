@@ -5,7 +5,7 @@
         "rows": 1
     },
     {
-        "query": "SELECT AVG(sourceID) FROM lasSource", 
+        "query": "SELECT AVG(ra) FROM lasSource", 
         "rows": 1
     }, 
     {
