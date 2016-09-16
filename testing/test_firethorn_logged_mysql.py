@@ -185,6 +185,7 @@ class test_firethorn(unittest.TestCase):
                             sqlserver_start_time = time.time()
                             query_timestamp = datetime.datetime.fromtimestamp(sqlserver_start_time).strftime('%Y-%m-%d %H:%M:%S')
                             logging.info("Starting SQL Server query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
+                            query = query.replace("`","")
                             with Timeout(config.sql_timeout):
                                 sqlserver_row_length, sqlserver_error_message = sqlserverEng.execute_sql_query_get_rows(query, config.test_database, config.sql_rowlimit, config.sql_timeout)
                             logging.info("Completed SQL Server query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
