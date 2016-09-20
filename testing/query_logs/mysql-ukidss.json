@@ -41,10 +41,6 @@
         "rows": 119
     },
     {
-        "query": "select top 10 * from lasSource" ,
-        "rows": 102
-    },
-    {
         "query": "SELECT *,2*DEGREES(ASIN(sqrt(power(0.7606329831372249-cx,2)+power(0.1176703620822802-cy,2)+power(-0.6384286576048973-cz,2))/2))*60 as distance FROM gpsSource WHERE `dec` > -39.85808133333334 and `dec` < -39.49141466666667 and ra >= 8.555150648986665 and ra <= 9.032807551013335 and ((cx * 0.7606329831372249 + cy * 0.1176703620822802 + cz * -0.6384286576048973 ) >= 0.9999948807393964)" ,
         "rows": 46
     },
@@ -74,7 +70,7 @@
     },
     {
         "query": "SELECT count(*) from lasSource" ,
-        "rows": 25
+        "rows": 1
     },
     {
         "query": "SELECT sourceID, framesetID, ra, `dec`, mergedClass, priOrSec, YAperMag3, YAperMag3Err, J_1AperMag3, J_1AperMag3Err, J_2AperMag3, J_2AperMag3Err, HAperMag3, HAperMag3Err, KAperMag3, KAperMag3Err,j_1ell,2*DEGREES(ASIN(sqrt(power(0.9912132999168521-cx,2)+power(0.058088906842647066-cy,2)+power(0.11883548699681716-cz,2))/2))*60 as distance FROM lasSource WHERE `dec` > 6.766566666666668 and `dec` < 6.883233333333334 and ra >= 3.295159874525504 and ra <= 3.412673525474496 and ((cx * 0.9912132999168521 + cy * 0.058088906842647066 + cz * 0.11883548699681716 ) >= 0.9999994817273514)" ,

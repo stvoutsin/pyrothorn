@@ -101,7 +101,7 @@ stored_queries_dbserver_username = "${storedqueriesuser:?}"
 stored_queries_dbserver_password = "${storedqueriespass:?}" 
 stored_queries_dbserver_port = "${storedqueriesport:?}" 
 stored_queries_database = "${storedqueriesdata:?}" 
-stored_queries_query = "select * from webqueries where dbname like 'ATLAS%' and query not like '%dr%' and query not like '%best%'" 
+stored_queries_query = "select * from webqueries where dbname like 'ATLAS%' and query not like '%mi.arcfile%'" 
 logged_queries_txt_file = "/queries.txt" 
 
 ### Firethorn Live test Configuration ###
