@@ -58,6 +58,7 @@ if [ "$1" == "--help" ]; then
   echo "08 - Build a TAP Service for a given catalogue. (Uses secret.store database credentials)"
   echo "09 - Build a Clearwing (webpy interface) container"
   echo "10 - Create Firethorn chain"
+  echo "11 - Run dual MySQL/SQLServer test. Compare queries results between two"
   return 0
 fi
 
