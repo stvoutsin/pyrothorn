@@ -45,7 +45,7 @@
         "rows": 46
     },
     {
-        "query": "select 0.02*floor(b/0.02)+0.01 as b,0.02*floor(l/0.02)+0.01 as l,floor( (K_1apermag3 - 1.48685*((Hapermag3-K_1apermag3)) + 0.0647944)/0.25)*0.25 as mag, count(*) as count FROM gpsJHKsource where l>=     -40.0000 and l<     -39.9500 and K_1apermag3 !=0 and Hapermag3 !=0 and mergedClass != 0 and (PriOrSec=0 OR PriOrSec=framesetID) and floor( (K_1apermag3 - 1.48685*((Hapermag3-K_1apermag3)) + 0.0647944)/0.25)*0.25 between 11.5 and 13.5 group by 0.02*floor(b/0.02), 0.02*floor(l/0.02), floor( (K_1apermag3 - 1.48685*((Hapermag3-K_1apermag3)) + 0.0647944)/0.25)*0.25" ,
+        "query": "select 0.02*floor(b/0.02)+0.01 as b,0.02*floor(l/0.02)+0.01 as l,floor( (K_1apermag3 - 1.48685*((Hapermag3-K_1apermag3)) + 0.0647944)/0.25)*0.25 as mag, count(*) as count FROM gpsSource where l>=     -40.0000 and l<     -39.9500 and K_1apermag3 !=0 and Hapermag3 !=0 and mergedClass != 0 and (PriOrSec=0 OR PriOrSec=framesetID) and floor( (K_1apermag3 - 1.48685*((Hapermag3-K_1apermag3)) + 0.0647944)/0.25)*0.25 between 11.5 and 13.5 group by 0.02*floor(b/0.02), 0.02*floor(l/0.02), floor( (K_1apermag3 - 1.48685*((Hapermag3-K_1apermag3)) + 0.0647944)/0.25)*0.25" ,
         "rows": 43
     },
     {
