@@ -216,7 +216,7 @@ class test_firethorn(unittest.TestCase):
                         logging.info("")
 
                         params = (query, queryrunID, querymd5, 1,  query_timestamp, sqlserver_row_length, mysql_row_length, mysql_duration, sqlserver_duration, test_passed, firethorn_version, str(mysql_error_message).encode('utf-8'), str(mysql_error_message).encode('utf-8'), java_version, firethorn_changeset, sys_platform, sys_timestamp )
-                        report_query = "INSERT INTO queries (query, queryrunID, query_hash, query_count, query_timestamp, direct_sql_rows, firethorn_sql_rows, firethorn_duration, sql_duration, test_passed, firethorn_version, firethorn_error_message, sql_error_message, java_version, firethorn_changeset, sys_platform, sys_timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" 
+                        report_query = "INSERT INTO queries (query, queryrunID, query_hash, query_count, query_timestamp, direct_sql_rows, mysql_sql_rows, mysql_duration, sql_duration, test_passed, firethorn_version, mysql_error_message, sql_error_message, java_version, firethorn_changeset, sys_platform, sys_timestamp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" 
                         reporting_sqlEng.execute_insert(report_query, config.reporting_database, params=params)
                         self.total_queries = self.total_queries + 1
 

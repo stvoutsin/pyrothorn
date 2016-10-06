@@ -255,7 +255,7 @@ EOF
     source "${HOME:?}/firethorn.settings"
     if [ ! -e "${PYROTHORN_CODE:?}" ]
     then
-        pushd "${FIRETHORN_CODE:?}"
+        pushd "${PYROTHORN_CODE:?}"
 
   	git clone -b 1.1 https://github.com/stvoutsin/pyrothorn.git 
 
@@ -271,7 +271,23 @@ EOF
 
 
     source "${HOME:?}/firethorn.settings"
-    pushd "${FIRETHORN_CODE:?}"
+    pushd "${PYROTHORN_CODE:?}"
+        
+        source "bin/util.sh"
+
+        if [ $(docker images | grep -c '^firethorn/pyrothorn') -eq 0 ]
+        then
+            echo "# ------"
+            echo "# Building pyrothorn image"
+            docker build \
+                --tag firethorn/pyrothorn:$(getversion) \
+                pyrothorn
+
+        fi
+    popd
+
+    source "${HOME:?}/firethorn.settings"
+    pushd "${PYROTHORN_CODE:?}"
         
         source "bin/util.sh"
 
