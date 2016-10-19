@@ -188,9 +188,9 @@ EOF
 
 firethornini=$(mktemp)
     cat > "${firethornini:?}" << EOF
-adqlspace=http://${firelink:?}:8080/firethorn/adql/resource/${adqlspace:?}
-atlasschema=http://${firelink:?}:8080/firethorn/adql/schema/${adqlschema:?}
-atlasprivate=http://${firelink:?}:8080/firethorn/adql/schema/${adqlschema:?}
+adqlspace=http://${firelink:?}:8080/firethorn/${adqlspace:?}
+atlasschema=http://${firelink:?}:8080/firethorn/${adqlschema:?}
+atlasprivate=http://${firelink:?}:8080/firethorn/${adqlschema:?}
 firethorn_base=http://${firelink:?}:8080/firethorn
 EOF
 

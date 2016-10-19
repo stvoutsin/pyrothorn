@@ -149,6 +149,10 @@ else
 
     elif [ $testname -eq 09 ];
     then
+        source tests/test009-genius-import-setup.sh
+        input_variable2=$(cat adqlresource)
+        input_variable3=$(cat adqlschema)
+	sleep 120
         if [  -n "$input_variable" ]
         then 
 	    echo -n "Deploying clearwing container"
@@ -164,6 +168,7 @@ else
 	    source setup/clearwing-run.sh
 
         fi
+
       
     elif [ $testname -eq 10 ];
     then
