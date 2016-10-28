@@ -47,7 +47,7 @@ from_email = "stv@roe.ac.uk"
 
 ### Survey Information
 survey_short = 'OSA';
-survey_full = 'OmegaCAM Science Archive (OSA)';
+survey_full = 'GENIUS Web2.0 demonstrator prototype';
 
 ### Template renders
 render = web.template.render('templates/')
@@ -188,9 +188,9 @@ EOF
 
 firethornini=$(mktemp)
     cat > "${firethornini:?}" << EOF
-adqlspace=http://${firelink:?}:8080/firethorn/${adqlspace:?}
-atlasschema=http://${firelink:?}:8080/firethorn/${adqlschema:?}
-atlasprivate=http://${firelink:?}:8080/firethorn/${adqlschema:?}
+adqlspace=${adqlspace:?}
+atlasschema=${adqlschema:?}
+atlasprivate=${adqlschema:?}
 firethorn_base=http://${firelink:?}:8080/firethorn
 EOF
 

@@ -30,13 +30,15 @@
 
     directory "${testerlogs:?}"
 
-    chmod a+r "${HOME:?}/adqlresource"
+
     touch "${HOME:?}/adqlresource"
+    chmod a+r "${HOME:?}/adqlresource"
     >adqlresource
     chcon -t svirt_sandbox_file_t "${HOME:?}/adqlresource" 
 
-    chmod a+r "${HOME:?}/adqlschema"
+
     touch "${HOME:?}/adqlschema"
+    chmod a+r "${HOME:?}/adqlschema"
     >adqlschema
     chcon -t svirt_sandbox_file_t "${HOME:?}/adqlschema" 
 
@@ -44,7 +46,7 @@
     echo "*** Running Genius Resource import ***"
 
     docker run \
-        --detach \
+        -it \
         --volume "${HOME:?}/tests/test009-genius-import.sh:/scripts/test009-genius-import.sh" \
         --volume "${HOME:?}/adqlresource:${HOME:?}/adqlresource" \
         --volume "${HOME:?}/adqlschema:${HOME:?}/adqlschema" \
@@ -56,6 +58,6 @@
         --env "endpointurl=http://${firelink:?}:8080/firethorn" \
         --link "${firename:?}:${firelink:?}" \
         --volume "${testerlogs:?}:${HOME:?}/logs" \
-        "firethorn/tester:${version:?}" \
+        "firethorn/tester" \
         bash  -c 'source /scripts/test009-genius-import.sh 2>&1 | tee /root/logs/output.log'
 

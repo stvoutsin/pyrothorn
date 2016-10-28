@@ -185,4 +185,4 @@ cat <<EOF >> ${HOME}/adqlschema
 ${mainschema:?}
 EOF
    
-
+exit
