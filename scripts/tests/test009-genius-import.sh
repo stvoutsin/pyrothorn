@@ -177,7 +177,7 @@
 
 
 cat <<EOF >> ${HOME}/adqlresource
-${adqlspace:?}
+${endpointurl:?}/${adqlspace:?}
 EOF
    
 
