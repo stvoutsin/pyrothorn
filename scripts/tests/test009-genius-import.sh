@@ -131,7 +131,7 @@
         #
         # Find the twomass schema
         gavospace=${ivoaspace:?}
-        gavoschemaname=public
+        gavoschemaname=icecube
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
