@@ -270,16 +270,15 @@ EOF
 
 
     source "${HOME:?}/firethorn.settings"
-    pushd "${PYROTHORN_CODE:?}"
+    pushd "${PROJECTS_CODE:?}"
         
-        source "bin/util.sh"
 
         if [ $(docker images | grep -c '^firethorn/pyrothorn') -eq 0 ]
         then
             echo "# ------"
             echo "# Building pyrothorn image"
             docker build \
-                --tag firethorn/pyrothorn:$(getversion) \
+                --tag firethorn/pyrothorn:${version:?} \
                 pyrothorn
 
         fi
