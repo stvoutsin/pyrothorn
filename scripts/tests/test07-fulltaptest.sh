@@ -170,7 +170,6 @@ docker run -i -t \
     --link "${ogsaname:?}:${ogsalink:?}" \
     --link "${dataname:?}:${datalink:?}" \
     --link "${username:?}:${userlink:?}" \
-    --link "firepache:firepache" \
        firethorn/pyrothorn:${version:?} bash -c  '/scripts/test06-nohup.sh'
 
 echo "*** Run pyrothorn [test07-taplint.sh] ***"
@@ -191,7 +190,6 @@ echo "*** Run pyrothorn [test07-taplint.sh] ***"
         --env "endpointurl=http://${firelink:?}:8080/firethorn" \
         --env "tap_service=${tap_service:?}" \
         --link "${firename:?}:${firelink:?}" \
-        --link "${firepache:?}:${firepachelink:?}" \
         "firethorn/tester:1.1" bash -c  '/scripts/test07-taplint.sh'
 
 
