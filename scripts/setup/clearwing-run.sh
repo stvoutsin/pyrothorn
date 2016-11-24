@@ -22,6 +22,8 @@
 
 source "${HOME:?}/chain.properties"
 
+adqlspace=$1
+adqlschema=$2
 clearwinglog=clearwing
 clearwinglogs="/var/logs/${clearwinglog:?}"
 setupdir="${HOME:?}/setup"
@@ -45,7 +47,7 @@ from_email = "stv@roe.ac.uk"
 
 ### Survey Information
 survey_short = 'OSA';
-survey_full = 'OmegaCAM Science Archive (OSA)';
+survey_full = 'GENIUS Web2.0 demonstrator prototype';
 
 ### Template renders
 render = web.template.render('templates/')
@@ -186,10 +188,9 @@ EOF
 
 firethornini=$(mktemp)
     cat > "${firethornini:?}" << EOF
-adqlspace=http://${firelink:?}:8080/firethorn/adql/resource/32669697
-atlasschema=http://${firelink:?}:8080/firethorn/adql/schema/32702514
-atlasprivate=http://${firelink:?}:8080/firethorn/adql/schema/32702514
-vphasprivate=http://${firelink:?}:8080/firethorn/adql/schema/32702514
+adqlspace=${adqlspace:?}
+atlasschema=${adqlschema:?}
+atlasprivate=${adqlschema:?}
 firethorn_base=http://${firelink:?}:8080/firethorn
 EOF
 
@@ -282,6 +283,7 @@ docker run  \
     --volume "${properties:?}:/var/www/html/atlas/config.py" \
     --volume "${firethornini:?}:/var/www/html/atlas/firethorn.ini" \
     --volume "${clearwinglogs:?}:/var/log/apache2" \
+    --volume "${clearwinglogs:?}:/varr/www/html/atlas/log" \
     --link "${firename:?}:${firelink:?}" \
     --link "${dataname:?}:${datalink:?}" \
     --volume "${setupdir:?}/apache-clearwing-init.sh:${setupdir:?}/apache-clearwing-init.sh" \

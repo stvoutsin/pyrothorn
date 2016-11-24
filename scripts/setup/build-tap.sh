@@ -112,7 +112,7 @@
        echo "${catalogue:?} Firethorn Resource: ${endpointurl:?}${atlasadql:?}"
 
 cat <<EOF >> ${HOME}/tap_service
-http://${ip:?}:80/firethorn/tap/${resourceid:?}
+${ip:?}:80/firethorn/tap/${resourceid:?}
 EOF
    
 

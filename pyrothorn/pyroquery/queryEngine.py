@@ -93,7 +93,14 @@ class QueryEngine(object):
         result_adql_table = ""
         query_identity = ""
         datatable = []
-        
+        error_message = None
+
+        def read_json(url):
+            request2 = urllib2.Request(url, headers={"Accept" : "application/json", "firethorn.auth.identity" : test_email, "firethorn.auth.community" : "public (unknown)"})
+            f_read = urllib2.urlopen(request2)
+            query_json = f_read.read()
+            f_read.close()
+            return query_json        
 
         try :
             from datetime import datetime
@@ -117,7 +124,7 @@ class QueryEngine(object):
             f_updt.close()
 
             query_loop_results = self.start_query_loop(query_identity)
-            results_adql_url = query_create_result["results"]["adql"]
+            results_adql_url = json.loads(read_json(query_identity)).get("results",None).get("table",None)
             
             if query_loop_results.get("Code", "") !="":
                 if query_loop_results.get("Code", "") ==-1:
@@ -189,34 +196,38 @@ class QueryEngine(object):
         
         try:
     
-            data = urllib.urlencode({ query_status_update : "RUNNING"})
-            
-            #data = urllib.urlencode({ query_status_update : "RUNNING", 'adql.query.update.delay.every' : '10000', 'adql.query.update.delay.first':'10000', 'adql.query.update.delay.last':'10000'})
+            data = urllib.urlencode({ query_status_update : "COMPLETED", "adql.query.wait.time" : 60000})
+
+            #data = urllib.urlencode({ query_status_update : "RUNNING", 'adql.query.update.delay.every' : '10000', 'adql.query.update.delay.first':'10000', 'adql.query.update.delay.la$
             request = urllib2.Request(url, data, headers={"Accept" : "application/json", "firethorn.auth.identity" : test_email, "firethorn.auth.community" : "public (unknown)"})
             f_update = urllib2.urlopen(request)
             query_json =  json.loads(f_update.read())
-            query_status = query_json["status"]
+            query_status = "QUEUED"
             logging.info("Started query:" + url)
-            
-       
-            while query_status=="PENDING" or query_status=="RUNNING" and elapsed_time<MAX_ELAPSED_TIME:
+
+
+            while query_status=="QUEUED" or query_status=="RUNNING" and elapsed_time<MAX_ELAPSED_TIME:
                 query_json = json.loads(get_status(url))
-                query_status= query_json["status"] 
+                query_status= query_json["status"]
                 time.sleep(delay)
                 if elapsed_time>MIN_ELAPSED_TIME_BEFORE_REDUCE and delay<MAX_DELAY:
                     delay = delay + delay
                 elapsed_time = int(time.time() - start_time)
-            
+
             logging.info("Finished query:" + url)
+
           
             if query_status=="ERROR" or query_status=="FAILED":
-                return {'Code' :-1,  'Content' : 'Query error: A problem occurred while running your query' }
+                if (query_json["syntax"]["status"]=="PARSE_ERROR"):
+                    return {'Code' :-1,  'Content' : 'Query error: ' + query_json["syntax"]["status"] + ' - ' + query_json["syntax"]["friendly"] }
+                else:
+                    return {'Code' :-1,  'Content' : 'Query error: A problem occurred while running your query'}
             elif query_status=="CANCELLED":
                 return {'Code' :1,  'Content' : 'Query error: Query has been canceled' }
             elif query_status=="EDITING":
                 return {'Code' :-1,  'Content' :  query_json["syntax"]["status"] + ' - ' + query_json["syntax"]["friendly"] }
             elif query_status=="COMPLETED":
-                return {'Code' :1,  'Content' : query_json["results"]["datatable"] }
+                return {'Code' :1,  'Content' : query_json["results"]["formats"]["datatable"] }
             elif elapsed_time>=MAX_ELAPSED_TIME:
                 return {'Code' :-1,  'Content' : 'Query error: Max run time (' + str(MAX_ELAPSED_TIME) + ' seconds) exceeded' }
             else:

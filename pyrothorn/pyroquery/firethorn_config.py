@@ -51,14 +51,14 @@ schema_import_uri = "/tables/import"
 
 query_create_uri = "/queries/create"
 query_update_uri = "/queries/update"
-query_name_param = "adql.schema.query.create.name"
-query_limit_rows_param = "adql.query.update.limit.rows"
-query_limit_time_param = "adql.query.update.limit.time"
+query_name_param = "adql.query.name"
+query_limit_rows_param = "adql.query.limit.rows"
+query_limit_time_param = "adql.query.limit.time"
 
-query_mode_param = "adql.schema.query.create.mode"
+query_mode_param = "adql.query.mode"
 
-query_param = "adql.schema.query.create.query"
-query_status_update = "adql.query.update.status"
+query_param = "adql.query.input"
+query_status_update = "adql.query.status.next"
 
 schema_create_uri = '/schemas/create'
 table_create_uri = '/tables/create'
@@ -70,10 +70,10 @@ jdbc_creator = web_services_url + "/jdbc/resource/create"
 
 
 resource_create_name_params = {
-                               'http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json' : 'jdbc.resource.create.name', 
+                               'http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json' : 'jdbc.resource.name', 
                                'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json' : 'adql.resource.create.name',
                                'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-service-1.0.json' : 'adql.resource.create.name',
-                               'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-schema-1.0.json' : 'adql.resource.schema.create.name'
+                               'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-schema-1.0.json' : 'adql.schema.name'
                                }
 
 
@@ -86,14 +86,14 @@ resource_create_url_params = {
 
 
 resource_create_username_params = {
-                                   'http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json' : 'jdbc.resource.create.user',
+                                   'http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json' : 'jdbc.connection.user',
                                    'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json' : 'adql.resource.create.user',
                                    'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-service-1.0.json' : 'adql.resource.create.user'
                                    }
 
 
 resource_create_password_params = {
-                                   'http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json' : 'jdbc.resource.create.pass',
+                                   'http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json' : 'jdbc.connection.pass',
                                    'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json' : 'adql.resource.create.pass',
                                    'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-service-1.0.json' : 'adql.resource.create.pass'
                                    }
@@ -168,7 +168,7 @@ db_select_with_text_params = {
 
 
 db_select_by_name_params = {
-                            'http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json': 'jdbc.resource.select.name',
+                            'http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json': 'jdbc.resource.name',
                             'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json': 'adql.resource.select.name',
                             'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-service-1.0.json': 'adql.resource.select.name'
                             }

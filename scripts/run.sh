@@ -28,6 +28,16 @@ if [ -n "$4" ]; then
 input_variable=${4}
 fi
 
+input_variable2=""
+if [ -n "$5" ]; then
+input_variable2=${5}
+fi
+
+input_variable3=""
+if [ -n "$6" ]; then
+input_variable3=${6}
+fi
+
 test="secret ping"
 
 if [ "$1" == "--help" ]; then
@@ -48,6 +58,7 @@ if [ "$1" == "--help" ]; then
   echo "08 - Build a TAP Service for a given catalogue. (Uses secret.store database credentials)"
   echo "09 - Build a Clearwing (webpy interface) container"
   echo "10 - Create Firethorn chain"
+  echo "11 - Run dual MySQL/SQLServer test. Compare queries results between two"
   return 0
 fi
 
@@ -138,12 +149,16 @@ else
 
     elif [ $testname -eq 09 ];
     then
+        source tests/test009-genius-import-setup.sh
+        input_variable2=$(cat adqlresource)
+        input_variable3=$(cat adqlschema)
+	sleep 120
         if [  -n "$input_variable" ]
         then 
 	    echo -n "Deploying clearwing container"
 	    source setup/setup-clearwing.sh ${input_variable:?}
 	    sleep 30
-	    source setup/clearwing-run.sh
+	    source setup/clearwing-run.sh  ${input_variable2:?} ${input_variable3:?}
         else
             echo -n "Please enter a version of clearwing to deploy and press [ENTER]: "
             read input_variable
@@ -153,10 +168,15 @@ else
 	    source setup/clearwing-run.sh
 
         fi
+
       
     elif [ $testname -eq 10 ];
     then
         echo -n "Firethorn services created"
+    elif [ $testname -eq 11 ];
+    then 
+	source setup/setup-pyro-mysql.sh
+        source tests/test11-mysql.sh
     else 
         source setup/setup-pyro.sh
         source tests/$testname

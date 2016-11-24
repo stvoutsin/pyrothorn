@@ -9,7 +9,7 @@
 #  the Free Software Foundation, either version 3 of the License, or
 #  (at your option) any later version.
 #
-#  This program is distributed in the hope that it will be useful,z
+#  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
@@ -19,18 +19,11 @@
 #
 #
 
-
-echo "*** Initialising test06 script [test07-fulltaptest.sh] ***"
-
-tap_service=$1
-
-
-echo "Running test on the following TAP Service :" ${tap_service:?}
+echo "*** Initialising test11 script [test11-integration.sh] ***"
 
 source ${HOME:?}/chain.properties
 
-
-echo "*** Creating pyrothorn properties file [test07-fulltaptest.sh] ***"
+echo "*** Creating pyrothorn properties file [test11-integration.sh] ***"
 
 pyroproperties=$(mktemp)
 cat > "${pyroproperties:?}" << EOF
@@ -59,8 +52,8 @@ sample_query="Select top 10 * from Filter"
 sample_query_expected_rows=10
 limit_query = None
 sql_rowlimit = ${defaultrows:?}
-sql_timeout = 1000
-firethorn_timeout = 1000
+sql_timeout = 1800
+firethorn_timeout = 1800
 query_mode = "AUTO" 
 
 #------------------- Test Configurations ----------------------------------#
@@ -93,6 +86,16 @@ neighbours_query = """
             ExternalSurvey.databaseName
             """ 
 
+### Second Database Configuration ###
+
+second_test_dbserver= "${second_test_dbserver:?}" 
+second_test_dbserver_username = "${second_test_dbserver_username:?}" 
+second_test_dbserver_password = "${second_test_dbserver_password:?}" 
+second_test_dbserver_port = "${second_test_dbserver_port:?}" 
+second_test_database = "${second_test_database:?}" 
+second_test_driver = "${second_test_driver:?}"
+
+
 ### Reporting Database Configuration ###
 
 reporting_dbserver= "${pyrosqllink:?}" 
@@ -109,9 +112,8 @@ stored_queries_dbserver_password = "${storedqueriespass:?}"
 stored_queries_dbserver_port = "${storedqueriesport:?}" 
 stored_queries_database = "${storedqueriesdata:?}" 
 stored_queries_query = "select * from webqueries where dbname like 'ATLAS%' and query not like '%dr%' and query not like '%best%'" 
-logged_queries_txt_file = "testing/query_logs/integration_list.txt" 
-logged_queries_json_file = "testing/query_logs/integration.json"
- 
+logged_queries_txt_file = "testing/query_logs/mysql-ukidss.json" 
+logged_queries_json_file = "testing/query_logs/mysql-ukidss.json" 
 ### Firethorn Live test Configuration ###
 
 adql_copy_depth = "THIN" 
@@ -125,10 +127,10 @@ jdbccatalogname = '${testrundatabase:?}'
 jdbcschemaname = 'dbo'
 jdbc_resource_user = '${datauser:?}'
 jdbc_resource_pass = '${datapass:?}'
-metadocfile = "testing/metadocs/${testrundatabase:?}_TablesSchema.xml" 
+#metadocfile = "testing/metadocs/${testrundatabase:?}_TablesSchema.xml" 
+metadocfile = "/metadoc.xml" 
 metadocdirectory = "testing/metadocs/" 
 stored_env_config = 'conf/pyrothorn-stored.js'
-tap_service = "${tap_service:?}"
 
 ### Firethorn Predefined test Configuration ###
 
@@ -141,28 +143,25 @@ schema_alias = "${testrundatabase:?}"
 
 EOF
 
-chmod a+r "${HOME:?}/tests/test06-nohup.sh" 
-chcon -t svirt_sandbox_file_t "${HOME:?}/tests/test06-nohup.sh" 
+testbase="${HOME:?}/tests"
+
+chmod a+r "${testbase:?}/test11-nohup.sh" 
+chcon -t svirt_sandbox_file_t "${testbase:?}/test11-nohup.sh" 
 
 chmod a+r "${pyroproperties:?}" 
 chcon -t svirt_sandbox_file_t "${pyroproperties:?}" 
 
 mkdir -p /var/logs/${pyroname:?}
 
-echo "*** Run pyrothorn [test06-taptest.sh] ***"
 
-chmod a+r "${HOME:?}/tests/test07-taplint.sh" 
-chcon -t svirt_sandbox_file_t "${HOME:?}/tests/test07-taplint.sh" 
-
-
-
+echo "*** Run pyrothorn  [test01-integration.sh] ***"
 
 docker run -i -t \
     --name ${pyroname:?} \
     --detach \
     --memory 512M \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
-    --volume ${HOME:?}/tests/test06-nohup.sh:/scripts/test06-nohup.sh \
+    --volume "${testbase:?}/test11-nohup.sh:/scripts/test11-nohup.sh" \
     --volume "${pyrologs}:/home/pyrothorn/logs" \
     --link "${firename:?}:${firelink:?}" \
     --link "${pyrosqlname:?}:${pyrosqllink:?}" \
@@ -170,27 +169,7 @@ docker run -i -t \
     --link "${ogsaname:?}:${ogsalink:?}" \
     --link "${dataname:?}:${datalink:?}" \
     --link "${username:?}:${userlink:?}" \
-       firethorn/pyrothorn:${version:?} bash -c  '/scripts/test06-nohup.sh'
-
-echo "*** Run pyrothorn [test07-taplint.sh] ***"
-
-    docker run \
-        -it \
-        --memory 512M \
-       --volume ${HOME:?}/tests/test07-taplint.sh:/scripts/test07-taplint.sh \
-        --env "datadata=${datadata:?}" \
-        --env "datalink=${datalink:?}" \
-        --env "datauser=${datauser:?}" \
-        --env "datapass=${datapass:?}" \
-        --env "datadriver=${datadriver:?}" \
-        --env "metadataurl=jdbc:jtds:sqlserver://${userlink:?}" \
-        --env "metauser=${metauser:?}" \
-        --env "metapass=${metapass:?}" \
-        --env "metadata=${metadata?}" \
-        --env "endpointurl=http://${firelink:?}:8080/firethorn" \
-        --env "tap_service=${tap_service:?}" \
-        --link "${firename:?}:${firelink:?}" \
-        "firethorn/tester:1.1" bash -c  '/scripts/test07-taplint.sh'
+       firethorn/pyrothorn:${version:?} bash -c  '/scripts/test11-nohup.sh'
 
 
 

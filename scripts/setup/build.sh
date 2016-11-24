@@ -40,7 +40,8 @@
     then
         cat > "${HOME:?}/firethorn.settings" << EOF
 FIRETHORN_CODE=/projects/firethorn
-PYROTHORN_CODE=/projects/firethorn/pyrothorn
+PROJECTS_CODE=/projects
+PYROTHORN_CODE=/projects/pyrothorn
 EOF
     fi
     
@@ -214,11 +215,11 @@ EOF
     pushd "${FIRETHORN_CODE:?}"
 
         pushd firethorn-ogsadai/webapp
-            mvn -D "docker.host=http://${dockerip:?}:2375" docker:package
+            mvn -D "docker.host=tcp://${dockerip:?}:2375" docker:package
         popd
         
         pushd firethorn-webapp
-            mvn -D "docker.host=http://${dockerip:?}:2375" docker:package
+            mvn -D "docker.host=tcp://${dockerip:?}:2375" docker:package
         popd
 
     popd
@@ -253,14 +254,12 @@ EOF
     #
     # Clone our repository.
     source "${HOME:?}/firethorn.settings"
-    if [ ! -e "${PYROTHORN_CODE:?}" ]
-    then
-        pushd "${FIRETHORN_CODE:?}"
+    pushd "${PROJECTS_CODE:?}"
 
-  	git clone https://github.com/stvoutsin/pyrothorn.git 
+  	git clone -b 1.1 https://github.com/stvoutsin/pyrothorn.git 
 
-        popd
-    fi
+    popd
+
 
     source "${HOME:?}/firethorn.settings"
     pushd "${PYROTHORN_CODE:?}"
@@ -271,20 +270,20 @@ EOF
 
 
     source "${HOME:?}/firethorn.settings"
-    pushd "${FIRETHORN_CODE:?}"
+    pushd "${PROJECTS_CODE:?}"
         
-        source "bin/util.sh"
 
         if [ $(docker images | grep -c '^firethorn/pyrothorn') -eq 0 ]
         then
             echo "# ------"
             echo "# Building pyrothorn image"
             docker build \
-                --tag firethorn/pyrothorn:$(getversion) \
+                --tag firethorn/pyrothorn:${version:?} \
                 pyrothorn
 
         fi
     popd
+
 
 # -----------------------------------------------------
 # Exit our builder.
