@@ -256,7 +256,7 @@ EOF
     source "${HOME:?}/firethorn.settings"
     pushd "${PROJECTS_CODE:?}"
 
-  	git clone -b 1.1 https://github.com/stvoutsin/pyrothorn.git 
+  	git clone https://github.com/stvoutsin/pyrothorn.git 
 
     popd
 
