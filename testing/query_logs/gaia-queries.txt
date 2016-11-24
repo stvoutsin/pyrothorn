@@ -13,3 +13,10 @@ SELECT *, SQRT(pmra*pmra + pmdec*pmdec) AS muTot FROM gaiadr1.tgas_source WHERE 
 SELECT COUNT(*) FROM gaiadr1.tgas_source WHERE pmra*pmra + pmdec*pmdec > 5*SQRT(pmra*pmra*pmra_error*pmra_error + pmdec*pmdec*pmdec_error*pmdec_error)
 SELECT TOP 10 * FROM gaiadr1.tgas_source WHERE pmra*pmra + pmdec*pmdec < SQRT(pmra*pmra*pmra_error*pmra_error + pmdec*pmdec*pmdec_error*pmdec_error) AND parallax < parallax_error AND (astrometric_excess_noise < 2 OR astrometric_excess_noise_sig <= 2)
 SELECT * FROM gaiadr1.gaia_source WHERE MOD(random_index, 1000000) = 0
+SELECT TOP 5 -ra from gaiadr1.gaia_source	
+SELECT TOP 10 ra FROM gaiadr1.gaia_source WHERE ra IN (SELECT TOP 20 ra FROM gaiadr1.gaia_source WHERE ra>0 ORDER BY ra)
+SELECT pi() from gaiadr1.gaia_source
+SELECT rand() from gaiadr1.gaia_source
+SELECT TOP 10 ra, ra + dec, ra - dec,ra * dec, ra / dec FROM gaiadr1.gaia_source where ra > 0 and dec > 0
+SELECT TOP 1 dec FROM gaiadr1.gaia_source WHERE dec = ANY (SELECT dec FROM gaiadr1.gaia_source WHERE (dec BETWEEN -22.5 AND -12.5))
+SELECT TOP 5 ((ra + 6) / 2) AS one, (ra + (6 / 2)) AS two FROM gaiadr1.gaia_source
