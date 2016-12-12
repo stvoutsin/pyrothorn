@@ -75,7 +75,7 @@
         # Create the IvoaResource
         source "bin/02-03-create-ivoa-space.sh" \
             'GAIA TAP service' \
-            'http://gea.esac.esa.int/tap-server/'
+            'http://gea.esac.esa.int/tap-server/tap'
 
         #
         # Import the static VOSI file

@@ -283,7 +283,7 @@ docker run  \
     --volume "${properties:?}:/var/www/html/atlas/config.py" \
     --volume "${firethornini:?}:/var/www/html/atlas/firethorn.ini" \
     --volume "${clearwinglogs:?}:/var/log/apache2" \
-    --volume "${clearwinglogs:?}:/varr/www/html/atlas/log" \
+    --volume "${clearwinglogs:?}:/var/www/html/atlas/log" \
     --link "${firename:?}:${firelink:?}" \
     --link "${dataname:?}:${datalink:?}" \
     --volume "${setupdir:?}/apache-clearwing-init.sh:${setupdir:?}/apache-clearwing-init.sh" \
