@@ -115,7 +115,7 @@
         # Create the IvoaResource
         source "bin/02-03-create-ivoa-space.sh" \
             'GAVO TAP service' \
-            'http://dc.zah.uni-heidelberg.de/__system__/tap/run/tap/'
+            'http://dc.zah.uni-heidelberg.de/__system__/tap/run/tap'
 
         #
         # Import the static VOSI file
