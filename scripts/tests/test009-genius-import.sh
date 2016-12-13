@@ -88,10 +88,21 @@
             "${endpointurl:?}/${ivoaspace:?}/vosi/import" \
             | bin/pp
 
-        #
-        # Find the twomass schema
+
+
         gaiaspace=${ivoaspace:?}
         gaiaschemaname=gaiadr1
+        curl \
+            --silent \
+            --header "firethorn.auth.identity:${identity:?}" \
+            --header "firethorn.auth.community:${community:?}" \
+            --data   "ivoa.resource.schema.name=${gaiaschemaname:?}" \
+            "${endpointurl:?}/${gaiaspace:?}/schemas/select" \
+            | bin/pp | tee gaia-schema.json
+
+
+        gaiaspace=${ivoaspace:?}
+        gaiaschemaname=public
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
