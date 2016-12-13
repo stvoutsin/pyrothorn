@@ -91,7 +91,7 @@
         #
         # Find the twomass schema
         gaiaspace=${ivoaspace:?}
-        gaiaschemaname=public
+        gaiaschemaname=gaiadr1
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
