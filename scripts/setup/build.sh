@@ -158,17 +158,7 @@ EOF
                 docker/ssh-client
         fi
 
-   	source "bin/util.sh"
-
-        if [ $(docker images | grep -c '^integration/tester') -eq 0 ]
-        then
-            echo "# ------"
-            echo "# Building tester image"
-            docker build \
-              --tag firethorn/tester:1.1 \
-              integration/tester
-        fi
-
+   	
 
     popd
 

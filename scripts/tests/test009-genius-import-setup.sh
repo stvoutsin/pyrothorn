@@ -58,6 +58,6 @@
         --env "endpointurl=http://${firelink:?}:8080/firethorn" \
         --link "${firename:?}:${firelink:?}" \
         --volume "${testerlogs:?}:${HOME:?}/logs" \
-        "firethorn/tester" \
+        "firethorn/tester:${version:?}" \
         bash  -c 'source /scripts/test009-genius-import.sh 2>&1 | tee /root/logs/output.log'
 
