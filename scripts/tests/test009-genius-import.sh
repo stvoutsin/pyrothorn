@@ -105,7 +105,7 @@
             )
 
         gaiaspace=${ivoaspace:?}
-        gaiaschemanamepublic=gaia_public
+        gaiaschemanamepublic=public
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
@@ -141,7 +141,7 @@
             --form   "vosi.tableset=@${vosifile:?}" \
             "${endpointurl:?}/${ivoaspace:?}/vosi/import" \
             | bin/pp
-.com
+
         #
         # Find the twomass schema
         gavospace=${ivoaspace:?}
