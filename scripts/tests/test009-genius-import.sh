@@ -91,27 +91,30 @@
 
 
         gaiaspace=${ivoaspace:?}
-        gaiaschemaname=gaiadr1
+        gaiaschemanamedr1=gaiadr1
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "ivoa.resource.schema.name=${gaiaschemaname:?}" \
+            --data   "ivoa.resource.schema.name=${gaiaschemanamedr1:?}" \
             "${endpointurl:?}/${gaiaspace:?}/schemas/select" \
             | bin/pp | tee gaia-schema.json
 
+        gaiaschemadr1=$(
+            cat gaia-schema.json | self
+            )
 
         gaiaspace=${ivoaspace:?}
-        gaiaschemaname=public
+        gaiaschemanamepublic=gaia_public
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "ivoa.resource.schema.name=${gaiaschemaname:?}" \
+            --data   "ivoa.resource.schema.name=${gaiaschemanamepublic:?}" \
             "${endpointurl:?}/${gaiaspace:?}/schemas/select" \
             | bin/pp | tee gaia-schema.json
 
-        gaiaschema=$(
+        gaiaschemapublic=$(
             cat gaia-schema.json | self
             )
 
@@ -138,7 +141,7 @@
             --form   "vosi.tableset=@${vosifile:?}" \
             "${endpointurl:?}/${ivoaspace:?}/vosi/import" \
             | bin/pp
-
+.com
         #
         # Find the twomass schema
         gavospace=${ivoaspace:?}
@@ -170,15 +173,27 @@
             | bin/pp | tee gavo-schema-import.json
 
 
-
-        adqlname=GACS
+        adqlname=gaia_public
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
             --data   "urn:adql.copy.depth=${adqlcopydepth:-THIN}" \
             --data   "adql.resource.schema.import.name=${adqlname:?}" \
-            --data   "adql.resource.schema.import.base=${gaiaschema:?}" \
+            --data   "adql.resource.schema.import.base=${gaiaschemapublic:?}" \
+            "${endpointurl:?}/${adqlspace:?}/schemas/import" \
+            | bin/pp | tee gaia-schema-import.json
+
+
+
+        adqlname=gaiadr1
+        curl \
+            --silent \
+            --header "firethorn.auth.identity:${identity:?}" \
+            --header "firethorn.auth.community:${community:?}" \
+            --data   "urn:adql.copy.depth=${adqlcopydepth:-THIN}" \
+            --data   "adql.resource.schema.import.name=${adqlname:?}" \
+            --data   "adql.resource.schema.import.base=${gaiaschemadr1:?}" \
             "${endpointurl:?}/${adqlspace:?}/schemas/import" \
             | bin/pp | tee gaia-schema-import.json
 

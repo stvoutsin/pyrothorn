@@ -284,6 +284,7 @@ docker run  \
     --volume "${firethornini:?}:/var/www/html/atlas/firethorn.ini" \
     --volume "${clearwinglogs:?}:/var/log/apache2" \
     --volume "${clearwinglogs:?}:/var/www/html/atlas/log" \
+    --volume "${clearwinglogs:?}/temp:/var/www/html/atlas/static/static_vo_tool/temp" \
     --link "${firename:?}:${firelink:?}" \
     --link "${dataname:?}:${datalink:?}" \
     --volume "${setupdir:?}/apache-clearwing-init.sh:${setupdir:?}/apache-clearwing-init.sh" \
