@@ -61,7 +61,7 @@ monitoring_render = web.template.render('templates/monitoring/')
 host = "${clearwing_host:?}"
 port = "${clearwing_port:?}"
 base_host = host if port=='' else host + ':' + port
-sub_app_prefix='${clearwing_host_alias:=""}'
+sub_app_prefix="${clearwing_host_alias:-}"
 base_location = os.getcwd()
 userhomedir =  base_location
 survey_sub_path = sub_app_prefix + "/" if sub_app_prefix!='' else ''#""
@@ -198,7 +198,7 @@ EOF
 
 ### Create 000-default.conf file
 
-apacheconf=$(mktemp)sub_app_prefix='${clearwing_host_alias:=""}'
+apacheconf=$(mktemp)
 
     cat > "${apacheconf:?}" << EOF
 <VirtualHost *:80>
