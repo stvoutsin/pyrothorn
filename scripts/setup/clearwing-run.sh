@@ -242,9 +242,9 @@ apacheconf=$(mktemp)
         ServerSignature On
  
     #### VO Interface Setup ####
-        WSGIScriptAlias /osa /var/www/html/atlas/app.py/
+        WSGIScriptAlias /${clearwing_host_alias:-} /var/www/html/atlas/app.py/
 
-        Alias /osa/static     /var/www/html/atlas/static/
+        Alias ${clearwing_host_alias+/$clearwing_host_alias}/static   /var/www/html/atlas/static/
         AddType text/css .css
         AddType text/javascript .js
         AddType text/html .htm
