@@ -242,16 +242,16 @@ apacheconf=$(mktemp)
         ServerSignature On
  
     #### VO Interface Setup ####
-        WSGIScriptAlias /${clearwing_host_alias:-} /var/www/html/atlas/app.py/
+        WSGIScriptAlias /${clearwing_host_alias:-} /var/www/html/app/app.py/
 
-        Alias ${clearwing_host_alias+/$clearwing_host_alias}/static   /var/www/html/atlas/static/
+        Alias ${clearwing_host_alias+/$clearwing_host_alias}/static   /var/www/html/app/static/
         AddType text/css .css
         AddType text/javascript .js
         AddType text/html .htm
         AddType image/gif .gif
         AddType image/jpeg .jpeg .jpg
 
-        <Directory /var/www/html/atlas/static>
+        <Directory /var/www/html/app/static>
                 # directives to effect the static directory
                 Options +Indexes
         </Directory>
@@ -281,11 +281,11 @@ docker run  \
     --name clearwing \
     --volume "${odbcinst:?}:/etc/odbcinst.ini" \
     --volume "${apacheconf:?}:/etc/apache2/sites-enabled/000-default.conf" \
-    --volume "${properties:?}:/var/www/html/atlas/config.py" \
-    --volume "${firethornini:?}:/var/www/html/atlas/firethorn.ini" \
+    --volume "${properties:?}:/var/www/html/app/config.py" \
+    --volume "${firethornini:?}:/var/www/html/app/firethorn.ini" \
     --volume "${clearwinglogs:?}:/var/log/apache2" \
-    --volume "${clearwinglogs:?}:/var/www/html/atlas/log" \
-    --volume "${clearwinglogs:?}/temp:/var/www/html/atlas/static/static_vo_tool/temp" \
+    --volume "${clearwinglogs:?}:/var/www/html/app/log" \
+    --volume "${clearwinglogs:?}/temp:/var/www/html/app/static/static_vo_tool/temp" \
     --link "${firename:?}:${firelink:?}" \
     --link "${dataname:?}:${datalink:?}" \
     --volume "${setupdir:?}/apache-clearwing-init.sh:${setupdir:?}/apache-clearwing-init.sh" \
