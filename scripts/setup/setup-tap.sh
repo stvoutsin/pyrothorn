@@ -18,7 +18,7 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-catalogue=ATLASDR1
+catalogue=$1
 
 if [ "$catalogue" != "DEFAULT" ]
   then
@@ -56,7 +56,7 @@ ip=$(hostname -i)
 
     source "${HOME:?}/chain.properties"
     docker run \
-        -it \
+        --detach \
         --memory 512M \
         --volume "${HOME:?}/tap_service:${HOME:?}/tap_service" \
         --volume "${setupdir:?}/build-tap.sh:${setupdir:?}/build-tap.sh" \
