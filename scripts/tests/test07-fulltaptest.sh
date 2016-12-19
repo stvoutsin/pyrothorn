@@ -190,7 +190,7 @@ echo "*** Run pyrothorn [test07-taplint.sh] ***"
         --env "endpointurl=http://${firelink:?}:8080/firethorn" \
         --env "tap_service=${tap_service:?}" \
         --link "${firename:?}:${firelink:?}" \
-        "firethorn/tester:1.1" bash -c  '/scripts/test07-taplint.sh'
+        "firethorn/tester:${version:?}" bash -c  '/scripts/test07-taplint.sh'
 
 
 
