@@ -77,6 +77,15 @@ EOF
     source "${HOME:?}/firethorn.settings"
     pushd "${FIRETHORN_CODE:?}"
 
+        source 'bin/util.sh'
+        dockversions "$(getversion)"
+
+    popd
+
+
+    source "${HOME:?}/firethorn.settings"
+    pushd "${FIRETHORN_CODE:?}"
+
         if [ $(docker images | grep -c '^firethorn/fedora') -eq 0 ]
         then
             echo "# ------"
@@ -91,7 +100,7 @@ EOF
             echo "# ------"
             echo "# Building Java image"
             docker build \
-                --tag firethorn/java:8.1 \
+                --tag firethorn/java:${version} \
                 docker/java/8
         fi
 
@@ -100,7 +109,7 @@ EOF
             echo "# ------"
             echo "# Building Tomcat image"
             docker build \
-                --tag firethorn/tomcat:8.1 \
+                --tag firethorn/tomcat:${version} \
                 docker/tomcat/8
         fi
 
@@ -109,7 +118,7 @@ EOF
             echo "# ------"
             echo "# Building Postgres image"
             docker build \
-                --tag firethorn/postgres:9 \
+                --tag firethorn/postgres:${version} \
                 docker/postgres/9
         fi
 
@@ -118,7 +127,7 @@ EOF
             echo "# ------"
             echo "# Building Builder image"
             docker build \
-                --tag firethorn/builder:1.1 \
+                --tag firethorn/builder:${version} \
                 docker/builder
         fi
 
@@ -127,7 +136,7 @@ EOF
             echo "# ------"
             echo "# Building docker-proxy image"
             docker build \
-                --tag firethorn/docker-proxy:1.1 \
+                --tag firethorn/docker-proxy:${version} \
                 docker/docker-proxy
         fi
 
@@ -136,7 +145,7 @@ EOF
             echo "# ------"
             echo "# Building sql-proxy image"
             docker build \
-                --tag firethorn/sql-proxy:1.1 \
+                --tag firethorn/sql-proxy:${version} \
                 docker/sql-proxy
         fi
 
@@ -145,7 +154,7 @@ EOF
             echo "# ------"
             echo "# Building sql-tunnel image"
             docker build \
-                --tag firethorn/sql-tunnel:1.1 \
+                --tag firethorn/sql-tunnel:${version} \
                 docker/sql-tunnel
         fi
 
@@ -154,7 +163,7 @@ EOF
             echo "# ------"
             echo "# Building ssh-client image"
             docker build \
-                --tag firethorn/ssh-client:1.1 \
+                --tag firethorn/ssh-client:${version} \
                 docker/ssh-client
         fi
 
@@ -162,23 +171,6 @@ EOF
 
     popd
 
-
-    echo "*** Start docker-proxy container. [build.sh] ***"
-# -----------------------------------------------------
-# Start our docker-proxy container.
-#[root@builder]
-
-    docker run \
-        --detach \
-        --name "docker-proxy" \
-        --volume /var/run/docker.sock:/var/run/docker.sock \
-        firethorn/docker-proxy:1.1
-
-    dockerip=$(docker inspect -f '{{.NetworkSettings.IPAddress}}' docker-proxy)
-    echo "docker-proxy [${dockerip:?}]"
-
-	sleep 1
-    curl "http://${dockerip:?}:2375/version"
 
 
     echo "*** Build our webapp services. [build.sh] ***"
@@ -201,19 +193,31 @@ EOF
 # Build our webapp containers.
 #[root@builder]
 
+    #source "${HOME:?}/firethorn.settings"
+    #pushd "${FIRETHORN_CODE:?}"
+
+    #    pushd firethorn-ogsadai/webapp
+    #        mvn -D "docker.host=tcp://${dockerip:?}:2375" docker:package
+    #    popd
+        
+    #    pushd firethorn-webapp
+    #        mvn -D "docker.host=tcp://${dockerip:?}:2375" docker:package
+    #    popd
+
+    #popd
+
     source "${HOME:?}/firethorn.settings"
     pushd "${FIRETHORN_CODE:?}"
 
         pushd firethorn-ogsadai/webapp
-            mvn -D "docker.host=tcp://${dockerip:?}:2375" docker:package
+            mvn -D "docker.host=unix:///var/run/docker.sock" docker:package
         popd
         
         pushd firethorn-webapp
-            mvn -D "docker.host=tcp://${dockerip:?}:2375" docker:package
+            mvn -D "docker.host=unix:///var/run/docker.sock" docker:package
         popd
 
     popd
-
 
     echo "*** Build our tester container. [build.sh] ***"
 # -----------------------------------------------------
