@@ -216,6 +216,7 @@ EOF
         --publish 8080:8080 \
         --publish 8085:8085 \
         --name "${firename:?}" \
+	--network "${version:?}" \
         --memory 512M \
         --tmpfs /run \
         --tmpfs /tmp \

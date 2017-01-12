@@ -72,7 +72,7 @@ ip=$(hostname -i)
         --env "endpointurl=http://${firelink:?}:8080/firethorn" \
         --env "catalogue=${catalogue:?}" \
         --env "ip=http://${ip:?}" \
-        --link "${firename:?}:${firelink:?}" \
+        --network "${version:?}" \
         "firethorn/tester:${version:?}" \
         bash -C ${setupdir:?}/build-tap.sh
 

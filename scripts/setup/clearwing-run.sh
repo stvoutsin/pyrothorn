@@ -286,8 +286,7 @@ docker run  \
     --volume "${clearwinglogs:?}:/var/log/apache2" \
     --volume "${clearwinglogs:?}:/var/www/html/app/log" \
     --volume "${clearwinglogs:?}/temp:/var/www/html/app/static/static_vo_tool/temp" \
-    --link "${firename:?}:${firelink:?}" \
-    --link "${dataname:?}:${datalink:?}" \
+    --network "${version:?}" \
     --volume "${setupdir:?}/apache-clearwing-init.sh:${setupdir:?}/apache-clearwing-init.sh" \
    firethorn/clearwing:${version:?}
 

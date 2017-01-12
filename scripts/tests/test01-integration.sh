@@ -39,7 +39,7 @@ include_neighbour_import = False # Choose whether to import all neighbour tables
 test_is_continuation = False # Test is continued from prev run or not (If true, duplicate queries that have been run previously will not be run)
 
 ### Directory and URL Information ###
-firethorn_host = "${firelink:?}" 
+firethorn_host = "gillian" 
 firethorn_port = "8080" 
 full_firethorn_host = firethorn_host if firethorn_port=='' else firethorn_host + ':' + firethorn_port
 base_location = os.getcwd()
@@ -160,12 +160,7 @@ docker run -i -t \
     --volume "${testdata:?}/metadoc.xml:/metadoc.xml" \
     --volume "${testdata:?}/queries.txt:/queries.txt" \
     --volume "${pyrologs}:/home/pyrothorn/logs" \
-    --link "${firename:?}:${firelink:?}" \
-    --link "${pyrosqlname:?}:${pyrosqllink:?}" \
-    --link "${storedqueriesname:?}:${storedquerieslink:?}" \
-    --link "${ogsaname:?}:${ogsalink:?}" \
-    --link "${dataname:?}:${datalink:?}" \
-    --link "${username:?}:${userlink:?}" \
+    --network "${version:?}" \
        firethorn/pyrothorn:${version:?} bash -c  '/scripts/test01-nohup.sh'
 
 
