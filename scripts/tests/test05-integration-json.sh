@@ -151,7 +151,12 @@ docker run -i -t \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
     --volume ${HOME:?}/tests/test05-nohup.sh:/scripts/test05-nohup.sh \
     --volume "${pyrologs}:/home/pyrothorn/logs" \
-    --network "${version:?}" \
+    --link "${firename:?}:${firelink:?}" \
+    --link "${pyrosqlname:?}:${pyrosqllink:?}" \
+    --link "${storedqueriesname:?}:${storedquerieslink:?}" \
+    --link "${ogsaname:?}:${ogsalink:?}" \
+    --link "${dataname:?}:${datalink:?}" \
+    --link "${username:?}:${userlink:?}" \
        firethorn/pyrothorn:${version:?} bash -c  '/scripts/test05-nohup.sh'
 
 

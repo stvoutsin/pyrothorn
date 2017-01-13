@@ -34,7 +34,7 @@ directory "${firepachelogs:?}"
 
 tapserviceid=$(basename $tap_service)
 
-docker run -p 80:80 --name firepache   --network "${version:?}"  --memory 512M --volume "${firepachelogs:?}:/var/log/apache2" --volume "${setupdir:?}/apache-tap-config-script.sh:${setupdir:?}/apache-tap-config-script.sh" \--env "gillianip=${gillianip:?}" --env "tapserviceid=${tapserviceid:?}" -d firethorn/apache 
+docker run -p 80:80 --name firepache  --memory 512M --volume "${firepachelogs:?}:/var/log/apache2" --volume "${setupdir:?}/apache-tap-config-script.sh:${setupdir:?}/apache-tap-config-script.sh" \--env "gillianip=${gillianip:?}" --env "tapserviceid=${tapserviceid:?}" -d firethorn/apache 
 
 docker exec  firepache /bin/sh -l -c ${setupdir:?}/apache-tap-config-script.sh
 

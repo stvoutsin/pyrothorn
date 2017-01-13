@@ -22,12 +22,6 @@
     echo "*** Initialising create-chain script [create-chain.sh] ***"
     source ${HOME:?}/chain.properties
 
-    source "${HOME:?}/chain.properties"
-    docker \
-        network \
-            create \
-                "${version:?}"
-
 
     echo "*** Run our userdata ambassador. [create-chain.sh] ***"
 # -----------------------------------------------------
@@ -35,27 +29,11 @@
 #[root@virtual]
 
 
-    #docker run \
-    #    --detach \
-    #    --name "${username:?}" \
-    #    --env  "target=${userhost:?}" \
-    #    firethorn/sql-proxy:1.1
-
-
     docker run \
         --detach \
-        --tmpfs /run \
-        --tmpfs /tmp \
-        --interactive \
         --name "${username:?}" \
-        --env  "tunneluser=${tunneluser:?}" \
-        --env  "tunnelhost=${tunnelhost:?}" \
-        --env  "targethost=${userhost:?}" \
         --env  "target=${userhost:?}" \
-        --volume  "${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock" \
-        --network "${version:?}" \
-        "firethorn/sql-proxy:${version:?}"
-
+        firethorn/sql-proxy:${version}
 
     echo "*** Run our science data ambassador. [create-chain.sh] ***"
 # -----------------------------------------------------
@@ -64,18 +42,10 @@
 
 
     docker run \
-        --interactive \
-        --tmpfs /run \
-        --tmpfs /tmp \
         --detach \
         --name "${dataname:?}" \
-        --env  "tunneluser=${tunneluser:?}" \
-        --env  "tunnelhost=${tunnelhost:?}" \
-        --env  "targethost=${datahost:?}" \
         --env  "target=${datahost:?}" \
-        --volume  "${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock" \
-        --network "${version:?}" \
-        "firethorn/sql-proxy:${version:?}"
+        firethorn/sql-proxy:${version}
 
 # -----------------------------------------------------
 # Start our PostgreSQL metadata container.
@@ -127,20 +97,12 @@
         --detach \
         --publish 8081:8080 \
         --memory 512M \
-        --tmpfs /run \
-        --tmpfs /tmp \
         --name "${ogsaname:?}" \
+        --link "${dataname:?}:${datalink:?}" \
+        --link "${username:?}:${userlink:?}" \
         --volume "${ogsatemp:?}:/temp" \
         --volume "${ogsalogs:?}:/var/local/tomcat/logs" \
-	--volume  '/etc/localtime:/etc/localtime:ro' \
-	--network "${version:?}" \
         firethorn/ogsadai:${version:?}
-
-   
-
-# -----------------------------------------------------
-# Start our FireThorn container.
-#[user@desktop] 
 
 
     echo "*** Create our FireThorn config. [create-chain.sh] ***"
@@ -153,20 +115,20 @@
 properties=$(mktemp)
 cat > "${properties:?}" << EOF
 
-        firethorn.ogsadai.endpoint=http://${ogsaname:?}:8080/ogsadai/services
+        firethorn.ogsadai.endpoint=http://${ogsalink:?}:8080/ogsadai/services
 
         firethorn.limits.time.default=6000000
         firethorn.limits.time.absolute=6000000
         firethorn.limits.rows.default=${defaultrows:?}
         firethorn.limits.rows.absolute=${absoluterows:?}
 
-        firethorn.meta.url=jdbc:jtds:sqlserver://${username:?}/${metadata:?}
+        firethorn.meta.url=jdbc:jtds:sqlserver://${userlink:?}/${metadata:?}
         firethorn.meta.user=${metauser:?}
         firethorn.meta.pass=${metapass:?}
         firethorn.meta.driver=net.sourceforge.jtds.jdbc.Driver
         firethorn.meta.type=mssql
 
-        firethorn.user.url=jdbc:jtds:sqlserver://${username:?}/${userdata:?}
+        firethorn.user.url=jdbc:jtds:sqlserver://${userlink:?}/${userdata:?}
         firethorn.user.user=${useruser:?}
         firethorn.user.pass=${userpass:?}
         firethorn.user.driver=net.sourceforge.jtds.jdbc.Driver
@@ -212,19 +174,18 @@ EOF
     directory "${firetemp:?}"
     directory "${firelogs:?}"
 
-
     docker run \
         --detach \
         --publish 8080:8080 \
         --publish 8085:8085 \
         --name "${firename:?}" \
         --memory 512M \
-        --tmpfs /run \
-        --tmpfs /tmp \
+        --link "${ogsaname:?}:${ogsalink:?}" \
+        --link "${dataname:?}:${datalink:?}" \
+        --link "${username:?}:${userlink:?}" \
         --volume "${firetemp:?}:/temp" \
         --volume "${firelogs:?}:/var/local/tomcat/logs" \
         --volume "${properties:?}:/etc/firethorn.properties" \
-        --volume  '/etc/localtime:/etc/localtime:ro' \
         --volume "${setenv:?}:/var/local/tomcat/bin/setenv.sh" \
         "firethorn/firethorn:${version:?}"
 

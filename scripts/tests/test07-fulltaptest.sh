@@ -164,7 +164,12 @@ docker run -i -t \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
     --volume ${HOME:?}/tests/test06-nohup.sh:/scripts/test06-nohup.sh \
     --volume "${pyrologs}:/home/pyrothorn/logs" \
-    --network "${version:?}" \
+    --link "${firename:?}:${firelink:?}" \
+    --link "${pyrosqlname:?}:${pyrosqllink:?}" \
+    --link "${storedqueriesname:?}:${storedquerieslink:?}" \
+    --link "${ogsaname:?}:${ogsalink:?}" \
+    --link "${dataname:?}:${datalink:?}" \
+    --link "${username:?}:${userlink:?}" \
        firethorn/pyrothorn:${version:?} bash -c  '/scripts/test06-nohup.sh'
 
 echo "*** Run pyrothorn [test07-taplint.sh] ***"
@@ -184,7 +189,7 @@ echo "*** Run pyrothorn [test07-taplint.sh] ***"
         --env "metadata=${metadata?}" \
         --env "endpointurl=http://${firelink:?}:8080/firethorn" \
         --env "tap_service=${tap_service:?}" \
-        --network "${version:?}" \
+        --link "${firename:?}:${firelink:?}" \
         "firethorn/tester:${version:?}" bash -c  '/scripts/test07-taplint.sh'
 
 

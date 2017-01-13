@@ -30,9 +30,8 @@ echo "*** Create sql-proxy for stored queries database [setup-pyro.sh] ***"
 docker run \
     --detach \
     --name "${storedqueriesname?}" \
-    --network "${version:?}" \
     --env  "target=${storedquerieshost:?}" \
-    firethorn/sql-proxy:1
+    firethorn/sql-proxy:${version:?}
 
 echo "*** Run pyrosl MySQL container [setup-pyro.sh] ***"
 # -----------------------------------------

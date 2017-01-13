@@ -73,17 +73,16 @@ EOF
 # -----------------------------------------------------
 # Build our toolkit containers.
 #[root@builder]
-
     source "${HOME:?}/firethorn.settings"
-    pushd "${FIRETHORN_CODE:?}"
-
+      pushd "${FIRETHORN_CODE:?}"
+  
         source 'bin/util.sh'
-        dockversions "$(getversion)"
-
+         dockversions "$(getversion)"
+ 
     popd
 
 
-    source "${HOME:?}/firethorn.settings"
+
     pushd "${FIRETHORN_CODE:?}"
 
         if [ $(docker images | grep -c '^firethorn/fedora') -eq 0 ]
@@ -193,19 +192,6 @@ EOF
 # Build our webapp containers.
 #[root@builder]
 
-    #source "${HOME:?}/firethorn.settings"
-    #pushd "${FIRETHORN_CODE:?}"
-
-    #    pushd firethorn-ogsadai/webapp
-    #        mvn -D "docker.host=tcp://${dockerip:?}:2375" docker:package
-    #    popd
-        
-    #    pushd firethorn-webapp
-    #        mvn -D "docker.host=tcp://${dockerip:?}:2375" docker:package
-    #    popd
-
-    #popd
-
     source "${HOME:?}/firethorn.settings"
     pushd "${FIRETHORN_CODE:?}"
 
@@ -218,6 +204,7 @@ EOF
         popd
 
     popd
+
 
     echo "*** Build our tester container. [build.sh] ***"
 # -----------------------------------------------------

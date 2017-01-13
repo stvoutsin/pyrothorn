@@ -41,7 +41,7 @@
         --env "datapass=${datapass:?}" \
         --env "datadriver=${datadriver:?}" \
         --env "endpointurl=http://${firelink:?}:8080/firethorn" \
-        --network "${version:?}" \
+        --link "${firename:?}:${firelink:?}" \
         --volume "${testerlogs:?}:${HOME:?}/logs" \
         "firethorn/tester:${version:?}" \
         bash  -c 'source /scripts/test04-nohup.sh 2>&1 | tee /root/logs/output.log'
