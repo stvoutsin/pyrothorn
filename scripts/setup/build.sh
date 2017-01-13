@@ -91,8 +91,8 @@ EOF
             echo "# ------"
             echo "# Building Fedora image"
             docker build \
-                --tag firethorn/fedora:21.1 \
-                docker/fedora/21
+                --tag firethorn/fedora:${version}  \
+                docker/fedora/24
         fi
 
         if [ $(docker images | grep -c '^firethorn/java') -eq 0 ]

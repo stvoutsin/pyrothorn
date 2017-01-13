@@ -51,9 +51,10 @@
         --env  "tunneluser=${tunneluser:?}" \
         --env  "tunnelhost=${tunnelhost:?}" \
         --env  "targethost=${userhost:?}" \
+        --env  "target=${userhost:?}" \
         --volume  "${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock" \
         --network "${version:?}" \
-        "firethorn/sql-tunnel:${version:?}"
+        "firethorn/sql-proxy:${version:?}"
 
 
     echo "*** Run our science data ambassador. [create-chain.sh] ***"
@@ -63,17 +64,18 @@
 
 
     docker run \
-        --detach \
+        --interactive \
         --tmpfs /run \
         --tmpfs /tmp \
-        --interactive \
+        --detach \
         --name "${dataname:?}" \
         --env  "tunneluser=${tunneluser:?}" \
         --env  "tunnelhost=${tunnelhost:?}" \
         --env  "targethost=${datahost:?}" \
+        --env  "target=${datahost:?}" \
         --volume  "${SSH_AUTH_SOCK}:/tmp/ssh_auth_sock" \
         --network "${version:?}" \
-        "firethorn/sql-tunnel:${version:?}"
+        "firethorn/sql-proxy:${version:?}"
 
 # -----------------------------------------------------
 # Start our PostgreSQL metadata container.
@@ -151,20 +153,20 @@
 properties=$(mktemp)
 cat > "${properties:?}" << EOF
 
-        firethorn.ogsadai.endpoint=http://${ogsalink:?}:8080/ogsadai/services
+        firethorn.ogsadai.endpoint=http://${ogsaname:?}:8080/ogsadai/services
 
         firethorn.limits.time.default=6000000
         firethorn.limits.time.absolute=6000000
         firethorn.limits.rows.default=${defaultrows:?}
         firethorn.limits.rows.absolute=${absoluterows:?}
 
-        firethorn.meta.url=jdbc:jtds:sqlserver://${userlink:?}/${metadata:?}
+        firethorn.meta.url=jdbc:jtds:sqlserver://${username:?}/${metadata:?}
         firethorn.meta.user=${metauser:?}
         firethorn.meta.pass=${metapass:?}
         firethorn.meta.driver=net.sourceforge.jtds.jdbc.Driver
         firethorn.meta.type=mssql
 
-        firethorn.user.url=jdbc:jtds:sqlserver://${userlink:?}/${userdata:?}
+        firethorn.user.url=jdbc:jtds:sqlserver://${username:?}/${userdata:?}
         firethorn.user.user=${useruser:?}
         firethorn.user.pass=${userpass:?}
         firethorn.user.driver=net.sourceforge.jtds.jdbc.Driver
@@ -216,7 +218,6 @@ EOF
         --publish 8080:8080 \
         --publish 8085:8085 \
         --name "${firename:?}" \
-	--network "${version:?}" \
         --memory 512M \
         --tmpfs /run \
         --tmpfs /tmp \
