@@ -177,6 +177,9 @@ else
     then 
 	source setup/setup-pyro-mysql.sh
         source tests/test11-mysql.sh
+    elif [ $testname -eq 12 ];
+    then 
+        source tests/test12-dqp.sh
     else 
         source setup/setup-pyro.sh
         source tests/$testname
