@@ -18,7 +18,7 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #
-catalogue=ATLASDR1
+catalogue=$1
 
 if [ "$catalogue" != "DEFAULT" ]
   then
