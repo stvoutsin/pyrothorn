@@ -81,6 +81,7 @@ EOF
  
     popd
 
+    export buildtag=${version}
 
 
     pushd "${FIRETHORN_CODE:?}"
