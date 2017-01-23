@@ -59,6 +59,7 @@ if [ "$1" == "--help" ]; then
   echo "09 - Build a Clearwing (webpy interface) container"
   echo "10 - Create Firethorn chain"
   echo "11 - Run dual MySQL/SQLServer test. Compare queries results between two"
+  echo "12 - Run DQP tests"
   return 0
 fi
 

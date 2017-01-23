@@ -22,6 +22,8 @@ run.sh testname branch version additional_param
 * 08 - Build a TAP Service for a given catalogue. (Uses secret.store database credentials)
 * 09 - Build a Clearwing (webpy interface) container
 * 10 - Create Firethorn chain
+* 11 - Run dual MySQL/SQLServer test. Compare queries results between two
+* 12 - Run DQP tests
 
 
 The research leading to these results has received funding from the European Community's Seventh Framework Programme (FP7-SPACE-2013-1) under grant agreement n°606740.
