@@ -208,6 +208,15 @@ EOF
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
 
+
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+
+	if [ "$count" -eq "2573" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 2573!=" + $count;
+	fi
+
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
@@ -218,6 +227,14 @@ EOF
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
 
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+
+	if [ "$count" -eq "1407" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 1407!=" + $count;
+	fi
+
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
@@ -227,6 +244,14 @@ EOF
             --data "adql.query.wait.time=600000" \
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
+
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+
+	if [ "$count" -eq "5000" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 5000!=" + $count;
+	fi
 
         curl \
             --silent \
@@ -239,8 +264,13 @@ EOF
             | bin/pp | tee /tmp/join-query.json
 
     
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
 
-
+	if [ "$count" -eq "10000" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 10000!=" + $count;
+	fi
 
 
 
@@ -454,6 +484,16 @@ EOF
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
 
+
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+
+	if [ "$count" -eq "1407" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 1407!=" + $count;
+	fi
+
+
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
@@ -463,6 +503,17 @@ EOF
             --data "adql.query.wait.time=600000" \
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
+
+
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+
+	if [ "$count" -eq "2573" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 2573!=" + $count;
+	fi
+
+
 
         curl \
             --silent \
@@ -474,6 +525,15 @@ EOF
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
 
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+
+	if [ "$count" -eq "5000" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 5000!=" + $count;
+	fi
+
+
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
@@ -483,16 +543,33 @@ EOF
             --data "adql.query.wait.time=600000" \
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
+
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
     
+	if [ "$count" -eq "10000" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 10000!=" + $count;
+	fi
+
+
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data-urlencode "adql.query.input@/tmp/join-query-10000.adql" \
+            --data-urlencode "adql.query.input@/tmp/jjoin-query-implicit.adql" \
             --data "adql.query.status.next=COMPLETED" \
             --data "adql.query.wait.time=600000" \
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query-implicit.json
+
+        count=$(cat /tmp/join-query-implicit.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+    
+	if [ "$count" -eq "10000" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 10000!=" + $count;
+	fi
 
 
 
@@ -630,7 +707,17 @@ EOF
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/gavo-query.json
 
-     
+       
+        gavocount=$(cat /tmp/gavo-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+        wfaucount=$(cat /tmp/wfau-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+
+	if [ "$gavocount" -eq "$wfaucount" ]; then
+	   echo "SUCCESS! Gavo and wfau twomass areas tested are equal";
+	elif	
+	   echo "FAILED! Gavo and wfau twomass areas tested are NOT equal";
+	fi
+
+
         #
         # Get URLs for the results as VOTable
         wfaudata=$(cat /tmp/wfau-query.json | votable)
@@ -697,6 +784,14 @@ EOF
             | bin/pp | tee /tmp/join-query.json
 
 
+
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+    
+	if [ "$count" -eq "10000" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 10000!=" + $count;
+	fi
 
 
 
@@ -826,6 +921,17 @@ EOF
             --data "adql.query.wait.time=600000" \
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/gaia-query.json
+
+        gaiacount=$(cat /tmp/gaia-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+        wfaucount=$(cat /tmp/wfau-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+
+	if [ "$gaiacount" -eq "$wfaucount" ]; then
+	   echo "SUCCESS! Gavo and wfau twomass areas tested are equal";
+	elif	
+	   echo "FAILED! Gavo and wfau twomass areas tested are NOT equal";
+	fi
+
+
 
         #
         # Get URLs for the results as VOTable
@@ -1004,6 +1110,17 @@ EOF
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
 
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+    
+	if [ "$count" -eq "2212" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 2212!=" + $count;
+	fi
+
+
+
+
 
         curl \
             --silent \
@@ -1014,6 +1131,16 @@ EOF
             --data "adql.query.wait.time=600000" \
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
+
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+    
+	if [ "$count" -eq "5594" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 5594!=" + $count;
+	fi
+
+
 
 
         curl \
@@ -1026,6 +1153,18 @@ EOF
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
 
+
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+    
+	if [ "$count" -eq "10000" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 10000!=" + $count;
+	fi
+
+
+
+
         curl \
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
@@ -1035,5 +1174,16 @@ EOF
             --data "adql.query.wait.time=600000" \
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
+
+        count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
+    
+	if [ "$count" -eq "2212" ]; then
+	   echo "SUCCESS!";
+	else	
+	   echo "FAILED! 2212!=" + $count;
+	fi
+
+
+
 
 
