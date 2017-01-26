@@ -952,6 +952,44 @@ cat > /tmp/join-query-3.adql << EOF
 
 EOF
 
+
+#2212 rows
+    cat > /tmp/join-query-4.adql << EOF
+
+
+    SELECT
+        gaia.tmass_best_neighbour.original_ext_source_id AS gaia_ident,
+        wfau.twomass_psc.designation                     AS wfau_ident,
+
+        gaia.tmass_best_neighbour.source_id              AS best_source_id,
+        gaia.gaia_source.source_id                       AS gaia_source_id,
+
+        wfau.twomass_psc.ra                              AS wfau_ra,
+        gaia.gaia_source.ra                              AS gaia_ra,
+
+        wfau.twomass_psc.dec                             AS wfau_dec,
+        gaia.gaia_source.dec                             AS gaia_dec
+    FROM
+        gaia.gaia_source
+    JOIN
+        gaia.tmass_best_neighbour
+    ON
+        gaia.tmass_best_neighbour.source_id = gaia.gaia_source.source_id
+    JOIN
+        wfau.twomass_psc
+    ON
+        gaia.tmass_best_neighbour.original_ext_source_id = wfau.twomass_psc.designation
+    WHERE
+        gaia.gaia_source.ra  BETWEEN 0 AND 1.25
+    AND
+        gaia.gaia_source.dec BETWEEN 0 AND 1.25
+    AND
+        wfau.twomass_psc.ra  BETWEEN 0 AND 1.25
+    AND
+        wfau.twomass_psc.dec BETWEEN 0 AND 1.25
+
+EOF
+
 # -----------------------------------------------------
 # Execute our join query.
 #[root@tester]
@@ -987,4 +1025,15 @@ EOF
             --data "adql.query.wait.time=600000" \
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
+
+        curl \
+            --silent \
+            --header "firethorn.auth.identity:${identity:?}" \
+            --header "firethorn.auth.community:${community:?}" \
+            --data-urlencode "adql.query.input@/tmp/join-query-4.adql" \
+            --data "adql.query.status.next=COMPLETED" \
+            --data "adql.query.wait.time=600000" \
+            "${endpointurl:?}/${queryspace:?}/queries/create" \
+            | bin/pp | tee /tmp/join-query.json
+
 
