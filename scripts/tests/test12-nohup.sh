@@ -78,8 +78,8 @@ mkdir logs
 # Create our join queries ...
 #[root@tester]
 
-#2573 rows
-   cat > /tmp/join-query.adql << EOF
+#1407 rows
+   cat > /tmp/join-query-1000.adql << EOF
 
             SELECT
                	atlasSource.ra  as atra,
@@ -107,8 +107,8 @@ mkdir logs
                	twomass_psc.dec BETWEEN -40 AND -39
 EOF
 
-#1407 rows
-    cat > /tmp/join-query-1000.adql << EOF
+#2573 rows
+    cat > /tmp/join-query-2000.adql << EOF
 
             SELECT
                 atlasSource.ra  as atra,
@@ -211,10 +211,11 @@ EOF
 
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
 
-	if [ "$count" -eq "2573" ]; then
+
+	if [ "$count" -eq 1407 ]; then
 	   echo "SUCCESS!";
 	else	
-	   echo "FAILED! 2573!=" + $count;
+	   echo "FAILED! 1407!=" + $count;
 	fi
 
         curl \
@@ -229,10 +230,10 @@ EOF
 
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
 
-	if [ "$count" -eq "1407" ]; then
+	if [ "$count" -eq 2573 ]; then
 	   echo "SUCCESS!";
 	else	
-	   echo "FAILED! 1407!=" + $count;
+	   echo "FAILED! 2573!=" + $count;
 	fi
 
         curl \
@@ -247,10 +248,10 @@ EOF
 
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
 
-	if [ "$count" -eq "5000" ]; then
+	if [ "$count" -eq 5592 ]; then
 	   echo "SUCCESS!";
 	else	
-	   echo "FAILED! 5000!=" + $count;
+	   echo "FAILED! 5592!=" + $count;
 	fi
 
         curl \
@@ -266,7 +267,7 @@ EOF
     
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
 
-	if [ "$count" -eq "10000" ]; then
+	if [ "$count" -ge 10000 ]; then
 	   echo "SUCCESS!";
 	else	
 	   echo "FAILED! 10000!=" + $count;
@@ -324,8 +325,8 @@ EOF
 # Create our join queries ...
 #[root@tester]
 
-#2573 rows
-   cat > /tmp/join-query.adql << EOF
+#1407 rows
+   cat > /tmp/join-query-1000.adql << EOF
 
             SELECT
                	atlasSource.ra  as atra,
@@ -353,8 +354,8 @@ EOF
                	twomass_psc.dec BETWEEN -40 AND -39
 EOF
 
-#1407 rows
-    cat > /tmp/join-query-1000.adql << EOF
+#2573 rows
+    cat > /tmp/join-query-2000.adql << EOF
 
             SELECT
                 atlasSource.ra  as atra,
@@ -440,36 +441,6 @@ EOF
 EOF
 
 
-# Implicit join
-    cat > /tmp/join-query-implicit.adql << EOF
-
-            SELECT
-                atlasSource.ra  as atra,
-                atlasSource.dec as atdec,
-                twomass_psc.ra  as tmra,
-                twomass_psc.dec as tmdec,
-                atlasSourceXtwomass_psc.distanceMins as dist
-            FROM
-                atlasSource
-                twomass_psc
-                atlasSourceXtwomass_psc
-	    WHERE
-                twomass_psc.pts_key = atlasSourceXtwomass_psc.slaveObjID
-            AND
-                atlasSource.ra  BETWEEN 351 AND 355
-            AND
-		atlasSource.sourceID = atlasSourceXtwomass_psc.masterObjID 
-            AND
-                atlasSource.dec BETWEEN -40 AND -39
-            AND
-                twomass_psc.ra  BETWEEN 351 AND 355
-            AND
-                twomass_psc.dec BETWEEN -40 AND -39
-	    ORDER BY
-                atra ASC
-EOF
-   
-
 # -----------------------------------------------------
 # Execute our join queries.
 #[root@tester]
@@ -487,12 +458,12 @@ EOF
 
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
 
-	if [ "$count" -eq "1407" ]; then
+
+	if [ "$count" -eq 1407 ]; then
 	   echo "SUCCESS!";
 	else	
 	   echo "FAILED! 1407!=" + $count;
 	fi
-
 
         curl \
             --silent \
@@ -504,16 +475,13 @@ EOF
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
 
-
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
 
-	if [ "$count" -eq "2573" ]; then
+	if [ "$count" -eq 2573 ]; then
 	   echo "SUCCESS!";
 	else	
 	   echo "FAILED! 2573!=" + $count;
 	fi
-
-
 
         curl \
             --silent \
@@ -527,12 +495,11 @@ EOF
 
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
 
-	if [ "$count" -eq "5000" ]; then
+	if [ "$count" -eq 5592 ]; then
 	   echo "SUCCESS!";
 	else	
-	   echo "FAILED! 5000!=" + $count;
+	   echo "FAILED! 5592!=" + $count;
 	fi
-
 
         curl \
             --silent \
@@ -544,28 +511,10 @@ EOF
             "${endpointurl:?}/${queryspace:?}/queries/create" \
             | bin/pp | tee /tmp/join-query.json
 
+    
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
-    
-	if [ "$count" -eq "10000" ]; then
-	   echo "SUCCESS!";
-	else	
-	   echo "FAILED! 10000!=" + $count;
-	fi
 
-
-        curl \
-            --silent \
-            --header "firethorn.auth.identity:${identity:?}" \
-            --header "firethorn.auth.community:${community:?}" \
-            --data-urlencode "adql.query.input@/tmp/jjoin-query-implicit.adql" \
-            --data "adql.query.status.next=COMPLETED" \
-            --data "adql.query.wait.time=600000" \
-            "${endpointurl:?}/${queryspace:?}/queries/create" \
-            | bin/pp | tee /tmp/join-query-implicit.json
-
-        count=$(cat /tmp/join-query-implicit.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
-    
-	if [ "$count" -eq "10000" ]; then
+	if [ "$count" -ge 10000 ]; then
 	   echo "SUCCESS!";
 	else	
 	   echo "FAILED! 10000!=" + $count;
@@ -713,7 +662,7 @@ EOF
 
 	if [ "$gavocount" -eq "$wfaucount" ]; then
 	   echo "SUCCESS! Gavo and wfau twomass areas tested are equal";
-	elif	
+	else	
 	   echo "FAILED! Gavo and wfau twomass areas tested are NOT equal";
 	fi
 
@@ -787,10 +736,10 @@ EOF
 
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
     
-	if [ "$count" -eq "10000" ]; then
+	if [ "$count" -eq 4100 ]; then
 	   echo "SUCCESS!";
 	else	
-	   echo "FAILED! 10000!=" + $count;
+	   echo "FAILED! 4100!=" + $count;
 	fi
 
 
@@ -927,7 +876,7 @@ EOF
 
 	if [ "$gaiacount" -eq "$wfaucount" ]; then
 	   echo "SUCCESS! Gavo and wfau twomass areas tested are equal";
-	elif	
+	else	
 	   echo "FAILED! Gavo and wfau twomass areas tested are NOT equal";
 	fi
 
@@ -1112,7 +1061,7 @@ EOF
 
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
     
-	if [ "$count" -eq "2212" ]; then
+	if [ "$count" -eq 2212 ]; then
 	   echo "SUCCESS!";
 	else	
 	   echo "FAILED! 2212!=" + $count;
@@ -1134,7 +1083,7 @@ EOF
 
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
     
-	if [ "$count" -eq "5594" ]; then
+	if [ "$count" -eq 5594 ]; then
 	   echo "SUCCESS!";
 	else	
 	   echo "FAILED! 5594!=" + $count;
@@ -1156,7 +1105,8 @@ EOF
 
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
     
-	if [ "$count" -eq "10000" ]; then
+
+	if [ "$count" -ge 10000 ]; then
 	   echo "SUCCESS!";
 	else	
 	   echo "FAILED! 10000!=" + $count;
