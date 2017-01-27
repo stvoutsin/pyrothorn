@@ -1324,10 +1324,10 @@ EOF
 
         count=$(cat /tmp/join-query.json | python3 -c "import sys;import json; print (json.load(sys.stdin)['results']['count'])")
     
-	if [ "$count" -eq 0 ]; then
+	if [ "$count" -eq 2212 ]; then
 	   echo "SUCCESS!";
 	else	
-	   echo "FAILED! 0!=" + $count;
+	   echo "FAILED! 2212!=" + $count;
 	fi
 
 
