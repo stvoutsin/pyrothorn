@@ -60,6 +60,7 @@ if [ "$1" == "--help" ]; then
   echo "10 - Create Firethorn chain"
   echo "11 - Run dual MySQL/SQLServer test. Compare queries results between two"
   echo "12 - Run DQP tests"
+  echo "13 - Build Apache proxy container"
   return 0
 fi
 
@@ -74,7 +75,13 @@ then
 elif [ -z "$2" ];
 then
     echo "[Error]: Branch name required!"
+fi
 
+if [ $testname -eq 13 ];
+then
+    source setup/setup.sh     
+    sleep 30
+    source setup/apache-proxy-run.sh  ${input_variable:?} ${input_variable2:?}
 else 
     source setup/setup.sh
     source setup/create-chain.sh
