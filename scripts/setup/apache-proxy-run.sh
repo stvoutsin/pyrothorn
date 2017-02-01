@@ -31,7 +31,7 @@ firepachelogs="/var/logs/firepache"
 
 directory "${firepachelogs:?}"
 
-docker run -p 80:80 --name firepache  --memory 512M --volume "${firepachelogs:?}:/var/log/apache2" --volume "${setupdir:?}/apache-proxy-config-script.sh:${setupdir:?}/apache-proxy-config-script.sh" --env "tapserviceip=${tapserviceip:?}" --env "clearwingip=${clearwingip:?}" -d firethorn/apache 
+docker run -p 80:80 --name firepache  --memory 512M --volume "${firepachelogs:?}:/var/log/apache2" --volume "${setupdir:?}/apache-proxy-config-script.sh:${setupdir:?}/apache-proxy-config-script.sh" --env "tapserviceip=${tapserviceip:?}" --env "clearwingip=${clearwingip:?}" -d firethorn/apache:${version:?} 
 
 docker exec  firepache /bin/sh -l -c ${setupdir:?}/apache-proxy-config-script.sh
 

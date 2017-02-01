@@ -1,4 +1,4 @@
-cat >> /etc/apache2/sites-enabled/000-default <<EOF
+cat >> /etc/apache2/sites-enabled/000-default.conf <<EOF
 
 <VirtualHost *:80>
     ServerName osa.metagrid.xyz

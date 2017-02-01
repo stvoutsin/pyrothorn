@@ -81,7 +81,7 @@ if [ $testname -eq 13 ];
 then
     source setup/setup.sh     
     sleep 30
-    source setup/apache-proxy-run.sh  ${input_variable:?} ${input_variable2:?}
+    source setup/apache-proxy-run.sh  ${input_variable2:?} ${input_variable3:?}
 else 
     source setup/setup.sh
     source setup/create-chain.sh

@@ -167,7 +167,15 @@ EOF
                 docker/ssh-client
         fi
 
-   	
+   	if [ $(docker images | grep -c '^firethorn/apache') -eq 0 ]
+        then
+            echo "# ------"
+            echo "# Building Apache image"
+            docker build \
+                --tag firethorn/apache:${version} \
+                docker/apache
+        fi
+
 
     popd
 
