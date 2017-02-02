@@ -88,7 +88,7 @@ class test_firethorn(unittest.TestCase):
 	    logged_queries=[]
             logged_query_sqlEng = sqlEngine.SQLEngine(config.stored_queries_dbserver, config.stored_queries_dbserver_username, config.stored_queries_dbserver_password, config.stored_queries_dbserver_port)
             sqlserverEng = sqlEngine.SQLEngine(config.test_dbserver, config.test_dbserver_username, config.test_dbserver_password, config.test_dbserver_port)
-            mysqlEng = sqlEngine.SQLEngine(config.second_test_dbserver, config.second_test_dbserver_username, config.second_test_dbserver_password, config.second_test_dbserver_port, config.second_test_driver)
+            mysqlEng = sqlEngine.SQLEngine(config.mysql_test_dbserver, config.mysql_test_dbserver_username, config.mysql_test_dbserver_password, config.mysql_test_dbserver_port, config.mysql_test_driver)
             reporting_sqlEng = sqlEngine.SQLEngine(config.reporting_dbserver, config.reporting_dbserver_username, config.reporting_dbserver_password, config.reporting_dbserver_port, "MySQL")
             fEng=None
             
@@ -165,7 +165,7 @@ class test_firethorn(unittest.TestCase):
 	            	    query_timestamp = datetime.datetime.fromtimestamp(mysql_start_time).strftime('%Y-%m-%d %H:%M:%S')
 	            	    logging.info("Starting MySQL query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 	            	    with Timeout(config.sql_timeout):
-	            	        mysql_row_length, mysql_error_message = mysqlEng.execute_sql_query_get_rows(query, config.second_test_database, config.sql_rowlimit, config.sql_timeout)
+	            	        mysql_row_length, mysql_error_message = mysqlEng.execute_sql_query_get_rows(query, config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
 	            	    logging.info("Completed MySQL query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 	            	    logging.info("MySQL Query: " + str(mysql_row_length) + " row(s) returned. ")
 	            	    mysql_duration = float(time.time() - mysql_start_time)
