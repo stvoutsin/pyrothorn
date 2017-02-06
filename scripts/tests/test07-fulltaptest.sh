@@ -177,7 +177,7 @@ echo "*** Run pyrothorn [test07-taplint.sh] ***"
     docker run \
         -it \
         --memory 512M \
-       --volume ${HOME:?}/tests/test07-taplint.sh:/scripts/test07-taplint.sh \
+       --volume "$(pwd)/tests/test07-taplint.sh:/scripts/test07-taplint.sh \
         --env "datadata=${datadata:?}" \
         --env "datalink=${datalink:?}" \
         --env "datauser=${datauser:?}" \

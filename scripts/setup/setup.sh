@@ -177,6 +177,7 @@ EOF
 # -----------------------------------------------------
 # Run our build container.
 #
+
     docker run \
         -it \
         --name builder \
@@ -185,6 +186,6 @@ EOF
         --volume /var/local/cache:/cache \
         --volume /var/local/projects:/projects \
         --volume /var/run/docker.sock:/var/run/docker.sock \
-        --volume ${HOME:?}/setup/build.sh:/build.sh \
+        --volume $(pwd)/setup/build.sh:/build.sh \
         firethorn/builder:1 \
         bash ./build.sh

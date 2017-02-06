@@ -25,7 +25,7 @@
     testname=tester
 
     chmod a+r "${HOME:?}/tests/test04-nohup.sh" 
-    chcon -t svirt_sandbox_file_t "${HOME:?}/tests/test04-nohup.sh" 
+    chcon -t svirt_sandbox_file_t "$(pwd)/tests/test04-nohup.sh" 
     testerlogs="/var/logs/tester"
 
     directory "${testerlogs:?}"
@@ -34,7 +34,7 @@
 
     docker run \
         --detach \
-        --volume "${HOME:?}/tests/test04-nohup.sh:/scripts/test04-nohup.sh" \
+        --volume "$(pwd)/tests/test04-nohup.sh:/scripts/test04-nohup.sh" \
         --name "${testname:?}" \
         --env "datalink=${datalink:?}" \
         --env "datauser=${datauser:?}" \

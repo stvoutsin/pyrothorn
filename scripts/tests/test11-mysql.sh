@@ -112,8 +112,8 @@ stored_queries_dbserver_password = "${storedqueriespass:?}"
 stored_queries_dbserver_port = "${storedqueriesport:?}" 
 stored_queries_database = "${storedqueriesdata:?}" 
 stored_queries_query = "select * from webqueries where dbname like 'ATLAS%' and query not like '%dr%' and query not like '%best%'" 
-logged_queries_txt_file = "testing/query_logs/mysql-ukidss.json" 
-logged_queries_json_file = "testing/query_logs/mysql-ukidss.json" 
+logged_queries_txt_file = "testing/query_logs/mysql-sqlserver.json" 
+logged_queries_json_file = "testing/query_logs/mysql-sqlserver.json" 
 ### Firethorn Live test Configuration ###
 
 adql_copy_depth = "THIN" 
@@ -143,7 +143,7 @@ schema_alias = "${testrundatabase:?}"
 
 EOF
 
-testbase="${HOME:?}/tests"
+testbase="$(pwd)/tests"
 
 chmod a+r "${testbase:?}/test11-nohup.sh" 
 chcon -t svirt_sandbox_file_t "${testbase:?}/test11-nohup.sh" 
@@ -154,7 +154,7 @@ chcon -t svirt_sandbox_file_t "${pyroproperties:?}"
 mkdir -p /var/logs/${pyroname:?}
 
 
-echo "*** Run pyrothorn  [test01-integration.sh] ***"
+echo "*** Run pyrothorn  [test11-mysql.sh] ***"
 
 docker run -i -t \
     --name ${pyroname:?} \

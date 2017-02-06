@@ -135,7 +135,7 @@ EOF
 
 chmod a+r "${pyroproperties:?}" 
 chcon -t svirt_sandbox_file_t "${pyroproperties:?}" 
-chmod a+r "${HOME:?}/tests/test02-nohup.sh" 
+chmod a+r "$(pwd)/tests/test02-nohup.sh" 
 chcon -t svirt_sandbox_file_t "${HOME:?}/tests/test02-nohup.sh" 
 
 echo "*** Run pyrothorn [test02-atlasfull.sh] ***"
@@ -146,7 +146,7 @@ docker run -i -t \
     --memory 512M \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
     --volume "${pyrologs}:/home/pyrothorn/logs" \
-    --volume ${HOME:?}/tests/test02-nohup.sh:/scripts/test02-nohup.sh \
+    --volume "$(pwd)/tests/test02-nohup.sh:/scripts/test02-nohup.sh" \
     --link "${firename:?}:${firelink:?}" \
     --link "${pyrosqlname:?}:${pyrosqllink:?}" \
     --link "${storedqueriesname:?}:${storedquerieslink:?}" \

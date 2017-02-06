@@ -157,7 +157,7 @@ docker run -i -t \
     --detach \
     --memory 512M \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
-    --volume ${HOME:?}/tests/test06-nohup.sh:/scripts/test06-nohup.sh \
+    --volume "$(pwd)/tests/test06-nohup.sh:/scripts/test06-nohup.sh" \
     --volume "${pyrologs}:/home/pyrothorn/logs" \
     --link "${firename:?}:${firelink:?}" \
     --link "${pyrosqlname:?}:${pyrosqllink:?}" \

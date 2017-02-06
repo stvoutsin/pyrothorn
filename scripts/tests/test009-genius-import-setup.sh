@@ -24,8 +24,8 @@
 
     testname=tester
 
-    chmod a+r "${HOME:?}/tests/test009-genius-import.sh" 
-    chcon -t svirt_sandbox_file_t "${HOME:?}/tests/test009-genius-import.sh" 
+    chmod a+r "$(pwd)/tests/test009-genius-import.sh" 
+    chcon -t svirt_sandbox_file_t "$(pwd)/tests/test009-genius-import.sh" 
     testerlogs="/var/logs/tester"
 
     directory "${testerlogs:?}"
@@ -47,7 +47,7 @@
 
     docker run \
         -it \
-        --volume "${HOME:?}/tests/test009-genius-import.sh:/scripts/test009-genius-import.sh" \
+        --volume "$(pwd)/tests/test009-genius-import.sh:/scripts/test009-genius-import.sh" \
         --volume "${HOME:?}/adqlresource:${HOME:?}/adqlresource" \
         --volume "${HOME:?}/adqlschema:${HOME:?}/adqlschema" \
         --name "${testname:?}" \
