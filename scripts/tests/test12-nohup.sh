@@ -24,6 +24,7 @@ mkdir logs
 
 # -------------------------TEST 1----------------------------
 # Test local TWOMASS and ATLASDR1 from the same JDBC resource.
+# http://redmine.roe.ac.uk/issues/999
 # -----------------------------------------------------------
 
 
@@ -279,6 +280,7 @@ EOF
 
 # -------------------------TEST 2----------------------------
 # Test local TWOMASS and ATLASDR1 from two JDBC resources.
+# http://redmine.roe.ac.uk/issues/999
 # -----------------------------------------------------------
 
 
@@ -534,9 +536,10 @@ EOF
 
 
 
-# -------------------------TEST 3-----
+# -------------------------TEST 3--------------------------
 # Test ATLAS joined with GAVO.twomass
-# ------------------------------------
+# http://redmine.roe.ac.uk/issues/1019
+# ---------------------------------------------------------
 
 
         identity=${identity:-$(date '+%H:%M:%S')}
@@ -751,6 +754,7 @@ EOF
 
 # -------------------------TEST 4-------------------
 # Test local TWOMASS joined with GAIADR1.gaiasource 
+# http://redmine.roe.ac.uk/issues/1000
 # --------------------------------------------------
 
 
@@ -1142,6 +1146,7 @@ EOF
 
 # -------------------------TEST 5-------------------
 # Test GAVO twomass joined with GAIADR1.gaiasource 
+# http://redmine.roe.ac.uk/issues/1021
 # --------------------------------------------------
 
 
