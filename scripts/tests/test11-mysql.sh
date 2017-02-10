@@ -90,9 +90,9 @@ neighbours_query = """
 
 mysql_test_dbserver= "$mysql_test_dbserver" 
 mysql_test_dbserver_username = "$mysql_test_dbserver_username" 
-mysql_test_dbserver_password = "mysql_test_dbserver_password" 
+mysql_test_dbserver_password = "$mysql_test_dbserver_password" 
 mysql_test_dbserver_port = "$mysql_test_dbserver_port" 
-mysql_test_database = "mysql_test_database" 
+mysql_test_database = "$mysql_test_database" 
 mysql_test_driver = "$mysql_test_driver"
 
 
@@ -158,7 +158,7 @@ echo "*** Run pyrothorn  [test11-mysql.sh] ***"
 
 docker run -i -t \
     --name ${pyroname:?} \
-    --detach \
+    -it \
     --memory 512M \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
     --volume "${testbase:?}/test11-nohup.sh:/scripts/test11-nohup.sh" \
