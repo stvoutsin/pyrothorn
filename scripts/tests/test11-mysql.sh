@@ -88,12 +88,12 @@ neighbours_query = """
 
 ### Second Database Configuration ###
 
-mysql_test_dbserver= "${mysql_test_dbserver:?}" 
-mysql_test_dbserver_username = "${mysql_test_dbserver_username:?}" 
-mysql_test_dbserver_password = "${mysql_test_dbserver_password:?}" 
-mysql_test_dbserver_port = "${mysql_test_dbserver_port:?}" 
-mysql_test_database = "${mysql_test_database:?}" 
-mysql_test_driver = "${mysql_test_driver:?}"
+mysql_test_dbserver= "$mysql_test_dbserver" 
+mysql_test_dbserver_username = "$mysql_test_dbserver_username" 
+mysql_test_dbserver_password = "mysql_test_dbserver_password" 
+mysql_test_dbserver_port = "$mysql_test_dbserver_port" 
+mysql_test_database = "mysql_test_database" 
+mysql_test_driver = "$mysql_test_driver"
 
 
 ### Reporting Database Configuration ###
