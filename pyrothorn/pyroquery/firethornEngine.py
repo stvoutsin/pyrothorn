@@ -13,6 +13,9 @@ import urllib2
 from datetime import datetime
 import firethorn_config as config
 
+
+
+
 class FirethornEngine(object):
     '''
     FirethornEngine
@@ -265,6 +268,107 @@ class FirethornEngine(object):
        
         return query_schema
     
+
+    def import_query_schema(self, name, import_schema, workspace):
+        '''
+        Import into a Schema into workspace
+        '''
+        try:
+            importname = name
+
+            if importname!="":
+                data = urllib.urlencode({'urn:adql.copy.depth' : config.adql_copy_depth, config.workspace_import_schema_base : import_schema, config.workspace_import_schema_name : importname})
+	        req = urllib2.Request( workspace + config.workspace_import_uri, data, headers={"Accept" : "application/json", "firethorn.auth.identity" : config.test_email, "firethorn.auth.community" : "public (unknown)"}) 
+                response = urllib2.urlopen(req)
+        except Exception as e:
+            logging.exception("Error importing catalogue")
+        return
+
+
+    def create_ivoa_space(self, ivoa_space_name, url):
+        '''
+        Create an IVOA space
+        '''
+        try:
+            data = urllib.urlencode({"ivoa.resource.name" : ivoa_space_name , "ivoa.resource.endpoint" : url})
+            req = urllib2.Request( config.ivoa_resource_create, data, headers={"Accept" : "application/json", "firethorn.auth.identity" : config.test_email, "firethorn.auth.community" : "public (unknown)"}) 
+            response = urllib2.urlopen(req)
+            ivoaspace = json.loads(response.read())["ident"]
+            response.close()
+        except Exception as e:
+            logging.exception("Error creating IVOA resource")
+
+        return ivoaspace
+
+
+    def import_vosi(self, vosi_name, ivoa_resource):
+        '''
+        Import a VOSI
+        :param vosi_name:
+        '''
+      
+        import pycurl
+        import cStringIO
+        
+        buf = cStringIO.StringIO()
+        schema = "" 
+        try:
+           
+            c = pycurl.Curl()   
+            
+            url = ivoa_resource + "/vosi/import"        
+            values = [  
+                      ("vosi.tableset", (c.FORM_FILE, vosi_name ))]
+                       
+            c.setopt(c.URL, str(url))
+            c.setopt(c.HTTPPOST, values)
+            c.setopt(c.WRITEFUNCTION, buf.write)
+            c.setopt(pycurl.HTTPHEADER, [ "firethorn.auth.identity",config.test_email,
+                                          "firethorn.auth.community","public (unknown)"
+                                          ])
+            c.perform()
+            c.close()
+	    schema = json.loads(buf.getvalue())[0]["ident"]
+            buf.close() 
+            
+        except Exception as e:
+            logging.exception("Error creating importing jdbc metadoc" )
+     
+        return schema
+
+
+    def get_ivoa_schema(self, findname="", ivoa_resource=""):
+        '''
+        Get IVOA Schema
+        :param findname:
+        :param ivoa_resource:
+        '''
+
+
+        schemaident=""
+        try:
+            data = urllib.urlencode({ "ivoa.resource.schema.name" : findname })
+            req = urllib2.Request( ivoa_resource + "/schemas/select", data, headers={"Accept" : "application/json", "firethorn.auth.identity" : config.test_email , "firethorn.auth.community" :"public (unknown)"})
+            response = urllib2.urlopen(req)
+            schemaident = json.loads(response.read())["self"]
+            response.close()
+
+        except Exception as e:
+            logging.exception("Error getting ivoa schema:  " + schemaident)
+
+        return schemaident   
+
+
+    def import_ivoa_schema(self, ivoa_resource_name, ivoa_resource_url, ivoa_resource_xml, ivoa_resource_alias, ivoa_schema_import, query_resource):
+        '''
+        Import a Schema from an IVOA resource into an ADQL resource
+        '''
+        ivoaspace = self.create_ivoa_space(ivoa_resource_name, ivoa_resource_url)
+        ivoaschema = self.import_vosi(ivoa_resource_xml, ivoaspace)
+        schema = self.get_ivoa_schema(ivoa_schema_import, ivoaspace)
+        self.import_query_schema(ivoa_resource_alias, schema, query_resource)
+        return
+
     
     def printClassVars(self):
         '''
@@ -298,3 +402,4 @@ class FirethornEngine(object):
         return attr_val
         
     
+

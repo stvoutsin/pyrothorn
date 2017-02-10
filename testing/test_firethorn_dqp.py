@@ -89,59 +89,18 @@ class test_firethorn(unittest.TestCase):
             logged_query_sqlEng = sqlEngine.SQLEngine(config.stored_queries_dbserver, config.stored_queries_dbserver_username, config.stored_queries_dbserver_password, config.stored_queries_dbserver_port)
             sqlEng = sqlEngine.SQLEngine(config.test_dbserver, config.test_dbserver_username, config.test_dbserver_password, config.test_dbserver_port)
             reporting_sqlEng = sqlEngine.SQLEngine(config.reporting_dbserver, config.reporting_dbserver_username, config.reporting_dbserver_password, config.reporting_dbserver_port, "MySQL")
-            fEng=None
+
             
             log_sql_query = config.stored_queries_query
             logging.info("Setting up Firethorn Environment..")
-            
-            if (self.use_preset_params):
-                fEng = firethornEngine.FirethornEngine(config.jdbcspace, config.adqlspace, config.adqlschema, config.query_schema, config.schema_name, config.schema_alias, config.driver)
-                fEng.printClassVars()
-                
-            else:
-                
-                if (self.use_cached_firethorn_env):
-                    try:
-                        if (os.path.isfile(config.stored_env_config)):
-                            data = []
-                            
-                            with open(config.stored_env_config) as data_file:    
-                                data = json.load(data_file)
-                            if ('jdbcspace' in data) and ('query_schema' in data) and ('adqlspace' in data):
-                                fEng = firethornEngine.FirethornEngine(jdbcspace=data['jdbcspace'], adqlspace=data['adqlspace'], query_schema = data['query_schema'], driver = config.driver )
-                                if (config.test_is_continuation):
-                                    queryrunID = data['queryrunID']
-                                else :
-				    queryrunID = get_a_uuid()
-				logging.info("Firethorn Environment loaded from cached config file: " + config.stored_env_config)
-                                valid_config_found = True
-                            else :
-                                valid_config_found = False
-                        else :
-                            valid_config_found = False   
-                    except Exception as e:
-                        valid_config_found = False     
-                        
-                    if (valid_config_found==False):  
-                        queryrunID = get_a_uuid() 
-			fEng = firethornEngine.FirethornEngine(driver = config.driver)
-                        fEng.setUpFirethornEnvironment( config.resourcename , config.resourceuri, config.catalogname, config.ogsadainame, config.adqlspacename, config.jdbccatalogname, config.jdbcschemaname, config.metadocfile)
-                    if (self.include_neighbours):
-                        self.import_neighbours(sqlEng, fEng)
-                            
-                    fEng.printClassVars()
-                            
-                else:
-                    fEng = firethornEngine.FirethornEngine( schema_name=config.schema_name, schema_alias=config.schema_alias,driver = config.driver )
-		    queryrunID = get_a_uuid() 
-                    fEng.setUpFirethornEnvironment( config.resourcename , config.resourceuri, config.catalogname, config.ogsadainame, config.adqlspacename, config.jdbccatalogname, config.jdbcschemaname, config.metadocfile, config.jdbc_resource_user, config.jdbc_resource_pass)
-                    fEng.printClassVars()
-                    if (self.include_neighbours):
-                        self.import_neighbours(sqlEng, fEng)
-            
-            self.store_environment_config(fEng, config.stored_env_config, queryrunID)
-	    try:
+            fEng = firethornEngine.FirethornEngine( schema_name=config.schema_name, schema_alias=config.schema_alias,driver = config.driver )
+            queryrunID = get_a_uuid() 
+            fEng.setUpFirethornEnvironment( config.resourcename , config.resourceuri, config.catalogname, config.ogsadainame, config.adqlspacename, config.jdbccatalogname, config.jdbcschemaname, config.metadocfile, config.jdbc_resource_user, config.jdbc_resource_pass)
 
+	    fEng.printClassVars()
+            
+
+	    try:
                 java_version = fEng.getAttribute(web_services_sys_info, "java")["version"]
                 sys_platform = fEng.getAttribute(web_services_sys_info, "system")["platform"]
                 sys_timestamp = fEng.getAttribute(web_services_sys_info, "system")["time"]
@@ -156,34 +115,33 @@ class test_firethorn(unittest.TestCase):
 	        logging.info(e)
             logging.info("")
        
-
-	    #logged_query_sqlEng.execute_sql_query(log_sql_query, config.stored_queries_database, limit=None)           
-	    #logged_queries_cols = logged_query_sqlEng.execute_sql_query("SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('dbo.webqueries') ", config.stored_queries_database, limit=None)
-	    #logging.info(logged_queries_cols)
-            #total_available_queries = 0
-	    #logging.info("Found " + str(total_available_queries)  + " available queries for " + config.stored_queries_database)
 	    logging.info("") 		    
 	    continue_from_here_flag = False
-
-
-            try:
-                if (config.test_is_continuation):
-                    total_unique_queries_qry = "select count(*) from queries where  queryrunID='" + queryrunID + "'"
-                    self.total_unique_queries = reporting_sqlEng.execute_sql_query(total_unique_queries_qry, config.reporting_database)[0][0]
-                    #total_queries_qry = "select sum(query_count) from queries where  queryrunID='" + queryrunID + "'"
-                    #self.total_queries = reporting_sqlEng.execute_sql_query(total_queries_qry, config.reporting_database)[0][0]
-                    total_failed_qry = "select count(*) from queries where  queryrunID='" + queryrunID + "'  and test_passed<=0"
-                    self.total_failed = reporting_sqlEng.execute_sql_query(total_failed_qry, config.reporting_database)[0][0]
-            except Exception as e:
-                self_total_unique_queries = 0
-                self.total_queries = 0
-                self.total_failed = 0            
-
+            self_total_unique_queries = 0
+            self.total_queries = 0
+            self.total_failed = 0  
             jsondata=[]
+
             with open(config.logged_queries_json_file ) as f:
                 data = json.load(f)
+                for key, value in data.iteritems():
+                    if key.lower()=="queries":
+                        queries=value
+                    elif key.lower()=="resources":
+                        resources = value	
 
-                for line in data:
+                for resource in resources:
+                    type = resource["type"]
+                    url = resource["url"]
+                    metadoc = resource["metadoc"]
+                    alias = resource["alias"]
+                    name = resource["name"]
+                    schema = resource["schema"]
+ 
+                    if type.lower()=="ivoa":
+                        fEng.import_ivoa_schema(alias, url, metadoc, name, schema, fEng.adqlspace)
+
+                for line in queries:
                     query = line["query"]
                     sql_row_length = line["rows"]
                     qEng = queryEngine.QueryEngine()
@@ -196,19 +154,8 @@ class test_firethorn(unittest.TestCase):
                     sql_error_message =  ""
                     logging.info("Query : " +  query)
                     self.total_queries = self.total_queries + 1
-                    try:
-                        check_duplicate_query = "select count(*), queryid, query_count from queries where query_hash='" + querymd5 + "' and queryrunID='" + queryrunID + "'"                              
-                        query_duplicates_found_row = reporting_sqlEng.execute_sql_query(check_duplicate_query, config.reporting_database)[0]
-                        query_duplicates_found = query_duplicates_found_row[0]
-                        queryid = query_duplicates_found_row[1]
-                        query_count = query_duplicates_found_row[2]
-                    except Exception as e:
-                        logging.info(e)
-                        query_duplicates_found = 0
-                        queryid = None
-                        query_count = 0
 
-                    if (query_duplicates_found<=0):
+                    if (True):
                         continue_from_here_flag = True
                         sql_duration = 0
                         firethorn_duration = 0
@@ -226,7 +173,6 @@ class test_firethorn(unittest.TestCase):
 			    logging.info("Started Firethorn job :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 			    with Timeout(config.firethorn_timeout):
 			        firethorn_row_length, firethorn_error_message = qEng.run_query(query, "", fEng.query_schema)
-
 			    logging.info("Finished Firethorn job :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 			    logging.info("Firethorn Query: " + str(firethorn_row_length) + " row(s) returned. ")
 			    firethorn_duration = float(time.time() - start_time)
@@ -334,5 +280,4 @@ class test_firethorn(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
 

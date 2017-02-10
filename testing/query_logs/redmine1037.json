@@ -1,0 +1,40 @@
+{
+	"resources": [{
+		"type": "ivoa",
+		"url": "http://dc.zah.uni-heidelberg.de/__system__/tap/run/tap",
+		"metadoc": "testing/metadocs/gavo-tableset.xml",
+		"alias": "GAVO TAP Service",
+		"name": "gavo",
+		"schema": "twomass"
+	},
+        {
+                "type": "ivoa",
+                "url": "http://gea.esac.esa.int/tap-server/tap",
+                "metadoc": "testing/metadocs/gaia-tableset.xml",
+                "alias": "GAIA TAP Service",
+                "name": "gaiadr1",
+                "schema": "gaia"
+        }
+],
+	"queries": [
+
+		{
+			"query": "SELECT TOP 2000 designation, ra, dec FROM TWOMASS.twomass_psc WHERE (ra BETWEEN 0 AND 0.5) AND (dec BETWEEN 0 AND 0.5)",
+			"rows": 395
+		},
+
+		{
+			"query": "SELECT TOP 2000 mainid AS designation, raj2000 AS ra, dej2000 AS dec FROM gavo.data WHERE (raj2000 BETWEEN 0 AND 0.5) AND (dej2000 BETWEEN 0 AND 0.5)",
+			"rows": 395
+		},
+                {
+			"query" : "SELECT TOP 2000 designation, ra, dec  FROM gaia.tmass_original_valid WHERE (ra BETWEEN 0 AND 0.5) AND (dec BETWEEN 0 AND 0.5)",
+                        "rows": 395
+                }
+
+
+
+	]
+
+}
+

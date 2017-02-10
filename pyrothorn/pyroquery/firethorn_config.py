@@ -67,6 +67,7 @@ table_import_uri = '/tables/import'
 
 workspace_creator = web_services_url + "/adql/resource/create"
 jdbc_creator = web_services_url + "/jdbc/resource/create"
+ivoa_resource_create = web_services_url + "/ivoa/resource/create"
 
 
 resource_create_name_params = {
@@ -193,5 +194,6 @@ types = {
          'workspace' : 'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json'
 
         }
+
 
 
