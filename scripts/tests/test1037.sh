@@ -19,11 +19,14 @@
 #
 #
 
-echo "*** Initialising test001 script [test01-integration.sh] ***"
+echo "*** Initialising test1037 script [test1037.sh] ***"
 
 source ${HOME:?}/chain.properties
 
-echo "*** Creating pyrothorn properties file [test01-integration.sh] ***"
+echo "*** Creating pyrothorn properties file [tes1037.sh] ***"
+testrundatabase=TWOMASS
+testrun_ogsadai_resource=TWOMASS
+
 
 pyroproperties=$(mktemp)
 cat > "${pyroproperties:?}" << EOF
@@ -103,7 +106,8 @@ stored_queries_dbserver_port = "${storedqueriesport:?}"
 stored_queries_database = "${storedqueriesdata:?}" 
 stored_queries_query = "select * from webqueries where dbname like 'ATLAS%' and query not like '%mi.arcfile%'" 
 logged_queries_txt_file = "/queries.txt" 
-
+logged_queries_json_file = "testing/query_logs/redmine1037.json"
+ 
 ### Firethorn Live test Configuration ###
 
 adql_copy_depth = "THIN" 
@@ -117,8 +121,7 @@ jdbccatalogname = '${testrundatabase:?}'
 jdbcschemaname = 'dbo'
 jdbc_resource_user = '${datauser:?}'
 jdbc_resource_pass = '${datapass:?}'
-#metadocfile = "testing/metadocs/${testrundatabase:?}_TablesSchema.xml" 
-metadocfile = "/metadoc.xml" 
+metadocfile = "testing/metadocs/${testrundatabase:?}_TablesSchema.xml" 
 metadocdirectory = "testing/metadocs/" 
 stored_env_config = 'conf/pyrothorn-stored.js'
 
