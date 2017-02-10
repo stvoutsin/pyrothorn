@@ -107,10 +107,10 @@ reporting_database = "pyrothorn_testing"
 ### Logged Queries Configuration ###
 
 stored_queries_dbserver= "${storedquerieslink:?}" 
-stored_queries_dbserver_username = "${storedqueriesuser:?}" 
-stored_queries_dbserver_password = "${storedqueriespass:?}" 
-stored_queries_dbserver_port = "${storedqueriesport:?}" 
-stored_queries_database = "${storedqueriesdata:?}" 
+stored_queries_dbserver_username = "$storedqueriesuser" 
+stored_queries_dbserver_password = "$storedqueriespass" 
+stored_queries_dbserver_port = "$storedqueriesport" 
+stored_queries_database = "$storedqueriesdata" 
 stored_queries_query = "select * from webqueries where dbname like 'ATLAS%' and query not like '%dr%' and query not like '%best%'" 
 logged_queries_txt_file = "testing/query_logs/mysql-sqlserver.json" 
 logged_queries_json_file = "testing/query_logs/mysql-sqlserver.json" 
@@ -163,12 +163,8 @@ docker run -i -t \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
     --volume "${testbase:?}/test11-nohup.sh:/scripts/test11-nohup.sh" \
     --volume "${pyrologs}:/home/pyrothorn/logs" \
-    --link "${firename:?}:${firelink:?}" \
     --link "${pyrosqlname:?}:${pyrosqllink:?}" \
-    --link "${storedqueriesname:?}:${storedquerieslink:?}" \
-    --link "${ogsaname:?}:${ogsalink:?}" \
     --link "${dataname:?}:${datalink:?}" \
-    --link "${username:?}:${userlink:?}" \
        firethorn/pyrothorn:${version:?} bash -c  '/scripts/test11-nohup.sh'
 
 
