@@ -12,8 +12,8 @@
                 "url": "http://gea.esac.esa.int/tap-server/tap",
                 "metadoc": "testing/metadocs/gaia-tableset.xml",
                 "alias": "GAIA TAP Service",
-                "name": "gaiadr1",
-                "schema": "gaia"
+                "name": "gaia",
+                "schema": "gaiadr1"
         }
 ],
 	"queries": [
