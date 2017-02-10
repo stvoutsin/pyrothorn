@@ -158,7 +158,7 @@ echo "*** Run pyrothorn  [test11-mysql.sh] ***"
 
 docker run -i -t \
     --name ${pyroname:?} \
-    -it \
+    --detach \
     --memory 512M \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
     --volume "${testbase:?}/test11-nohup.sh:/scripts/test11-nohup.sh" \
