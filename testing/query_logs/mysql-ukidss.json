@@ -99,6 +99,24 @@
     {
         "query": "SELECT  sourceID, framesetID, ra, `dec`, mergedClass, priOrSec, JAperMag3, JAperMag3Err, HAperMag3, HAperMag3Err, K_1AperMag3, K_1AperMag3Err, K_2AperMag3, K_2AperMag3Err, H2AperMag3, H2AperMag3Err,2*DEGREES(ASIN(sqrt(power(0.04292215518527661-cx,2)+power(-0.9391451011784818-cy,2)+power(-0.3408286483362428-cz,2))/2))*60 as distance  FROM gpsSource WHERE `dec` > -19.929034504342926 and `dec` < -19.925701171009596 and ra >= 272.6150200117686 and ra <= 272.6185656753208 and ((cx * 0.04292215518527661 + cy * -0.9391451011784818 + cz * -0.3408286483362428 ) >= 0.9999999995769202)" ,
         "rows": 21
-    }
+    },
+    {
+         "query": "select ra as radeg,dec as decdeg, japermag3 as j, hapermag3 as h, k_1apermag3 as k from gpssource where framesetid=438086670524",
+         "rows" :  3027
+    },
+    {
+         "query": "SELECT l, b, ra, dec, pstar, pGalaxy, pNoise, mergedClass, jAperMag3, hAperMag3, k_1AperMag3, k_1ppErrBits, jppErrbits, hppErrbits, k_1ErrBits, jAperMag3Err, hAperMag3Err, k_1AperMag3Err, sourceID FROM gpsSource WHERE ra between 94.5 and 97.5 and dec between 4 and 4.5 and (mergedClass = 1 or mergedClass = -3 or mergedClass = -1 or mergedClass = -2) AND jppErrBits < 17 AND hppErrBits < 17 AND k_1ppErrBits < 17 AND jErrBits = 0 AND hErrBits = 0 AND k_1ErrBits = 0 AND abs(jAperMag3Err) < 0.3 AND abs(hAperMag3Err) < 0.3 AND abs(k_1AperMag3Err) < 0.3",
+         "rows" :  64981
+    },
+    {
+         "query": "select count(*) from lasSource where mergedClass=-1 or mergedClass=-2 or mergedClass=-3 or mergedClass=-9  and yPsfMag<=19 and j_1PsfMag<=19 and hPsfMag<=19 and kPsfMag<=19  and yPsfMag>0 and j_1PsfMag>0 and hPsfMag>0 and kPsfMag>0",
+         "rows" :  1
+    },
+    {
+         "query": "SELECT l, b, ra, dec,jAperMag3, hAperMag3, k_1AperMag3, mergedClass, sourceID, k_1ppErrBits, PriOrSec, framesetID FROM gpsSource WHERE ra between 272.830 and 275.000 and dec between 31.830 and 34.000 AND k_1AperMag3 > 0",
+         "rows" :   0
+    },
+  
+
 ]
 
