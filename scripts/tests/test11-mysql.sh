@@ -52,7 +52,7 @@ sample_query="Select top 10 * from Filter"
 sample_query_expected_rows=10
 limit_query = None
 sql_rowlimit = ${defaultrows:?}
-sql_timeout = 1800
+sql_timeout = 3600
 firethorn_timeout = 1800
 query_mode = "AUTO" 
 
