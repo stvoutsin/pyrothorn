@@ -115,8 +115,7 @@
     {
          "query": "SELECT l, b, ra, dec,jAperMag3, hAperMag3, k_1AperMag3, mergedClass, sourceID, k_1ppErrBits, PriOrSec, framesetID FROM gpsSource WHERE ra between 272.830 and 275.000 and dec between 31.830 and 34.000 AND k_1AperMag3 > 0",
          "rows" :   0
-    },
-  
+    }
 
 ]
 
