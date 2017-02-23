@@ -174,6 +174,7 @@ class test_firethorn(unittest.TestCase):
                             logging.exception(e)
                             if (type(e).__name__=="Timeout"):
                                 test_skipped = True
+                                mysql_duration = -1
                                 logging.info("Timeout reached while running sql query..")
                             else :
                                 logging.info("Error caught while running sql query")
@@ -196,6 +197,7 @@ class test_firethorn(unittest.TestCase):
                             logging.exception(e)
                             if (type(e).__name__=="Timeout"):
                                 test_skipped = True
+                                sqlserver_duration = -1
                                 logging.info("Timeout reached while running sql query..")
                             else :
                                 logging.info("Error caught while running sql query")
