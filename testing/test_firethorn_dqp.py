@@ -131,14 +131,14 @@ class test_firethorn(unittest.TestCase):
                         resources = value	
 
                 for resource in resources:
-                    type = resource["type"]
+                    resourcetype = resource["type"]
                     url = resource["url"]
                     metadoc = resource["metadoc"]
                     alias = resource["alias"]
                     name = resource["name"]
                     schema = resource["schema"]
  
-                    if type.lower()=="ivoa":
+                    if resourcetype.lower()=="ivoa":
                         fEng.import_ivoa_schema(alias, url, metadoc, name, schema, fEng.adqlspace)
 
                 for line in queries:
