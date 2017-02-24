@@ -101,7 +101,8 @@ class test_firethorn(unittest.TestCase):
             firethorn_changeset = ""
             firethorn_version = ""
 	    continue_from_here_flag = False
-
+            sqlserver_flush_query = "DBCC DROPCLEANBUFFERS"
+            mysql_flush_query = "RESET QUERY CACHE"
               
             try:
                 if (config.test_is_continuation):
@@ -165,6 +166,8 @@ class test_firethorn(unittest.TestCase):
 	            	    query_timestamp = datetime.datetime.fromtimestamp(mysql_start_time).strftime('%Y-%m-%d %H:%M:%S')
 	            	    logging.info("Starting MySQL query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 	            	    with Timeout(config.sql_timeout):
+                                if self.total_queries<=1:
+                                    mysqlEng.execute_sql_query_get_rows(mysql_flush_query, config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
 	            	        mysql_row_length, mysql_error_message = mysqlEng.execute_sql_query_get_rows(query, config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
 	            	    logging.info("Completed MySQL query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 	            	    logging.info("MySQL Query: " + str(mysql_row_length) + " row(s) returned. ")
@@ -188,6 +191,8 @@ class test_firethorn(unittest.TestCase):
                             logging.info("Starting SQL Server query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
                             query = query.replace("`","")
                             with Timeout(config.sql_timeout):
+                                if self.total_queries<=1:
+                                    sqlserverEng.execute_sql_query_get_rows(sqlserver_flush_query, config.test_database, config.sql_rowlimit, config.sql_timeout)
                                 sqlserver_row_length, sqlserver_error_message = sqlserverEng.execute_sql_query_get_rows(query, config.test_database, config.sql_rowlimit, config.sql_timeout)
                             logging.info("Completed SQL Server query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
                             logging.info("SQL Server Query: " + str(sqlserver_row_length) + " row(s) returned. ")
