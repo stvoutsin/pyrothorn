@@ -17,6 +17,7 @@ yum install git
 # Clone repository
 
 git clone https://github.com/stvoutsin/pyrothorn.git
+
 cwd=$(pwd)
 
 
