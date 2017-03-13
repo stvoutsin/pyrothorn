@@ -13,6 +13,7 @@ except Exception as e:
 
 web_services_url = "http://" + full_firethorn_host + "/firethorn"
 web_services_sys_info = web_services_url + "/system/info"
+tap_base = "http://" + full_firethorn_host + "/firethorn/tap/"
 
 ### Query Runtime and Polling Configurations ###
 MAX_FILE_SIZE = 248576000 

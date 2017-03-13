@@ -88,6 +88,7 @@ class FirethornEngine(object):
 	:param jdbc_resource_pass
         '''
         self.jdbcspace = self.create_jdbc_space(resourcename ,resourceuri, catalogname, ogsadainame, jdbc_resource_user, jdbc_resource_pass)
+        logging.exception("SELF.JDBCSPACE:" + self.jdbcspace)
         if (self.adqlspace=="" or self.adqlspace==None):
 	    self.adqlspace = self.create_adql_space(adqlspacename)
         self.adqlschema = self.import_jdbc_metadoc(self.adqlspace, self.jdbcspace, jdbccatalogname, jdbcschemaname, metadocfile)
@@ -108,8 +109,8 @@ class FirethornEngine(object):
 	    if jdbc_resource_user!="" and jdbc_resource_pass!="":
                 data = urllib.urlencode({config.resource_create_name_params['http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json'] : resourcename,
  				     "urn:jdbc.copy.depth" : config.adql_copy_depth,
-                                     "jdbc.connection.url" : resourceuri,
-                                     "jdbc.catalog.name" : catalogname,
+                                     "jdbc.connection.url" : resourceuri,	
+                                     "jdbc.resource.catalog" : catalogname,
                                      "jdbc.resource.name" : ogsadainame,
                                      "jdbc.connection.driver" : self.driver,
                                      "jdbc.connection.user" : jdbc_resource_user,
@@ -158,7 +159,8 @@ class FirethornEngine(object):
                                      "jdbc.resource.schema.select.schema" : jdbcschemaname})
             req = urllib2.Request( jdbcspace + "/schemas/select", data, headers={"Accept" : "application/json", "firethorn.auth.identity" : config.test_email , "firethorn.auth.community" : "public (unknown)"})
             response = urllib2.urlopen(req)
-            jdbcschemaident = json.loads(response.read())["ident"]
+            js = response.read()
+            jdbcschemaident = json.loads(js)["ident"]
             response.close()
         except Exception as e:
             logging.exception("Error creating importing jdbc metadoc:  " + jdbcschemaident)
@@ -400,6 +402,4 @@ class FirethornEngine(object):
         except Exception as e:
             logging.exception(e)
         return attr_val
-        
-    
 

@@ -61,6 +61,7 @@ if [ "$1" == "--help" ]; then
   echo "11 - Run dual MySQL/SQLServer test. Compare queries results between two"
   echo "12 - Run DQP tests"
   echo "13 - Build Apache proxy container"
+  echo "14 - Given a JSON query file, Execute on given resources (ivoa/local)"
   return 0
 fi
 
@@ -194,6 +195,10 @@ else
     elif [ $testname -eq 12 ];
     then 
         source tests/test12-dqp.sh
+    elif [ $testname -eq 14 ];
+    then
+	source setup/setup-pyro.sh
+        source tests/test14-json.sh ${input_variable:?}
     else 
         source setup/setup-pyro.sh
         source tests/$testname

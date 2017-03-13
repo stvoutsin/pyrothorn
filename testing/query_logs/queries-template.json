@@ -1,0 +1,29 @@
+{
+
+       	"resources": [
+        {
+                "type": "local",
+                "name": "TWOMASS",
+                "metadoc": "testing/metadocs/TWOMASS_TablesSchema.xml"
+
+        }
+	
+
+],
+	"queries": [
+
+		
+                {
+			"query" : "SELECT TOP 10 * FROM Filter",
+                        "rows": 10
+                },
+                {
+			"query" : "SELECT COUNT(*) FROM Filter",
+                        "rows": 1
+                }
+              
+
+	]
+
+}
+

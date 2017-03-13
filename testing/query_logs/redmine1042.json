@@ -1,0 +1,102 @@
+{
+	"resources": [
+        {
+                "type": "tap",
+                "url": "http://gea.esac.esa.int/tap-server/tap",
+                "name": "gaia"
+
+        }
+],
+	"queries": [
+
+		
+                {
+			"query" : "SELECT TOP 10 * FROM gaiadr1.tgas_source WHERE dec < 0 ORDER BY parallax DESC",
+                        "rows": 10
+                },
+                {
+			"query" : "SELECT COUNT(*) FROM gaiadr1.tgas_source AS t, public.igsl_source_catalog_ids AS i WHERE t.source_id = i.source_id",
+                        "rows": 1
+                },
+                {
+			"query" : "SELECT TOP 1 'Hello world!' AS greeting, ra, dec FROM gaiadr1.tgas_source",
+                        "rows": 1
+                },
+                {
+			"query" : "SELECT COUNT(*) FROM gaiadr1.gaia_source WHERE parallax IS NULL",
+                        "rows": 1
+                },
+                {
+			"query" : "SELECT COUNT(*) FROM gaiadr1.tgas_source AS t INNER JOIN public.igsl_source_catalog_ids AS i ON t.source_id = i.source_id",
+                        "rows": 1
+                },
+                {
+			"query" : "SELECT TOP 10000 p.*, c.* FROM gaiadr1.cepheid AS c, gaiadr1.phot_variable_time_series_gfov AS p WHERE p.source_id = c.source_id ORDER BY p.source_id, p.observation_time",
+                        "rows": 10000
+                },
+                {
+			"query" : "SELECT observation_time, g_magnitude FROM gaiadr1.phot_variable_time_series_gfov AS p, (SELECT TOP 1 source_id FROM gaiadr1.phot_variable_time_series_gfov_statistical_parameters ORDER  BY range DESC ) AS t WHERE p.source_id = t.source_id ORDER BY observation_time",
+                        "rows": 43
+                },
+                {
+			"query" : "SELECT TOP 10 g.ra, g.dec FROM gaiadr1.gaia_source AS g, public.igsl_source AS i WHERE aux_lqrf = 'true' AND g.source_id = i.source_id ",
+                        "rows": 10000
+                },
+                {
+			"query" : "SELECT TOP 10 ra, dec, phot_g_mean_mag FROM gaiadr1.gaia_source WHERE ((ra BETWEEN 268.74298 AND 271.25702 AND dec BETWEEN 66.061389 AND 67.061389) OR (ra BETWEEN 88.74298 AND 91.25702 AND dec BETWEEN -67.061389 AND 66.061389)) AND source_id NOT IN (SELECT source_id FROM gaiadr1.cepheid)",
+                        "rows": 10000
+                },
+                {
+			"query" : "SELECT ROUND(SQRT(pmra*pmra + pmdec*pmdec), 0) AS muTot, COUNT(*) FROM gaiadr1.tgas_source GROUP BY muTot ORDER BY muTot DESC",
+                        "rows": 886
+                },
+                {
+			"query" : "SELECT *, SQRT(pmra*pmra + pmdec*pmdec) AS muTot FROM gaiadr1.tgas_source WHERE SQRT(pmra*pmra + pmdec*pmdec) > 3000",
+                        "rows": 2
+                },
+                {
+			"query" : "SELECT COUNT(*) FROM gaiadr1.tgas_source WHERE pmra*pmra + pmdec*pmdec > 5*SQRT(pmra*pmra*pmra_error*pmra_error + pmdec*pmdec*pmdec_error*pmdec_error)",
+                        "rows": 1
+                },
+                {
+			"query" : "SELECT TOP 10 * FROM gaiadr1.tgas_source WHERE pmra*pmra + pmdec*pmdec < SQRT(pmra*pmra*pmra_error*pmra_error + pmdec*pmdec*pmdec_error*pmdec_error) AND parallax < parallax_error AND (astrometric_excess_noise < 2 OR astrometric_excess_noise_sig <= 2)",
+                        "rows": 10
+                },
+                {
+			"query" : "SELECT * FROM gaiadr1.gaia_source WHERE MOD(random_index, 1000000) = 0",
+                        "rows": 1143
+                },
+                {
+			"query" : "SELECT TOP 5 -ra from gaiadr1.gaia_source",
+                        "rows": 5
+                },
+                {
+			"query" : "SELECT TOP 10 ra FROM gaiadr1.gaia_source WHERE ra IN (SELECT TOP 20 ra FROM gaiadr1.gaia_source WHERE ra>0 ORDER BY ra)",
+                        "rows": 10
+                },
+                {
+			"query" : "SELECT TOP 10 pi() from gaiadr1.gaia_source",
+                        "rows": 10000
+                },
+
+                {
+			"query" : "SELECT TOP 10 rand() from gaiadr1.gaia_source",
+                        "rows": 10000
+                },
+                {
+			"query" : "SELECT TOP 10 ra, ra + dec, ra - dec,ra * dec, ra / dec FROM gaiadr1.gaia_source where ra > 0 and dec > 0",
+                        "rows": 10
+                },
+                {
+			"query" : "SELECT TOP 1 dec FROM gaiadr1.gaia_source WHERE dec = ANY (SELECT dec FROM gaiadr1.gaia_source WHERE (dec BETWEEN -22.5 AND -12.5))",
+                        "rows": 1
+                },
+                {
+			"query" : "SELECT TOP 5 ((ra + 6) / 2) AS one, (ra + (6 / 2)) AS two FROM gaiadr1.gaia_source",
+                        "rows": 5
+                }
+
+	]
+
+}
+

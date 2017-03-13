@@ -18,5 +18,5 @@ SELECT TOP 10 ra FROM gaia_source WHERE ra IN (SELECT TOP 20 ra FROM gaia_source
 SELECT pi() from gaia_source
 SELECT rand() from gaia_source
 SELECT TOP 10 ra, ra + dec, ra - dec,ra * dec, ra / dec FROM gaia_source where ra > 0 and dec > 0
-SELECT TOP 1 dec FROM gaia_source WHERE dec = ANY (SELECT dec FROM gaia_source WHERE (dec BETWEEN -22.5 AND -12.5))
+SELECT TOP 1 dec FROM gaia_source WHERE dec IN (SELECT dec FROM gaia_source WHERE (dec BETWEEN -22.5 AND -12.5))
 SELECT TOP 5 ((ra + 6) / 2) AS one, (ra + (6 / 2)) AS two FROM gaia_source
