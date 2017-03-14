@@ -151,7 +151,7 @@ nano /root/queries.json
 newversion=2.1.5
 hgchangeset=4b5097b7d4d9
 
-# Run JSon query test
+# Run JSON query test
 source run.sh 14  default  ${newversion:?} /root/queries.json
 
 
