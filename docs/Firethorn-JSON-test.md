@@ -152,7 +152,10 @@ newversion=2.1.5
 
 hgchangeset=4b5097b7d4d9
 
+
 # Run JSON query test
+
+cd ${cwd:?}/pyrothorn/scripts
 
 source run.sh 14  ${hgchangeset:?}  ${newversion:?} /root/queries.json
 
