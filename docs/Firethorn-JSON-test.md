@@ -154,7 +154,7 @@ hgchangeset=4b5097b7d4d9
 
 # Run JSON query test
 
-source run.sh 14  default  ${newversion:?} /root/queries.json
+source run.sh 14  ${hgchangeset:?}  ${newversion:?} /root/queries.json
 
 
 # Observing Results
