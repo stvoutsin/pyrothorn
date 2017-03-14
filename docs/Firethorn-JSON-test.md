@@ -149,9 +149,11 @@ nano /root/queries.json
 # Set the version of Firethorn and hg changeset
 
 newversion=2.1.5
+
 hgchangeset=4b5097b7d4d9
 
 # Run JSON query test
+
 source run.sh 14  default  ${newversion:?} /root/queries.json
 
 
