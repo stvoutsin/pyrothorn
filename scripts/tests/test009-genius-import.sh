@@ -96,7 +96,7 @@
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "ivoa.resource.schema.name=${gaiaschemanamedr1:?}" \
+            --data   "ivoa.schema.name=${gaiaschemanamedr1:?}" \
             "${endpointurl:?}/${gaiaspace:?}/schemas/select" \
             | bin/pp | tee gaia-schema.json
 
@@ -110,7 +110,7 @@
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "ivoa.resource.schema.name=${gaiaschemanamepublic:?}" \
+            --data   "ivoa.schema.name=${gaiaschemanamepublic:?}" \
             "${endpointurl:?}/${gaiaspace:?}/schemas/select" \
             | bin/pp | tee gaia-schema.json
 
@@ -150,7 +150,7 @@
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "ivoa.resource.schema.name=${gavoschemaname:?}" \
+            --data   "ivoa.schema.name=${gavoschemaname:?}" \
             "${endpointurl:?}/${gavospace:?}/schemas/select" \
             | bin/pp | tee gavo-schema.json
 
@@ -166,9 +166,9 @@
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "urn:adql.copy.depth=${adqlcopydepth:-THIN}" \
-            --data   "adql.resource.schema.import.name=${adqlname:?}" \
-            --data   "adql.resource.schema.import.base=${gavoschema:?}" \
+            --data   "adql.copy.depth=${adqlcopydepth:-THIN}" \
+            --data   "adql.schema.name=${adqlname:?}" \
+            --data   "adql.schema.base=${gavoschema:?}" \
             "${endpointurl:?}/${adqlspace:?}/schemas/import" \
             | bin/pp | tee gavo-schema-import.json
 
@@ -178,9 +178,9 @@
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "urn:adql.copy.depth=${adqlcopydepth:-THIN}" \
-            --data   "adql.resource.schema.import.name=${adqlname:?}" \
-            --data   "adql.resource.schema.import.base=${gaiaschemapublic:?}" \
+            --data   "adql.copy.depth=${adqlcopydepth:-THIN}" \
+            --data   "adql.schema.name=${adqlname:?}" \
+            --data   "adql.schema.base=${gaiaschemapublic:?}" \
             "${endpointurl:?}/${adqlspace:?}/schemas/import" \
             | bin/pp | tee gaia-schema-import.json
 
@@ -191,9 +191,9 @@
             --silent \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "urn:adql.copy.depth=${adqlcopydepth:-THIN}" \
-            --data   "adql.resource.schema.import.name=${adqlname:?}" \
-            --data   "adql.resource.schema.import.base=${gaiaschemadr1:?}" \
+            --data   "adql.copy.depth=${adqlcopydepth:-THIN}" \
+            --data   "adql.schema.name=${adqlname:?}" \
+            --data   "adql.schema.base=${gaiaschemadr1:?}" \
             "${endpointurl:?}/${adqlspace:?}/schemas/import" \
             | bin/pp | tee gaia-schema-import.json
 

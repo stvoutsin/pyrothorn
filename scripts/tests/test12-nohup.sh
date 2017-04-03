@@ -604,7 +604,7 @@ EOF
         curl \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "ivoa.resource.schema.name=${findname:?}" \
+            --data   "ivoa.schema.name=${findname:?}" \
             "${endpointurl:?}/${gavoivoa:?}/schemas/select" \
             | bin/pp | tee /tmp/gavo-schema.json
 
@@ -628,9 +628,9 @@ EOF
         curl \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "urn:adql.copy.depth=${adqlcopydepth:-THIN}" \
-            --data   "adql.resource.schema.import.name=${gavoname:?}" \
-            --data   "adql.resource.schema.import.base=${gavoschema:?}" \
+            --data   "adql.copy.depth=${adqlcopydepth:-THIN}" \
+            --data   "adql.schema.name=${gavoname:?}" \
+            --data   "adql.schema.base=${gavoschema:?}" \
             "${endpointurl:?}/${queryspace:?}/schemas/import" \
             | bin/pp | tee /tmp/query-schema.json
 
@@ -820,7 +820,7 @@ EOF
         curl \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "ivoa.resource.schema.name=${findname:?}" \
+            --data   "ivoa.schema.name=${findname:?}" \
             "${endpointurl:?}/${gaiaivoa:?}/schemas/select" \
             | bin/pp | tee /tmp/gaia-schema.json
 
@@ -844,9 +844,9 @@ EOF
         curl \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "urn:adql.copy.depth=${adqlcopydepth:-THIN}" \
-            --data   "adql.resource.schema.import.name=${gaianame:?}" \
-            --data   "adql.resource.schema.import.base=${gaiaschema:?}" \
+            --data   "adql.copy.depth=${adqlcopydepth:-THIN}" \
+            --data   "adql.schema.name=${gaianame:?}" \
+            --data   "adql.schema.base=${gaiaschema:?}" \
             "${endpointurl:?}/${queryspace:?}/schemas/import" \
             | bin/pp | tee /tmp/query-schema.json
 
@@ -1194,7 +1194,7 @@ EOF
         curl \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "ivoa.resource.schema.name=${findname:?}" \
+            --data   "ivoa.schema.name=${findname:?}" \
             "${endpointurl:?}/${gaiaivoa:?}/schemas/select" \
             | bin/pp | tee /tmp/gaia-schema.json
 
@@ -1226,7 +1226,7 @@ EOF
         curl \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "ivoa.resource.schema.name=${findname:?}" \
+            --data   "ivoa.schema.name=${findname:?}" \
             "${endpointurl:?}/${gavoivoa:?}/schemas/select" \
             | bin/pp | tee /tmp/gavo-schema.json
 
@@ -1248,9 +1248,9 @@ EOF
         curl \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "urn:adql.copy.depth=${adqlcopydepth:-THIN}" \
-            --data   "adql.resource.schema.import.name=${gavoname:?}" \
-            --data   "adql.resource.schema.import.base=${gavoschema:?}" \
+            --data   "adql.copy.depth=${adqlcopydepth:-THIN}" \
+            --data   "adql.schema.name=${gavoname:?}" \
+            --data   "adql.schema.base=${gavoschema:?}" \
             "${endpointurl:?}/${queryspace:?}/schemas/import" \
             | bin/pp | tee /tmp/query-schema.json
 
@@ -1262,9 +1262,9 @@ EOF
         curl \
             --header "firethorn.auth.identity:${identity:?}" \
             --header "firethorn.auth.community:${community:?}" \
-            --data   "urn:adql.copy.depth=${adqlcopydepth:-THIN}" \
-            --data   "adql.resource.schema.import.name=${gaianame:?}" \
-            --data   "adql.resource.schema.import.base=${gaiaschema:?}" \
+            --data   "adql.copy.depth=${adqlcopydepth:-THIN}" \
+            --data   "adql.schema.name=${gaianame:?}" \
+            --data   "adql.schema.base=${gaiaschema:?}" \
             "${endpointurl:?}/${queryspace:?}/schemas/import" \
             | bin/pp | tee /tmp/query-schema.json
 
