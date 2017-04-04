@@ -169,7 +169,7 @@ class test_firethorn(unittest.TestCase):
                                 if self.total_queries<=1:
                                     mysqlEng.execute_sql_query_get_rows(mysql_flush_query, config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
                                     mysqlEng.execute_sql_query_get_rows("FLUSH TABLES", config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
-                                    mysqlEng.execute_sql_query_get_rows("FLASH QUERY CACHE", config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
+                                    mysqlEng.execute_sql_query_get_rows("FLUSH QUERY CACHE", config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
 
 	            	        mysql_row_length, mysql_error_message = mysqlEng.execute_sql_query_get_rows(query, config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
 	            	    logging.info("Completed MySQL query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
