@@ -4,10 +4,6 @@
         "rows": 2
     }, 
     {
-        "query": "select m.multiframeid,sum(tablerows) from Multiframe as m, MultiframeDetector as mfd where m.multiframeID=mfd.multiframeID and project like 'atlas' and frameType like 'stack' group by m.multiframeid order by sum(tableRows) desc  /*select  * from atlasDetection  where multiframeID=158148 and ra>0*/", 
-        "rows": 1000
-    }, 
-    {
         "query": "select   s.ra as raDeg,s.dec as decDeg,gAperMag3,rAperMag3,x,y,s.framesetid from atlasSource as s, atlasMergeLog as l, atlasDetection as d where  l.frameSetID=s.frameSetID and gmfid >0 and rmfid >0 and ( (gapermag3 between 0 and 22 and rapermag3 <0 and gSeqNum=d.seqNum and geNum=d.extnum and gmfid=d.multiframeID) /* (rapermag3 between 0 and 22 and gapermag3 <0 and rSeqNum=d.seqNum and reNum=d.extnum and rmfid=d.multiframeID)*/ )", 
         "rows": 1000
     }, 
