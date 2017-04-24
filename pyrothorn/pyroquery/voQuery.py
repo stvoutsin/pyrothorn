@@ -106,7 +106,7 @@ class VOQuery():
         """
         Get table rowcount
         """
-        if self.votable:
+        if not self.votable is None:
             return len(self.votable)
         else :
             return -1
