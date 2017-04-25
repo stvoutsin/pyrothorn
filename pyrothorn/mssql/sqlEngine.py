@@ -163,7 +163,7 @@ class DBHelper:
             cnxn.close()
         except Exception as e:
             logging.exception(e)
-            cnxn.close()
+            #cnxn.close()
             raise e
             
         return return_val
