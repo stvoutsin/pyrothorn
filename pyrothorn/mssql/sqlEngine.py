@@ -133,7 +133,7 @@ class DBHelper:
             cursor = cnxn.cursor()
             cursor.execute(query)
 
-            if len(cursor.description)>0:
+            if cursor.description!=None:
                 columns = [column[0] for column in cursor.description]
             else:
                 columns=[]
