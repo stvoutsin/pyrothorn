@@ -166,9 +166,9 @@ class test_firethorn(unittest.TestCase):
 	            	    query_timestamp = datetime.datetime.fromtimestamp(mysql_start_time).strftime('%Y-%m-%d %H:%M:%S')
 	            	    logging.info("Starting MySQL query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 	            	    with Timeout(config.sql_timeout):
-                                mysqlEng.execute_sql_query_get_rows(mysql_flush_query, config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
-                                mysqlEng.execute_sql_query_get_rows("FLUSH TABLES", config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
-                                mysqlEng.execute_sql_query_get_rows("FLUSH QUERY CACHE", config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
+                                mysqlEng.execute_sql_query(mysql_flush_query, config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
+                                mysqlEng.execute_sql_query("FLUSH TABLES", config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
+                                mysqlEng.execute_sql_query("FLUSH QUERY CACHE", config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
 	            	        mysql_row_length, mysql_error_message = mysqlEng.execute_sql_query_get_rows(query, config.mysql_test_database, config.sql_rowlimit, config.sql_timeout)
 	            	    logging.info("Completed MySQL query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 	            	    logging.info("MySQL Query: " + str(mysql_row_length) + " row(s) returned. ")
@@ -192,8 +192,8 @@ class test_firethorn(unittest.TestCase):
                             logging.info("Starting SQL Server query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
                             query = query.replace("`","")
                             with Timeout(config.sql_timeout):
-                                sqlserverEng.execute_sql_query_get_rows(sqlserver_flush_query, config.test_database, config.sql_rowlimit, config.sql_timeout)
-                                sqlserverEng.execute_sql_query_get_rows("DBCC FREEPROCCACHE", config.test_database, config.sql_rowlimit, config.sql_timeout)
+                                sqlserverEng.execute_sql_query(sqlserver_flush_query, config.test_database, config.sql_rowlimit, config.sql_timeout)
+                                sqlserverEng.execute_sql_query("DBCC FREEPROCCACHE", config.test_database, config.sql_rowlimit, config.sql_timeout)
                                 sqlserver_row_length, sqlserver_error_message = sqlserverEng.execute_sql_query_get_rows(query, config.test_database, config.sql_rowlimit, config.sql_timeout)
                             logging.info("Completed SQL Server query :::" +  strftime("%Y-%m-%d %H:%M:%S", gmtime()))
                             logging.info("SQL Server Query: " + str(sqlserver_row_length) + " row(s) returned. ")
