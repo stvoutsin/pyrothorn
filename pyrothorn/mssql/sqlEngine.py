@@ -133,7 +133,10 @@ class DBHelper:
             cursor = cnxn.cursor()
             cursor.execute(query)
 
-            columns = [column[0] for column in cursor.description]
+            if len(cursor.description)>0:
+                columns = [column[0] for column in cursor.description]
+            else:
+                columns=[]
             return_val.append(columns)
             rowlist=[]
 
