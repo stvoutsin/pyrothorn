@@ -71,6 +71,19 @@ class DBHelper:
         
         return return_val
     
+    def execute_qry_no_results (self, query, db_name):
+        '''
+        Execute a query on a database & table, that will return a single row
+        '''
+        return_val = []
+        params = 'DRIVER={' + self.driver + '};SERVER=' + self.db_server + ';Database=' + db_name +';UID=' + self.username + ';PWD=' + self.password +';TDS_Version=8.0;Port='  + self.$
+        cnxn = pyodbc.connect(params)
+        cursor = cnxn.cursor()
+        cursor.execute(query)
+        cnxn.close()
+
+        return
+
     
     def execute_query_multiple_rows(self, query, db_name, limit=None, timeout=None):
         '''
@@ -323,5 +336,16 @@ class SQLEngine(object):
         mydb = DBHelper(self.dbserver,self.dbuser ,self.dbpasswd, self.dbport, self.driver)
         table_data = mydb.execute_query_get_cols_rows(qry, database, limit, timeout)
         return table_data        
+
+    def execute_query_empty (self, qry, database, limit=None, timeout=None):
+        '''
+        Execute a query (qry) against a db and table
+
+        :param qry:
+        :param database:
+        '''
+        mydb = DBHelper(self.dbserver, self.dbuser, self.dbpasswd, self.dbport, self.driver)
+        table_data = mydb.execute_qry_no_results(qry, database, limit, timeout)
+        return table_data
           
  
