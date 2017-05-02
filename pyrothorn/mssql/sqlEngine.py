@@ -76,7 +76,7 @@ class DBHelper:
         Execute a query on a database & table, that will return a single row
         '''
         return_val = []
-        params = 'DRIVER={' + self.driver + '};SERVER=' + self.db_server + ';Database=' + db_name +';UID=' + self.username + ';PWD=' + self.password +';TDS_Version=8.0;Port='  + self.$
+        params = 'DRIVER={' + self.driver + '};SERVER=' + self.db_server + ';Database=' + db_name +';UID=' + self.username + ';PWD=' + self.password +';TDS_Version=8.0;Port='  + self.port + ';'
         cnxn = pyodbc.connect(params)
         cursor = cnxn.cursor()
         cursor.execute(query)
