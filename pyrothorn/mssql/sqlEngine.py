@@ -71,7 +71,7 @@ class DBHelper:
         
         return return_val
     
-    def execute_qry_no_results (self, query, db_name):
+    def execute_qry_no_results (self, query, db_name, limit=None, timeout=None):
         '''
         Execute a query on a database & table, that will return a single row
         '''
