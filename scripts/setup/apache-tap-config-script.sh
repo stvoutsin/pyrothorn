@@ -1,4 +1,4 @@
-cat >> test <<EOF
+cat >> /etc/apache2/apache2.conf <<EOF
 
 # mod_proxy setup.
 ProxyRequests Off
