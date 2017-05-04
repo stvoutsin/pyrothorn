@@ -134,7 +134,7 @@ else
     then
         if [  -n "$input_variable" ]
         then 
-            echo "Running setup tap script with: " + ${input_variable:?}
+            echo "Running setup tap script with config: " + ${input_variable:?}
             source setup/setup-tap.sh ${input_variable:?}
             sleep 120
 	    tap_service=$(cat tap_service)
