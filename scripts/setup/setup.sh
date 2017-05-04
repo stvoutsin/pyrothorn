@@ -62,8 +62,8 @@
     chcon -t svirt_sandbox_file_t "/var/local/cache" 
 
 
-    chmod a+r "${HOME:?}/setup/build.sh" 
-    chcon -t svirt_sandbox_file_t "${HOME:?}/setup/build.sh" 
+    chmod a+r "$(pwd)/setup/build.sh" 
+    chcon -t svirt_sandbox_file_t "$(pwd)/setup/build.sh" 
  
     touch ${HOME:?}/chain.properties
     chmod a+r "${HOME:?}/chain.properties"

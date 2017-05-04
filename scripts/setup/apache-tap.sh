@@ -20,10 +20,10 @@
 #
 
 homedir="${HOME:?}"
-setupdir="${HOME:?}/setup"
+setupdir="$(pwd)/setup"
 
-chcon -t svirt_sandbox_file_t "${setupdir:?}/apache-tap-config-script.sh" 
-chmod +x "${setupdir:?}/apache-tap-config-script.sh"
+chcon -t svirt_sandbox_file_t "$(pwd)/apache-tap-config-script.sh" 
+chmod +x "$(pwd)/apache-tap-config-script.sh"
 
 gillianip=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' gillian)
 
@@ -34,9 +34,9 @@ directory "${firepachelogs:?}"
 
 tapserviceid=$(basename $tap_service)
 
-docker run -p 80:80 --name firepache  --memory 512M --volume "${firepachelogs:?}:/var/log/apache2" --volume "${setupdir:?}/apache-tap-config-script.sh:${setupdir:?}/apache-tap-config-script.sh" \--env "gillianip=${gillianip:?}" --env "tapserviceid=${tapserviceid:?}" -d firethorn/apache 
+docker run -p 80:80 --name firepache  --memory 512M --volume "${firepachelogs:?}:/var/log/apache2" --volume "$(pwd)/apache-tap-config-script.sh:/apache-tap-config-script.sh" \--env "gillianip=${gillianip:?}" --env "tapserviceid=${tapserviceid:?}" -d firethorn/apache 
 
-docker exec  firepache /bin/sh -l -c ${setupdir:?}/apache-tap-config-script.sh
+docker exec  firepache /bin/sh -l -c /apache-tap-config-script.sh
 
 
 
