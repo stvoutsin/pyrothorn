@@ -1,0 +1,2930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>GAIADR1</Name>
+   <Description></Description>
+
+   <Table ID="aux_qso_icrf2_match">
+      <Name>aux_qso_icrf2_match</Name>
+      <Description><![CDATA[ Auxilliary QSO solution source matches to ICRF2 defining source]]></Description>
+      <Column ID="aux_qso_icrf2_match.solution_id" indexed="false">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.ref_epoch" indexed="false">
+         <Name>ref_epoch</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Reference epoch]]></Description>
+         <Units>Julian years</Units>
+         <UCD version="1+">time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Right Ascension]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.ra;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.ra_error" indexed="false">
+         <Name>ra_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on celestial Right Ascension]]></Description>
+         <Units>milliarcseconds</Units>
+         <UCD version="1+">stat.error;pos.eq.ra;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Declination]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.dec;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.dec_error" indexed="false">
+         <Name>dec_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on celestial Declination]]></Description>
+         <Units>milliarcseconds</Units>
+         <UCD version="1+">stat.error;pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.ra_dec_corr" indexed="false">
+         <Name>ra_dec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Right Ascension and Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.phot_g_mean_mag" indexed="false">
+         <Name>phot_g_mean_mag</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[G-band mean magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;stat.mean;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.astrometric_priors_used" indexed="false">
+         <Name>astrometric_priors_used</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Type of prior used in the astrometric solution]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.icrf2_match" indexed="false">
+         <Name>icrf2_match</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[ICRF2 designation of the source matched to this Gaia source]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id.cross</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="aux_qso_icrf2_match.rot_flag" indexed="false">
+         <Name>rot_flag</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flag indicating how this source was used to fix the orientation of the reference frame of the Gaia DR1 solution]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="cepheid">
+      <Name>cepheid</Name>
+      <Description><![CDATA[ Contains Cepheids identified in GDR]]></Description>
+      <Column ID="cepheid.type_best_classification" indexed="false">
+         <Name>type_best_classification</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Best type classification estimate out of {&quot;DCEP&quot;, &quot;T2CEP&quot;, &quot;ACEP&quot;}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code.class;src.class</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.type2_best_sub_classification" indexed="false">
+         <Name>type2_best_sub_classification</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Best subclassification estimate for typeBestClassification=&quot;T2CEP&quot; out of {&quot;BL_HER&quot;, &quot;W_VIR&quot;,&quot;RV_TAU&quot;}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code.class;src.class</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.mode_best_classification" indexed="false">
+         <Name>mode_best_classification</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Best mode classification estimate out of {&quot;FUNDAMENTAL&quot;, &quot;FIRST_OVERTONE&quot;,&quot;SECOND_OVERTONE&quot;,&quot;UNDEFINED&quot;,&quot;NOT_APPLICABLE&quot;}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code.class;src.class</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.solution_id" indexed="true">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.p1" indexed="false">
+         <Name>p1</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Period corresponding to the maximum peak in the periodogram of G band time series]]></Description>
+         <Units>days</Units>
+         <UCD version="1+">time.period</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.p1_error" indexed="false">
+         <Name>p1_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on the period corresponding to the maximum peak in the periodogram of G band time series]]></Description>
+         <Units>days</Units>
+         <UCD version="1+">stat.error;time.period</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.epoch_g" indexed="false">
+         <Name>epoch_g</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Epoch of the maximum of the light curve in the G band]]></Description>
+         <Units>Barycentric JD in TCB - 2455197.5 days</Units>
+         <UCD version="1+">time.epoch;stat.max</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.epoch_g_error" indexed="false">
+         <Name>epoch_g_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on epoch of the maximum of the light curve in the G band]]></Description>
+         <Units>days</Units>
+         <UCD version="1+">stat.error;time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.int_average_g" indexed="false">
+         <Name>int_average_g</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Intensity-averaged magnitude in the G band]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.int_average_g_error" indexed="false">
+         <Name>int_average_g_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on the intensity-averaged magnitude in the G band]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.peak_to_peak_g" indexed="false">
+         <Name>peak_to_peak_g</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Peak-to-peak amplitude of the G band light curve]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">src.var.amplitude;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.peak_to_peak_g_error" indexed="false">
+         <Name>peak_to_peak_g_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on peak-to-peak amplitude of the G band light curve]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;src.var.amplitude;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.num_harmonics_for_p1" indexed="false">
+         <Name>num_harmonics_for_p1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of harmonics used to model P1 of the light curve]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.r21_g" indexed="false">
+         <Name>r21_g</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Fourier decomposition parameter r21G: A2/A1 (for G band)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.Fourier</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.r21_g_error" indexed="false">
+         <Name>r21_g_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on Fourier decomposition parameter r21G]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.phi21_g" indexed="false">
+         <Name>phi21_g</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Fourier decomposition parameter phi21G: phi2 - 2*phi1 (for G band)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.Fourier</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="cepheid.phi21_g_error" indexed="false">
+         <Name>phi21_g_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on Fourier decomposition parameter phi21G]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="ext_phot_zero_point">
+      <Name>ext_phot_zero_point</Name>
+      <Description><![CDATA[ Photometric zero-point data for Gaia passbands]]></Description>
+      <Column ID="ext_phot_zero_point.solution_id" indexed="true">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ext_phot_zero_point.g_mag_zero_point" indexed="false">
+         <Name>g_mag_zero_point</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[G magnitude zero point]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;arith.zp;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ext_phot_zero_point.g_mag_zero_oint_error" indexed="false">
+         <Name>g_mag_zero_oint_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on G magnitude zero point]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag;arith.zp;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ext_phot_zero_point.bp_mag_zero_point" indexed="false">
+         <Name>bp_mag_zero_point</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[BP magnitude zero point]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;arith.zp</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ext_phot_zero_point.bp_mag_zero_point_error" indexed="false">
+         <Name>bp_mag_zero_point_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on BP magnitude zero point]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag;arith.zp</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ext_phot_zero_point.rp_mag_zero_point" indexed="false">
+         <Name>rp_mag_zero_point</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[RP magnitude zero point]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;arith.zp</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ext_phot_zero_point.rp_mag_zero_oint_error" indexed="false">
+         <Name>rp_mag_zero_oint_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on RP magnitude zero point]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag;arith.zp</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="gaia_hip_tycho2_match">
+      <Name>gaia_hip_tycho2_match</Name>
+      <Description><![CDATA[ Cross-identifications between Gaia and Tycho2/Hipparcos sources used in TGA]]></Description>
+      <Column ID="gaia_hip_tycho2_match.solution_id" indexed="true">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_hip_tycho2_match.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_hip_tycho2_match.hip_tyc_oid" indexed="false">
+         <Name>hip_tyc_oid</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Initial Gaia Source List identifier for Hipparcos/Tycho2]]></Description>
+         <Units> </Units>
+         <UCD version="1+">id.cross</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_hip_tycho2_match.original_ext_source_id" indexed="false">
+         <Name>original_ext_source_id</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Original source identified in Hipparcos/Tycho2]]></Description>
+         <Units> </Units>
+         <UCD version="1+">id.cross</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_hip_tycho2_match.ext_cat_solution_type" indexed="false">
+         <Name>ext_cat_solution_type</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Type of solution in the Hipparcos/Tycho2 catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="gaia_source">
+      <Name>gaia_source</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in Gaia Data Release 1]]></Description>
+      <Column ID="gaia_source.solution_id" indexed="false">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.random_index" indexed="false">
+         <Name>random_index</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Random index used to select subsets]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.ref_epoch" indexed="false">
+         <Name>ref_epoch</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Reference epoch]]></Description>
+         <Units>Julian years</Units>
+         <UCD version="1+">meta.ref;time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Right Ascension]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.ra;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.ra_error" indexed="false">
+         <Name>ra_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standard error of Right Ascension]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error;pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Declination]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.dec;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.dec_error" indexed="false">
+         <Name>dec_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standard error of Declination]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error;pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.parallax" indexed="false">
+         <Name>parallax</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Parallax]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">pos.parallax</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.parallax_error" indexed="false">
+         <Name>parallax_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standard error of parallax]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error;pos.parallax</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.pmra" indexed="false">
+         <Name>pmra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Proper motion in Right Ascension direction]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">pos.pm;.pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.pmra_error" indexed="false">
+         <Name>pmra_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error of proper motion in Right Ascension direction]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">stat.error;pos.pm;.pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.pmdec" indexed="false">
+         <Name>pmdec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Proper motion in Declination direction]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">pos.pm;.pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.pmdec_error" indexed="false">
+         <Name>pmdec_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error of proper motion in Declination direction]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">stat.error;pos.pm;.pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.ra_dec_corr" indexed="false">
+         <Name>ra_dec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Right Ascension and Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.ra_parallax_corr" indexed="false">
+         <Name>ra_parallax_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Right Ascension and parallax]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.ra_pmra_corr" indexed="false">
+         <Name>ra_pmra_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Right Ascension and proper motion in Right Ascension]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.ra_pmdec_corr" indexed="false">
+         <Name>ra_pmdec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Right Ascension and proper motion in Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.dec_parallax_corr" indexed="false">
+         <Name>dec_parallax_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Declination and parallax]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.dec_pmra_corr" indexed="false">
+         <Name>dec_pmra_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Declination and proper motion in Right Ascension]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.dec_pmdec_corr" indexed="false">
+         <Name>dec_pmdec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Declination and proper motion in Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.parallax_pmra_corr" indexed="false">
+         <Name>parallax_pmra_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between parallax and proper motion in Right Ascension]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.parallax_pmdec_corr" indexed="false">
+         <Name>parallax_pmdec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between parallax and proper motion in Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.pmra_pmdec_corr" indexed="false">
+         <Name>pmra_pmdec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between proper motion in Right Ascension and proper motion in Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_n_obs_al" indexed="false">
+         <Name>astrometric_n_obs_al</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Total number of observations in the Along-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_n_obs_ac" indexed="false">
+         <Name>astrometric_n_obs_ac</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Total number of observations in the Across-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_n_good_obs_al" indexed="false">
+         <Name>astrometric_n_good_obs_al</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of good observations in the Along-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_n_good_obs_ac" indexed="false">
+         <Name>astrometric_n_good_obs_ac</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of good observations in the Across-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_n_bad_obs_al" indexed="false">
+         <Name>astrometric_n_bad_obs_al</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of bad observations in the Along-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_n_bad_obs_ac" indexed="false">
+         <Name>astrometric_n_bad_obs_ac</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of bad observations in the Across-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_delta_q" indexed="false">
+         <Name>astrometric_delta_q</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Hipparcos/Gaia data discrepancy (Hipparcos subset of TGAS only)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_excess_noise" indexed="false">
+         <Name>astrometric_excess_noise</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Excess noise of the source]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_excess_noise_sig" indexed="false">
+         <Name>astrometric_excess_noise_sig</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Significance of the excess noise]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_primary_flag" indexed="false">
+         <Name>astrometric_primary_flag</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Primary or secondary]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_relegation_factor" indexed="false">
+         <Name>astrometric_relegation_factor</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Relegation factor]]></Description>
+         <Units> </Units>
+         <UCD version="1+">arith.factor</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_weight_al" indexed="false">
+         <Name>astrometric_weight_al</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean astrometric weight of the source Along-Scan]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight;stat.mean</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_weight_ac" indexed="false">
+         <Name>astrometric_weight_ac</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean astrometric weight of the source Across-Scan]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight;stat.mean</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.astrometric_priors_used" indexed="false">
+         <Name>astrometric_priors_used</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Type of prior used in the astrometric solution]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.matched_observations" indexed="false">
+         <Name>matched_observations</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Amount of observations matched to this source]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.duplicated_source" indexed="false">
+         <Name>duplicated_source</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Source with duplicated sources]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.scan_direction_strength_k1" indexed="false">
+         <Name>scan_direction_strength_k1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Degree of concentration of scan directions across the source]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.scan_direction_strength_k2" indexed="false">
+         <Name>scan_direction_strength_k2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Degree of concentration of scan directions across the source]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.scan_direction_strength_k3" indexed="false">
+         <Name>scan_direction_strength_k3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Degree of concentration of scan directions across the source]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.scan_direction_strength_k4" indexed="false">
+         <Name>scan_direction_strength_k4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Degree of concentration of scan directions across the source]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.scan_direction_mean_k1" indexed="false">
+         <Name>scan_direction_mean_k1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean position angle of scan directions across the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.scan_direction_mean_k2" indexed="false">
+         <Name>scan_direction_mean_k2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean position angle of scan directions across the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.scan_direction_mean_k3" indexed="false">
+         <Name>scan_direction_mean_k3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean position angle of scan directions across the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.scan_direction_mean_k4" indexed="false">
+         <Name>scan_direction_mean_k4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean position angle of scan directions across the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.phot_g_n_obs" indexed="false">
+         <Name>phot_g_n_obs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of observations contributing to G band photometry]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.phot_g_mean_flux" indexed="false">
+         <Name>phot_g_mean_flux</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[G-band mean flux]]></Description>
+         <Units>electrons/s</Units>
+         <UCD version="1+">phot.flux;stat.mean;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.phot_g_mean_flux_error" indexed="false">
+         <Name>phot_g_mean_flux_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error on G-band mean flux]]></Description>
+         <Units>electrons/s</Units>
+         <UCD version="1+">stat.error;phot.flux;stat.mean;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.phot_g_mean_mag" indexed="false">
+         <Name>phot_g_mean_mag</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[G-band mean magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;stat.mean;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.phot_variable_flag" indexed="false">
+         <Name>phot_variable_flag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Photometric variability flag]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code;src.var</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.l" indexed="false">
+         <Name>l</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.galactic.lon</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.b" indexed="false">
+         <Name>b</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.galactic.lat</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.ecl_lon" indexed="false">
+         <Name>ecl_lon</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Ecliptic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.ecliptic.lon</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.ecl_lat" indexed="false">
+         <Name>ecl_lat</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Ecliptic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.ecliptic.lat</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.x</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="gaia_source.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.eq</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="hipparcos_new_reduction">
+      <Name>hipparcos_new_reduction</Name>
+      <Description><![CDATA[ Hipparcos New Reduction: The Astrometric Catalogu]]></Description>
+      <Column ID="hipparcos_new_reduction.hip" indexed="true">
+         <Name>hip</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Hipparcos identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.main;meta.id</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.ic" indexed="false">
+         <Name>ic</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Entry in one of the supplementary catalogues]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id.cross</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Right Ascension in the ICRS at epoch 1991.25]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">meta.main;pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Declination in the ICRS at epoch 1991.25]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">meta.main;pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.ra_rad" indexed="false">
+         <Name>ra_rad</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Right Ascension in the ICRS at epoch 1991.25]]></Description>
+         <Units>radians</Units>
+         <UCD version="1+">pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.de_rad" indexed="false">
+         <Name>de_rad</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Declination in the ICRS at epoch 1991.25]]></Description>
+         <Units>radians</Units>
+         <UCD version="1+">pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.plx" indexed="false">
+         <Name>plx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Parallax]]></Description>
+         <Units>milliarcseconds</Units>
+         <UCD version="1+">pos.parallax</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.pm_ra" indexed="false">
+         <Name>pm_ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Proper motion in Right Ascension]]></Description>
+         <Units>milliarcseconds/year</Units>
+         <UCD version="1+">pos.eq.ra;pos.pm</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.pm_de" indexed="false">
+         <Name>pm_de</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Proper motion in Declination]]></Description>
+         <Units>milliarcseconds/year</Units>
+         <UCD version="1+">pos.eq.dec;pos.pm</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.e_ra_rad" indexed="false">
+         <Name>e_ra_rad</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Formal error on ra_rad]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">pos.eq.ra;stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.e_de_rad" indexed="false">
+         <Name>e_de_rad</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Formal error on de_rad]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">pos.eq.dec;stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.e_plx" indexed="false">
+         <Name>e_plx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Formal error on parallax]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">pos.parallax;stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.e_pm_ra" indexed="false">
+         <Name>e_pm_ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Formal error on pm_ra]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">pos.eq.ra;pos.pm;stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.e_pm_de" indexed="false">
+         <Name>e_pm_de</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Formal error on pm_de]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">pos.eq.dec;pos.pm;stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.f1" indexed="false">
+         <Name>f1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Percentage rejected data]]></Description>
+         <Units> </Units>
+         <UCD version="1+">arith.ratio;stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.f2" indexed="false">
+         <Name>f2</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Goodness of fit]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.goodness</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.nc" indexed="false">
+         <Name>nc</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of components]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.ntr" indexed="false">
+         <Name>ntr</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of field transits used]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;obs.field</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u3" indexed="false">
+         <Name>u3</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 3]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u4" indexed="false">
+         <Name>u4</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 4]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u5" indexed="false">
+         <Name>u5</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 5]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u6" indexed="false">
+         <Name>u6</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 6]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u7" indexed="false">
+         <Name>u7</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 7]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u8" indexed="false">
+         <Name>u8</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 8]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u9" indexed="false">
+         <Name>u9</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 9]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.sn" indexed="false">
+         <Name>sn</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Solution type in the New Reduction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;stat.fit</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.so" indexed="false">
+         <Name>so</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Solution type in the old reduction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;stat.fit</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.var" indexed="false">
+         <Name>var</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Cosmic dispersion added (stochastc solution)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.residual</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u1" indexed="false">
+         <Name>u1</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 1]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u2" indexed="false">
+         <Name>u2</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 2]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u10" indexed="false">
+         <Name>u10</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 10]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u11" indexed="false">
+         <Name>u11</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 11]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u12" indexed="false">
+         <Name>u12</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 12]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u13" indexed="false">
+         <Name>u13</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 13]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u14" indexed="false">
+         <Name>u14</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 14]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.u15" indexed="false">
+         <Name>u15</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Upper-triangular weight matric element 15]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.hp_mag" indexed="false">
+         <Name>hp_mag</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Hipparcos magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">em.opt;phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.b_v" indexed="false">
+         <Name>b_v</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[B-V colour index]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.color;em.opt.B;em.opt.V</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.v_i" indexed="false">
+         <Name>v_i</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[V-I colour index]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.color;em.opt.V;em.opt.I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.e_hp_mag" indexed="false">
+         <Name>e_hp_mag</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error on mean Hipparcos magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">em.opt.V;phot.mag;stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.e_b_v" indexed="false">
+         <Name>e_b_v</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Formal error on B-V colour index]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">em.opt;phot.colour;stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.s_hp" indexed="false">
+         <Name>s_hp</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Scatter in Hipparcos magnitudes]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.va" indexed="false">
+         <Name>va</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Reference to variability annex]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.note</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.x</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="hipparcos_new_reduction.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.eq</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="igsl_source">
+      <Name>igsl_source</Name>
+      <Description><![CDATA[ Initial Gaia Source List (IGSL]]></Description>
+      <Column ID="igsl_source.solution_id" indexed="true">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Right Ascension at catalogue epoch]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.ra;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Declination at catalogue epoch]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.dec;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.ra_error" indexed="false">
+         <Name>ra_error</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard error of Right Ascension]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error;pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.dec_error" indexed="false">
+         <Name>dec_error</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard error of Declination]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error;pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.ra_epoch" indexed="false">
+         <Name>ra_epoch</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean Epoch of Right Ascension]]></Description>
+         <Units>years</Units>
+         <UCD version="1+">time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.dec_epoch" indexed="false">
+         <Name>dec_epoch</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean Epoch of Declination]]></Description>
+         <Units>years</Units>
+         <UCD version="1+">time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.source_position" indexed="false">
+         <Name>source_position</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source of the position estimate]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.pm_ra" indexed="false">
+         <Name>pm_ra</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Proper motion in RA at catalogue epoch]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">pos.pm;pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.pm_dec" indexed="false">
+         <Name>pm_dec</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Proper motion in Dec at catalogue epoch]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">pos.pm;pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.pm_ra_error" indexed="false">
+         <Name>pm_ra_error</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in proper motion in RA]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">stat.error;pos.pm;pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.pm_dec_error" indexed="false">
+         <Name>pm_dec_error</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in proper motion in Dec]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">stat.error;pos.pm;pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.source_mu" indexed="false">
+         <Name>source_mu</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source of the proper motions]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.galactic_lon" indexed="false">
+         <Name>galactic_lon</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Galactic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.galatic.lon</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.galactic_lat" indexed="false">
+         <Name>galactic_lat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Galactic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.galatic.lat</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.ecliptic_lon" indexed="false">
+         <Name>ecliptic_lon</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Ecliptic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.ecliptic.lon</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.ecliptic_lat" indexed="false">
+         <Name>ecliptic_lat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Ecliptic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.ecliptic.lat</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.mag_bj" indexed="false">
+         <Name>mag_bj</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[B magnitude measure (GSC23 system)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.mag_bj_error" indexed="false">
+         <Name>mag_bj_error</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in B magnitude measure]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag;em.opt.B</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.source_mag_bj" indexed="false">
+         <Name>source_mag_bj</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source of the B magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.mag_rf" indexed="false">
+         <Name>mag_rf</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[R magnitude measure (GSC23 system)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;em.opt.R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.mag_rf_error" indexed="false">
+         <Name>mag_rf_error</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in R magnitude measure]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag;em.opt.R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.source_mag_rf" indexed="false">
+         <Name>source_mag_rf</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source of the R magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.mag_g" indexed="false">
+         <Name>mag_g</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[G magnitude estimate]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.mag_g_error" indexed="false">
+         <Name>mag_g_error</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error on G magnitude estimate]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.source_mag_g" indexed="false">
+         <Name>source_mag_g</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source of the G magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.mag_grvs" indexed="false">
+         <Name>mag_grvs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RVS G magnitude estimate]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.mag_grvs_error" indexed="false">
+         <Name>mag_grvs_error</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error on RVS G magnitude estimate]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.source_mag_grvs" indexed="false">
+         <Name>source_mag_grvs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source of the RVS G magnitude]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.classification" indexed="false">
+         <Name>classification</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Classification, simply a 0=star and 1=nonstar taken from different sources as given in the souce_classification field]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code.class</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.source_classification" indexed="false">
+         <Name>source_classification</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Source of the classification]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.toggle_asc" indexed="false">
+         <Name>toggle_asc</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[A flag that indicates if the object is used for the Atittude Star Catalog]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.aux_gsc23" indexed="false">
+         <Name>aux_gsc23</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Flag indicating presence in GSC2.3 (0 = no; 1 = yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.aux_sdss" indexed="false">
+         <Name>aux_sdss</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Flag indicating presence in SDSS (0 = no; 1 = yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.aux_ucac" indexed="false">
+         <Name>aux_ucac</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Flag indicating presence in UCAC (0 = no; 1 = yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.aux_lqrf" indexed="false">
+         <Name>aux_lqrf</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Flag indicating presence in LQRF (0 = no; 1 = yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.aux_tycho" indexed="false">
+         <Name>aux_tycho</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Flag indicating presence in Tycho (0 = no; 1 = yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.aux_hip" indexed="false">
+         <Name>aux_hip</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Flag indicating presence in Hipparcos (0 = no; 1 = yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.aux_ppmxl" indexed="false">
+         <Name>aux_ppmxl</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Flag indicating presence in PPMXL (0 = no; 1 = yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.aux_ogle" indexed="false">
+         <Name>aux_ogle</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Flag indicating presence in OGLE (0 = no; 1 = yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.aux_tmass" indexed="false">
+         <Name>aux_tmass</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Flag indicating presence in 2MASS PSC (0 = no; 1 = yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.aux_epc" indexed="false">
+         <Name>aux_epc</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Flag indicating presence in Ecliptic Poles Catalogue (0 = no; 1 = yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.x</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.eq</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="igsl_source_catalog_ids">
+      <Name>igsl_source_catalog_ids</Name>
+      <Description><![CDATA[ IGSL source identifiers in original catalogue]]></Description>
+      <Column ID="igsl_source_catalog_ids.solution_id" indexed="true">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier from IGSL2]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.id_gsc23" indexed="false">
+         <Name>id_gsc23</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Identifier in GSC2.3]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.id_sdss" indexed="false">
+         <Name>id_sdss</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Identifier in SDSS]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.id_ucac" indexed="false">
+         <Name>id_ucac</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Identifier in UCAC]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.id_lqrf" indexed="false">
+         <Name>id_lqrf</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Identifier in LQRF]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.id_tycho" indexed="false">
+         <Name>id_tycho</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Identifier in Tycho]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.id_hip" indexed="false">
+         <Name>id_hip</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Identifier in Hipparcos]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.id_ppmxl" indexed="false">
+         <Name>id_ppmxl</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Identifier in PPMXL]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.id_ogle" indexed="false">
+         <Name>id_ogle</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Identifier in OGLE]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.id_tmass" indexed="false">
+         <Name>id_tmass</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Identifier in 2MASS PSC]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="igsl_source_catalog_ids.id_epc" indexed="false">
+         <Name>id_epc</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Identifier in Ecliptic Poles Catalogue]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="phot_variable_time_series_g_fov">
+      <Name>phot_variable_time_series_g_fov</Name>
+      <Description><![CDATA[ Field-of-view transit level time series photometry of variable source]]></Description>
+      <Column ID="phot_variable_time_series_g_fov.solution_id" indexed="true">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov.observation_time" indexed="true">
+         <Name>observation_time</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Barycentric light-travle time corrected timestamp for each FoV observation]]></Description>
+         <Units>Barycentric JD in TCB - 2455197.5 days</Units>
+         <UCD version="1+">time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov.g_flux" indexed="false">
+         <Name>g_flux</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[G-band flux for each FoV observation]]></Description>
+         <Units>electrons/second</Units>
+         <UCD version="1+">phot.flux;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov.g_flux_error" indexed="false">
+         <Name>g_flux_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Estimated uncertainty on G-band flux for each FoV observation]]></Description>
+         <Units>electrons/second</Units>
+         <UCD version="1+">stat.error;phot.flux;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov.g_magnitude" indexed="false">
+         <Name>g_magnitude</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[G-band magnitude for each FoV observation]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov.rejected_by_variability_processing" indexed="false">
+         <Name>rejected_by_variability_processing</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[True when this FoV observation was excluded from the variability analysis]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="phot_variable_time_series_g_fov_statistical_parameters">
+      <Name>phot_variable_time_series_g_fov_statistical_parameters</Name>
+      <Description><![CDATA[ Statistical parameters of field-of-view time series photometr]]></Description>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.solution_id" indexed="true">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.num_observations_processed" indexed="false">
+         <Name>num_observations_processed</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of processed G-band observations for variability analysis]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.mean_obs_time" indexed="false">
+         <Name>mean_obs_time</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Mean observation time (with respect to T0) of G-band time series]]></Description>
+         <Units>days</Units>
+         <UCD version="1+">time.epoch;stat.mean</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.minimum" indexed="false">
+         <Name>minimum</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Minimum magnitude of the G-band time series]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;stat.min</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.maximum" indexed="false">
+         <Name>maximum</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Maximum magnitude of the G-band time series]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;stat.max</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.mean" indexed="false">
+         <Name>mean</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Mean magnitude of the G-band time series]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;stat.mean</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.median" indexed="false">
+         <Name>median</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Median magnitude of the G-band time series]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;stat.median</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.range" indexed="false">
+         <Name>range</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Difference between the highest and lowest magnitude of the G-band time series]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;arith.diff</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.std_dev" indexed="false">
+         <Name>std_dev</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Square root of the unweighted variance of the G-band time series values]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;stat.stdev</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.skewness" indexed="false">
+         <Name>skewness</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standardized unweighted skewness of the G-band time series values]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.kurtosis" indexed="false">
+         <Name>kurtosis</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standardized unweighted kurtosis of the G-band time series values]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.time_duration" indexed="false">
+         <Name>time_duration</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Time duration of the G-band time series]]></Description>
+         <Units>days</Units>
+         <UCD version="1+">time.duration</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.median_absolute_deviation" indexed="false">
+         <Name>median_absolute_deviation</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Median Absolute Deviation of the G-band time series values]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.abbe" indexed="false">
+         <Name>abbe</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Abbe value of the G-band time series values]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="phot_variable_time_series_g_fov_statistical_parameters.iqr" indexed="false">
+         <Name>iqr</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Inter-quartile range of the G-band time series values]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="rrlyrae">
+      <Name>rrlyrae</Name>
+      <Description><![CDATA[ RR Lyrae variables identified amongst the Gaia sources]]></Description>
+      <Column ID="rrlyrae.best_classification" indexed="false">
+         <Name>best_classification</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Best RR Lyrae classification estimate out of &quot;RRC&quot; and &quot;RRAB&quot;]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code.class;src.class</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.solution_id" indexed="true">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.p1" indexed="false">
+         <Name>p1</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Period corresponding to the maximum peak in the periodogram of G band time series]]></Description>
+         <Units>days</Units>
+         <UCD version="1+">time.period</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.p1_error" indexed="false">
+         <Name>p1_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on the period corresponding to the maximum peak in the periodogram of G band time series]]></Description>
+         <Units>days</Units>
+         <UCD version="1+">stat.error;time.period</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.epoch_g" indexed="false">
+         <Name>epoch_g</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Epoch of the maximum of the light curve in the G band]]></Description>
+         <Units>Barycentric JD in TCB - 2455197.5 days</Units>
+         <UCD version="1+">time.epoch;stat.max</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.epoch_g_error" indexed="false">
+         <Name>epoch_g_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on epoch of the maximum of the light curve in the G band]]></Description>
+         <Units>days</Units>
+         <UCD version="1+">stat.error;time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.int_average_g" indexed="false">
+         <Name>int_average_g</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Intensity-averaged magnitude in the G band]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.int_average_g_error" indexed="false">
+         <Name>int_average_g_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on the intensity-averaged magnitude in the G band]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.peak_to_peak_g" indexed="false">
+         <Name>peak_to_peak_g</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Peak-to-peak amplitude of the G band light curve]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">src.var.amplitude;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.peak_to_peak_g_error" indexed="false">
+         <Name>peak_to_peak_g_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on peak-to-peak amplitude of the G band light curve]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;src.var.amplitude;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.num_harmonics_for_p1" indexed="false">
+         <Name>num_harmonics_for_p1</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of harmonics used to model P1 of the light curve]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.r21_g" indexed="false">
+         <Name>r21_g</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Fourier decomposition parameter r21G: A2/A1 (for G band)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.Fourier</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.r21_g_error" indexed="false">
+         <Name>r21_g_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on Fourier decomposition parameter r21G]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.phi21_g" indexed="false">
+         <Name>phi21_g</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Fourier decomposition parameter phi21G: phi2 - 2*phi1 (for G band)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.Fourier</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="rrlyrae.phi21_g_error" indexed="false">
+         <Name>phi21_g_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Uncertainty on Fourier decomposition parameter phi21G]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="tgas_source">
+      <Name>tgas_source</Name>
+      <Description><![CDATA[ Contains the parameters provided for each TGAS source in Gaia Data Release 1]]></Description>
+      <Column ID="tgas_source.hip" indexed="false">
+         <Name>hip</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Hipparcos identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">id.cross</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.tycho2_id" indexed="false">
+         <Name>tycho2_id</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Tycho2 identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">id.cross</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.solution_id" indexed="false">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.random_index" indexed="false">
+         <Name>random_index</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Random index used to select subsets]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.ref_epoch" indexed="false">
+         <Name>ref_epoch</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Reference epoch]]></Description>
+         <Units>Julian years</Units>
+         <UCD version="1+">meta.ref;time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Right Ascension]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.ra;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.ra_error" indexed="false">
+         <Name>ra_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standard error of Right Ascension]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error;pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Declination]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.dec;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.dec_error" indexed="false">
+         <Name>dec_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standard error of Declination]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error;pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.parallax" indexed="false">
+         <Name>parallax</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Parallax]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">pos.parallax</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.parallax_error" indexed="false">
+         <Name>parallax_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standard error of parallax]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error;pos.parallax</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.pmra" indexed="false">
+         <Name>pmra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Proper motion in Right Ascension direction]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">pos.pm;.pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.pmra_error" indexed="false">
+         <Name>pmra_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error of proper motion in Right Ascension direction]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">stat.error;pos.pm;.pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.pmdec" indexed="false">
+         <Name>pmdec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Proper motion in Declination direction]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">pos.pm;.pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.pmdec_error" indexed="false">
+         <Name>pmdec_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error of proper motion in Declination direction]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">stat.error;pos.pm;.pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.ra_dec_corr" indexed="false">
+         <Name>ra_dec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Right Ascension and Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.ra_parallax_corr" indexed="false">
+         <Name>ra_parallax_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Right Ascension and parallax]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.ra_pmra_corr" indexed="false">
+         <Name>ra_pmra_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Right Ascension and proper motion in Right Ascension]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.ra_pmdec_corr" indexed="false">
+         <Name>ra_pmdec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Right Ascension and proper motion in Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.dec_parallax_corr" indexed="false">
+         <Name>dec_parallax_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Declination and parallax]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.dec_pmra_corr" indexed="false">
+         <Name>dec_pmra_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Declination and proper motion in Right Ascension]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.dec_pmdec_corr" indexed="false">
+         <Name>dec_pmdec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between Declination and proper motion in Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.parallax_pmra_corr" indexed="false">
+         <Name>parallax_pmra_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between parallax and proper motion in Right Ascension]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.parallax_pmdec_corr" indexed="false">
+         <Name>parallax_pmdec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between parallax and proper motion in Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.pmra_pmdec_corr" indexed="false">
+         <Name>pmra_pmdec_corr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Correlation between proper motion in Right Ascension and proper motion in Declination]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_n_obs_al" indexed="false">
+         <Name>astrometric_n_obs_al</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Total number of observations in the Along-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_n_obs_ac" indexed="false">
+         <Name>astrometric_n_obs_ac</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Total number of observations in the Across-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_n_good_obs_al" indexed="false">
+         <Name>astrometric_n_good_obs_al</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of good observations in the Along-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_n_good_obs_ac" indexed="false">
+         <Name>astrometric_n_good_obs_ac</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of good observations in the Across-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_n_bad_obs_al" indexed="false">
+         <Name>astrometric_n_bad_obs_al</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of bad observations in the Along-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_n_bad_obs_ac" indexed="false">
+         <Name>astrometric_n_bad_obs_ac</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of bad observations in the Across-Scan direction]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_delta_q" indexed="false">
+         <Name>astrometric_delta_q</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Hipparcos/Gaia data discrepancy (Hipparcos subset of TGAS only)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_excess_noise" indexed="false">
+         <Name>astrometric_excess_noise</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Excess noise of the source]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_excess_noise_sig" indexed="false">
+         <Name>astrometric_excess_noise_sig</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Significance of the excess noise]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.value</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_primary_flag" indexed="false">
+         <Name>astrometric_primary_flag</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Primary or secondary]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_relegation_factor" indexed="false">
+         <Name>astrometric_relegation_factor</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Relegation factor]]></Description>
+         <Units> </Units>
+         <UCD version="1+">arith.factor</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_weight_al" indexed="false">
+         <Name>astrometric_weight_al</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean astrometric weight of the source Along-Scan]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight;stat.mean</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_weight_ac" indexed="false">
+         <Name>astrometric_weight_ac</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean astrometric weight of the source Across-Scan]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.weight;stat.mean</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.astrometric_priors_used" indexed="false">
+         <Name>astrometric_priors_used</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Type of prior used in the astrometric solution]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.matched_observations" indexed="false">
+         <Name>matched_observations</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Amount of observations matched to this source]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.duplicated_source" indexed="false">
+         <Name>duplicated_source</Name>
+         <Datatype>boolean</Datatype>
+         <Description><![CDATA[Source with duplicated sources]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.scan_direction_strength_k1" indexed="false">
+         <Name>scan_direction_strength_k1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Degree of concentration of scan directions across the source]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.scan_direction_strength_k2" indexed="false">
+         <Name>scan_direction_strength_k2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Degree of concentration of scan directions across the source]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.scan_direction_strength_k3" indexed="false">
+         <Name>scan_direction_strength_k3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Degree of concentration of scan directions across the source]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.scan_direction_strength_k4" indexed="false">
+         <Name>scan_direction_strength_k4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Degree of concentration of scan directions across the source]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.scan_direction_mean_k1" indexed="false">
+         <Name>scan_direction_mean_k1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean position angle of scan directions across the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.scan_direction_mean_k2" indexed="false">
+         <Name>scan_direction_mean_k2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean position angle of scan directions across the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.scan_direction_mean_k3" indexed="false">
+         <Name>scan_direction_mean_k3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean position angle of scan directions across the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.scan_direction_mean_k4" indexed="false">
+         <Name>scan_direction_mean_k4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean position angle of scan directions across the source]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.phot_g_n_obs" indexed="false">
+         <Name>phot_g_n_obs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of observations contributing to G band photometry]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.phot_g_mean_flux" indexed="false">
+         <Name>phot_g_mean_flux</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[G-band mean flux]]></Description>
+         <Units>electrons/s</Units>
+         <UCD version="1+">phot.flux;stat.mean;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.phot_g_mean_flux_error" indexed="false">
+         <Name>phot_g_mean_flux_error</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Error on G-band mean flux]]></Description>
+         <Units>electrons/s</Units>
+         <UCD version="1+">stat.error;phot.flux;stat.mean;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.phot_g_mean_mag" indexed="false">
+         <Name>phot_g_mean_mag</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[G-band mean magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;stat.mean;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.phot_variable_flag" indexed="false">
+         <Name>phot_variable_flag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Photometric variability flag]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code;src.var</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.l" indexed="false">
+         <Name>l</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.galactic.lon</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.b" indexed="false">
+         <Name>b</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.galactic.lat</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.ecl_lon" indexed="false">
+         <Name>ecl_lon</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Ecliptic longitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.ecliptic.lon</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.ecl_lat" indexed="false">
+         <Name>ecl_lat</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Ecliptic latitude]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.ecliptic.lat</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.x</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tgas_source.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.eq</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="tycho2">
+      <Name>tycho2</Name>
+      <Description><![CDATA[ Tycho2 catalogu]]></Description>
+      <Column ID="tycho2.id" indexed="true">
+         <Name>id</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Tycho2 identifier (constructed from the GSC region number)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.hip" indexed="false">
+         <Name>hip</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Hipparcos number]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id.cross</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.tyc1" indexed="false">
+         <Name>tyc1</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[First part of Tycho2 identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id.part;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.tyc2" indexed="false">
+         <Name>tyc2</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Second part of Tycho2 identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id.part;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.tyc3" indexed="false">
+         <Name>tyc3</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Third part of Tycho2 identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id.part;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.id_tycho" indexed="false">
+         <Name>id_tycho</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Numerical Tycho2 identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.tyc" indexed="false">
+         <Name>tyc</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Flag indicating Tycho1 stars]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Observed Tycho2 Right Ascension in ICRS]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">meta.main;pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Observed Tycho2 Declination in ICRS]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">meta.main;pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.ra_deg" indexed="false">
+         <Name>ra_deg</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Observed Tycho2 Right Ascension in ICRS]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.de_deg" indexed="false">
+         <Name>de_deg</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Observed Tycho2 Declination in ICRS]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.ra_m_deg" indexed="false">
+         <Name>ra_m_deg</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Mean Right Ascension, ICRS, epoch = J2000]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.ra</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.de_m_deg" indexed="false">
+         <Name>de_m_deg</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Mean Declination, ICRS, epoch = J2000]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.eq.dec</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.pm_ra" indexed="false">
+         <Name>pm_ra</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Proper motion in RA*cos(Dec)]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">pos.eq.ra;pos.pm</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.pm_de" indexed="false">
+         <Name>pm_de</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Proper motion in Dec]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">pos.eq.dec;pos.pm</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.ep_ra1990" indexed="false">
+         <Name>ep_ra1990</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Epoch - 1990 of ra_deg]]></Description>
+         <Units>years</Units>
+         <UCD version="1+">time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.ep_de1990" indexed="false">
+         <Name>ep_de1990</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Epoch - 1990 of de_deg]]></Description>
+         <Units>years</Units>
+         <UCD version="1+">time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.ep_ra_m" indexed="false">
+         <Name>ep_ra_m</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean epoch of ra (Julian years)]]></Description>
+         <Units>years</Units>
+         <UCD version="1+">time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.ep_de_m" indexed="false">
+         <Name>ep_de_m</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean epoch of dec (Julian years)]]></Description>
+         <Units>years</Units>
+         <UCD version="1+">time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.num" indexed="false">
+         <Name>num</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[NUmber of positions used]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.e_ra_deg" indexed="false">
+         <Name>e_ra_deg</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standard error in RA*cos(Dec) of observed Tycho2 RA]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.e_de_deg" indexed="false">
+         <Name>e_de_deg</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standard error of observed Tycho2 Dec]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.corr" indexed="false">
+         <Name>corr</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Correlation (ra_deg,de_deg)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.correlation</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.e_ra_m_deg" indexed="false">
+         <Name>e_ra_m_deg</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standard error in RA*cos(Dec) of mean Tycho2 RA]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.e_de_m_deg" indexed="false">
+         <Name>e_de_m_deg</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Standard error of mean Tycho2 Dec]]></Description>
+         <Units>milliarcsec</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.e_pm_ra" indexed="false">
+         <Name>e_pm_ra</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard error in RA*cos(Dec) of RA proper motion]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.e_pm_de" indexed="false">
+         <Name>e_pm_de</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard error of Dec proper motion]]></Description>
+         <Units>milliarcsec/year</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.q_ra_m_deg" indexed="false">
+         <Name>q_ra_m_deg</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Goodness of fit for mean RA]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meat.code.qual</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.q_de_m_deg" indexed="false">
+         <Name>q_de_m_deg</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Goodness of fit for mean Dec]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meat.code.qual</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.q_pm_de" indexed="false">
+         <Name>q_pm_de</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Goodness of fit for pm_de]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meat.code.qual</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.q_pm_ra" indexed="false">
+         <Name>q_pm_ra</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Goodness of fit for pm_ra]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meat.code.qual</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.pflag" indexed="false">
+         <Name>pflag</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Mean position flag]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.posflg" indexed="false">
+         <Name>posflg</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Type of Tycho2 solution]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;stat.fit</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.ccdm" indexed="false">
+         <Name>ccdm</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[CCDM component identifier for Hipparcos stars]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code.multip</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.prox" indexed="false">
+         <Name>prox</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Proximity indicator]]></Description>
+         <Units>0.1 arcsec</Units>
+         <UCD version="1+">pos.angDistance</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.bt_mag" indexed="false">
+         <Name>bt_mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Tycho2 BT magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.vt_mag" indexed="false">
+         <Name>vt_mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Tycho2 VT magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag;em.opt.V</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.e_bt_mag" indexed="false">
+         <Name>e_bt_mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard error on BT]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.e_vt_mag" indexed="false">
+         <Name>e_vt_mag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Standard error on VT]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.x</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tycho2.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.eq</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="variable_summary">
+      <Name>variable_summary</Name>
+      <Description><![CDATA[ Summary information on variable sources]]></Description>
+      <Column ID="variable_summary.solution_id" indexed="true">
+         <Name>solution_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Solution identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.version</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="variable_summary.source_id" indexed="true">
+         <Name>source_id</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique source identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="variable_summary.phot_variable_fundam_freq1" indexed="false">
+         <Name>phot_variable_fundam_freq1</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Fundamental frequency 1]]></Description>
+         <Units>/days</Units>
+         <UCD version="1+">src.var.pulse</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="variable_summary.classification" indexed="false">
+         <Name>classification</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Photometric variability classification &quot;RRLYR&quot; (for RR Lyrae) or &quot;CEP&quot; (for Cepheid)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code.class;src.var</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

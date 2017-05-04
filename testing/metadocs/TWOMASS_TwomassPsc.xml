@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>TWOMASS</Name>
+   <Description></Description>
+   <Table ID="twomass_psc">
+      <Name>twomass_psc</Name>
+      <Description><![CDATA[ Contains the parameters provided for each source in the TWOMASS All Sky Release PSC]]></Description>
+      <Column ID="twomass_psc.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_X</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_EQ_Z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1">POS_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 right ascension with respect to the ICRS]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_RA_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[J2000 declination with respect to the ICRS]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_EQ_DEC_MAIN</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.err_maj" indexed="false">
+         <Name>err_maj</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-major axis length of the one sigma position uncertainty ellipse]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.err_min" indexed="false">
+         <Name>err_min</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Semi-minor axis length of the one sigma position uncertainty ellipse]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">EXTENSION_RAD</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.err_ang" indexed="false">
+         <Name>err_ang</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Position angle on the sky of the semi-major axis of the position uncertainty ellipse (East of North)]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.designation" indexed="false">
+         <Name>designation</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Sexagesimal, equatorial position-based source name in the form: hhmmssss+ddmmsss[ABC...].]]></Description>
+         <Units> </Units>
+         <UCD version="1">NAME</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.j_m" indexed="false">
+         <Name>j_m</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Default J-band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.j_cmsig" indexed="false">
+         <Name>j_cmsig</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Corrected photometric uncertainty for the default J-band magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.j_msigcom" indexed="false">
+         <Name>j_msigcom</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Combined, or total photometric uncertainty for the default J-band magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.j_snr" indexed="false">
+         <Name>j_snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[J-band &quot;scan&quot; signal-to-noise ratio.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">INST_NOISE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.h_m" indexed="false">
+         <Name>h_m</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Default H-band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.h_cmsig" indexed="false">
+         <Name>h_cmsig</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Corrected photometric uncertainty for the default H-band magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.h_msigcom" indexed="false">
+         <Name>h_msigcom</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Combined, or total photometric uncertainty for the default H-band magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.h_snr" indexed="false">
+         <Name>h_snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[H-band &quot;scan&quot; signal-to-noise ratio.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">INST_NOISE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.k_m" indexed="false">
+         <Name>k_m</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Default Ks-band magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.k_cmsig" indexed="false">
+         <Name>k_cmsig</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Corrected photometric uncertainty for the default Ks-band magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.k_msigcom" indexed="false">
+         <Name>k_msigcom</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Combined, or total photometric uncertainty for the default Ks-band magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.k_snr" indexed="false">
+         <Name>k_snr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Ks-band &quot;scan&quot; signal-to-noise ratio.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">INST_NOISE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.ph_qual" indexed="false">
+         <Name>ph_qual</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Photometric quality flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_QUALITY</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.rd_flg" indexed="false">
+         <Name>rd_flg</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Read flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.bl_flg" indexed="false">
+         <Name>bl_flg</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Blend flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.cc_flg" indexed="false">
+         <Name>cc_flg</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Contamination and confusion flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.ndet" indexed="false">
+         <Name>ndet</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Frame detection statistics.]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.prox" indexed="false">
+         <Name>prox</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Proximity.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">POS_ANG_DIST_GENERAL</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.pxpa" indexed="false">
+         <Name>pxpa</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The position angle on the sky of the vector from the source to the nearest neighbor in the PSC, in degrees East of North.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.pxcntr" indexed="false">
+         <Name>pxcntr</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The pts_key value of the nearest source in the PSC.]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.gal_contam" indexed="false">
+         <Name>gal_contam</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Extended source &quot;contamination&quot; flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.mp_flg" indexed="false">
+         <Name>mp_flg</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Minor Planet Flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.pts_key" indexed="true">
+         <Name>pts_key</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[A unique identification number for the PSC source.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.hemis" indexed="false">
+         <Name>hemis</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Hemisphere code for the TWOMASS Observatory from which this source was observed.]]></Description>
+         <Units> </Units>
+         <UCD version="1">OBS_CODE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.date" indexed="false">
+         <Name>date</Name>
+         <Datatype>dateTime</Datatype>
+         <Description><![CDATA[The observation reference date for this source expressed in ISO standard format. (YYYY-MM-DD)]]></Description>
+         <Units>yyyy-mm-dd</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.scan" indexed="false">
+         <Name>scan</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The nightly scan number in which the source was detected.]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.glon" indexed="false">
+         <Name>glon</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Galactic longitude rounded to 0.001 deg.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LON</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.glat" indexed="false">
+         <Name>glat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Galactic latitude rounded to 0.001 deg.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_GAL_LAT</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.x_scan" indexed="false">
+         <Name>x_scan</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Mean cross-scan focal plane position of the source in the Universal scan (U-scan) coordinate system.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">INST_POS</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.jdate" indexed="false">
+         <Name>jdate</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The Julian Date of the source measurement accurate to +-30 seconds.]]></Description>
+         <Units>Julian days</Units>
+         <UCD version="1">TIME_DATE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.j_psfchi" indexed="false">
+         <Name>j_psfchi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared goodness-of-fit value for the J-band profile-fit photometry made on the 1.3 s &quot;Read_2&quot; exposures.]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.h_psfchi" indexed="false">
+         <Name>h_psfchi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared goodness-of-fit value for the H-band profile-fit photometry made on the 1.3 s &quot;Read_2&quot; exposures.]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.k_psfchi" indexed="false">
+         <Name>k_psfchi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Reduced chi-squared goodness-of-fit value for the Ks-band profile-fit photometry made on the 1.3 s &quot;Read_2&quot; exposures.]]></Description>
+         <Units> </Units>
+         <UCD version="1">FIT_PARAM_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.j_m_stdap" indexed="false">
+         <Name>j_m_stdap</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[J-band &quot;standard&quot; aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.j_msig_stdap" indexed="false">
+         <Name>j_msig_stdap</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the J-band standard aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.h_m_stdap" indexed="false">
+         <Name>h_m_stdap</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[H-band &quot;standard&quot; aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.h_msig_stdap" indexed="false">
+         <Name>h_msig_stdap</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the H-band standard aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.k_m_stdap" indexed="false">
+         <Name>k_m_stdap</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Ks-band &quot;standard&quot; aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.k_msig_stdap" indexed="false">
+         <Name>k_msig_stdap</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Uncertainty in the Ks-band standard aperture magnitude.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.dist_edge_ns" indexed="false">
+         <Name>dist_edge_ns</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The distance from the source to the nearest North or South scan edge.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">INST_PLATE_DIST</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.dist_edge_ew" indexed="false">
+         <Name>dist_edge_ew</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The distance from the source to the nearest East or West scan edge.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">INST_PLATE_DIST</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.dist_edge_flg" indexed="false">
+         <Name>dist_edge_flg</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Two character flag that specifies to which scan edges a source lies closest, and to which edges the dist_edge_ns and dist_edge_ew values refer.]]></Description>
+         <Units> </Units>
+         <UCD version="1">INST_PLATE_DIST</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.dup_src" indexed="false">
+         <Name>dup_src</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Duplicate source flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.use_src" indexed="false">
+         <Name>use_src</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Use source flag.]]></Description>
+         <Units> </Units>
+         <UCD version="1">CODE_MISC</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.a" indexed="false">
+         <Name>a</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Catalog identifier of an optical source from either the Tycho 2 or USNO-A2.0 catalog that falls within ~5&quot; of the TWOMASS source position.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_ALTERNATIVE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.dist_opt" indexed="false">
+         <Name>dist_opt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Distance separating TWOMASS source position and associated optical source within 5&quot;.]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1">INST_PLATE_DIST</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.phi_opt" indexed="false">
+         <Name>phi_opt</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Position angle on the sky of the vector from the the associated optical source to the TWOMASS source position, in degrees East of North.]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1">POS_POS-ANG</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.b_m_opt" indexed="false">
+         <Name>b_m_opt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Blue magnitude of associated optical source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.vr_m_opt" indexed="false">
+         <Name>vr_m_opt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Visual or red magnitude of the associated optical source.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">SPECT_FLUX_VALUE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.nopt_mchs" indexed="false">
+         <Name>nopt_mchs</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[The number of USNO-A2.0 or Tycho 2 optical sources found within a 5&quot; radius of the TWOMASS position.]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.ext_key" indexed="false">
+         <Name>ext_key</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique identification number of the record in the XSC that corresponds to this point source.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.scan_key" indexed="false">
+         <Name>scan_key</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique identification number of the record in the Scan Information Table that corresponds to the survey scan in which this source was detected.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.coadd_key" indexed="false">
+         <Name>coadd_key</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Unique identification number of the record in the Atlas Image Data Table (NOT YET AVAILABLE) that corresponds to Image in which the position of this source falls.]]></Description>
+         <Units> </Units>
+         <UCD version="1">ID_NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="twomass_psc.coadd" indexed="false">
+         <Name>coadd</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Sequence number of the Atlas Image in which the position of this source falls.]]></Description>
+         <Units> </Units>
+         <UCD version="1">NUMBER</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+

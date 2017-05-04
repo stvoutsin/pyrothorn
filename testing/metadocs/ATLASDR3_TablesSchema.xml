@@ -2,8 +2,7 @@
 <DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
    <Catalog>
-   <!--Name>wsa</Name-->
-   <Name>ATLASDR1</Name>
+   <Name>wsa</Name>
    <Description></Description>
 
    <Table ID="ArchiveCurationHistory">
@@ -338,7 +337,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[Pass level of WCS {image extension keyword: WCSPASS}]]></Description>
          <Units> </Units>
-         <UCD version="1+">pos.wcs.cdmatrix</UCD>
+         <UCD version="1+">pos.wcs</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="CurrentAstrometry.numRms" indexed="false">
@@ -590,6 +589,142 @@
          <ErrorColumn></ErrorColumn>
       </Column>
    </Table>
+   <Table ID="EpochFrameStatus">
+      <Name>EpochFrameStatus</Name>
+      <Description><![CDATA[ Contains details of which image(s) are used in epochs in mergelog]]></Description>
+      <Column ID="EpochFrameStatus.programmeID" indexed="true">
+         <Name>programmeID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[OSA assigned programme UID {image primary HDU keyword: HIERARCH ESO OBS PROG ID}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="EpochFrameStatus.multiframeID" indexed="true">
+         <Name>multiframeID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[the UID of the relevant multiframe]]></Description>
+         <Units> </Units>
+         <UCD version="1+">obs.field</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="EpochFrameStatus.cuEventID" indexed="false">
+         <Name>cuEventID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[UID of curation event giving rise to this record]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.bib</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="EpochFrameStatus.productID" indexed="false">
+         <Name>productID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Product ID of deep stack frame (or intermediate stack if used as a deep stack). {image primary HDU keyword: PRODID}]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="EpochFrameStatus.releaseNum" indexed="false">
+         <Name>releaseNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Release number of deep stack frame (or intermediate stack if used as a deep stack). {image primary HDU keyword: RELNUM}]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="EpochFrameStatus.productType" indexed="false">
+         <Name>productType</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Product type (stack,tile,mosaic)]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="ExternalProduct">
+      <Name>ExternalProduct</Name>
+      <Description><![CDATA[ Contains details of external products imported into archiv]]></Description>
+      <Column ID="ExternalProduct.programmeID" indexed="true">
+         <Name>programmeID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[the unique programme ID]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ExternalProduct.productType" indexed="true">
+         <Name>productType</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[The product type within the imported directory]]></Description>
+         <Units> </Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ExternalProduct.description" indexed="false">
+         <Name>description</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Description of the product set]]></Description>
+         <Units> </Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ExternalProduct.institution" indexed="false">
+         <Name>institution</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of the institution that created the product]]></Description>
+         <Units> </Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ExternalProduct.creator" indexed="false">
+         <Name>creator</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of the individual that created the product]]></Description>
+         <Units> </Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ExternalProduct.releaseNum" indexed="true">
+         <Name>releaseNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Release number of deep stack frame (or intermediate stack if used as a deep stack).]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ExternalProduct.directory" indexed="false">
+         <Name>directory</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of directory which these data reside in]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ExternalProduct.fileNameRoot" indexed="false">
+         <Name>fileNameRoot</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[File name root of the products]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ExternalProduct.zeroPoint" indexed="false">
+         <Name>zeroPoint</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Zeropoint of each product]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ExternalProduct.zpSystem" indexed="false">
+         <Name>zpSystem</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[System of zeropoint (Vega/AB)]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
    <Table ID="ExternalSurvey">
       <Name>ExternalSurvey</Name>
       <Description><![CDATA[ A list of all externally produced survey products held in the OSA]]></Description>
@@ -765,6 +900,14 @@
          <Name>isSectioned</Name>
          <Datatype>int</Datatype>
          <Description><![CDATA[Is the focal plane sectioned into different filters, 0 No, 1 Yes. If so, data for each section in FilterSections and SectionDetectors]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Filter.filterType" indexed="false">
+         <Name>filterType</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[The type of filter BROAD, NARROW, BROADLIST]]></Description>
          <Units> </Units>
          <UCD version="1+"></UCD>
          <ErrorColumn></ErrorColumn>
@@ -1213,6 +1356,14 @@
          <Name>catName</Name>
          <Datatype>string</Datatype>
          <Description><![CDATA[the filename of the associated catalogue MEF, eg. server:/path/filename.fits]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.dataset</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Multiframe.uncorrCatName" indexed="false">
+         <Name>uncorrCatName</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[the filename of the associated catalogue MEF containing data without illumination correction, eg. server:/path/filename.fits]]></Description>
          <Units> </Units>
          <UCD version="1+">meta.id;meta.dataset</UCD>
          <ErrorColumn></ErrorColumn>
@@ -1712,7 +1863,7 @@
       <Column ID="MultiframeDetector.photZPCat" indexed="false">
          <Name>photZPCat</Name>
          <Datatype>float</Datatype>
-         <Description><![CDATA[Photometric zero point for default extinction for the catalogue data {catalogue extension keyword:  MAGZPT}]]></Description>
+         <Description><![CDATA[Photometric zero point (Vega) for default extinction for the catalogue data {catalogue extension keyword:  MAGZPT}]]></Description>
          <Units>mags</Units>
          <UCD version="1+">??</UCD>
          <ErrorColumn></ErrorColumn>
@@ -1741,10 +1892,34 @@
          <UCD version="1+"></UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
+      <Column ID="MultiframeDetector.apassZPCat" indexed="false">
+         <Name>apassZPCat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[APASS zero point (AB) for default extinction {catalogue extension keyword:  APASSZPT}]]></Description>
+         <Units>mags</Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="MultiframeDetector.apassZPErrCat" indexed="false">
+         <Name>apassZPErrCat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[APASS zero point error {catalogue extension keyword:  APASSZRR}]]></Description>
+         <Units>mags</Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="MultiframeDetector.apassZPNum" indexed="false">
+         <Name>apassZPNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Number of APASS standards used {catalogue extension keyword:  APASSNUM}]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
       <Column ID="MultiframeDetector.nightZPCat" indexed="false">
          <Name>nightZPCat</Name>
          <Datatype>float</Datatype>
-         <Description><![CDATA[Average photometric zero point for night {catalogue extension keyword:  NIGHTZPT}]]></Description>
+         <Description><![CDATA[Average APASS zero point (AB) for night {catalogue extension keyword:  NIGHTZPT}]]></Description>
          <Units>mags</Units>
          <UCD version="1+">??</UCD>
          <ErrorColumn></ErrorColumn>
@@ -1752,7 +1927,7 @@
       <Column ID="MultiframeDetector.nightZPErrCat" indexed="false">
          <Name>nightZPErrCat</Name>
          <Datatype>float</Datatype>
-         <Description><![CDATA[Photometric zero point sigma for night {catalogue extension keyword:  NIGHTZRR}]]></Description>
+         <Description><![CDATA[APASS zero point sigma for night {catalogue extension keyword:  NIGHTZRR}]]></Description>
          <Units>mags</Units>
          <UCD version="1+">??</UCD>
          <ErrorColumn></ErrorColumn>
@@ -1760,8 +1935,8 @@
       <Column ID="MultiframeDetector.nightZPNum" indexed="false">
          <Name>nightZPNum</Name>
          <Datatype>int</Datatype>
-         <Description><![CDATA[Number of ZP in band used to calculate nightZPCat {catalogue extension keyword:  NIGHTNUM}]]></Description>
-         <Units>mags</Units>
+         <Description><![CDATA[Number of zero points in band used to calculate nightZPCat {catalogue extension keyword:  NIGHTNUM}]]></Description>
+         <Units> </Units>
          <UCD version="1+">??</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
@@ -4246,6 +4421,42 @@
          <ErrorColumn></ErrorColumn>
       </Column>
    </Table>
+   <Table ID="ProblemFrames">
+      <Name>ProblemFrames</Name>
+      <Description><![CDATA[ Contains details of problem multiframes]]></Description>
+      <Column ID="ProblemFrames.programmeID" indexed="true">
+         <Name>programmeID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[VSA assigned programme UID]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ProblemFrames.multiframeID" indexed="true">
+         <Name>multiframeID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[UID of the multiframe (assigned sequentially by the archive ingest process)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">obs.field</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ProblemFrames.corrPointingRa" indexed="false">
+         <Name>corrPointingRa</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Corrected pointing Right Ascension]]></Description>
+         <Units>deg</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="ProblemFrames.corrPointingDec" indexed="false">
+         <Name>corrPointingDec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Corrected pointing Declination]]></Description>
+         <Units>deg</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
    <Table ID="ProductLinks">
       <Name>ProductLinks</Name>
       <Description><![CDATA[ Contains links between different products, e.g. tiles and stacks, mosaics and tiles, mosaics and stack]]></Description>
@@ -4509,6 +4720,30 @@
          <UCD version="1+">??</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
+      <Column ID="Programme.extinctionMapList" indexed="false">
+         <Name>extinctionMapList</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[A list of 3D extinction maps that should be matched to this survey]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Programme.epochTolerance" indexed="false">
+         <Name>epochTolerance</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Minimum separation of epochs for proper motion calculation]]></Description>
+         <Units>days</Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="Programme.doNotUseOBinfo" indexed="false">
+         <Name>doNotUseOBinfo</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Don't use OB info in wide field multi-epoch frame assignment.]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
    </Table>
    <Table ID="ProgrammeCurationHistory">
       <Name>ProgrammeCurationHistory</Name>
@@ -4552,7 +4787,7 @@
       <Column ID="ProgrammeFrame.programmeID" indexed="true">
          <Name>programmeID</Name>
          <Datatype>int</Datatype>
-         <Description><![CDATA[VSA assigned programme UID {image primary HDU keyword: HIERARCH ESO OBS PROG ID}]]></Description>
+         <Description><![CDATA[OSA assigned programme UID {image primary HDU keyword: HIERARCH ESO OBS PROG ID}]]></Description>
          <Units> </Units>
          <UCD version="1+">meta.id</UCD>
          <ErrorColumn></ErrorColumn>
@@ -4793,6 +5028,14 @@
          <UCD version="1+"></UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
+      <Column ID="RequiredFilters.obReqs" indexed="false">
+         <Name>obReqs</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[For wide shallow surveys with small number of epochs, what MSB requirements for each epoch.]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.note</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
    </Table>
    <Table ID="RequiredListDrivenProduct">
       <Name>RequiredListDrivenProduct</Name>
@@ -4835,6 +5078,74 @@
          <Description><![CDATA[CASU list-driven photometry tool option specifying the fixed radius to be used for photometry]]></Description>
          <Units>pixels</Units>
          <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   <Table ID="RequiredMergeLogMultiEpoch">
+      <Name>RequiredMergeLogMultiEpoch</Name>
+      <Description><![CDATA[ Contains details of filter epochs in MergeLog table products]]></Description>
+      <Column ID="RequiredMergeLogMultiEpoch.programmeID" indexed="true">
+         <Name>programmeID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[the unique programme ID]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="RequiredMergeLogMultiEpoch.productType" indexed="true">
+         <Name>productType</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Product type (stack,tile,mosaic)]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="RequiredMergeLogMultiEpoch.productID" indexed="true">
+         <Name>productID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[A unique identifier assigned to each required stack product entry]]></Description>
+         <Units> </Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="RequiredMergeLogMultiEpoch.name" indexed="false">
+         <Name>name</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Name of the stacked product]]></Description>
+         <Units> </Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="RequiredMergeLogMultiEpoch.description" indexed="false">
+         <Name>description</Name>
+         <Datatype>string</Datatype>
+         <Description><![CDATA[Description of the product]]></Description>
+         <Units> </Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="RequiredMergeLogMultiEpoch.fieldID" indexed="false">
+         <Name>fieldID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[UID of position on sky. References Required{productType}.fieldID]]></Description>
+         <Units> </Units>
+         <UCD version="1+">??</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="RequiredMergeLogMultiEpoch.filterID" indexed="false">
+         <Name>filterID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[UID of combined filter (assigned in OSA: 1=u,2=g,3=r,4=i,5=z,6=blank)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code;instr.filter</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="RequiredMergeLogMultiEpoch.epoch" indexed="false">
+         <Name>epoch</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Epoch number in MergeLog table]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
    </Table>
@@ -5136,7 +5447,7 @@
    </Table>
    <Table ID="atlasDetection">
       <Name>atlasDetection</Name>
-      <Description><![CDATA[ Contains the individual ATLAS source detections for each frame]]></Description>
+      <Description><![CDATA[ frame types in ATLAS]]></Description>
       <Column ID="atlasDetection.multiframeID" indexed="true">
          <Name>multiframeID</Name>
          <Datatype>long</Datatype>
@@ -5172,7 +5483,7 @@
       <Column ID="atlasDetection.filterID" indexed="false">
          <Name>filterID</Name>
          <Datatype>int</Datatype>
-         <Description><![CDATA[UID of combined filter (assigned in VSA: 1=Z,2=Y,3=J,4=H,5=Ks,8=blank)]]></Description>
+         <Description><![CDATA[UID of combined filter (assigned in OSA: 1=Z,2=Y,3=J,4=H,5=Ks,8=blank)]]></Description>
          <Units> </Units>
          <UCD version="1+">meta.code;instr.filter</UCD>
          <ErrorColumn></ErrorColumn>
@@ -6321,6 +6632,22 @@
          <UCD version="1+"></UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
+      <Column ID="atlasDetection.isIllumCorr" indexed="false">
+         <Name>isIllumCorr</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Code for a illumination corrected (=1) or not illumination corrected (=0) detection]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetection.isApassCal" indexed="false">
+         <Name>isApassCal</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Code for a APASS calibrated (=1) or standard calibrated (=0) detection]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
       <Column ID="atlasDetection.ppErrBits" indexed="false">
          <Name>ppErrBits</Name>
          <Datatype>int</Datatype>
@@ -6346,15 +6673,1243 @@
          <ErrorColumn></ErrorColumn>
       </Column>
    </Table>
+   <Table ID="atlasDetectionUncorr">
+      <Name>atlasDetectionUncorr</Name>
+      <Description><![CDATA[ Contains the individual ATLAS source detections for each frame]]></Description>
+      <Column ID="atlasDetectionUncorr.multiframeID" indexed="true">
+         <Name>multiframeID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[the UID of the relevant multiframe]]></Description>
+         <Units> </Units>
+         <UCD version="1+">obs.field</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.extNum" indexed="true">
+         <Name>extNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[the extension number of this frame]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.cuEventID" indexed="false">
+         <Name>cuEventID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[UID of curation event giving rise to this record]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.bib</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.seqNum" indexed="true">
+         <Name>seqNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[the running number of this detection {catalogue TType keyword: Sequence_number}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.filterID" indexed="false">
+         <Name>filterID</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[UID of combined filter (assigned in OSA: 1=Z,2=Y,3=J,4=H,5=Ks,8=blank)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code;instr.filter</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.isoFlux" indexed="false">
+         <Name>isoFlux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Instrumental isophotal flux counts {catalogue TType keyword: Isophotal_flux}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.isoMag" indexed="false">
+         <Name>isoMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated isophotal magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.x" indexed="false">
+         <Name>x</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[X coordinate of detection {catalogue TType keyword: X_coordinate}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">pos.cartesian.x;instr.plate</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.xErr" indexed="false">
+         <Name>xErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in X coordinate {catalogue TType keyword: X_coordinate_err}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.y" indexed="false">
+         <Name>y</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Y coordinate of detection {catalogue TType keyword: Y_coordinate}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">pos.cartesian.y;instr.plate</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.yErr" indexed="false">
+         <Name>yErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in Y coordinate {catalogue TType keyword: Y_coordinate_err}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.gauSig" indexed="false">
+         <Name>gauSig</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS of axes of ellipse fit {catalogue TType keyword: Gaussian_sigma}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">src.morph.param</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.ell" indexed="false">
+         <Name>ell</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1-b/a, where a/b=semi-major/minor axes {catalogue TType keyword: Ellipticity}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">src.ellipticity</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.pa" indexed="false">
+         <Name>pa</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[ellipse fit orientation to x axis {catalogue TType keyword: Position_angle}]]></Description>
+         <Units>degrees</Units>
+         <UCD version="1+">pos.posAng</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aProf1" indexed="false">
+         <Name>aProf1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[No. of pixels above rethreshold 1 (can be non-integer for deblends) {catalogue TType keyword: Areal_1_profile}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aProf2" indexed="false">
+         <Name>aProf2</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of pixels above rethreshold 2 {catalogue TType keyword: Areal_2_profile}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aProf3" indexed="false">
+         <Name>aProf3</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of pixels above rethreshold 3 {catalogue TType keyword: Areal_3_profile}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aProf4" indexed="false">
+         <Name>aProf4</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of pixels above rethreshold 4 {catalogue TType keyword: Areal_4_profile}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aProf5" indexed="false">
+         <Name>aProf5</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of pixels above rethreshold 5 {catalogue TType keyword: Areal_5_profile}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aProf6" indexed="false">
+         <Name>aProf6</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of pixels above rethreshold 6 {catalogue TType keyword: Areal_6_profile}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aProf7" indexed="false">
+         <Name>aProf7</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of pixels above rethreshold 7 {catalogue TType keyword: Areal_7_profile}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aProf8" indexed="false">
+         <Name>aProf8</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[No. of pixels above rethreshold 8 {catalogue TType keyword: Areal_8_profile}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.pHeight" indexed="false">
+         <Name>pHeight</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Highest pixel value above sky {catalogue TType keyword: Peak_height}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.pHeightErr" indexed="false">
+         <Name>pHeightErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in peak height {catalogue TType keyword: Peak_height_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux1" indexed="false">
+         <Name>aperFlux1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Default aperture flux counts 1 {catalogue TType keyword: Aper_flux_1}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux1err" indexed="false">
+         <Name>aperFlux1err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux counts 1 {catalogue TType keyword: Aper_flux_1_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMagNoAperCorr1" indexed="false">
+         <Name>aperMagNoAperCorr1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and standard corrected (but no aperture correction applied) aperture magnitude 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag1" indexed="false">
+         <Name>aperMag1</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag1err" indexed="false">
+         <Name>aperMag1err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux2" indexed="false">
+         <Name>aperFlux2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Default aperture flux 2 {catalogue TType keyword: Aper_flux_2}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux2err" indexed="false">
+         <Name>aperFlux2err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 2 {catalogue TType keyword: Aper_flux_2_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMagNoAperCorr2" indexed="false">
+         <Name>aperMagNoAperCorr2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and standard corrected (but no aperture correction applied) aperture magnitude 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag2" indexed="false">
+         <Name>aperMag2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 2]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag2err" indexed="false">
+         <Name>aperMag2err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 2]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux3" indexed="false">
+         <Name>aperFlux3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 3 {catalogue TType keyword: Aper_flux_3}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux3err" indexed="false">
+         <Name>aperFlux3err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 3 {catalogue TType keyword: Aper_flux_3_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMagNoAperCorr3" indexed="false">
+         <Name>aperMagNoAperCorr3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and standard corrected (but no aperture correction applied) aperture magnitude 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag3" indexed="false">
+         <Name>aperMag3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 3. aperMag3 has also a saturation correction applied for saturated stars.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag3err" indexed="false">
+         <Name>aperMag3err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 3]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux4" indexed="false">
+         <Name>aperFlux4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 4 {catalogue TType keyword: Aper_flux_4}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux4err" indexed="false">
+         <Name>aperFlux4err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 4 {catalogue TType keyword: Aper_flux_4_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMagNoAperCorr4" indexed="false">
+         <Name>aperMagNoAperCorr4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and standard corrected (but no aperture correction applied) aperture magnitude 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag4" indexed="false">
+         <Name>aperMag4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 4]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag4err" indexed="false">
+         <Name>aperMag4err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 4]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux5" indexed="false">
+         <Name>aperFlux5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 5 {catalogue TType keyword: Aper_flux_5}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux5err" indexed="false">
+         <Name>aperFlux5err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 5 {catalogue TType keyword: Aper_flux_5_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMagNoAperCorr5" indexed="false">
+         <Name>aperMagNoAperCorr5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and standard corrected (but no aperture correction applied) aperture magnitude 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag5" indexed="false">
+         <Name>aperMag5</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 5]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag5err" indexed="false">
+         <Name>aperMag5err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 5]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux6" indexed="false">
+         <Name>aperFlux6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 6 {catalogue TType keyword: Aper_flux_6}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux6err" indexed="false">
+         <Name>aperFlux6err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 6 {catalogue TType keyword: Aper_flux_6_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMagNoAperCorr6" indexed="false">
+         <Name>aperMagNoAperCorr6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and standard corrected (but no aperture correction applied) aperture magnitude 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag6" indexed="false">
+         <Name>aperMag6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 6]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag6err" indexed="false">
+         <Name>aperMag6err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 6]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux7" indexed="false">
+         <Name>aperFlux7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 7 {catalogue TType keyword: Aper_flux_7}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux7err" indexed="false">
+         <Name>aperFlux7err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 7 {catalogue TType keyword: Aper_flux_7_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMagNoAperCorr7" indexed="false">
+         <Name>aperMagNoAperCorr7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and standard corrected (but no aperture correction applied) aperture magnitude 1]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag7" indexed="false">
+         <Name>aperMag7</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 7]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag7err" indexed="false">
+         <Name>aperMag7err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 7]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux8" indexed="false">
+         <Name>aperFlux8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 8 {catalogue TType keyword: Aper_flux_8}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux8err" indexed="false">
+         <Name>aperFlux8err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 8 {catalogue TType keyword: Aper_flux_8_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag8" indexed="false">
+         <Name>aperMag8</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 8. No aperture correction applied since it is 0.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag8err" indexed="false">
+         <Name>aperMag8err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 8]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux9" indexed="false">
+         <Name>aperFlux9</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 9 {catalogue TType keyword: Aper_flux_9}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux9err" indexed="false">
+         <Name>aperFlux9err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 9 {catalogue TType keyword: Aper_flux_9_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag9" indexed="false">
+         <Name>aperMag9</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 9. No aperture correction applied since it is 0.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag9err" indexed="false">
+         <Name>aperMag9err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 9]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux10" indexed="false">
+         <Name>aperFlux10</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 10 {catalogue TType keyword: Aper_flux_10}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux10err" indexed="false">
+         <Name>aperFlux10err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 10 {catalogue TType keyword: Aper_flux_10_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag10" indexed="false">
+         <Name>aperMag10</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 10. No aperture correction applied since it is 0.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag10err" indexed="false">
+         <Name>aperMag10err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 10]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux11" indexed="false">
+         <Name>aperFlux11</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 11 {catalogue TType keyword: Aper_flux_11}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux11err" indexed="false">
+         <Name>aperFlux11err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 11 {catalogue TType keyword: Aper_flux_11_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag11" indexed="false">
+         <Name>aperMag11</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 11. No aperture correction applied since it is 0.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag11err" indexed="false">
+         <Name>aperMag11err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 11]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux12" indexed="false">
+         <Name>aperFlux12</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 12 {catalogue TType keyword: Aper_flux_12}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux12err" indexed="false">
+         <Name>aperFlux12err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 12 {catalogue TType keyword: Aper_flux_12_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag12" indexed="false">
+         <Name>aperMag12</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 12. No aperture correction applied since it is 0.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag12err" indexed="false">
+         <Name>aperMag12err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 12]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux13" indexed="false">
+         <Name>aperFlux13</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[default aperture flux 13 {catalogue TType keyword: Aper_flux_13}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperFlux13err" indexed="false">
+         <Name>aperFlux13err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in aperture flux 13 {catalogue TType keyword: Aper_flux_13_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag13" indexed="false">
+         <Name>aperMag13</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated and corrected aperture magnitude 13. No aperture correction applied since it is 0.]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.aperMag13err" indexed="false">
+         <Name>aperMag13err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in calibrated aperture magnitude 13]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.petroRad" indexed="false">
+         <Name>petroRad</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[r_p as defined in Yasuda et al. 2001 AJ 112 1104 {catalogue TType keyword: Petr_radius}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">phys.angSize;src</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.kronRad" indexed="false">
+         <Name>kronRad</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[r_k as defined in Bertin and Arnouts 1996 A&#38;A Supp 117 393 {catalogue TType keyword: Kron_radius}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">phys.angSize;src</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.halfRad" indexed="false">
+         <Name>halfRad</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[r_h half-light radius, calculated as the circular aperture that encloses half the total flux, which is specified as max(isoFlux,aperFlux5) {catalogue TType keyword: Half_radius}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">phys.angSize;src</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.hlCircRadAs" indexed="false">
+         <Name>hlCircRadAs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Circular half-light radius computed from curve of growth assuming petrosian flux is 90% of total]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1+">phys.angSize;src</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.hlCircRadErrAs" indexed="false">
+         <Name>hlCircRadErrAs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in hlCircRadAs]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1+">phys.angSize;src</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.hlGeoRadAs" indexed="false">
+         <Name>hlGeoRadAs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Geometric half-light radius]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1+">phys.angSize;src</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.hlSMnRadAs" indexed="false">
+         <Name>hlSMnRadAs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Half-light semi-minor axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.hlSMjRadAs" indexed="false">
+         <Name>hlSMjRadAs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Half-light semi-major axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.hlCorSMnRadAs" indexed="false">
+         <Name>hlCorSMnRadAs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Seeing corrected Half-light semi-minor axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.hlCorSMjRadAs" indexed="false">
+         <Name>hlCorSMjRadAs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Seeing corrected Half-light semi-major axis]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.petroFlux" indexed="false">
+         <Name>petroFlux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[flux within circular aperture to k &#215; r_p ; k = 2 {catalogue TType keyword: Petr_flux}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.petroFluxErr" indexed="false">
+         <Name>petroFluxErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[error on Petrosian flux {catalogue TType keyword: Petr_flux_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.petroMag" indexed="false">
+         <Name>petroMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated Petrosian magnitude within circular aperture r_p]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.petroMagErr" indexed="false">
+         <Name>petroMagErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[error on calibrated Petrosian magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.kronFlux" indexed="false">
+         <Name>kronFlux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[flux within circular aperture to k &#215; r_k ; k = 2 {catalogue TType keyword: Kron_flux}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.kronFluxErr" indexed="false">
+         <Name>kronFluxErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[error on Kron flux {catalogue TType keyword: Kron_flux_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.kronMag" indexed="false">
+         <Name>kronMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated Kron magnitude within circular aperture r_k]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.kronMagErr" indexed="false">
+         <Name>kronMagErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[error on calibrated Kron magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.halfFlux" indexed="false">
+         <Name>halfFlux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Half the total flux (max(isoFlux,aperFlux5), used in the halfRad calculation {catalogue TType keyword: Half_flux}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.halfFluxErr" indexed="false">
+         <Name>halfFluxErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[error on Half flux {catalogue TType keyword: Half_flux_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.halfMag" indexed="false">
+         <Name>halfMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated magnitude within circular aperture halfRad]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.halfMagErr" indexed="false">
+         <Name>halfMagErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated error on Half magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.errBits" indexed="false">
+         <Name>errBits</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[processing warning/error bitwise flags {catalogue TType keyword: Error_bit_flag}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.sky" indexed="false">
+         <Name>sky</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[local interpolated sky level from background tracker {catalogue TType keyword: Sky_level}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">instr.skyLevel</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.skyVar" indexed="false">
+         <Name>skyVar</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[local estimate of variation in sky level around image {catalogue TType keyword: Sky_rms}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">instr.skyLevel</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.averageConf" indexed="false">
+         <Name>averageConf</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[The average confidence level in the default 2 arcsec diameter aperture (aper3). {catalogue TType keyword: Av_conf}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.mjd" indexed="false">
+         <Name>mjd</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The mean Modified Julian Day of each detection {catalogue TType keyword: MJDoff}]]></Description>
+         <Units>day</Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.ra" indexed="false">
+         <Name>ra</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Right Ascension]]></Description>
+         <Units>Degrees</Units>
+         <UCD version="1+">pos.eq.ra;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.dec" indexed="false">
+         <Name>dec</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Celestial Declination]]></Description>
+         <Units>Degrees</Units>
+         <UCD version="1+">pos.eq.dec;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.cx" indexed="false">
+         <Name>cx</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.x</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.cy" indexed="false">
+         <Name>cy</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.y</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.cz" indexed="false">
+         <Name>cz</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.distance;pos.cartesian.z</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.htmID" indexed="false">
+         <Name>htmID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
+         <Units> </Units>
+         <UCD version="1+">pos.eq</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.l" indexed="false">
+         <Name>l</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic longitude]]></Description>
+         <Units>Degrees</Units>
+         <UCD version="1+">pos.galactic.lon</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.b" indexed="false">
+         <Name>b</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[Galactic latitude]]></Description>
+         <Units>Degrees</Units>
+         <UCD version="1+">pos.galactic.lat</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.lambda" indexed="false">
+         <Name>lambda</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[SDSS system spherical co-ordinate 1]]></Description>
+         <Units>Degrees</Units>
+         <UCD version="1+">pos</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.eta" indexed="false">
+         <Name>eta</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[SDSS system spherical co-ordinate 2]]></Description>
+         <Units>Degrees</Units>
+         <UCD version="1+">pos</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.class" indexed="false">
+         <Name>class</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Flag indicating most probable morphological classification {catalogue TType keyword: Classification}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">src.class</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.classStat" indexed="false">
+         <Name>classStat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[N(0,1) stellarness-of-profile statistic {catalogue TType keyword: Statistic}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.psfFlux" indexed="false">
+         <Name>psfFlux</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF-fitted flux {catalogue TType keyword: PSF_flux}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.psfFluxErr" indexed="false">
+         <Name>psfFluxErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error on PSF-fitted flux {catalogue TType keyword: PSF_flux_err}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.psfMag" indexed="false">
+         <Name>psfMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF-fitted calibrated magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PROFILE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.psfMagErr" indexed="false">
+         <Name>psfMagErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error on PSF-fitted calibrated magnitude]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.psfFitX" indexed="false">
+         <Name>psfFitX</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF-fitted X coordinate {catalogue TType keyword: PSF_fit_X}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">pos.cartesian.x;instr.plate</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.psfFitXerr" indexed="false">
+         <Name>psfFitXerr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error on PSF-fitted X coordinate {catalogue TType keyword: PSF_fit_X_err}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.psfFitY" indexed="false">
+         <Name>psfFitY</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[PSF-fitted Y coordinate {catalogue TType keyword: PSF_fit_Y}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">pos.cartesian.y;instr.plate</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.psfFitYerr" indexed="false">
+         <Name>psfFitYerr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error on PSF-fitted Y coordinate {catalogue TType keyword: PSF_fit_y_err}]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">stat.error</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.psfFitChi2" indexed="false">
+         <Name>psfFitChi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[standard normalised variance of PSF fit {catalogue TType keyword: PSF_fit_chi2}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.stdev</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.psfFitDof" indexed="false">
+         <Name>psfFitDof</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[no. of degrees of freedom of PSF fit {catalogue TType keyword: PSF_fit_dof}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.dof</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerFlux1D" indexed="false">
+         <Name>SerFlux1D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1D Sersic flux {catalogue TType keyword: 1D_Sersic_flux}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerMag1D" indexed="false">
+         <Name>SerMag1D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated 1D Sersic flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PROFILE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerScaleLen1D" indexed="false">
+         <Name>SerScaleLen1D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Scale length {catalogue TType keyword: 1D_Sersic_scale_len}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.param</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerIdx1D" indexed="false">
+         <Name>SerIdx1D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Power law index {catalogue TType keyword: 1D_Sersic_index}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.param</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerFit1DChi2" indexed="false">
+         <Name>SerFit1DChi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in 1D fit {catalogue TType keyword: 1D_Sersic_fit_chi2}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.param</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerFitNu1D" indexed="false">
+         <Name>SerFitNu1D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[No. of degrees of freedom for 1D Sersic fit {catalogue TType keyword: 1D_Sersic_fit_nu}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.dof</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerFlux2D" indexed="false">
+         <Name>SerFlux2D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[2D Sersic flux {catalogue TType keyword: 2D_Sersic_flux}]]></Description>
+         <Units>ADU</Units>
+         <UCD version="1+">phot.count;em.opt</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerMag2D" indexed="false">
+         <Name>SerMag2D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Calibrated 2D Sersic flux]]></Description>
+         <Units>mag</Units>
+         <UCD version="1">PHOT_PROFILE</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerScaleLen2D" indexed="false">
+         <Name>SerScaleLen2D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Scale length {catalogue TType keyword: 2D_Sersic_scale_len}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.param</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerIdx2D" indexed="false">
+         <Name>SerIdx2D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Power law index {catalogue TType keyword: 2D_Sersic_index}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.param</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerFit2DChi2" indexed="false">
+         <Name>SerFit2DChi2</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in 2D fit {catalogue TType keyword: 2D_Sersic_fit_chi2}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.param</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.SerFitNu2D" indexed="false">
+         <Name>SerFitNu2D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[No. of degrees of freedom for 2D Sersic fit {catalogue TType keyword: 2D_Sersic_fit_nu}]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.fit.dof</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.deltaMag" indexed="false">
+         <Name>deltaMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[sum of magnitude corrections for faster processing]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.illumCorr" indexed="false">
+         <Name>illumCorr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[illumination correction]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.distortCorr" indexed="false">
+         <Name>distortCorr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[distortion correction]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.saturatCorr" indexed="false">
+         <Name>saturatCorr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[saturation correction]]></Description>
+         <Units> </Units>
+         <UCD version="1+"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.isIllumCorr" indexed="false">
+         <Name>isIllumCorr</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Code for a illumination corrected (=1) or not illumination corrected (=0) detection]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.isApassCal" indexed="false">
+         <Name>isApassCal</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Code for a APASS calibrated (=1) or standard calibrated (=0) detection]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.ppErrBits" indexed="false">
+         <Name>ppErrBits</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[additional WFAU post-processing error bits]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.deprecated" indexed="false">
+         <Name>deprecated</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Code for a current (=0) or deprecated (!=0) detection]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasDetectionUncorr.objID" indexed="false">
+         <Name>objID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[Unique identifier for this detection or default for no detection]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;meta.main</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
    <Table ID="atlasMergeLog">
       <Name>atlasMergeLog</Name>
       <Description><![CDATA[ Contains frame set details of merged ATLAS MultiframeDetector images]]></Description>
       <Column ID="atlasMergeLog.frameSetID" indexed="true">
          <Name>frameSetID</Name>
          <Datatype>long</Datatype>
-         <Description><![CDATA[frame set ID, unique over the whole VSA via programme ID prefix, assigned by merging procedure]]></Description>
+         <Description><![CDATA[frame set ID, unique over the whole OSA via programme ID prefix, assigned by merging procedure]]></Description>
          <Units> </Units>
-         <UCD version="1+">obs.field</UCD>
+         <UCD version="1+">meta.id;obs.field</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.cuEventID" indexed="false">
@@ -6386,7 +7941,7 @@
          <Datatype>double</Datatype>
          <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
          <Units> </Units>
-         <UCD version="1+">pos.distance;pos.cartesian.x</UCD>
+         <UCD version="1+">pos.cartesian.x;pos.eq</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.cy" indexed="false">
@@ -6394,7 +7949,7 @@
          <Datatype>double</Datatype>
          <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
          <Units> </Units>
-         <UCD version="1+">pos.distance;pos.cartesian.y</UCD>
+         <UCD version="1+">pos.cartesian.y;pos.eq</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.cz" indexed="false">
@@ -6402,7 +7957,7 @@
          <Datatype>double</Datatype>
          <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
          <Units> </Units>
-         <UCD version="1+">pos.distance;pos.cartesian.z</UCD>
+         <UCD version="1+">pos.cartesian.z;pos.eq</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.htmID" indexed="false">
@@ -6410,7 +7965,7 @@
          <Datatype>long</Datatype>
          <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
          <Units> </Units>
-         <UCD version="1+">pos.eq</UCD>
+         <UCD version="1+">pos</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.umfID" indexed="false">
@@ -6418,7 +7973,7 @@
          <Datatype>long</Datatype>
          <Description><![CDATA[the UID of the relevant U multiframe]]></Description>
          <Units> </Units>
-         <UCD version="1+">obs.field</UCD>
+         <UCD version="1+">meta.id;obs.field;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.ueNum" indexed="false">
@@ -6426,7 +7981,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[the extension number of this U frame]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.number</UCD>
+         <UCD version="1+">meta.number;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.newUframe" indexed="false">
@@ -6434,11 +7989,43 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[new/old flag (1/0) of this detector image]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.listProcU" indexed="false">
          <Name>listProcU</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[Frame has been list processed (0=no; 1=yes)]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code;em.opt.U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasMergeLog.ulmfID" indexed="false">
+         <Name>ulmfID</Name>
+         <Datatype>long</Datatype>
+         <Description><![CDATA[the UID of the relevant Ul multiframe]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.id;obs.field</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasMergeLog.uleNum" indexed="false">
+         <Name>uleNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[the extension number of this Ul frame]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasMergeLog.newUlframe" indexed="false">
+         <Name>newUlframe</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[new/old flag (1/0) of this detector image]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasMergeLog.listProcUl" indexed="false">
+         <Name>listProcUl</Name>
          <Datatype>int</Datatype>
          <Description><![CDATA[Frame has been list processed (0=no; 1=yes)]]></Description>
          <Units> </Units>
@@ -6450,7 +8037,7 @@
          <Datatype>long</Datatype>
          <Description><![CDATA[the UID of the relevant G multiframe]]></Description>
          <Units> </Units>
-         <UCD version="1+">obs.field</UCD>
+         <UCD version="1+">meta.id;obs.field;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.geNum" indexed="false">
@@ -6458,7 +8045,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[the extension number of this G frame]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.number</UCD>
+         <UCD version="1+">meta.number;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.newGframe" indexed="false">
@@ -6466,7 +8053,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[new/old flag (1/0) of this detector image]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.listProcG" indexed="false">
@@ -6474,7 +8061,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[Frame has been list processed (0=no; 1=yes)]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.rmfID" indexed="false">
@@ -6482,7 +8069,7 @@
          <Datatype>long</Datatype>
          <Description><![CDATA[the UID of the relevant R multiframe]]></Description>
          <Units> </Units>
-         <UCD version="1+">obs.field</UCD>
+         <UCD version="1+">meta.id;obs.field;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.reNum" indexed="false">
@@ -6490,7 +8077,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[the extension number of this R frame]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.number</UCD>
+         <UCD version="1+">meta.number;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.newRframe" indexed="false">
@@ -6498,7 +8085,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[new/old flag (1/0) of this detector image]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.listProcR" indexed="false">
@@ -6506,7 +8093,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[Frame has been list processed (0=no; 1=yes)]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.imfID" indexed="false">
@@ -6514,7 +8101,7 @@
          <Datatype>long</Datatype>
          <Description><![CDATA[the UID of the relevant I multiframe]]></Description>
          <Units> </Units>
-         <UCD version="1+">obs.field</UCD>
+         <UCD version="1+">meta.id;obs.field;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.ieNum" indexed="false">
@@ -6522,7 +8109,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[the extension number of this I frame]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.number</UCD>
+         <UCD version="1+">meta.number;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.newIframe" indexed="false">
@@ -6530,7 +8117,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[new/old flag (1/0) of this detector image]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.listProcI" indexed="false">
@@ -6538,7 +8125,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[Frame has been list processed (0=no; 1=yes)]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.zmfID" indexed="false">
@@ -6546,7 +8133,7 @@
          <Datatype>long</Datatype>
          <Description><![CDATA[the UID of the relevant Z multiframe]]></Description>
          <Units> </Units>
-         <UCD version="1+">obs.field</UCD>
+         <UCD version="1+">meta.id;obs.field;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.zeNum" indexed="false">
@@ -6554,7 +8141,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[the extension number of this Z frame]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.number</UCD>
+         <UCD version="1+">meta.number;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.newZframe" indexed="false">
@@ -6562,7 +8149,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[new/old flag (1/0) of this detector image]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.listProcZ" indexed="false">
@@ -6570,7 +8157,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[Frame has been list processed (0=no; 1=yes)]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.mergeSwVersion" indexed="false">
@@ -6578,7 +8165,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[version number of the software used to merge the frames]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.software</UCD>
+         <UCD version="1+">meta.id;meta.software</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasMergeLog.newFrameSet" indexed="false">
@@ -6604,7 +8191,7 @@
       <Column ID="atlasSource.sourceID" indexed="true">
          <Name>sourceID</Name>
          <Datatype>long</Datatype>
-         <Description><![CDATA[UID (unique over entire VSA via programme ID prefix) of this merged detection as assigned by merge algorithm]]></Description>
+         <Description><![CDATA[UID (unique over entire OSA via programme ID prefix) of this merged detection as assigned by merge algorithm]]></Description>
          <Units> </Units>
          <UCD version="1+">meta.id;meta.main</UCD>
          <ErrorColumn></ErrorColumn>
@@ -6646,7 +8233,7 @@
          <Datatype>double</Datatype>
          <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
          <Units> </Units>
-         <UCD version="1+">pos.distance;pos.cartesian.x</UCD>
+         <UCD version="1+">pos.cartesian.x;pos.eq</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.cy" indexed="false">
@@ -6654,7 +8241,7 @@
          <Datatype>double</Datatype>
          <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
          <Units> </Units>
-         <UCD version="1+">pos.distance;pos.cartesian.y</UCD>
+         <UCD version="1+">pos.cartesian.x;pos.eq</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.cz" indexed="false">
@@ -6662,7 +8249,7 @@
          <Datatype>double</Datatype>
          <Description><![CDATA[unit vector of spherical co-ordinates]]></Description>
          <Units> </Units>
-         <UCD version="1+">pos.distance;pos.cartesian.z</UCD>
+         <UCD version="1+">pos.cartesian.x;pos.eq</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.htmID" indexed="true">
@@ -6670,7 +8257,7 @@
          <Datatype>long</Datatype>
          <Description><![CDATA[Hierarchical Triangular Mesh (HTM) index, 20 deep, for equatorial co-ordinates]]></Description>
          <Units> </Units>
-         <UCD version="1+">pos.eq</UCD>
+         <UCD version="1+">pos</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.l" indexed="true">
@@ -6718,7 +8305,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source colour U-G (using aperMag3)]]></Description>
          <Units>mag</Units>
-         <UCD version="1">PHOT_COLOR</UCD>
+         <UCD version="1+">phot.color;em.opt.U;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.umgPntErr" indexed="false">
@@ -6726,7 +8313,23 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error on point source colour U-G]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;em.opt.U;em.opt.B</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulmgPnt" indexed="true">
+         <Name>ulmgPnt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Point source colour Ul-G (using aperMag3)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.color;em.opt.B</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulmgPntErr" indexed="false">
+         <Name>ulmgPntErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error on point source colour Ul-G]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gmrPnt" indexed="true">
@@ -6734,7 +8337,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source colour G-R (using aperMag3)]]></Description>
          <Units>mag</Units>
-         <UCD version="1">PHOT_COLOR</UCD>
+         <UCD version="1+">phot.color;em.opt.B;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gmrPntErr" indexed="false">
@@ -6742,7 +8345,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error on point source colour G-R]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;em.opt.B;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rmiPnt" indexed="true">
@@ -6750,7 +8353,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source colour R-I (using aperMag3)]]></Description>
          <Units>mag</Units>
-         <UCD version="1">PHOT_COLOR</UCD>
+         <UCD version="1+">phot.color;em.opt.R;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rmiPntErr" indexed="false">
@@ -6758,7 +8361,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error on point source colour R-I]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;em.opt.R;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.imzPnt" indexed="true">
@@ -6766,7 +8369,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source colour I-Z (using aperMag3)]]></Description>
          <Units>mag</Units>
-         <UCD version="1">PHOT_COLOR</UCD>
+         <UCD version="1+">phot.color;em.opt.I;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.imzPntErr" indexed="false">
@@ -6774,7 +8377,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error on point source colour I-Z]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;em.opt.I;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.umgExt" indexed="false">
@@ -6782,7 +8385,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source colour U-G (using aperMagNoAperCorr3)]]></Description>
          <Units>mag</Units>
-         <UCD version="1">PHOT_COLOR</UCD>
+         <UCD version="1+">phot.color;em.opt.U;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.umgExtErr" indexed="false">
@@ -6790,7 +8393,23 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error on extended source colour U-G]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;em.opt.U;em.opt.B</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulmgExt" indexed="false">
+         <Name>ulmgExt</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Extended source colour Ul-G (using aperMagNoAperCorr3)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.color;em.opt.B</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulmgExtErr" indexed="false">
+         <Name>ulmgExtErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error on extended source colour Ul-G]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gmrExt" indexed="false">
@@ -6798,7 +8417,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source colour G-R (using aperMagNoAperCorr3)]]></Description>
          <Units>mag</Units>
-         <UCD version="1">PHOT_COLOR</UCD>
+         <UCD version="1+">phot.color;em.opt.B;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gmrExtErr" indexed="false">
@@ -6806,7 +8425,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error on extended source colour G-R]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;em.opt.B;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rmiExt" indexed="false">
@@ -6814,7 +8433,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source colour R-I (using aperMagNoAperCorr3)]]></Description>
          <Units>mag</Units>
-         <UCD version="1">PHOT_COLOR</UCD>
+         <UCD version="1+">phot.color;em.opt.R;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rmiExtErr" indexed="false">
@@ -6822,7 +8441,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error on extended source colour R-I]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;em.opt.R;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.imzExt" indexed="false">
@@ -6830,7 +8449,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source colour I-Z (using aperMagNoAperCorr3)]]></Description>
          <Units>mag</Units>
-         <UCD version="1">PHOT_COLOR</UCD>
+         <UCD version="1+">phot.color;em.opt.I;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.imzExtErr" indexed="false">
@@ -6838,7 +8457,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error on extended source colour I-Z]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;em.opt.I;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.mergedClassStat" indexed="false">
@@ -6862,7 +8481,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Probability that the source is a star]]></Description>
          <Units> </Units>
-         <UCD version="1+">stat</UCD>
+         <UCD version="1+">stat.probability</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.pGalaxy" indexed="false">
@@ -6870,7 +8489,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Probability that the source is a galaxy]]></Description>
          <Units> </Units>
-         <UCD version="1+">stat</UCD>
+         <UCD version="1+">stat.probability</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.pNoise" indexed="false">
@@ -6878,7 +8497,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Probability that the source is noise]]></Description>
          <Units> </Units>
-         <UCD version="1+">stat</UCD>
+         <UCD version="1+">stat.probability</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.pSaturated" indexed="false">
@@ -6886,7 +8505,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Probability that the source is saturated]]></Description>
          <Units> </Units>
-         <UCD version="1+">stat</UCD>
+         <UCD version="1+">stat.probability</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.eBV" indexed="false">
@@ -6894,7 +8513,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[The galactic dust extinction value measured from the Schlegel, Finkbeiner &#38; Davis (1998) maps. This uses the correction given in Bonifacio, Monai &#38; Beers (2000). This correction reduces the extinction value in regions of high extinction (E(B-V)&gt;0.1)]]></Description>
          <Units> </Units>
-         <UCD version="1+"></UCD>
+         <UCD version="1+">phys.absorption.gal</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.aU" indexed="false">
@@ -6902,7 +8521,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[The galactic extinction correction in the U band for extragalactic objects]]></Description>
          <Units>mag</Units>
-         <UCD version="1+"></UCD>
+         <UCD version="1+">phys.absorption.gal</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.aG" indexed="false">
@@ -6910,7 +8529,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[The galactic extinction correction in the G band for extragalactic objects]]></Description>
          <Units>mag</Units>
-         <UCD version="1+"></UCD>
+         <UCD version="1+">phys.absorption.gal</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.aR" indexed="false">
@@ -6918,7 +8537,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[The galactic extinction correction in the R band for extragalactic objects]]></Description>
          <Units>mag</Units>
-         <UCD version="1+"></UCD>
+         <UCD version="1+">phys.absorption.gal</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.aI" indexed="false">
@@ -6926,7 +8545,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[The galactic extinction correction in the I band for extragalactic objects]]></Description>
          <Units>mag</Units>
-         <UCD version="1+"></UCD>
+         <UCD version="1+">phys.absorption.gal</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.aZ" indexed="false">
@@ -6934,7 +8553,15 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[The galactic extinction correction in the Z band for extragalactic objects]]></Description>
          <Units>mag</Units>
-         <UCD version="1+"></UCD>
+         <UCD version="1+">phys.absorption.gal</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.uMjd" indexed="false">
+         <Name>uMjd</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The mean Modified Julian Day of each detection]]></Description>
+         <Units>day</Units>
+         <UCD version="1+">time.epoch</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uPetroMag" indexed="true">
@@ -6942,7 +8569,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source U mag (Petrosian)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uPetroMagErr" indexed="false">
@@ -6950,7 +8577,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in extended source U mag (Petrosian)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uPsfMag" indexed="false">
@@ -6958,7 +8585,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source profile-fitted U mag]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uPsfMagErr" indexed="false">
@@ -6966,7 +8593,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point source profile-fitted U mag]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uSerMag2D" indexed="false">
@@ -6974,7 +8601,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source U mag (profile-fitted)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uSerMag2DErr" indexed="false">
@@ -6982,7 +8609,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in extended source U mag (profile-fitted)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uAperMag3" indexed="true">
@@ -6990,7 +8617,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Default point source U aperture corrected mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uAperMag3Err" indexed="false">
@@ -6998,7 +8625,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in default point/extended source U mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uAperMag4" indexed="false">
@@ -7006,7 +8633,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source U aperture corrected mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uAperMag4Err" indexed="false">
@@ -7014,7 +8641,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point/extended source U mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uAperMag6" indexed="false">
@@ -7022,7 +8649,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source U aperture corrected mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uAperMag6Err" indexed="false">
@@ -7030,7 +8657,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point/extended source U mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uAperMagNoAperCorr3" indexed="true">
@@ -7038,7 +8665,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Default extended source U aperture mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uAperMagNoAperCorr4" indexed="false">
@@ -7046,7 +8673,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source U aperture mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uAperMagNoAperCorr6" indexed="false">
@@ -7054,7 +8681,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source U aperture mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uHlCorSMjRadAs" indexed="false">
@@ -7062,7 +8689,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Seeing corrected half-light, semi-major axis in U band]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">phys.angSize;src</UCD>
+         <UCD version="1+">phys.angSize;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uGausig" indexed="false">
@@ -7070,7 +8697,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[RMS of axes of ellipse fit in U]]></Description>
          <Units>pixels</Units>
-         <UCD version="1+">src.morph.param</UCD>
+         <UCD version="1+">src.morph.param;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uEll" indexed="false">
@@ -7078,7 +8705,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[1-b/a, where a/b=semi-major/minor axes in U]]></Description>
          <Units> </Units>
-         <UCD version="1+">src.ellipticity</UCD>
+         <UCD version="1+">src.ellipticity;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uPA" indexed="false">
@@ -7086,7 +8713,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[ellipse fit celestial orientation in U]]></Description>
          <Units>Degrees</Units>
-         <UCD version="1+">pos.posAng</UCD>
+         <UCD version="1+">pos.posAng;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uErrBits" indexed="false">
@@ -7094,7 +8721,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[processing warning/error bitwise flags in U]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uAverageConf" indexed="false">
@@ -7102,7 +8729,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[average confidence in 2 arcsec diameter default aperture (aper3) U]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">stat.likelihood;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uClass" indexed="false">
@@ -7110,7 +8737,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[discrete image classification flag in U]]></Description>
          <Units> </Units>
-         <UCD version="1+">src.class</UCD>
+         <UCD version="1+">src.class;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uClassStat" indexed="false">
@@ -7118,7 +8745,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[N(0,1) stellarness-of-profile statistic in U]]></Description>
          <Units> </Units>
-         <UCD version="1+">stat</UCD>
+         <UCD version="1+">stat;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uppErrBits" indexed="false">
@@ -7126,7 +8753,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[additional WFAU post-processing error bits in U]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uSeqNum" indexed="false">
@@ -7134,7 +8761,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[the running number of the U detection]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.id</UCD>
+         <UCD version="1+">meta.number;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uXi" indexed="false">
@@ -7142,7 +8769,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Offset of U detection from master position (+east/-west)]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">pos.eq.ra;arith.diff</UCD>
+         <UCD version="1+">pos.eq.ra;arith.diff;em.opt.U</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.uEta" indexed="false">
@@ -7150,7 +8777,239 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Offset of U detection from master position (+north/-south)]]></Description>
          <Units>arcsec</Units>
+         <UCD version="1+">pos.eq.dec;arith.diff;em.opt.U</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulMjd" indexed="false">
+         <Name>ulMjd</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The mean Modified Julian Day of each detection]]></Description>
+         <Units>day</Units>
+         <UCD version="1+">time.epoch</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulPetroMag" indexed="true">
+         <Name>ulPetroMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Extended source Ul mag (Petrosian)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulPetroMagErr" indexed="false">
+         <Name>ulPetroMagErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in extended source Ul mag (Petrosian)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulPsfMag" indexed="false">
+         <Name>ulPsfMag</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Point source profile-fitted Ul mag]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulPsfMagErr" indexed="false">
+         <Name>ulPsfMagErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in point source profile-fitted Ul mag]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulSerMag2D" indexed="false">
+         <Name>ulSerMag2D</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Extended source Ul mag (profile-fitted)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulSerMag2DErr" indexed="false">
+         <Name>ulSerMag2DErr</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in extended source Ul mag (profile-fitted)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulAperMag3" indexed="true">
+         <Name>ulAperMag3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Default point source Ul aperture corrected mag (2.0 arcsec aperture diameter)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulAperMag3Err" indexed="false">
+         <Name>ulAperMag3Err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in default point/extended source Ul mag (2.0 arcsec aperture diameter)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulAperMag4" indexed="false">
+         <Name>ulAperMag4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Point source Ul aperture corrected mag (2.8 arcsec aperture diameter)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulAperMag4Err" indexed="false">
+         <Name>ulAperMag4Err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in point/extended source Ul mag (2.8 arcsec aperture diameter)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulAperMag6" indexed="false">
+         <Name>ulAperMag6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Point source Ul aperture corrected mag (5.7 arcsec aperture diameter)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulAperMag6Err" indexed="false">
+         <Name>ulAperMag6Err</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Error in point/extended source Ul mag (5.7 arcsec aperture diameter)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">stat.error;phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulAperMagNoAperCorr3" indexed="true">
+         <Name>ulAperMagNoAperCorr3</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Default extended source Ul aperture mag (2.0 arcsec aperture diameter)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulAperMagNoAperCorr4" indexed="false">
+         <Name>ulAperMagNoAperCorr4</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Extended source Ul aperture mag (2.8 arcsec aperture diameter)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulAperMagNoAperCorr6" indexed="false">
+         <Name>ulAperMagNoAperCorr6</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Extended source Ul aperture mag (5.7 arcsec aperture diameter)]]></Description>
+         <Units>mag</Units>
+         <UCD version="1+">phot.mag</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulHlCorSMjRadAs" indexed="false">
+         <Name>ulHlCorSMjRadAs</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Seeing corrected half-light, semi-major axis in Ul band]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1+">phys.angSize</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulGausig" indexed="false">
+         <Name>ulGausig</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[RMS of axes of ellipse fit in Ul]]></Description>
+         <Units>pixels</Units>
+         <UCD version="1+">src.morph.param</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulEll" indexed="false">
+         <Name>ulEll</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[1-b/a, where a/b=semi-major/minor axes in Ul]]></Description>
+         <Units> </Units>
+         <UCD version="1+">src.ellipticity</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulPA" indexed="false">
+         <Name>ulPA</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[ellipse fit celestial orientation in Ul]]></Description>
+         <Units>Degrees</Units>
+         <UCD version="1+">pos.posAng</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulErrBits" indexed="false">
+         <Name>ulErrBits</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[processing warning/error bitwise flags in Ul]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulAverageConf" indexed="false">
+         <Name>ulAverageConf</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[average confidence in 2 arcsec diameter default aperture (aper3) Ul]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat.likelihood</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulClass" indexed="false">
+         <Name>ulClass</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[discrete image classification flag in Ul]]></Description>
+         <Units> </Units>
+         <UCD version="1+">src.class</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulClassStat" indexed="false">
+         <Name>ulClassStat</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[N(0,1) stellarness-of-profile statistic in Ul]]></Description>
+         <Units> </Units>
+         <UCD version="1+">stat</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulppErrBits" indexed="false">
+         <Name>ulppErrBits</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[additional WFAU post-processing error bits in Ul]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.code</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulSeqNum" indexed="false">
+         <Name>ulSeqNum</Name>
+         <Datatype>int</Datatype>
+         <Description><![CDATA[the running number of the Ul detection]]></Description>
+         <Units> </Units>
+         <UCD version="1+">meta.number</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulXi" indexed="false">
+         <Name>ulXi</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Offset of Ul detection from master position (+east/-west)]]></Description>
+         <Units>arcsec</Units>
+         <UCD version="1+">pos.eq.ra;arith.diff</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.ulEta" indexed="false">
+         <Name>ulEta</Name>
+         <Datatype>float</Datatype>
+         <Description><![CDATA[Offset of Ul detection from master position (+north/-south)]]></Description>
+         <Units>arcsec</Units>
          <UCD version="1+">pos.eq.dec;arith.diff</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.gMjd" indexed="false">
+         <Name>gMjd</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The mean Modified Julian Day of each detection]]></Description>
+         <Units>day</Units>
+         <UCD version="1+">time.epoch</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gPetroMag" indexed="true">
@@ -7158,7 +9017,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source G mag (Petrosian)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gPetroMagErr" indexed="false">
@@ -7166,7 +9025,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in extended source G mag (Petrosian)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gPsfMag" indexed="false">
@@ -7174,7 +9033,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source profile-fitted G mag]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gPsfMagErr" indexed="false">
@@ -7182,7 +9041,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point source profile-fitted G mag]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gSerMag2D" indexed="false">
@@ -7190,7 +9049,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source G mag (profile-fitted)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gSerMag2DErr" indexed="false">
@@ -7198,7 +9057,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in extended source G mag (profile-fitted)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gAperMag3" indexed="true">
@@ -7206,7 +9065,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Default point source G aperture corrected mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gAperMag3Err" indexed="false">
@@ -7214,7 +9073,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in default point/extended source G mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gAperMag4" indexed="false">
@@ -7222,7 +9081,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source G aperture corrected mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gAperMag4Err" indexed="false">
@@ -7230,7 +9089,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point/extended source G mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gAperMag6" indexed="false">
@@ -7238,7 +9097,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source G aperture corrected mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gAperMag6Err" indexed="false">
@@ -7246,7 +9105,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point/extended source G mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gAperMagNoAperCorr3" indexed="true">
@@ -7254,7 +9113,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Default extended source G aperture mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gAperMagNoAperCorr4" indexed="false">
@@ -7262,7 +9121,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source G aperture mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gAperMagNoAperCorr6" indexed="false">
@@ -7270,7 +9129,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source G aperture mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gHlCorSMjRadAs" indexed="false">
@@ -7278,7 +9137,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Seeing corrected half-light, semi-major axis in G band]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">phys.angSize;src</UCD>
+         <UCD version="1+">phys.angSize;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gGausig" indexed="false">
@@ -7286,7 +9145,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[RMS of axes of ellipse fit in G]]></Description>
          <Units>pixels</Units>
-         <UCD version="1+">src.morph.param</UCD>
+         <UCD version="1+">src.morph.param;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gEll" indexed="false">
@@ -7294,7 +9153,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[1-b/a, where a/b=semi-major/minor axes in G]]></Description>
          <Units> </Units>
-         <UCD version="1+">src.ellipticity</UCD>
+         <UCD version="1+">src.ellipticity;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gPA" indexed="false">
@@ -7302,7 +9161,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[ellipse fit celestial orientation in G]]></Description>
          <Units>Degrees</Units>
-         <UCD version="1+">pos.posAng</UCD>
+         <UCD version="1+">pos.posAng;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gErrBits" indexed="false">
@@ -7310,7 +9169,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[processing warning/error bitwise flags in G]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gAverageConf" indexed="false">
@@ -7318,7 +9177,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[average confidence in 2 arcsec diameter default aperture (aper3) G]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">stat.likelihood;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gClass" indexed="false">
@@ -7326,7 +9185,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[discrete image classification flag in G]]></Description>
          <Units> </Units>
-         <UCD version="1+">src.class</UCD>
+         <UCD version="1+">src.class;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gClassStat" indexed="false">
@@ -7334,7 +9193,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[N(0,1) stellarness-of-profile statistic in G]]></Description>
          <Units> </Units>
-         <UCD version="1+">stat</UCD>
+         <UCD version="1+">stat;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gppErrBits" indexed="false">
@@ -7342,7 +9201,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[additional WFAU post-processing error bits in G]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gSeqNum" indexed="false">
@@ -7350,7 +9209,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[the running number of the G detection]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.id</UCD>
+         <UCD version="1+">meta.number;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gXi" indexed="false">
@@ -7358,7 +9217,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Offset of G detection from master position (+east/-west)]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">pos.eq.ra;arith.diff</UCD>
+         <UCD version="1+">pos.eq.ra;arith.diff;em.opt.B</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.gEta" indexed="false">
@@ -7366,7 +9225,15 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Offset of G detection from master position (+north/-south)]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">pos.eq.dec;arith.diff</UCD>
+         <UCD version="1+">pos.eq.dec;arith.diff;em.opt.B</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.rMjd" indexed="false">
+         <Name>rMjd</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The mean Modified Julian Day of each detection]]></Description>
+         <Units>day</Units>
+         <UCD version="1+">time.epoch</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rPetroMag" indexed="true">
@@ -7374,7 +9241,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source R mag (Petrosian)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rPetroMagErr" indexed="false">
@@ -7382,7 +9249,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in extended source R mag (Petrosian)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rPsfMag" indexed="false">
@@ -7390,7 +9257,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source profile-fitted R mag]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rPsfMagErr" indexed="false">
@@ -7398,7 +9265,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point source profile-fitted R mag]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rSerMag2D" indexed="false">
@@ -7406,7 +9273,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source R mag (profile-fitted)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rSerMag2DErr" indexed="false">
@@ -7414,7 +9281,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in extended source R mag (profile-fitted)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rAperMag3" indexed="true">
@@ -7422,7 +9289,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Default point source R aperture corrected mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rAperMag3Err" indexed="false">
@@ -7430,7 +9297,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in default point/extended source R mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rAperMag4" indexed="false">
@@ -7438,7 +9305,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source R aperture corrected mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rAperMag4Err" indexed="false">
@@ -7446,7 +9313,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point/extended source R mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rAperMag6" indexed="false">
@@ -7454,7 +9321,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source R aperture corrected mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rAperMag6Err" indexed="false">
@@ -7462,7 +9329,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point/extended source R mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rAperMagNoAperCorr3" indexed="true">
@@ -7470,7 +9337,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Default extended source R aperture mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rAperMagNoAperCorr4" indexed="false">
@@ -7478,7 +9345,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source R aperture mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rAperMagNoAperCorr6" indexed="false">
@@ -7486,7 +9353,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source R aperture mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rHlCorSMjRadAs" indexed="false">
@@ -7494,7 +9361,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Seeing corrected half-light, semi-major axis in R band]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">phys.angSize;src</UCD>
+         <UCD version="1+">phys.angSize;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rGausig" indexed="false">
@@ -7502,7 +9369,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[RMS of axes of ellipse fit in R]]></Description>
          <Units>pixels</Units>
-         <UCD version="1+">src.morph.param</UCD>
+         <UCD version="1+">src.morph.param;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rEll" indexed="false">
@@ -7510,7 +9377,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[1-b/a, where a/b=semi-major/minor axes in R]]></Description>
          <Units> </Units>
-         <UCD version="1+">src.ellipticity</UCD>
+         <UCD version="1+">src.ellipticity;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rPA" indexed="false">
@@ -7518,7 +9385,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[ellipse fit celestial orientation in R]]></Description>
          <Units>Degrees</Units>
-         <UCD version="1+">pos.posAng</UCD>
+         <UCD version="1+">pos.posAng;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rErrBits" indexed="false">
@@ -7526,7 +9393,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[processing warning/error bitwise flags in R]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rAverageConf" indexed="false">
@@ -7534,7 +9401,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[average confidence in 2 arcsec diameter default aperture (aper3) R]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">stat.likelihood;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rClass" indexed="false">
@@ -7542,7 +9409,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[discrete image classification flag in R]]></Description>
          <Units> </Units>
-         <UCD version="1+">src.class</UCD>
+         <UCD version="1+">src.class;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rClassStat" indexed="false">
@@ -7550,7 +9417,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[N(0,1) stellarness-of-profile statistic in R]]></Description>
          <Units> </Units>
-         <UCD version="1+">stat</UCD>
+         <UCD version="1+">stat;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rppErrBits" indexed="false">
@@ -7558,7 +9425,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[additional WFAU post-processing error bits in R]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rSeqNum" indexed="false">
@@ -7566,7 +9433,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[the running number of the R detection]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.id</UCD>
+         <UCD version="1+">meta.number;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rXi" indexed="false">
@@ -7574,7 +9441,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Offset of R detection from master position (+east/-west)]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">pos.eq.ra;arith.diff</UCD>
+         <UCD version="1+">pos.eq.ra;arith.diff;em.opt.R</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.rEta" indexed="false">
@@ -7582,7 +9449,15 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Offset of R detection from master position (+north/-south)]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">pos.eq.dec;arith.diff</UCD>
+         <UCD version="1+">pos.eq.dec;arith.diff;em.opt.R</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.iMjd" indexed="false">
+         <Name>iMjd</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The mean Modified Julian Day of each detection]]></Description>
+         <Units>day</Units>
+         <UCD version="1+">time.epoch</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iPetroMag" indexed="true">
@@ -7590,7 +9465,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source I mag (Petrosian)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iPetroMagErr" indexed="false">
@@ -7598,7 +9473,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in extended source I mag (Petrosian)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iPsfMag" indexed="false">
@@ -7606,7 +9481,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source profile-fitted I mag]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iPsfMagErr" indexed="false">
@@ -7614,7 +9489,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point source profile-fitted I mag]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iSerMag2D" indexed="false">
@@ -7622,7 +9497,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source I mag (profile-fitted)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iSerMag2DErr" indexed="false">
@@ -7630,7 +9505,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in extended source I mag (profile-fitted)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iAperMag3" indexed="true">
@@ -7638,7 +9513,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Default point source I aperture corrected mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iAperMag3Err" indexed="false">
@@ -7646,7 +9521,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in default point/extended source I mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iAperMag4" indexed="false">
@@ -7654,7 +9529,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source I aperture corrected mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iAperMag4Err" indexed="false">
@@ -7662,7 +9537,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point/extended source I mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iAperMag6" indexed="false">
@@ -7670,7 +9545,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source I aperture corrected mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iAperMag6Err" indexed="false">
@@ -7678,7 +9553,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point/extended source I mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iAperMagNoAperCorr3" indexed="true">
@@ -7686,7 +9561,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Default extended source I aperture mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iAperMagNoAperCorr4" indexed="false">
@@ -7694,7 +9569,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source I aperture mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iAperMagNoAperCorr6" indexed="false">
@@ -7702,7 +9577,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source I aperture mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iHlCorSMjRadAs" indexed="false">
@@ -7710,7 +9585,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Seeing corrected half-light, semi-major axis in I band]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">phys.angSize;src</UCD>
+         <UCD version="1+">phys.angSize;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iGausig" indexed="false">
@@ -7718,7 +9593,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[RMS of axes of ellipse fit in I]]></Description>
          <Units>pixels</Units>
-         <UCD version="1+">src.morph.param</UCD>
+         <UCD version="1+">src.morph.param;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iEll" indexed="false">
@@ -7726,7 +9601,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[1-b/a, where a/b=semi-major/minor axes in I]]></Description>
          <Units> </Units>
-         <UCD version="1+">src.ellipticity</UCD>
+         <UCD version="1+">src.ellipticity;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iPA" indexed="false">
@@ -7734,7 +9609,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[ellipse fit celestial orientation in I]]></Description>
          <Units>Degrees</Units>
-         <UCD version="1+">pos.posAng</UCD>
+         <UCD version="1+">pos.posAng;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iErrBits" indexed="false">
@@ -7742,7 +9617,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[processing warning/error bitwise flags in I]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iAverageConf" indexed="false">
@@ -7750,7 +9625,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[average confidence in 2 arcsec diameter default aperture (aper3) I]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">stat.likelihood;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iClass" indexed="false">
@@ -7758,7 +9633,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[discrete image classification flag in I]]></Description>
          <Units> </Units>
-         <UCD version="1+">src.class</UCD>
+         <UCD version="1+">src.class;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iClassStat" indexed="false">
@@ -7766,7 +9641,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[N(0,1) stellarness-of-profile statistic in I]]></Description>
          <Units> </Units>
-         <UCD version="1+">stat</UCD>
+         <UCD version="1+">stat;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.ippErrBits" indexed="false">
@@ -7774,7 +9649,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[additional WFAU post-processing error bits in I]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iSeqNum" indexed="false">
@@ -7782,7 +9657,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[the running number of the I detection]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.id</UCD>
+         <UCD version="1+">meta.number;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iXi" indexed="false">
@@ -7790,7 +9665,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Offset of I detection from master position (+east/-west)]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">pos.eq.ra;arith.diff</UCD>
+         <UCD version="1+">pos.eq.ra;arith.diff;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.iEta" indexed="false">
@@ -7798,7 +9673,15 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Offset of I detection from master position (+north/-south)]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">pos.eq.dec;arith.diff</UCD>
+         <UCD version="1+">pos.eq.dec;arith.diff;em.opt.I</UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="atlasSource.zMjd" indexed="false">
+         <Name>zMjd</Name>
+         <Datatype>double</Datatype>
+         <Description><![CDATA[The mean Modified Julian Day of each detection]]></Description>
+         <Units>day</Units>
+         <UCD version="1+">time.epoch</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zPetroMag" indexed="true">
@@ -7806,7 +9689,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source Z mag (Petrosian)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zPetroMagErr" indexed="false">
@@ -7814,7 +9697,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in extended source Z mag (Petrosian)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zPsfMag" indexed="false">
@@ -7822,7 +9705,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source profile-fitted Z mag]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zPsfMagErr" indexed="false">
@@ -7830,7 +9713,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point source profile-fitted Z mag]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zSerMag2D" indexed="false">
@@ -7838,7 +9721,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source Z mag (profile-fitted)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zSerMag2DErr" indexed="false">
@@ -7846,7 +9729,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in extended source Z mag (profile-fitted)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zAperMag3" indexed="true">
@@ -7854,7 +9737,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Default point source Z aperture corrected mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zAperMag3Err" indexed="false">
@@ -7862,7 +9745,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in default point/extended source Z mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zAperMag4" indexed="false">
@@ -7870,7 +9753,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source Z aperture corrected mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zAperMag4Err" indexed="false">
@@ -7878,7 +9761,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point/extended source Z mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zAperMag6" indexed="false">
@@ -7886,7 +9769,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Point source Z aperture corrected mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zAperMag6Err" indexed="false">
@@ -7894,7 +9777,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Error in point/extended source Z mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">stat.error</UCD>
+         <UCD version="1+">stat.error;phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zAperMagNoAperCorr3" indexed="true">
@@ -7902,7 +9785,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Default extended source Z aperture mag (2.0 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zAperMagNoAperCorr4" indexed="false">
@@ -7910,7 +9793,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source Z aperture mag (2.8 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zAperMagNoAperCorr6" indexed="false">
@@ -7918,7 +9801,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Extended source Z aperture mag (5.7 arcsec aperture diameter)]]></Description>
          <Units>mag</Units>
-         <UCD version="1+">phot.mag</UCD>
+         <UCD version="1+">phot.mag;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zHlCorSMjRadAs" indexed="false">
@@ -7926,7 +9809,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Seeing corrected half-light, semi-major axis in Z band]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">phys.angSize;src</UCD>
+         <UCD version="1+">phys.angSize;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zGausig" indexed="false">
@@ -7934,7 +9817,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[RMS of axes of ellipse fit in Z]]></Description>
          <Units>pixels</Units>
-         <UCD version="1+">src.morph.param</UCD>
+         <UCD version="1+">src.morph.param;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zEll" indexed="false">
@@ -7942,7 +9825,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[1-b/a, where a/b=semi-major/minor axes in Z]]></Description>
          <Units> </Units>
-         <UCD version="1+">src.ellipticity</UCD>
+         <UCD version="1+">src.ellipticity;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zPA" indexed="false">
@@ -7950,7 +9833,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[ellipse fit celestial orientation in Z]]></Description>
          <Units>Degrees</Units>
-         <UCD version="1+">pos.posAng</UCD>
+         <UCD version="1+">pos.posAng;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zErrBits" indexed="false">
@@ -7958,7 +9841,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[processing warning/error bitwise flags in Z]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zAverageConf" indexed="false">
@@ -7966,7 +9849,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[average confidence in 2 arcsec diameter default aperture (aper3) Z]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">stat.likelihood;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zClass" indexed="false">
@@ -7974,7 +9857,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[discrete image classification flag in Z]]></Description>
          <Units> </Units>
-         <UCD version="1+">src.class</UCD>
+         <UCD version="1+">src.class;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zClassStat" indexed="false">
@@ -7982,7 +9865,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[N(0,1) stellarness-of-profile statistic in Z]]></Description>
          <Units> </Units>
-         <UCD version="1+">stat</UCD>
+         <UCD version="1+">stat;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zppErrBits" indexed="false">
@@ -7990,7 +9873,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[additional WFAU post-processing error bits in Z]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.code</UCD>
+         <UCD version="1+">meta.code;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zSeqNum" indexed="false">
@@ -7998,7 +9881,7 @@
          <Datatype>int</Datatype>
          <Description><![CDATA[the running number of the Z detection]]></Description>
          <Units> </Units>
-         <UCD version="1+">meta.id</UCD>
+         <UCD version="1+">meta.number;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zXi" indexed="false">
@@ -8006,7 +9889,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Offset of Z detection from master position (+east/-west)]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">pos.eq.ra;arith.diff</UCD>
+         <UCD version="1+">pos.eq.ra;arith.diff;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
       <Column ID="atlasSource.zEta" indexed="false">
@@ -8014,7 +9897,7 @@
          <Datatype>float</Datatype>
          <Description><![CDATA[Offset of Z detection from master position (+north/-south)]]></Description>
          <Units>arcsec</Units>
-         <UCD version="1+">pos.eq.dec;arith.diff</UCD>
+         <UCD version="1+">pos.eq.dec;arith.diff;em.opt.I</UCD>
          <ErrorColumn></ErrorColumn>
       </Column>
    </Table>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasetDescription xmlns='urn:astrogrid:schema:TableMetaDoc:v1.1'
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Catalog>
+   <Name>TAP_SCHEMA</Name>
+   <Description></Description>
+
+   <Table ID="schemas">
+      <Name>schemas</Name>
+      <Description><![CDATA[Schemas]]></Description>
+      <Column ID="schemas.schema_name">
+         <Name>schema_name</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[schema name, possibly qualified]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="schemas.description">
+         <Name>description</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[brief description of schema]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="schemas.utype">
+         <Name>utype</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[UTYPE if schema corresponds to a data model]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="schemas.dbname">
+         <Name>dbname</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[The Database name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+
+   <Table ID="tables">
+      <Name>tables</Name>
+      <Description><![CDATA[Tables]]></Description>
+      <Column ID="tables.schema_name">
+         <Name>schema_name</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[schema name, possibly qualified]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tables.description">
+         <Name>description</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[brief description of table]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tables.table_name">
+         <Name>table_name</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[table name as it should be used in queries]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tables.table_type">
+         <Name>table_type</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[one of: table, view]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tables.utype">
+         <Name>utype</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[UTYPE if table corresponds to a data model]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="tables.dbname">
+         <Name>dbname</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[The Database name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+
+   <Table ID="columns">
+      <Name>columns</Name>
+      <Description><![CDATA[Columns]]></Description>
+      <Column ID="columns.table_name">
+         <Name>utype</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[table name from TAP_SCHEMA.tables]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="columns.column_name">
+         <Name>column_name</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[column name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="columns.description">
+         <Name>description</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[brief description of column]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="columns.unit">
+         <Name>unit</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[unit in VO standard format]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="columns.ucd">
+         <Name>ucd</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[UCD of column if any]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="columns.utype">
+         <Name>utype</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[UTYPE of column if any]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="columns.datatype">
+         <Name>datatype</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[ADQL datatype as in section 2.5 ]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="columns.size">
+         <Name>size</Name>
+         <Datatype>integer</Datatype>
+         <Description><![CDATA[length of variable length datatypes]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="columns.principal">
+         <Name>principal</Name>
+         <Datatype>integer</Datatype>
+         <Description><![CDATA[a principal column; 1 means true, 0 means false]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="columns.indexed">
+         <Name>indexed</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[an indexed column; 1 means true, 0 means false]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="columns.std">
+         <Name>std</Name>
+         <Datatype>integer</Datatype>
+         <Description><![CDATA[a standard column; 1 means true, 0 means false]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+     <Column ID="columns.dbname">
+         <Name>dbname</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[The Database name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+
+   <Table ID="keys">
+      <Name>keys</Name>
+      <Description><![CDATA[Foreign Keys]]></Description>
+      <Column ID="keys.key_id">
+         <Name>key_id</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[unique key identifier]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="keys.from_table">
+         <Name>from_table</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[fully qualified table name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="keys.target_table">
+         <Name>target_table</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[fully qualified table name]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="keys.description">
+         <Name>description</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[description of this key]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column> 
+      <Column ID="keys.utype">
+         <Name>utype</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[utype of this key]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>      
+   </Table>
+
+   <Table ID="key_columns">
+      <Name>key_columns</Name>
+      <Description><![CDATA[Foreign Key Columns ]]></Description>
+      <Column ID="key_columns.key_id">
+         <Name>key_id</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[key identifier from the TAP_SCHEMA.keys]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="key_columns.from_column">
+         <Name>from_column</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[key column name in the <from_table>]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+      <Column ID="key_columns.target_column">
+         <Name>target_column</Name>
+         <Datatype>varchar</Datatype>
+         <Description><![CDATA[key column in the <target_table>]]></Description>
+         <Units> </Units>
+         <UCD version="1"></UCD>
+         <ErrorColumn></ErrorColumn>
+      </Column>
+   </Table>
+   </Catalog>
+</DatasetDescription>
+
