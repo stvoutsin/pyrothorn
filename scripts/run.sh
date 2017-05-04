@@ -139,7 +139,7 @@ else
             sleep 120
 	    tap_service=$(cat tap_service)
             source setup/apache-tap.sh
-    	    echo "${catalogue:?} TAP Service available at: "$tap_service
+    	    echo "TAP Service available at: "$tap_service
         else
             echo -n "Please enter a catalogue and press [ENTER]: "
             read input_variable

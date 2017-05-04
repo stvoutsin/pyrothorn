@@ -141,7 +141,7 @@ class test_firethorn(unittest.TestCase):
 
 
                 # Write TAP service URL to file 
-		file = open(“/tap_service”, “w”)
+		file = open("/tap_service", "w")
 		file.write(firethorn_tap_service) 
 		file.close()
 

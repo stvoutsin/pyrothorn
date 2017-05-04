@@ -20,14 +20,6 @@
 #
 jsonfile=$1
 
-if [ "$jsonfile" != "DEFAULT" ]
-  then
-    echo "Building TAP service for the supplied config:" + ${jsonfile:?}
-  else
-    jsonfile=${testrundatabase:?}
-    echo "No catalogue given.. Using catalogue from config:" + ${catalogue:?}
-fi
-
 source ${HOME:?}/chain.properties
 
 setupdir="${HOME:?}/setup"
@@ -161,7 +153,7 @@ adqlschema = ""
 query_schema = "" 
 schema_name = "${testrundatabase:?}" 
 schema_alias = "${testrundatabase:?}" 
-testbase
+
 EOF
 
 echo "*** Run pyrothorn  [pyro-tap.sh] ***"
@@ -189,8 +181,6 @@ docker run -i -t \
     --env "endpointurl=http://${firelink:?}:8080/firethorn" \
     --env "ip=http://${ip:?}" \
     --link "${firename:?}:${firelink:?}" \
-    --link "${pyrosqlname:?}:${pyrosqllink:?}" \
-    --link "${storedqueriesname:?}:${storedquerieslink:?}" \
     --link "${ogsaname:?}:${ogsalink:?}" \
     --link "${dataname:?}:${datalink:?}" \
     --link "${username:?}:${userlink:?}" \
