@@ -29,8 +29,6 @@ testdata="$(pwd)/tests/test-001"
 chmod a+r "${testbase:?}/pyro-tap.sh" 
 chcon -t svirt_sandbox_file_t "${testbase:?}/pyro-tap.sh" 
 
-chmod a+r "${HOME:?}/tap_service"
-
 echo "*** Running tap setup script ***"
 
 touch "${HOME:?}/tap_service"

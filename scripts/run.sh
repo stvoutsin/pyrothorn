@@ -136,7 +136,7 @@ else
         then 
             echo "Running setup tap script with config: " + ${input_variable:?}
             source setup/setup-tap.sh ${input_variable:?}
-            sleep 120
+            sleep 1500
 	    tap_service=$(cat ${HOME:?}/tap_service)
             source setup/apache-tap.sh
     	    echo "TAP Service available at: "$tap_service
