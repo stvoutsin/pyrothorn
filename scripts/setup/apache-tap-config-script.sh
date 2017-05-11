@@ -16,6 +16,8 @@ ProxyPassReverse  ^/firethorn\/tap\/osa\/(.*)$  http://${gillianip:?}:8080/firet
 ProxyPassMatch ^/firethorn\/tap\/(.*)$  http://${gillianip:?}:8080/firethorn/tap/\$1  retry=0 connectiontimeout=14400 timeout=14400
 ProxyPassReverse  ^/firethorn\/tap\/(.*)$  http://${gillianip:?}:8080/firethorn/tap/\$1
 
+ProxyPassMatch ^/osa\/(.*)$  http://172.17.0.5:8080/firethorn/tap/${tapserviceid:?}/\$1
+ProxyPassReverse  ^/osa\/(.*)$  http://172.17.0.5:8080/firethorn/tap/${tapserviceid:?}/\$1
 
 <Proxy *>
 Order deny,allow
