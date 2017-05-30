@@ -31,8 +31,7 @@ def doWork():
         print "Starting query: " + query 
         maxrec=randint(0,10)
         row_length = runQuery(query,maxrec)
-        print row_length 
-        if (row_length==maxrec):
+        if (row_length>=0):
            print "Success"
         else:
            print "Fail"
