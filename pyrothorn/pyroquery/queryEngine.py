@@ -77,7 +77,7 @@ class QueryEngine(object):
         return row_length
     
                 
-    def run_query(self, query=None, query_name="", query_space="", **kwargs):
+    def run_query(self, query=None, query_name="", query_space="", query_mode="AUTO", test_email="", **kwargs):
         '''
         Run a query on a resource
                
@@ -171,7 +171,7 @@ class QueryEngine(object):
     
     
     
-    def start_query_loop(self, url):
+    def start_query_loop(self, url, test_email=""):
         '''
         Start the query loop
         
