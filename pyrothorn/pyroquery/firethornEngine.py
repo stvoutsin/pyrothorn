@@ -108,7 +108,6 @@ class FirethornEngine(object):
          
 	    if jdbc_resource_user!="" and jdbc_resource_pass!="":
                 data = urllib.urlencode({config.resource_create_name_params['http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json'] : resourcename,
- 				     "urn:jdbc.copy.depth" : config.adql_copy_depth,
                                      "jdbc.connection.url" : resourceuri,	
                                      "jdbc.resource.catalog" : catalogname,
                                      "jdbc.resource.name" : ogsadainame,
@@ -120,7 +119,6 @@ class FirethornEngine(object):
 
 	    else :
                 data = urllib.urlencode({config.resource_create_name_params['http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json'] : resourcename ,
-                                     "urn:jdbc.copy.depth" : config.adql_copy_depth,
                                      "jdbc.connection.url" : resourceuri,
                                      "jdbc.catalog.name" : catalogname,
 				     "jdbc.connection.driver" : self.driver,
@@ -155,8 +153,8 @@ class FirethornEngine(object):
         
         buf = cStringIO.StringIO()
         try:
-            data = urllib.urlencode({"jdbc.resource.schema.select.catalog" : jdbccatalogname,
-                                     "jdbc.resource.schema.select.schema" : jdbcschemaname})
+            data = urllib.urlencode({"jdbc.schema.catalog" : jdbccatalogname,
+                                     "jdbc.schema.schema" : jdbcschemaname})
             req = urllib2.Request( jdbcspace + "/schemas/select", data, headers={"Accept" : "application/json", "firethorn.auth.identity" : config.test_email , "firethorn.auth.community" : "public (unknown)"})
             response = urllib2.urlopen(req)
             js = response.read()
@@ -171,8 +169,8 @@ class FirethornEngine(object):
             
             url = adqlspace + "/metadoc/import"        
             values = [  
-                      ("urn:schema.metadoc.base", str(jdbcschemaident)),
-                      ("urn:schema.metadoc.file", (c.FORM_FILE, metadocfile))]
+                      ("metadoc.base", str(jdbcschemaident)),
+                      ("metadoc.file", (c.FORM_FILE, metadocfile))]
                        
             c.setopt(c.URL, str(url))
             c.setopt(c.HTTPPOST, values)
@@ -205,8 +203,7 @@ class FirethornEngine(object):
             if adqlspacename==None:
                 t = datetime.now()
                 adqlspacename = 'workspace-' + t.strftime("%y%m%d_%H%M%S") 
-            data = urllib.urlencode({config.resource_create_name_params['http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json'] : adqlspacename,
-                                     "urn:adql.copy.depth": config.adql_copy_depth})
+            data = urllib.urlencode({config.resource_create_name_params['http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json'] : adqlspacename})
             req = urllib2.Request( config.workspace_creator, data, headers={"Accept" : "application/json", "firethorn.auth.identity" : config.test_email , "firethorn.auth.community" : "public (unknown)"})
             response = urllib2.urlopen(req)
             adqlspace = json.loads(response.read())["ident"]
@@ -262,7 +259,7 @@ class FirethornEngine(object):
                 importname = name
 
             if importname!="":
-                data = urllib.urlencode({'urn:adql.copy.depth' : config.adql_copy_depth, config.workspace_import_schema_base : ident, config.workspace_import_schema_name : importname})
+                data = urllib.urlencode({config.workspace_import_schema_base : ident, config.workspace_import_schema_name : importname})
 	        req = urllib2.Request( workspace + config.workspace_import_uri, data, headers={"Accept" : "application/json", "firethorn.auth.identity" : config.test_email, "firethorn.auth.community" : "public (unknown)"}) 
                 response = urllib2.urlopen(req)
         except Exception as e:
@@ -279,7 +276,7 @@ class FirethornEngine(object):
             importname = name
 
             if importname!="":
-                data = urllib.urlencode({'urn:adql.copy.depth' : config.adql_copy_depth, config.workspace_import_schema_base : import_schema, config.workspace_import_schema_name : importname})
+                data = urllib.urlencode({config.workspace_import_schema_base : import_schema, config.workspace_import_schema_name : importname})
 	        req = urllib2.Request( workspace + config.workspace_import_uri, data, headers={"Accept" : "application/json", "firethorn.auth.identity" : config.test_email, "firethorn.auth.community" : "public (unknown)"}) 
                 response = urllib2.urlopen(req)
         except Exception as e:
@@ -349,7 +346,7 @@ class FirethornEngine(object):
 
         schemaident=""
         try:
-            data = urllib.urlencode({ "ivoa.resource.schema.name" : findname })
+            data = urllib.urlencode({ "ivoa.schema.name" : findname })
             req = urllib2.Request( ivoa_resource + "/schemas/select", data, headers={"Accept" : "application/json", "firethorn.auth.identity" : config.test_email , "firethorn.auth.community" :"public (unknown)"})
             response = urllib2.urlopen(req)
             schemaident = json.loads(response.read())["self"]

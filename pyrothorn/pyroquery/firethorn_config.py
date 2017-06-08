@@ -42,12 +42,12 @@ get_adql_resources_url = "/firethorn/adql/resource/select"
 
 get_param = 'id'
 
-workspace_import_schema_name = "adql.resource.schema.import.name"
-workspace_import_schema_base = "adql.resource.schema.import.base"
+workspace_import_schema_name = "adql.schema.name"
+workspace_import_schema_base = "adql.schema.base"
 workspace_import_uri = "/schemas/import"
 
 schema_import_schema_name = "adql.schema.table.import.name"
-schema_import_schema_base = "adql.schema.table.import.base"
+schema_import_schema_base = "adql.table.base"
 schema_import_uri = "/tables/import"
 
 query_create_uri = "/queries/create"
@@ -73,8 +73,8 @@ ivoa_resource_create = web_services_url + "/ivoa/resource/create"
 
 resource_create_name_params = {
                                'http://data.metagrid.co.uk/wfau/firethorn/types/entity/jdbc-resource-1.0.json' : 'jdbc.resource.name', 
-                               'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json' : 'adql.resource.create.name',
-                               'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-service-1.0.json' : 'adql.resource.create.name',
+                               'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json' : 'adql.resource.name',
+                               'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-service-1.0.json' : 'adql.resource.name',
                                'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-schema-1.0.json' : 'adql.schema.name'
                                }
 
@@ -174,8 +174,8 @@ db_select_by_name_params = {
                             'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json': 'adql.resource.select.name',
                             'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-service-1.0.json': 'adql.resource.select.name'
                             }
-schema_select_by_name_param = "adql.resource.schema.select.name"
-table_select_by_name_param = "adql.schema.table.select.name"
+schema_select_by_name_param = "adql.schema.name"
+table_select_by_name_param = "adql.table.name"
 
 types = {
          'service' : 'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-service-1.0.json', 
@@ -195,6 +195,4 @@ types = {
          'workspace' : 'http://data.metagrid.co.uk/wfau/firethorn/types/entity/adql-resource-1.0.json'
 
         }
-
-
 
