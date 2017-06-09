@@ -69,6 +69,20 @@ EOF
     
     popd
 
+
+
+    #
+    # Clone our Pyrothorn repository.
+    source "${HOME:?}/firethorn.settings"
+    pushd "${PROJECTS_CODE:?}"
+
+  	git clone https://github.com/stvoutsin/pyrothorn.git -b master
+        git pull
+
+    popd
+
+
+
     echo "*** Build our toolkit containers. [build.sh] ***"
 # -----------------------------------------------------
 # Build our toolkit containers.
@@ -167,18 +181,45 @@ EOF
                 docker/ssh-client
         fi
 
+
+    popd
+
+
+
+    pushd "${PYROTHORN_CODE:?}"
+
+
+
+   	if [ $(docker images | grep -c '^firethorn/pythonlibs') -eq 0 ]
+        then
+            echo "# ------"
+            echo "# Building Pythonlibs image"
+            docker build \
+                --tag firethorn/pythonlibs \
+                containers/docker/pythonlibs
+        fi
+
    	if [ $(docker images | grep -c '^firethorn/apache') -eq 0 ]
         then
             echo "# ------"
             echo "# Building Apache image"
             docker build \
                 --tag firethorn/apache:${version} \
-                docker/apache
+                 containers/docker/apache
+        fi
+
+
+   	if [ $(docker images | grep -c '^firethorn/pyrosql') -eq 0 ]
+        then
+            echo "# ------"
+            echo "# Building Pyrosql image"
+            docker build \
+                --tag firethorn/pyrosql \
+                containers/docker/pyrosql
         fi
 
 
     popd
-
 
 
     echo "*** Build our webapp services. [build.sh] ***"
@@ -239,24 +280,6 @@ EOF
 # Build our pyrothorn container.
 #[root@builder]
 
-
-
-    #
-    # Clone our repository.
-    source "${HOME:?}/firethorn.settings"
-    pushd "${PROJECTS_CODE:?}"
-
-  	git clone https://github.com/stvoutsin/pyrothorn.git -b master
-
-    popd
-
-
-    source "${HOME:?}/firethorn.settings"
-    pushd "${PYROTHORN_CODE:?}"
-
-       git pull
-
-    popd
 
 
     source "${HOME:?}/firethorn.settings"
