@@ -22,7 +22,7 @@
 
 clearwinglog=clearwing
 clearwinglogs="/var/logs/${clearwinglog:?}"
-setupdir="${HOME:?}/setup"
+setupdir="$(pwd)/setup"
 
 
 source "${HOME:?}/chain.properties"
@@ -31,8 +31,8 @@ chcon -t svirt_sandbox_file_t "${setupdir:?}/apache-clearwing-init.sh"
 chmod +x "${setupdir:?}/apache-clearwing-init.sh"
 
 
-chmod +x "${HOME:?}/setup/build-clearwing.sh"
-chcon -t svirt_sandbox_file_t "${HOME:?}/setup/build-clearwing.sh" 
+chmod +x "$(pwd)/setup/build-clearwing.sh"
+chcon -t svirt_sandbox_file_t "$(pwd/)setup/build-clearwing.sh" 
 
 # ----------------------------------------------------
 # Run builder
@@ -46,7 +46,7 @@ chcon -t svirt_sandbox_file_t "${HOME:?}/setup/build-clearwing.sh"
         --volume /var/local/cache:/cache \
         --volume /var/local/projects:/projects \
         --volume /var/run/docker.sock:/var/run/docker.sock \
-        --volume ${HOME:?}/setup/build-clearwing.sh:${HOME:?}/build-clearwing.sh \
+        --volume $(pwd)/setup/build-clearwing.sh:${HOME:?}/build-clearwing.sh \
         --volume "${HOME:?}/chain.properties:/root/chain.properties" \
         firethorn/builder:1 \
         bash ${HOME:?}/build-clearwing.sh

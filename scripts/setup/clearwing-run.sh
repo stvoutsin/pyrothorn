@@ -26,7 +26,7 @@ adqlspace=$1
 adqlschema=$2
 clearwinglog=clearwing
 clearwinglogs="/var/logs/${clearwinglog:?}"
-setupdir="${HOME:?}/setup"
+setupdir="$(pwd)/setup"
 homedir="${HOME:?}"
 
 chcon -t svirt_sandbox_file_t "${setupdir:?}/apache-clearwing-init.sh" 

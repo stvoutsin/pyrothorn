@@ -20,7 +20,7 @@
 #
 
 homedir="${HOME:?}"
-setupdir="${HOME:?}/setup"
+setupdir="$(pwd)/setup"
 clearwingip=$1
 tapserviceip=$2
 

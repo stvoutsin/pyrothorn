@@ -24,7 +24,7 @@
 
     testname=tester
 
-    chmod a+r "${HOME:?}/tests/test04-nohup.sh" 
+    chmod a+r "$(pwd)/tests/test04-nohup.sh" 
     chcon -t svirt_sandbox_file_t "$(pwd)/tests/test04-nohup.sh" 
     testerlogs="/var/logs/tester"
 

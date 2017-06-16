@@ -142,7 +142,7 @@ schema_alias = "${testrundatabase:?}"
 EOF
 
 chmod a+r "${HOME:?}/tests/test06-nohup.sh" 
-chcon -t svirt_sandbox_file_t "${HOME:?}/tests/test06-nohup.sh" 
+chcon -t svirt_sandbox_file_t "$(pwd)/tests/test06-nohup.sh" 
 
 chmod a+r "${pyroproperties:?}" 
 chcon -t svirt_sandbox_file_t "${pyroproperties:?}" 
@@ -151,8 +151,8 @@ mkdir -p /var/logs/${pyroname:?}
 
 echo "*** Run pyrothorn [test06-taptest.sh] ***"
 
-chmod a+r "${HOME:?}/tests/test07-taplint.sh" 
-chcon -t svirt_sandbox_file_t "${HOME:?}/tests/test07-taplint.sh" 
+chmod a+r "$(pwd)/tests/test07-taplint.sh" 
+chcon -t svirt_sandbox_file_t "$(pwd)/tests/test07-taplint.sh" 
 
 
 
@@ -162,7 +162,7 @@ docker run -i -t \
     --detach \
     --memory 512M \
     --volume "${pyroproperties:?}:/home/pyrothorn/config.py" \
-    --volume ${HOME:?}/tests/test06-nohup.sh:/scripts/test06-nohup.sh \
+    --volume $(pwd)/tests/test06-nohup.sh:/scripts/test06-nohup.sh \
     --volume "${pyrologs}:/home/pyrothorn/logs" \
     --link "${firename:?}:${firelink:?}" \
     --link "${pyrosqlname:?}:${pyrosqllink:?}" \

@@ -29,7 +29,7 @@
     source "${HOME:?}/chain.properties"
     FIRETHORN_CODE=/projects/firethorn
     CLEARWING_CODE=/projects/clearwing
-
+    PYROTHORN_CODE=/projects/pyrothorn
 # -----------------------------------------------------
 # Checkout a copy of our source code.
 #[root@builder]
@@ -37,20 +37,20 @@
 
 
 
-pushd "${FIRETHORN_CODE:?}"
+pushd "${PYROTHORN_CODE:?}"
 
 
     docker build \
         --tag "firethorn/ubuntu:14.04" \
-        docker/ubuntu/14.04
+        containers/docker/ubuntu/14.04
 
     docker build \
         --tag "firethorn/python:3.4.2" \
-        docker/python/3.4.2
+        containers/docker/python/3.4.2
 
     docker build \
         --tag "firethorn/pythonlibs" \
-        docker/pythonlibs
+        containers/docker/pythonlibs
 
 popd
 

@@ -140,8 +140,8 @@ schema_alias = "${testrundatabase:?}"
 
 EOF
 
-chmod a+r "${HOME:?}/tests/test06-nohup.sh" 
-chcon -t svirt_sandbox_file_t "${HOME:?}//tests/test06-nohup.sh" 
+chmod a+r "$(pwd)/tests/test06-nohup.sh" 
+chcon -t svirt_sandbox_file_t "$(pwd)/tests/test06-nohup.sh" 
 
 chmod a+r "${pyroproperties:?}" 
 chcon -t svirt_sandbox_file_t "${pyroproperties:?}" 
